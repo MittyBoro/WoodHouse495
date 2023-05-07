@@ -3,5 +3,7 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": true,
-  "vueIndentScriptAndStyle": true
+  "vueIndentScriptAndStyle": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "printWidth": 100
 }
