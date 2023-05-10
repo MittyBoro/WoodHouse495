@@ -6,7 +6,7 @@
       <a
         target="_blank"
         class="btn-secondary btn-mini ml-auto"
-        :href="panelRoute('props.create', { page_id: form.id })"
+        :href="$panelRoute('props.create', { page_id: form.id })"
       >
         Добавить параметр
       </a>

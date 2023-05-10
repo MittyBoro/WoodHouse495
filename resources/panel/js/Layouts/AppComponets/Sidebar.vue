@@ -7,14 +7,15 @@
     <div
       class="flex shrink-0 items-center h-16 lg:h-20 lg:pl-5 lg:mr-5 border-b border-white border-opacity-10"
     >
-      <Link class="flex items-center shrink-0 mr-auto" :href="panelRoute('dashboard')">
+      <Link class="flex items-center shrink-0 mr-auto" :href="$panelRoute('dashboard')">
         <Icon icon="solar-panel" class="w-6 text-2xl -mb-1 mr-2 opacity-80" />
-
         <div
           class="hidden sm:block text-2xl pt-1 font-bold leading-none tracking-tight hover:text-gray-100 transition"
         >
-          The Panel
-          <span class="text-white text-opacity-80 ml-0.5">ка</span>
+          <div class="flex">
+            The Panel
+            <span class="text-white text-opacity-80 ml-0.5">ка</span>
+          </div>
         </div>
       </Link>
 
@@ -38,8 +39,8 @@
 </template>
 
 <script>
-  import NavLink from './Elements/NavLink'
-  import Hamburger from './Elements/Hamburger'
+  import NavLink from './Elements/NavLink.vue'
+  import Hamburger from './Elements/Hamburger.vue'
 
   export default {
     components: {

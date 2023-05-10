@@ -8,7 +8,7 @@
       >
         <div class="mt-3 mb-6 text-center text-gray-600">
           <a
-            :href="panelRoute('login')"
+            :href="$panelRoute('login')"
             class="mb-1 text-5xl font-bold leading-none hover:text-gray-800 transition flex justify-center"
           >
             The Panel

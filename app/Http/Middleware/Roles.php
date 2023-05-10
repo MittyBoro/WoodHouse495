@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PanelRole
+class Roles
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,6 @@ class PanelRole
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-
         // не авторизован
         if (!Auth::check()) {
             return redirect()->route('panel.login');
@@ -38,7 +37,7 @@ class PanelRole
             return redirect()->route('panel.login')->withErrors('Вы не являетесь редактором');
         }
 
-        if ($rightRole == 'admin' && !$user->is_panel) {
+        if ($rightRole == 'admin' && !$user->is_admin) {
             Auth::logout();
             return redirect()->route('panel.login')->withErrors('Вы не являетесь администратором');
         }

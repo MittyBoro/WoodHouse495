@@ -21,7 +21,7 @@
         <div class="right-els flex items-center text-sm text-gray-400 transition">
           <Icon icon="arrows-up-down-left-right" class="drag-handle mr-2" />
           <Link
-            :href="panelRoute('props.edit', item.id)"
+            :href="$panelRoute('props.edit', item.id)"
             class="cursor-pointer transition-colors hover:text-primary-600"
           >
             <Icon icon="gear" class="block" />

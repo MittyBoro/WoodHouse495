@@ -1,78 +1,15 @@
 <template>
   <AppLayout title="Главная">
-    <div v-if="data.orders" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
-      <div
-        class="md:col-span-2 flex flex-col justify-between bg-white shadow-lg rounded-lg px-8 py-6"
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-center gap-8">
+      <Link
+        v-for="item in $page.props.config.menu"
+        key="route"
+        :href="$route(item.route)"
+        class="aspect-[5/3] md:col-span-1 flex flex-col items-center justify-center bg-white shadow-lg rounded-xl px-8 py-6 text-gray-600 hover:bg-gray-500 hover:text-white transition-colors"
       >
-        <h1 class="font-bold text-lg uppercase">{{ data.products.title }}</h1>
-        <div class="text-grid">
-          <div class="text-row">
-            <div class="text-title">Всего:</div>
-            <div class="text-value">{{ data.products.count }}</div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">Новых за месяц:</div>
-            <div class="text-value">{{ data.products.count_month }}</div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">За полгода:</div>
-            <div class="text-value">{{ data.products.count_half_year }}</div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">За год:</div>
-            <div class="text-value">{{ data.products.count_year }}</div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">Категорий:</div>
-            <div class="text-value">{{ data.products.count_categories }}</div>
-          </div>
-        </div>
-        <Link class="btn w-full" :href="route(data.products.route)">Перейти</Link>
-      </div>
-
-      <div
-        class="md:col-span-2 flex flex-col justify-between bg-white shadow-lg rounded-lg px-8 py-6"
-      >
-        <h1 class="font-bold text-lg uppercase">{{ data.orders.title }}</h1>
-        <div class="text-grid">
-          <div class="text-row">
-            <div class="text-title">За неделю:</div>
-            <div class="text-value">
-              {{ data.orders.count_week }}
-              <!-- на {{ formatPrice(data.orders.week_info.sum) }}₽ -->
-            </div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">За месяц:</div>
-            <div class="text-value">
-              {{ data.orders.count_month }}
-              <!-- на {{ formatPrice(data.orders.month_info.sum) }}₽ -->
-            </div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">За полгода:</div>
-            <div class="text-value">
-              {{ data.orders.count_half_year }}
-              <!-- на {{ formatPrice(data.orders.half_year_info.sum) }}₽ -->
-            </div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">За год:</div>
-            <div class="text-value">
-              {{ data.orders.count_year }}
-              <!-- на {{ formatPrice(data.orders.year_info.sum) }}₽ -->
-            </div>
-          </div>
-          <div class="text-row">
-            <div class="text-title">Всего:</div>
-            <div class="text-value">
-              {{ data.orders.count }}
-              <!-- на {{ formatPrice(data.orders.info.sum) }}₽ -->
-            </div>
-          </div>
-        </div>
-        <Link class="btn w-full" :href="route(data.orders.route)">Перейти</Link>
-      </div>
+        <Icon :icon="item.icon || 'circle-dot'" class="text-5xl" />
+        <div class="text-xl font-bold mt-5">{{ item.name }}</div>
+      </Link>
     </div>
   </AppLayout>
 </template>

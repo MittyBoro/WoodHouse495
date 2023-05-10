@@ -36,7 +36,7 @@
       </FLabel>
 
       <div class="flex items-center justify-between mt-4">
-        <Link :href="panelRoute('login')" class="hover-link text-sm">Уже зарегистрированы?</Link>
+        <Link :href="$panelRoute('login')" class="hover-link text-sm">Уже зарегистрированы?</Link>
 
         <FButton class="ml-4" :disabled="form.processing">Регистрация</FButton>
       </div>
@@ -69,7 +69,7 @@
 
     methods: {
       submit() {
-        this.form.post(this.panelRoute('register'), {
+        this.form.post(this.$panelRoute('register'), {
           onFinish: () => this.form.reset('password', 'password_confirmation'),
         })
       },

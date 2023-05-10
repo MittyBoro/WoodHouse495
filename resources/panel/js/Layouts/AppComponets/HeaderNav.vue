@@ -3,7 +3,7 @@
     class="flex justify-between px-3 md:px-0 pt-0 md:pt-1 items-center h-16 md:h-20 border-b border-gray-300"
   >
     <div class="flex items-center font-bold pr-7 pt-0 text-gray-700 leading-tight">
-      <Link :href="panelRoute('dashboard')" class="link"><Icon icon="house" /></Link>
+      <Link :href="$panelRoute('dashboard')" class="link"><Icon icon="house" /></Link>
       <div class="text-sm opacity-50 mx-2">/</div>
 
       <div
@@ -59,7 +59,7 @@
           </template>
 
           <template #content>
-            <DropdownLink :href="panelRoute('users.edit', $page.props.auth.user.id)">
+            <DropdownLink :href="$panelRoute('users.edit', $page.props.auth.user.id)">
               Редактировать
             </DropdownLink>
             <div class="border-t border-gray-100"></div>
@@ -72,8 +72,8 @@
 </template>
 
 <script>
-  import Dropdown from './Elements/Dropdown'
-  import DropdownLink from './Elements/DropdownLink'
+  import Dropdown from './Elements/Dropdown.vue'
+  import DropdownLink from './Elements/DropdownLink.vue'
 
   export default {
     components: {
@@ -101,7 +101,7 @@
 
     methods: {
       logout() {
-        axios.post(panelRoute('logout')).then(() => (location.href = panelRoute('login')))
+        axios.post($panelRoute('logout')).then(() => (location.href = $panelRoute('login')))
       },
 
       findItemInMenu(menu, routeStart) {

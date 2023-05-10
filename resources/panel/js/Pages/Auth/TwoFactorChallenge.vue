@@ -93,7 +93,7 @@
       },
 
       submit() {
-        this.form.post(this.panelRoute('two-factor.login'))
+        this.form.post(this.$panelRoute('two-factor.login'))
       },
     },
   }

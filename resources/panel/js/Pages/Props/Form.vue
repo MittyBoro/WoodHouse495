@@ -17,7 +17,7 @@
           <FSelect :options="pages" :keys="['id', 'title']" v-model="page_id" />
           <Link
             v-if="page_id"
-            :href="panelRoute('pages.edit', page_id)"
+            :href="$panelRoute('pages.edit', page_id)"
             class="link flex text-xs items-center mt-3"
           >
             <Icon icon="pencil" class="mr-1.5" />

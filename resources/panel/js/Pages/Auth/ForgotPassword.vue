@@ -17,7 +17,7 @@
       </FLabel>
 
       <div class="flex items-center justify-between mt-4">
-        <Link :href="panelRoute('login')" class="hover-link text-sm">Вход</Link>
+        <Link :href="$panelRoute('login')" class="hover-link text-sm">Вход</Link>
 
         <FButton class="ml-4" :disabled="form.processing">Cброс пароля</FButton>
       </div>
@@ -47,7 +47,7 @@
 
     methods: {
       submit() {
-        this.form.post(this.panelRoute('password.email'))
+        this.form.post(this.$panelRoute('password.email'))
       },
     },
   }

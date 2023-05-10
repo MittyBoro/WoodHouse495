@@ -78,9 +78,9 @@
     padding-left: theme('spacing.1');
     padding-top: theme('spacing.2');
     padding-bottom: theme('spacing.2');
-    margin-left: -theme('spacing.1');
-    margin-top: -theme('spacing.1');
-    margin-bottom: -theme('spacing.2');
+    margin-left: calc(-1 * theme('spacing.1'));
+    margin-top: calc(-1 * theme('spacing.1'));
+    margin-bottom: calc(-1 * theme('spacing.2'));
     border-radius: theme('borderRadius.DEFAULT');
     transition-property: all;
     display: grid;

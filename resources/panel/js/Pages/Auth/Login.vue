@@ -8,7 +8,7 @@
 
     <form @submit.prevent="submit">
       <FLabel title="Email" classes="block">
-        <FInput type="text" class="mt-1" v-model="form.login" required autofocus />
+        <FInput type="text" class="mt-1" v-model="form.email" required autofocus />
       </FLabel>
 
       <FLabel title="Пароль" classes="mt-4 block">
@@ -27,8 +27,8 @@
       <!-- <a :href="route('oauth.vk')" class="btn-vk w-full mt-4">Вход через ВК</a> -->
 
       <div class="flex items-center mt-4">
-        <Link :href="panelRoute('register')" class="hover-link mr-4 text-sm">Регистрация</Link>
-        <Link :href="panelRoute('password.request')" class="hover-link ml-auto text-sm">
+        <Link :href="$panelRoute('register')" class="hover-link mr-4 text-sm">Регистрация</Link>
+        <Link :href="$panelRoute('password.request')" class="hover-link ml-auto text-sm">
           Забыли пароль?
         </Link>
       </div>
@@ -51,7 +51,7 @@
     data() {
       return {
         form: this.$inertia.form({
-          login: '',
+          email: '',
           password: '',
           remember: true,
         }),
@@ -65,7 +65,7 @@
             ...data,
             remember: this.form.remember ? 'on' : '',
           }))
-          .post(this.panelRoute('login'))
+          .post(this.$panelRoute('login'))
       },
     },
   }

@@ -43,7 +43,7 @@
 
     methods: {
       submit() {
-        this.form.post(this.panelRoute('password.confirm'), {
+        this.form.post(this.$panelRoute('password.confirm'), {
           onFinish: () => this.form.reset(),
         })
       },

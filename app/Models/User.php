@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -52,4 +53,35 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = [
+        'avatar',
+    ];
+
+    public function setPasswordAttribute($val)
+    {
+        $this->attributes['password'] = Hash::make($val);
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return $this->role == self::ROLE_ADMIN;
+    }
+    public function getIsEditorAttribute()
+    {
+        return $this->role == self::ROLE_ADMIN || $this->role == self::ROLE_EDITOR;
+    }
+
+    public function getFirstNameAttribute()
+    {
+        return explode(' ', $this->name)[0];
+    }
+
+    public function getAvatarAttribute()
+    {
+        $ui = 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=fff&background=AC2CDB';
+        $gravatar = 'https://www.gravatar.com/avatar/' . md5($this->email) . '?' . urlencode($ui);
+
+        return $gravatar;
+    }
 }

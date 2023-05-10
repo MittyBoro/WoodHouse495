@@ -17,7 +17,7 @@ export default {
       let prefix = this.$route().current().split('.').slice(0, 2).join('.') + '.'
       return prefix
     },
-    panelRoute(...args) {
+    $panelRoute(...args) {
       args[0] = 'panel.' + args[0]
       return this.$route(...args)
     },

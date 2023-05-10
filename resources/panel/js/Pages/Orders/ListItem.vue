@@ -199,7 +199,7 @@
           status: status,
         })
 
-        form.put(panelRoute('orders.update', this.element.id), {
+        form.put($panelRoute('orders.update', this.element.id), {
           preserveScroll: true,
           onSuccess: () => {
             this.element.status = this.status

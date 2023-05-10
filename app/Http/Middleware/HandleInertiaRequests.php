@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use Cookie;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -40,9 +39,7 @@ class HandleInertiaRequests extends Middleware
         $request->headers->set('Is-Inertia', true);
 
         return array_merge(parent::share($request), [
-            'config' => fn () => config('admin'),
-
-            'currencies' => config('app.currencies'),
+            'config' => fn () => config('panel'),
 
             'auth' => [
                 'user' => fn () => $request->user()

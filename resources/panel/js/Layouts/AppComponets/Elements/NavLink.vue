@@ -100,27 +100,29 @@
     background-image: linear-gradient(to right, theme('colors.white'), theme('colors.gray.200'));
     color: theme('colors.gray.600');
 
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      display: none;
-      height: theme('spacing.6');
-      width: theme('spacing.6');
-      background-color: theme('colors.gray.200');
-      clip-path: url(#nav-clip);
-    }
+    @media (min-width: theme('screens.lg')) {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        right: 0;
+        height: theme('width.6');
+        width: theme('height.6');
+        background-color: theme('colors.gray.200');
+        clip-path: url(#nav-clip);
+      }
 
-    &::before {
-      top: 0;
-      margin-top: -theme('spacing.6');
-      transform: rotate(90deg);
-    }
+      &::before {
+        top: 0;
+        margin-top: calc(-1 * theme('spacing.6'));
+        transform: rotate(90deg);
+      }
 
-    &::after {
-      bottom: 0;
-      margin-bottom: -theme('spacing.6');
+      &::after {
+        bottom: 0;
+        margin-bottom: calc(-1 * theme('spacing.6'));
+      }
     }
   }
 </style>

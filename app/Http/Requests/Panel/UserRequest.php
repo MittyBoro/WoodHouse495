@@ -16,7 +16,7 @@ class UserRequest extends FormRequest
     {
         $user = $this->user;
         $role = $this->get('role');
-        $isPanel = Auth::user()->is_panel;
+        $isAdmin = Auth::user()->is_admin;
 
         // первого редактирует только первый
         if ($user->id === 1 && Auth::id() !== $user->id) {
@@ -24,17 +24,17 @@ class UserRequest extends FormRequest
         }
 
         // нельзя менять свои права
-        if ($user->id === Auth::id() && $role && $role !== User::ROLE_PANEL) {
+        if ($user->id === Auth::id() && $role && $role !== User::ROLE_ADMIN) {
             return false;
         }
 
         // нельзя  «неадмину» повышатьдо админа
-        if (!$isPanel && $user->role === User::ROLE_PANEL) {
+        if (!$isAdmin && $user->role === User::ROLE_ADMIN) {
             return false;
         }
 
         // нельзя «неадмину» редактировать других
-        if ($user->id !== Auth::id() && !$isPanel) {
+        if ($user->id !== Auth::id() && !$isAdmin) {
             return false;
         }
 
