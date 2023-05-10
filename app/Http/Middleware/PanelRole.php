@@ -21,7 +21,7 @@ class PanelRole
 
         // не авторизован
         if (!Auth::check()) {
-            return redirect()->route('admin.login');
+            return redirect()->route('panel.login');
         }
 
         $rightRole = $guards[0];
@@ -30,17 +30,17 @@ class PanelRole
         // нельзя в админку - выкинуть
         if (!in_array($user->role, User::ROLES)) {
             Auth::logout();
-            return redirect()->route('admin.login')->withErrors('У вас нет доступа к панели управления');
+            return redirect()->route('panel.login')->withErrors('У вас нет доступа к панели управления');
         }
 
         if ($rightRole == 'editor' && !$user->is_editor) {
             Auth::logout();
-            return redirect()->route('admin.login')->withErrors('Вы не являетесь редактором');
+            return redirect()->route('panel.login')->withErrors('Вы не являетесь редактором');
         }
 
-        if ($rightRole == 'admin' && !$user->is_admin) {
+        if ($rightRole == 'admin' && !$user->is_panel) {
             Auth::logout();
-            return redirect()->route('admin.login')->withErrors('Вы не являетесь администратором');
+            return redirect()->route('panel.login')->withErrors('Вы не являетесь администратором');
         }
 
         return $next($request);

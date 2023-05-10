@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['admin.role:editor'])
+Route::middleware(['panel.role:editor'])
     ->group(function () {
 
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -45,7 +45,7 @@ Route::middleware(['admin.role:editor'])
         Route::post('faqs/sort', 'FAQController@sort')->name('faqs.sort');
 
 
-        Route::middleware(['admin.role:admin'])->group(function () {
+        Route::middleware(['panel.role:admin'])->group(function () {
             Route::resource('props', 'PropController')->except('show');
             Route::post('props/update_list', 'PropController@updateList')->name('props.update_list');
 
