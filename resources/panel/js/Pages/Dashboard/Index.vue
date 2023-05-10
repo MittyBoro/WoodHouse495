@@ -78,7 +78,7 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
+  import AppLayout from '@/Layouts/AppLayout.vue'
 
   export default {
     components: {
@@ -93,23 +93,38 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .text-grid
-    @apply grid pt-3 pb-5 gap-y-1
-    grid-template-columns: 1fr
-    .text-row
-      display: grid
-      grid-template-columns: auto max-content
-    .text-title
-      display: flex
-      align-items: baseline
-      @apply text-gray-400 whitespace-nowrap
-      &::after
-        content: ''
-        min-width: 10px
-        width: 100%
-        margin: 0 3px
-        border-bottom: 1px dotted #aaa
-    .text-value
-      @apply text-gray-500 font-semibold text-right
+<style lang="scss" scoped>
+  .text-grid {
+    display: grid;
+    padding-top: theme('spacing.3');
+    padding-bottom: theme('spacing.5');
+    gap: theme('spacing.1');
+    grid-template-columns: 1fr;
+
+    .text-row {
+      display: grid;
+      grid-template-columns: auto max-content;
+    }
+
+    .text-title {
+      display: flex;
+      align-items: baseline;
+      color: theme('colors.gray.400');
+      white-space: nowrap;
+
+      &::after {
+        content: '';
+        min-width: theme('spacing.10');
+        width: 100%;
+        margin: 0 theme('spacing.3');
+        border-bottom: 1px dotted #aaa;
+      }
+    }
+
+    .text-value {
+      color: theme('colors.gray.500');
+      font-weight: theme('fontWeight.semibold');
+      text-align: right;
+    }
+  }
 </style>

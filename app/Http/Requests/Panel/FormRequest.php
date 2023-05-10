@@ -3,10 +3,10 @@
 namespace App\Http\Requests\Panel;
 
 
-use App\Http\Requests\FormRequest;
+use App\Http\Requests\FormRequest as BaseFormRequest;
 use Illuminate\Validation\Rule;
 
-class BaseFormRequest extends FormRequest
+class FormRequest extends BaseFormRequest
 {
 
     protected function prepareForValidation()
@@ -25,7 +25,7 @@ class BaseFormRequest extends FormRequest
     protected function validationFiles($key, $fileRules): array
     {
         return [
-            $key           => 'nullable|array',
+            $key             => 'nullable|array',
             $key . '.*.id'   => 'nullable|exists:media,id',
             $key . '.*.file' => 'nullable|' . $fileRules,
             $key . '.*.del'  => 'nullable',

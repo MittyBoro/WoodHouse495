@@ -16,13 +16,13 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import FormSection from '@/Layouts/Sections/Form'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import FormSection from '@/Layouts/Sections/Form.vue'
 
-  import TabMain from './Form/Main'
-  import TabProps from './Form/Props'
+  import TabMain from './Form/Main.vue'
+  import TabProps from './Form/Props.vue'
 
-  import Form from '@/Mixins/Form/Form'
+  import Form from '@/Mixins/Form/Form.js'
 
   export default {
     mixins: [Form],

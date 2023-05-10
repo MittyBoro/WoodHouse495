@@ -5,7 +5,7 @@ namespace App\Http\Requests\Panel;
 use Illuminate\Validation\Rule;
 use App\Models\Panel\Prop;
 
-class PropListRequest extends PanelFormRequest
+class PropListRequest extends FormRequest
 {
 
     public function authorize()

@@ -12,7 +12,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 
 
-class ProductRequest extends PanelFormRequest
+class ProductRequest extends FormRequest
 {
 
     public function authorize()

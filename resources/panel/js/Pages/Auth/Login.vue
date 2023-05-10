@@ -7,7 +7,7 @@
     </div>
 
     <form @submit.prevent="submit">
-      <FLabel title="Email или логин" classes="block">
+      <FLabel title="Email" classes="block">
         <FInput type="text" class="mt-1" v-model="form.login" required autofocus />
       </FLabel>
 
@@ -27,8 +27,8 @@
       <!-- <a :href="route('oauth.vk')" class="btn-vk w-full mt-4">Вход через ВК</a> -->
 
       <div class="flex items-center mt-4">
-        <Link :href="route('admin.register')" class="hover-link mr-4 text-sm">Регистрация</Link>
-        <Link :href="route('admin.password.request')" class="hover-link ml-auto text-sm">
+        <Link :href="panelRoute('register')" class="hover-link mr-4 text-sm">Регистрация</Link>
+        <Link :href="panelRoute('password.request')" class="hover-link ml-auto text-sm">
           Забыли пароль?
         </Link>
       </div>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-  import AuthLayout from '@/Layouts/AuthLayout'
+  import AuthLayout from '@/Layouts/AuthLayout.vue'
   export default {
     components: {
       AuthLayout,
@@ -65,7 +65,7 @@
             ...data,
             remember: this.form.remember ? 'on' : '',
           }))
-          .post(this.route('admin.login'))
+          .post(this.panelRoute('login'))
       },
     },
   }

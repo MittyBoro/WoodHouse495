@@ -28,18 +28,17 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import FormSection from '@/Layouts/Sections/Form'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import FormSection from '@/Layouts/Sections/Form.vue'
 
-  import TabMain from './Form/Main'
-  import TabDescription from './Form/Description'
-  import TabOptions from './Form/Options'
+  import TabMain from './Form/Main.vue'
+  import TabDescription from './Form/Description.vue'
+  import TabOptions from './Form/Options.vue'
 
-  import Translation from '@/Mixins/Form/Translation'
-  import Form from '@/Mixins/Form/Form'
+  import Form from '@/Mixins/Form/Form.js'
 
   export default {
-    mixins: [Translation, Form],
+    mixins: [Form],
 
     components: {
       AppLayout,

@@ -17,7 +17,7 @@
           <FSelect :options="pages" :keys="['id', 'title']" v-model="page_id" />
           <Link
             v-if="page_id"
-            :href="route('admin.pages.edit', page_id)"
+            :href="panelRoute('pages.edit', page_id)"
             class="link flex text-xs items-center mt-3"
           >
             <Icon icon="pencil" class="mr-1.5" />
@@ -44,10 +44,10 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import FormSection from '@/Layouts/Sections/Form'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import FormSection from '@/Layouts/Sections/Form.vue'
 
-  import Form from '@/Mixins/Form/Form'
+  import Form from '@/Mixins/Form/Form.js'
 
   export default {
     mixins: [Form],

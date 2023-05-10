@@ -10,7 +10,7 @@
       <div v-if="form.alt_langs" class="text-xs mt-2">
         <span>Другие языки:</span>
         <span v-for="alt in form.alt_langs" :key="alt.id" class="uppercase ml-1 link font-bold">
-          <Link :href="route('admin.pages.edit', alt.id)">{{ alt.lang }}</Link>
+          <Link :href="panelRoute('pages.edit', alt.id)">{{ alt.lang }}</Link>
         </span>
       </div>
     </FLabel>

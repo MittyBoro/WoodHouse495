@@ -65,8 +65,10 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .drag
-    :deep(.props-item)
-      pointer-events: none
+<style lang="scss" scoped>
+.drag {
+  :deep(.props-item) {
+    pointer-events: none;
+  }
+}
 </style>

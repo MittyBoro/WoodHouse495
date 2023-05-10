@@ -4,13 +4,13 @@
     :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle }"
   >
     <div
-      v-if="($slots.title || $admin.title || $slots.buttons) && !hiddenTitle"
+      v-if="($slots.title || $panel.title || $slots.buttons) && !hiddenTitle"
       class="px-6 md:px-10 pt-8 mb-8 md:flex"
     >
       <div class="grid gap-4 mb-4 md:mb-0 self-center">
         <div class="font-semibold text-2xl">
           <slot v-if="$slots.title" name="title"></slot>
-          <template v-else>{{ $admin.title }}</template>
+          <template v-else>{{ $panel.title }}</template>
         </div>
         <div v-if="$slots.subtitle" class="grid gap-1">
           <slot name="subtitle"></slot>

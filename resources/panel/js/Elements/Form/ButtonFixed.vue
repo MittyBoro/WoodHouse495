@@ -49,13 +49,21 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .save-row
-    @apply rounded-full
-    transition: .25s
-    bottom: 10px
-    margin-bottom: -80px
-    transform: translateX(-100%)
-  .btn
-    @apply w-10 h-10 p-0 rounded-full
+<style lang="scss" scoped>
+  .save-row {
+    border-radius: theme('borderRadius.full');
+    transition-property: theme('transitionProperty.DEFAULT');
+    transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+    transition-duration: theme('transitionDuration.DEFAULT');
+
+    bottom: 10px;
+    margin-bottom: -80px;
+    transform: translateX(-100%);
+  }
+  .btn {
+    height: theme('height.10');
+    width: theme('width.10');
+    border-radius: theme('borderRadius.full');
+    padding: 0;
+  }
 </style>

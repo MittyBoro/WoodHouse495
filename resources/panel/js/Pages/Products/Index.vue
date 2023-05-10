@@ -24,7 +24,7 @@
                 />
               </div>
             </TData>
-            <TData v-text="sp.element.title" />
+            <TData>{{ sp.element.title }}</TData>
             <TData>
               {{ formatPrice(sp.element.price) }}
               {{ currencyByLang(sp.element.lang) }}
@@ -44,10 +44,10 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import IndexSection from '@/Layouts/Sections/Index'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import IndexSection from '@/Layouts/Sections/Index.vue'
 
-  import ListFilter from './Index/ListFilter'
+  import ListFilter from './Index/ListFilter.vue'
 
   export default {
     components: {

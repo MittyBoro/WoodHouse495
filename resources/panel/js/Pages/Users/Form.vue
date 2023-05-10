@@ -7,8 +7,8 @@
         <template #content>
           <div class="col-span-full grid gap-4">
             <template v-if="0">
-              <FLabel title="Аватар" :error="form.errors.admin_avatar">
-                <FFileInput :imagesOnly="true" v-model="form.admin_avatar" />
+              <FLabel title="Аватар" :error="form.errors.panel_avatar">
+                <FFileInput :imagesOnly="true" v-model="form.panel_avatar" />
               </FLabel>
             </template>
 
@@ -51,8 +51,8 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import FormSection from '@/Layouts/Sections/Form'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import FormSection from '@/Layouts/Sections/Form.vue'
 
   export default {
     components: {

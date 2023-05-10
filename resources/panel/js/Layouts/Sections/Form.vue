@@ -12,7 +12,7 @@
         <div class="font-bold text-xl">
           <div class="flex items-center">
             <slot v-if="$slots.title" name="title"></slot>
-            <template v-else>{{ $admin.title }}</template>
+            <template v-else>{{ $panel.title }}</template>
             <Link
               :href="showLink"
               target="_blank"
@@ -107,7 +107,7 @@
       },
       hasHeaderSlots() {
         return (
-          (this.$slots.title || this.$slots.subtitle || this.$slots.buttons || this.$admin.title) &&
+          (this.$slots.title || this.$slots.subtitle || this.$slots.buttons || this.$panel.title) &&
           !this.hiddenTitle
         )
       },
@@ -145,10 +145,11 @@
   }
 </script>
 
-<style lang="sass">
-  .tab
-    max-width: 200px
-    text-overflow: ellipsis
-    overflow: hidden
-    white-space: nowrap
+<style lang="scss">
+  .tab {
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 </style>

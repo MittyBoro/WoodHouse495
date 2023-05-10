@@ -36,7 +36,7 @@
       </FLabel>
 
       <div class="flex items-center justify-between mt-4">
-        <Link :href="route('admin.login')" class="hover-link text-sm">Уже зарегистрированы?</Link>
+        <Link :href="panelRoute('login')" class="hover-link text-sm">Уже зарегистрированы?</Link>
 
         <FButton class="ml-4" :disabled="form.processing">Регистрация</FButton>
       </div>
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-  import AuthLayout from '@/Layouts/AuthLayout'
+  import AuthLayout from '@/Layouts/AuthLayout.vue'
 
   export default {
     components: {
@@ -69,15 +69,10 @@
 
     methods: {
       submit() {
-        this.form.post(this.route('admin.register'), {
+        this.form.post(this.panelRoute('register'), {
           onFinish: () => this.form.reset('password', 'password_confirmation'),
         })
       },
     },
   }
 </script>
-
-<style lang="sass" scoped>
-  label
-    display: block
-</style>

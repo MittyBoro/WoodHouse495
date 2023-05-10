@@ -68,11 +68,12 @@
   }
 </script>
 
-<style lang="sass">
-  svg
-    fill: currentColor
-    height: 1em
-    width: 1em
-    vertical-align: -0.125em
-    overflow: visible
+<style lang="scss">
+  svg {
+    fill: currentColor;
+    height: 1em;
+    width: 1em;
+    vertical-align: -0.125em;
+    overflow: visible;
+  }
 </style>

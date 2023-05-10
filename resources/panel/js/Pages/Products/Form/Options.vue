@@ -1,6 +1,6 @@
 <template>
   <div class="form-grid lg:grid-cols-2">
-    <FNotice class="col-span-full mb-4" v-text="'Выберите варианты, которые есть в наличии'" />
+    <FNotice class="col-span-full mb-4">Выберите варианты, которые есть в наличии</FNotice>
 
     <div v-for="attr in options" :key="attr.type">
       <FLabel as="div" :title="toRu(attr.type)" :error="form.errors.options">

@@ -7,20 +7,20 @@ body {
   @apply bg-secondary-800;
 }
 ::-webkit-scrollbar-thumb {
-  @apply rounded-lg bg-primary-400 border-4 border-solid border-white;
+  @apply rounded-lg border-4 border-solid border-white bg-primary-400;
 }
 ::-webkit-scrollbar-track {
   @apply bg-white;
 }
 ::-webkit-scrollbar {
-  @apply w-4 h-4;
+  @apply h-4 w-4;
 }
 ::selection {
   @apply bg-primary-500 text-white;
 }
 .btn,
 .btn-secondary {
-  @apply inline-flex items-center px-6 py-3 h-9 bg-primary-600 border-none outline-none rounded-md font-semibold justify-center text-xs text-white uppercase transition cursor-pointer tracking-widest text-center select-none shadow-md;
+  @apply inline-flex h-9 cursor-pointer select-none items-center justify-center rounded-md border-none bg-primary-600 px-6 py-3 text-center text-xs font-semibold uppercase tracking-widest text-white shadow-md outline-none transition;
   &:hover {
     @apply bg-primary-700 ring-primary-700;
   }
@@ -28,7 +28,7 @@ body {
     @apply opacity-25;
   }
   &:active {
-    @apply border-none outline-none bg-primary-600 ring-4 ring-primary-200;
+    @apply border-none bg-primary-600 outline-none ring-4 ring-primary-200;
   }
   &:focus {
     @apply border-none outline-none;
@@ -93,10 +93,10 @@ body {
 .form-textarea,
 .form-select,
 .form-text {
-  @apply block w-full bg-white border border-gray-200 px-4 pr-6 rounded-md shadow-sm transition outline-none;
+  @apply block w-full rounded-md border border-gray-200 bg-white px-4 pr-6 shadow-sm outline-none transition;
   &:focus,
   &.focus {
-    @apply border-transparent ring-4 ring-primary-200 outline-none bg-white;
+    @apply border-transparent bg-white outline-none ring-4 ring-primary-200;
   }
 }
 .form-input,
@@ -107,32 +107,32 @@ body {
     @apply bg-gray-50 text-gray-500;
   }
   &.f-mini {
-    @apply px-3 pr-4 h-8 text-xs;
+    @apply h-8 px-3 pr-4 text-xs;
   }
 }
 .form-checkbox {
-  @apply rounded border-gray-300 text-primary-600 shadow-sm cursor-pointer;
+  @apply cursor-pointer rounded border-gray-300 text-primary-600 shadow-sm;
   &:checked {
-    @apply bg-primary-600 border-primary-600;
+    @apply border-primary-600 bg-primary-600;
   }
   &:focus {
-    @apply border-primary-300 ring ring-primary-100 ring-offset-0 outline-none;
+    @apply border-primary-300 outline-none ring ring-primary-100 ring-offset-0;
   }
 }
 .link {
-  @apply text-primary-600 transition-colors cursor-pointer;
+  @apply cursor-pointer text-primary-600 transition-colors;
   &:hover {
     @apply text-primary-700 underline;
   }
 }
 .hover-link {
-  @apply transition-colors cursor-pointer;
+  @apply cursor-pointer transition-colors;
   &:hover {
     @apply text-primary-700;
   }
 }
 .drag-handle {
-  @apply text-sm text-gray-300 transition-colors select-none cursor-move;
+  @apply cursor-move select-none text-sm text-gray-300 transition-colors;
   &:hover {
     @apply text-primary-500;
   }
@@ -145,9 +145,9 @@ body {
   overflow-x: auto;
 }
 .table {
-  @apply border-collapse w-full leading-4 text-gray-800;
+  @apply w-full border-collapse leading-4 text-gray-800;
   th:not(.no-style) {
-    @apply font-bold text-sm bg-gray-50 text-gray-600 border-b text-left table-cell;
+    @apply table-cell border-b bg-gray-50 text-left text-sm font-bold text-gray-600;
     &.text-center {
       text-align: center;
     }
@@ -168,7 +168,7 @@ body {
     }
   }
   tbody tr {
-    @apply table-row transition z-10;
+    @apply z-10 table-row transition;
     &:not(:last-child) td:not(.no-style) {
       @apply border-gray-200;
     }
@@ -179,7 +179,7 @@ body {
       }
     }
     td:not(.no-style) {
-      @apply bg-white w-auto table-cell py-3 border-b relative transition align-middle;
+      @apply relative table-cell w-auto border-b bg-white py-3 align-middle transition;
       &.w-min {
         width: 1%;
       }
@@ -189,7 +189,7 @@ body {
 .table-save-row {
   position: sticky;
   bottom: 0;
-  @apply px-4 py-2 bg-gray-100;
+  @apply bg-gray-100 px-4 py-2;
   width: 100%;
   z-index: 20;
 }
@@ -212,7 +212,7 @@ body {
 .pagination {
   input,
   select {
-    @apply leading-4 ml-2 px-1 h-7 text-xs rounded appearance-none;
+    @apply ml-2 h-7 appearance-none rounded px-1 text-xs leading-4;
   }
   input {
     @apply w-12 text-center;
@@ -223,6 +223,6 @@ body {
     margin: 0;
   }
   input[type='number'] {
-    -moz-appearance: textfield;
+    appearance: textfield;
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <FLabel as="div" :error="error" class="main-label pb-2">
     <template #title>
-      <div class="flex justify-between mb-2">
+      <div class="mb-2 flex justify-between">
         <div>
           <span
             class="font-semibold"
@@ -18,10 +18,10 @@
             ]
           </code>
         </div>
-        <div class="flex items-center text-sm text-gray-400 right-els transition">
-          <Icon icon="arrows-up-down-left-right" class="mr-2 drag-handle" />
+        <div class="right-els flex items-center text-sm text-gray-400 transition">
+          <Icon icon="arrows-up-down-left-right" class="drag-handle mr-2" />
           <Link
-            :href="route('admin.props.edit', item.id)"
+            :href="panelRoute('props.edit', item.id)"
             class="cursor-pointer transition-colors hover:text-primary-600"
           >
             <Icon icon="gear" class="block" />
@@ -82,10 +82,13 @@
   }
 </script>
 
-<style lang="sass">
-  .main-label:not(:hover)
-    .right-els
-      opacity: .05
-  [contenteditable]
-    outline: 0
+<style lang="scss">
+  .main-label:not(:hover) {
+    .right-els {
+      opacity: 0.05;
+    }
+  }
+  [contenteditable] {
+    outline: 0;
+  }
 </style>

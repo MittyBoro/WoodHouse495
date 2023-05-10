@@ -62,52 +62,84 @@
   }
 </script>
 
-<style lang="sass">
+<style lang="scss">
+  #nprogress {
+    .bar {
+      height: 5px !important;
+      background-color: theme('colors.primary.500');
+      box-shadow: 0 0 10px theme('colors.primary.500');
+    }
+  }
 
-  #nprogress
-    .bar
-      height: 5px !important
-      @apply ring-primary-500
-      box-shadow: 0 0 10px var(--tw-ring-color)
-
-  .loading
+  .loading {
     &::before,
-    &::after
-      @apply transition
-      pointer-events: none
-      opacity: 0
-    &::before
-      @apply absolute -inset-x-3 -inset-y-1 bg-white bg-opacity-90 z-30 rounded
-      backdrop-filter: blur(4px)
-    &::after
-      @apply absolute w-10 h-10 -mt-5 -ml-5 border-primary-500 border-4 rounded-full z-40
-      top: 50%
-      left: 50%
-      border-left-color: transparent
-      border-right-color: transparent
-  .nprogress-busy
-    .loading
-      @apply relative pointer-events-none
-      overflow: hidden
-      &::before
-        content: ''
-        opacity: 1
-        @apply animate-pulse rounded
-      &::after
-        content: ''
-        @apply animate-spin
-        opacity: 1
+    &::after {
+      transition-property: theme('transitionProperty.DEFAULT');
+      transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+      transition-duration: theme('transitionDuration.DEFAULT');
+      pointer-events: none;
+      opacity: 0;
+    }
 
-  .Vue-Toastification__toast-body
-    align-self: center
-    font-size: 14px
-    line-height: 1.35
-  .Vue-Toastification__toast
-    padding: 15px 20px
-    max-width: 360px
-    min-height: auto
-  .Vue-Toastification__icon
-    margin-right: 15px
-  .Vue-Toastification__progress-bar
-    bottom: -3px
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -3px 0;
+      background-color: theme('colors.white' / 90%);
+      z-index: 30;
+      border-radius: theme('borderRadius.DEFAULT');
+      backdrop-filter: blur(4px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      margin-left: -5px;
+      border: 4px solid theme('colors.primary.500');
+      border-radius: 9999px;
+      z-index: 40;
+      top: 50%;
+      left: 50%;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+  }
+
+  .nprogress-busy {
+    .loading {
+      position: relative;
+      pointer-events: none;
+      overflow: hidden;
+
+      &::before {
+        opacity: 1;
+        animation: pulse 2s infinite;
+      }
+
+      &::after {
+        content: '';
+        animation: spin 1s infinite linear;
+        opacity: 1;
+      }
+    }
+  }
+  .Vue-Toastification__toast-body {
+    align-self: center;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .Vue-Toastification__toast {
+    padding: 15px 20px;
+    max-width: 360px;
+    min-height: auto;
+  }
+  .Vue-Toastification__icon {
+    margin-right: 15px;
+  }
+  .Vue-Toastification__progress-bar {
+    bottom: -3px;
+  }
 </style>

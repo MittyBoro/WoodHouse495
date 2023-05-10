@@ -29,7 +29,7 @@
 
       <div class="flex items-center justify-between mt-4">
         <Link
-          :href="route('admin.login')"
+          :href="panelRoute('login')"
           class="underline text-sm text-gray-600 hover:text-gray-900"
         >
           Вход
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-  import AuthLayout from '@/Layouts/AuthLayout'
+  import AuthLayout from '@/Layouts/AuthLayout.vue'
 
   export default {
     components: {
@@ -73,7 +73,7 @@
 
     methods: {
       submit() {
-        this.form.post(this.route('admin.password.update'), {
+        this.form.post(this.panelRoute('password.update'), {
           onFinish: () => this.form.reset('password', 'password_confirmation'),
         })
       },

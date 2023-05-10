@@ -4,7 +4,7 @@ namespace App\Http\Requests\Panel;
 
 use Illuminate\Validation\Rule;
 
-class PageRequest extends PanelFormRequest
+class PageRequest extends FormRequest
 {
 
     public function authorize()

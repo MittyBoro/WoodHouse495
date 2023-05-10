@@ -17,10 +17,10 @@
     <div
       :class="{ invisible: !open }"
       v-if="options && options.length"
-      class="options absolute w-full z-50 border rounded-md shadow-lg text-gray-700 bg-white transition max-h-40 overflow-auto"
+      class="options absolute z-50 max-h-40 w-full overflow-auto rounded-md border bg-white text-gray-700 shadow-lg transition"
     >
       <div
-        class="block px-4 py-1 text-sm leading-5 cursor-pointer hover:bg-gray-100 transition"
+        class="block cursor-pointer px-4 py-1 text-sm leading-5 transition hover:bg-gray-100"
         v-for="option in filterOptions"
         @click="setValue(option)"
         :key="option"
@@ -31,7 +31,7 @@
 
     <div
       v-if="type == 'password'"
-      class="pass-eyes absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-gray-400 hover:text-gray-500 text-base transition"
+      class="pass-eyes absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3 text-base text-gray-400 transition hover:text-gray-500"
       onclick="this.previousElementSibling.type = this.previousElementSibling.type == 'password' ? 'text' : 'password' "
     >
       <Icon icon="eye" />
@@ -121,16 +121,23 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .options
-    transition: .15s
-  .options:empty
-    display: none
-  input
-    &[type=password] ~ .pass-eyes
-      svg:last-child
-        display: none
-    &[type=text] ~ .pass-eyes
-      svg:first-child
-        display: none
+<style lang="scss" scoped>
+  .options {
+    transition: 0.15s;
+  }
+  .options:empty {
+    display: none;
+  }
+  input {
+    &[type='password'] ~ .pass-eyes {
+      svg:last-child {
+        display: none;
+      }
+    }
+    &[type='text'] ~ .pass-eyes {
+      svg:first-child {
+        display: none;
+      }
+    }
+  }
 </style>

@@ -73,11 +73,26 @@
   }
 </script>
 
-<style lang="sass" scoped>
-
-  .variations-row
-    @apply px-1 pt-2 pb-2 -mx-1 -mt-1 -mb-2 rounded transition
-    grid-template-columns: max-content auto max-content
-    &:hover
-      @apply bg-white ring-1 ring-primary-200 border-transparent
+<style lang="scss" scoped>
+  .variations-row {
+    padding-left: theme('spacing.1');
+    padding-top: theme('spacing.2');
+    padding-bottom: theme('spacing.2');
+    margin-left: -theme('spacing.1');
+    margin-top: -theme('spacing.1');
+    margin-bottom: -theme('spacing.2');
+    border-radius: theme('borderRadius.DEFAULT');
+    transition-property: all;
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    grid-template-columns: max-content auto max-content;
+    &:hover {
+      background-color: theme('colors.white');
+      border-width: theme('borderWidth.DEFAULT');
+      border-style: solid;
+      border-color: transparent;
+      box-shadow: 0 0 0 0 calc(theme('ringWidth.1') + theme('ringOffsetWidth.0'))
+        theme('colors.primary.200');
+    }
+  }
 </style>

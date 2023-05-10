@@ -41,8 +41,8 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import IndexSection from '@/Layouts/Sections/Index'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import IndexSection from '@/Layouts/Sections/Index.vue'
 
   import ListItem from './ListItem'
 

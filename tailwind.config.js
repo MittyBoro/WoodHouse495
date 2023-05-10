@@ -6,6 +6,7 @@ module.exports = {
     './resources/**/*.blade.php',
     './resources/panel/**/*.js',
     './resources/panel/**/*.vue',
+    './resources/panel/**/favicon.svg',
   ],
 
   theme: {
@@ -30,9 +31,9 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
 
-      primary: colors.pink,
+      primary: colors.lime,
 
-      secondary: colors.gray,
+      secondary: colors.zinc,
     },
     extend: {
       fontFamily: {

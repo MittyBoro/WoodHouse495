@@ -21,7 +21,7 @@
         </FButton>
 
         <Link
-          :href="route('admin.logout')"
+          :href="panelRoute('logout')"
           method="post"
           as="button"
           class="underline text-sm text-gray-600 hover:text-gray-900"
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-  import AuthLayout from '@/Layouts/AuthLayout'
+  import AuthLayout from '@/Layouts/AuthLayout.vue'
 
   export default {
     components: {
@@ -53,7 +53,7 @@
 
     methods: {
       submit() {
-        this.form.post(this.route('admin.verification.send'))
+        this.form.post(this.panelRoute('verification.send'))
       },
     },
 

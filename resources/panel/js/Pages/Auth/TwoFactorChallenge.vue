@@ -60,7 +60,7 @@
 </template>
 
 <script>
-  import AuthLayout from '@/Layouts/AuthLayout'
+  import AuthLayout from '@/Layouts/AuthLayout.vue'
 
   export default {
     components: {
@@ -93,7 +93,7 @@
       },
 
       submit() {
-        this.form.post(this.route('admin.two-factor.login'))
+        this.form.post(this.panelRoute('two-factor.login'))
       },
     },
   }

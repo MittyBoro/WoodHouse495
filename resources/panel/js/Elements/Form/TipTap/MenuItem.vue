@@ -44,20 +44,43 @@
   }
 </script>
 
-<style lang="sass">
-  .menu-item
-    @apply flex items-center justify-center text-gray-500 py-1.5 w-7 h-7 rounded mx-0.5 transition
-    cursor: pointer
-    svg
-      width: 100%
-      height: 100%
-      fill: currentColor
+<style lang="scss">
+  .menu-item {
+    margin-left: theme('spacing[0.5]');
+    margin-right: theme('spacing[0.5]');
+    display: flex;
+    height: theme('height.7');
+    width: theme('width.7');
+    align-items: center;
+    justify-content: center;
+    border-radius: theme('borderRadius.DEFAULT');
+    padding-top: theme('spacing[1.5]');
+    padding-bottom: theme('spacing[1.5]');
+    color: theme('colors.gray.500');
+    transition-property: theme('transitionProperty.DEFAULT');
+    transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+    transition-duration: theme('transitionDuration.DEFAULT');
+    cursor: pointer;
 
-    &.disabled
-      @apply pointer-events-none opacity-30
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
 
-    &.is-active
-      @apply bg-gray-500 text-white
-    &:hover
-      @apply bg-gray-600 text-white
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.3;
+    }
+
+    &.is-active {
+      background-color: theme('colors.gray.500');
+      color: theme('colors.white');
+    }
+
+    &:hover {
+      background-color: theme('colors.gray.600');
+      color: theme('colors.white');
+    }
+  }
 </style>

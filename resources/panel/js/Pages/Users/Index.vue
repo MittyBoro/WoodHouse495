@@ -18,7 +18,7 @@
             <TData v-model="sp.element.name" @update:modelValue="update(sp.element)" />
             <!-- <TData v-model="sp.element.username" @update:modelValue="update(sp.element)" /> -->
             <TData v-model="sp.element.email" @update:modelValue="update(sp.element)" />
-            <TData v-text="roles[sp.element.role]" />
+            <TData>{{ roles[sp.element.role] }}</TData>
             <TData>
               <div class="text-xs" v-text="formatDateTime(sp.element.created_at)"></div>
               <div
@@ -37,10 +37,10 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import IndexSection from '@/Layouts/Sections/Index'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import IndexSection from '@/Layouts/Sections/Index.vue'
 
-  import ListFilter from './Index/ListFilter'
+  import ListFilter from './Index/ListFilter.vue'
 
   export default {
     components: {

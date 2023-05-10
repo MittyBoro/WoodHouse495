@@ -3,28 +3,28 @@
     <div
       v-if="link.sublinks"
       @click="opened = !opened"
-      class="flex rounded-full lg:rounded-r-none transition items-center px-5 py-4 font-bold cursor-pointer"
+      class="flex cursor-pointer items-center rounded-full px-5 py-4 font-bold transition lg:rounded-r-none"
       :class="activeClass"
     >
-      <Icon :icon="link.icon || 'circle-dot'" class="w-6 text-center mr-2" />
+      <Icon :icon="link.icon || 'circle-dot'" class="mr-2 w-6 text-center" />
       <slot></slot>
     </div>
     <Link
       v-else
       :href="route(link.route, link.query)"
-      class="flex rounded-full lg:rounded-r-none transition items-center px-5 py-4 font-bold cursor-pointer"
+      class="flex cursor-pointer items-center rounded-full px-5 py-4 font-bold transition lg:rounded-r-none"
       :class="activeClass"
     >
-      <Icon :icon="link.icon || 'circle-dot'" class="w-6 text-center mr-2" />
+      <Icon :icon="link.icon || 'circle-dot'" class="mr-2 w-6 text-center" />
       <slot></slot>
     </Link>
 
-    <div class="sub-list ml-9 mt-2 mb-3" v-if="link.sublinks" v-show="opened">
+    <div class="sub-list mb-3 ml-9 mt-2" v-if="link.sublinks" v-show="opened">
       <Link
         v-for="slink in link.sublinks"
         :key="slink.route"
         :href="route(slink.route, slink.query)"
-        class="block px-5 py-2 rounded-full lg:rounded-r-none mb-0.5"
+        class="mb-0.5 block rounded-full px-5 py-2 lg:rounded-r-none"
         :class="activeSubClass(slink)"
         v-show="canShow(slink.role_except)"
       >
@@ -94,18 +94,33 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .active
-    @apply relative text-gray-600 bg-gradient-to-r from-white to-gray-200
-    &::before,
-    &::after
-      content: ''
-      @apply w-6 h-6 absolute right-0 pointer-events-none bg-gray-200 hidden lg:block
-      clip-path: url(#nav-clip)
+<style lang="scss" scoped>
+  .active {
+    position: relative;
+    background-image: linear-gradient(to right, theme('colors.white'), theme('colors.gray.200'));
+    color: theme('colors.gray.600');
 
-    &::before
-      @apply top-0 -mt-6
-      transform: rotate(90deg)
-    &::after
-      @apply bottom-0 -mb-6
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      display: none;
+      height: theme('spacing.6');
+      width: theme('spacing.6');
+      background-color: theme('colors.gray.200');
+      clip-path: url(#nav-clip);
+    }
+
+    &::before {
+      top: 0;
+      margin-top: -theme('spacing.6');
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      bottom: 0;
+      margin-bottom: -theme('spacing.6');
+    }
+  }
 </style>

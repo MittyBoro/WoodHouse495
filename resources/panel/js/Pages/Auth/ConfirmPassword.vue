@@ -1,5 +1,5 @@
 <template>
-  <AuthLayout>
+  <AuthLayout title>
     <div class="mb-4 text-sm text-gray-600">
       Пожалуйста, подтвердите свой пароль, прежде чем продолжить.
     </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import AuthLayout from '@/Layouts/AuthLayout'
+  import AuthLayout from '@/Layouts/AuthLayout.vue'
 
   export default {
     components: {
@@ -43,7 +43,7 @@
 
     methods: {
       submit() {
-        this.form.post(this.route('admin.password.confirm'), {
+        this.form.post(this.panelRoute('password.confirm'), {
           onFinish: () => this.form.reset(),
         })
       },

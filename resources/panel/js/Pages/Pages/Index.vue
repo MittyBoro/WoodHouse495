@@ -15,7 +15,6 @@
           <template #row="sp">
             <TData v-model="sp.element.title" @update:modelValue="update(sp.element)" />
             <TData v-model="sp.element.slug" @update:modelValue="update(sp.element)" />
-            <TData v-text="sp.element.lang" class="uppercase font-bold text-gray-500" />
           </template>
         </TTable>
       </template>
@@ -24,8 +23,8 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import IndexSection from '@/Layouts/Sections/Index'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import IndexSection from '@/Layouts/Sections/Index.vue'
 
   export default {
     components: {
@@ -43,7 +42,6 @@
           headers: [
             { key: 'title', text: 'Заголовок', sortable: true },
             { key: 'slug', text: 'Ярлык', sortable: true },
-            { key: 'lang', text: 'Язык', sortable: true },
           ],
           items: this.$page.props.list.data,
           pagination: this.$page.props.list,

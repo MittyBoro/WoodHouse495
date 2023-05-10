@@ -14,10 +14,10 @@
 </template>
 
 <script>
-  import AppLayout from '@/Layouts/AppLayout'
-  import FormSection from '@/Layouts/Sections/Form'
+  import AppLayout from '@/Layouts/AppLayout.vue'
+  import FormSection from '@/Layouts/Sections/Form.vue'
 
-  import Form from '@/Mixins/Form/Form'
+  import Form from '@/Mixins/Form/Form.js'
 
   export default {
     mixins: [Form],

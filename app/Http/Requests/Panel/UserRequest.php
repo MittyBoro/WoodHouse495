@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 
 use Propaganistas\LaravelPhone\PhoneNumber;
 
-class UserRequest extends PanelFormRequest
+class UserRequest extends FormRequest
 {
 
     public function authorize()

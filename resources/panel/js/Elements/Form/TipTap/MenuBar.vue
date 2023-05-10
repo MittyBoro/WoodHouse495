@@ -180,11 +180,12 @@
   }
 </script>
 
-<style lang="sass">
-  .divider
-    width: 2px
-    height: 1.25em
-    background-color: rgba(#000, 0.1)
-    margin-left: 0.3rem
-    margin-right: 0.3rem
+<style lang="scss">
+  .divider {
+    width: 2px;
+    height: 1.25em;
+    background-color: rgba(#000, 0.1);
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+  }
 </style>

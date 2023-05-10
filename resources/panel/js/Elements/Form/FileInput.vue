@@ -15,13 +15,13 @@
             <div
               v-if="element.url"
               @click="openFile(element)"
-              class="absolute inset-0 cursor-pointer transition opacity-10 hover:bg-gray-500"
+              class="absolute inset-0 cursor-pointer opacity-10 transition hover:bg-gray-500"
             ></div>
-            <div v-if="!imagesOnly" class="text-gray-600 text-sm">{{ element.name }}</div>
+            <div v-if="!imagesOnly" class="text-sm text-gray-600">{{ element.name }}</div>
             <span
               @click.prevent="removeAt(element, index)"
-              class="flex items-center justify-center bg-red-500 text-white h-3 w-3 rounded-sm shadow-sm text-xs cursor-pointer"
-              :class="[imagesOnly ? 'absolute top-1 right-1' : 'relative']"
+              class="flex h-3 w-3 cursor-pointer items-center justify-center rounded-sm bg-red-500 text-xs text-white shadow-sm"
+              :class="[imagesOnly ? 'absolute right-1 top-1' : 'relative']"
             >
               <Icon icon="xmark" />
             </span>
@@ -35,7 +35,7 @@
         <span v-if="multiple">Выберите файлы</span>
         <span v-else>Выберите файл</span>
         <span v-if="drop"> или перетащите сюда</span>
-        <Icon icon="cloud-arrow-up" class="opacity-60 ml-1" />
+        <Icon icon="cloud-arrow-up" class="ml-1 opacity-60" />
         <input
           type="file"
           @change="addFiles"
@@ -172,7 +172,6 @@
         let dropArea = this.$el.querySelector('.drop-area')
 
         if (!dropArea) return
-
         ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName) => {
           this.$el.addEventListener(
             eventName,
@@ -183,7 +182,6 @@
             false
           )
         })
-
         ;['dragenter', 'dragover'].forEach((eventName) => {
           this.$el.addEventListener(
             eventName,
@@ -239,35 +237,74 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .form-input
-    @apply flex items-center justify-center bg-gray-50 text-xs py-3
-    height: auto
-    max-height: none !important
-    &:hover
-      @apply bg-gray-50 ring-4 ring-primary-600 ring-opacity-20
+<style lang="scss" scoped>
+  .form-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: theme('colors.gray.50');
+    padding-top: theme('spacing.3');
+    font-size: theme('fontSize.xs');
+    height: auto;
+    max-height: none !important;
 
-  .drop-area
-    @apply flex justify-center rounded-lg w-full border-dashed border-4 border-gray-300 cursor-pointer transition
-    padding: 15px 20px
-    span
-      display: inline-block
-      text-align: center
-    &:hover
-      @apply bg-gray-50
+    &:hover {
+      background-color: theme('colors.gray.50');
+      border-width: 4px;
+      border-color: theme('colors.primary.600' / 20%);
+    }
+  }
 
-  @screen sm
-    .drop-area
-      padding: 25px 30px
+  .drop-area {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    justify-content: center;
+    border-radius: theme('borderRadius.lg');
+    border-width: 4px;
+    border-style: dashed;
+    border-color: theme('colors.gray.300');
+    transition-property: background-color;
+    padding: theme('spacing.3') theme('spacing.4');
 
-  .drop-area.highlight
-    @apply bg-primary-500 border-primary-700
+    span {
+      display: inline-block;
+      text-align: center;
+    }
 
-  .file-image
-    @apply relative block border shadow-sm rounded-sm bg-gray-50 bg-center bg-contain bg-no-repeat
-    padding-bottom: 100%
+    &:hover {
+      background-color: theme('colors.gray.50');
+    }
 
-  .file-simple
-    @apply relative flex items-center justify-between pr-1
-    background-size: 0
+    @media (min-width: theme('screens.sm')) {
+      padding: theme('spacing.5') theme('spacing.6');
+    }
+  }
+
+  .drop-area.highlight {
+    border-color: theme('colors.primary.700');
+    background-color: theme('colors.primary.500');
+  }
+
+  .file-image {
+    position: relative;
+    display: block;
+    border-radius: theme('borderRadius.sm');
+    border-width: 1px;
+    background-color: theme('colors.gray.50');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: theme('boxShadow.sm');
+    padding-bottom: 100%;
+  }
+
+  .file-simple {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: theme('spacing.1');
+    background-size: 0;
+  }
 </style>

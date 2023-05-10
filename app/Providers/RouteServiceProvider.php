@@ -18,7 +18,6 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/';
-    public const HOME_PANEL = '/@thepanel';
 
     protected $panelNamespace = 'App\Http\Controllers\Panel';
     protected $apiNamespace = 'App\Http\Controllers\Api';
@@ -67,7 +66,7 @@ class RouteServiceProvider extends ServiceProvider
     public static function home(Request $request)
     {
         return $request->header('Is-Inertia') ?
-            self::HOME_PANEL :
+            config('panel.path') :
             self::HOME;
     }
 }

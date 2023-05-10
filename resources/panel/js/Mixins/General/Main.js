@@ -4,17 +4,6 @@ export default {
   },
 
   computed: {
-    adminLang: {
-      get() {
-        return this.$page.props.admin_lang
-      },
-      set(val) {
-        this.$page.props.admin_lang = val
-      },
-    },
-    validAdminLang() {
-      return this.$page.props.langs[this.adminLang] ? this.adminLang : 'ru'
-    },
     isAdmin() {
       return this.$page.props.auth.user.role == 'admin'
     },

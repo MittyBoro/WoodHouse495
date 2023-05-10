@@ -199,7 +199,7 @@
           status: status,
         })
 
-        form.put(route('admin.orders.update', this.element.id), {
+        form.put(panelRoute('orders.update', this.element.id), {
           preserveScroll: true,
           onSuccess: () => {
             this.element.status = this.status
@@ -213,9 +213,16 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  .product
-    grid-template-columns: max-content auto max-content
-  .status
-    @apply inline-flex items-center px-2 py-0.5 text-white rounded text-xs
+<style lang="scss" scoped>
+  .product {
+    grid-template-columns: max-content auto max-content;
+  }
+  .status {
+    display: inline-flex;
+    align-items: center;
+    padding: theme('spacing[0.5]') theme('spacing.2');
+    color: theme('colors.white');
+    border-radius: theme('borderRadius.sm');
+    font-size: theme('fontSize.xs');
+  }
 </style>

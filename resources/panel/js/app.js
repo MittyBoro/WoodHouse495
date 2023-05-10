@@ -1,5 +1,5 @@
 import { componentFromFolder } from './bootstrap'
-import '../sass/app.sass'
+import '../sass/app.scss'
 
 // Import modules...
 
@@ -25,14 +25,13 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     let createdApp = createApp({ render: () => h(App, props) })
 
-    createdApp.config.globalProperties.$admin = {}
-
+    createdApp.config.globalProperties.$panel = {}
+    createdApp.config.globalProperties.$route = route
     createdApp
       .use(plugin)
       .use(ZiggyVue, Ziggy)
       .use(Toast)
 
-      .mixin({ methods: { route } })
       .mixin(MixinFormat)
       .mixin(MixinMain)
       .mixin(MixinRouting)

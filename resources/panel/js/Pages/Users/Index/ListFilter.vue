@@ -51,11 +51,16 @@
   }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+  :deep(label) {
+    .text-sm {
+      font-size: theme('fontSize.xs');
+    }
 
-  :deep(label)
-    .text-sm
-      @apply text-xs
-    .form-input
-      @apply max-h-7 pl-3 text-xs
+    .form-input {
+      max-height: theme('spacing.7');
+      padding-left: theme('spacing.3');
+      font-size: theme('fontSize.xs');
+    }
+  }
 </style>

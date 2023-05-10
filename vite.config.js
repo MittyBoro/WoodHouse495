@@ -27,7 +27,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/resources/admin/js',
+      '@': '/resources/panel/js',
       '~': '/resources/js',
       ziggy: '/vendor/tightenco/ziggy/dist/vue.m',
     },

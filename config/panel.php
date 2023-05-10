@@ -12,19 +12,31 @@ return [
         [
             'name' => 'Главная',
             'route' => 'panel.dashboard',
-            'icon' => 'house',
+            'icon' => 'gauge',
         ],
 
         [
-            'name' => 'Заказы',
-            'route' => 'panel.orders.index',
-            'icon' => 'cart-shopping',
+            'name' => 'Заявки',
+            'route' => 'panel.callback_orders.index',
+            'icon' => 'phone-office',
         ],
         [
             'name' => 'Страницы',
             'route' => 'panel.pages.index',
             'icon' => 'note-sticky',
         ],
+        [
+            'name' => 'Портфолио',
+            'route' => 'panel.portfolios.index',
+            'icon' => 'briefcase',
+        ],
+        [
+            'name' => 'Статьи',
+            'route' => 'panel.articles.index',
+            'icon' => 'newspaper',
+        ],
+
+
         [
             'name' => 'Дополнительно',
             'icon' => 'gear',

@@ -1,7 +1,7 @@
 <template>
   <td :class="{ 'w-min': mini }">
     <div v-if="modelValue !== undefined">
-      <div class="max-h-0 overflow-hidden invisible" v-html="modelValue"></div>
+      <div class="invisible max-h-0 overflow-hidden" v-html="modelValue"></div>
       <div class="-mx-2">
         <FTextarea
           rows="1"
@@ -41,13 +41,34 @@
   }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
+  textarea {
+    display: block;
+    width: 100%;
+    border-radius: theme('borderRadius.sm');
+    border-width: 0;
+    background-color: transparent;
+    padding-left: theme('spacing.2');
+    padding-right: theme('spacing.2');
+    padding-top: theme('spacing.1');
+    padding-bottom: theme('spacing.1');
+    align-items: middle;
+    box-shadow: none;
+    font-size: inherit;
+    transition-property: theme('transitionProperty.DEFAULT');
+    transition-timing-function: theme('transitionTimingFunction.DEFAULT');
+    transition-duration: theme('transitionDuration.DEFAULT');
 
-  textarea
-    @apply bg-transparent block border-0 w-full rounded-sm shadow-none px-2 py-1 align-middle
-    font-size: inherit
-    &:not(:focus):hover
-      @apply ring-primary-500 ring-opacity-20 ring bg-white bg-opacity-40
-    &:disabled
-      @apply bg-transparent pointer-events-none opacity-50
+    &:not(:focus):hover {
+      background-color: theme('colors.white' / 40%);
+      box-shadow: 0 0 0 0 calc(theme('ringWidth.DEFAULT') + theme('ringOffsetWidth.0'))
+        theme('ringColor.primary.500' / 20%);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: transparent;
+      opacity: theme('opacity.50');
+    }
+  }
 </style>

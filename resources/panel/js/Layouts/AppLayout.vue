@@ -20,9 +20,9 @@
 </template>
 
 <script>
-  import Sidebar from './AppComponets/Sidebar'
-  import HeaderNav from './AppComponets/HeaderNav'
-  import Notify from './AppComponets/Notify'
+  import Sidebar from './AppComponets/Sidebar.vue'
+  import HeaderNav from './AppComponets/HeaderNav.vue'
+  import Notify from './AppComponets/Notify.vue'
 
   export default {
     components: {
@@ -36,9 +36,9 @@
     },
 
     created() {
-      document.title = `${this.title} | TheAdmin`
+      document.title = `${this.title} | ThePanel`
 
-      this.$admin.title = this.title
+      this.$panel.title = this.title
       this.addNotiEvents()
     },
 

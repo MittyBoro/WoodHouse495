@@ -7,18 +7,19 @@ export default {
 
   methods: {
     currentRoute(method = null, data = null) {
-      return route(this.currentRouteStr(method), data)
+      return this.$route(this.currentRouteStr(method), data)
     },
     currentRouteStr(method = null) {
-      return method ? this.routePrefix + method : route().current()
+      return method ? this.routePrefix + method : this.$route().current()
     },
 
     getPrefix() {
-      let prefix = route().current().split('.').slice(0, 2).join('.') + '.'
+      let prefix = this.$route().current().split('.').slice(0, 2).join('.') + '.'
       return prefix
     },
-    adminRoute(...args) {
-      return router(...args)
+    panelRoute(...args) {
+      args[0] = 'panel.' + args[0]
+      return this.$route(...args)
     },
     frontUrl(url = '') {
       return this.$page.props.config.url + '/' + url

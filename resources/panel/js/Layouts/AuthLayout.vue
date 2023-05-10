@@ -8,15 +8,15 @@
       >
         <div class="mt-3 mb-6 text-center text-gray-600">
           <a
-            :href="route('admin.login')"
-            class="mb-1 text-5xl font-bold leading-none hover:text-gray-800 transition"
+            :href="panelRoute('login')"
+            class="mb-1 text-5xl font-bold leading-none hover:text-gray-800 transition flex justify-center"
           >
-            The Admin
+            The Panel
             <span class="text-gray-400">ка</span>
           </a>
           <div class="tracking-wide text-gray-400 font-mono" v-text="'<панель управления>'"></div>
         </div>
-        <slot />
+        <slot></slot>
       </div>
     </div>
   </div>

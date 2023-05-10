@@ -14,35 +14,11 @@ Route::middleware(['panel.role:editor'])
         Route::resource('media', 'MediaController')->only(['store', 'destroy']);
 
 
+        Route::resource('callback_orders', 'CallbackOrderController')->only(['index', 'update']);
 
+        Route::resource('portfolios', 'PortfolioController');
         Route::resource('pages', 'PageController');
-
-        Route::resource('faqs', 'FAQController')->except(['show']);
-        Route::resource('translations', 'TranslationController')->only(['index', 'create', 'update', 'destroy']);
-
-
-
-        Route::resource('products', 'ProductController');
-        Route::post('products/sort', 'ProductController@sort')->name('products.sort');
-
-        Route::resource('product_options', 'ProductOptionController')
-            ->only(['index', 'create', 'update', 'destroy']);
-        Route::post('product_options/sort', 'ProductOptionController@sort')
-            ->name('product_options.sort');
-
-        Route::resource('product_categories', 'ProductCategoryController');
-        Route::post('product_categories/sort', 'ProductCategoryController@sort')->name('product_categories.sort');
-
-        Route::resource('orders', 'OrderController')->only(['index', 'update']);
-
-
-
-
-        // Route::resource('feedback_orders', 'FeedbackOrderController')->only(['index', 'destroy']);
-
-
-
-        Route::post('faqs/sort', 'FAQController@sort')->name('faqs.sort');
+        Route::resource('articles', 'ArticleController');
 
 
         Route::middleware(['panel.role:admin'])->group(function () {
@@ -65,9 +41,9 @@ Route::middleware(['panel.role:editor'])
         // проверка внешнего вида писем
         Route::prefix('mail')->group(function () {
             Route::get('order/{id?}', function ($id = null) {
-                $invoice = App\Models\Order::isPaid()->latest();
-                $invoice = $id ? $invoice->findOrFail($id) : $invoice->first();
-                return new App\Mail\OrderPaid($invoice, null);
+                // $invoice = App\Models\Order::isPaid()->latest();
+                // $invoice = $id ? $invoice->findOrFail($id) : $invoice->first();
+                // return new App\Mail\OrderPaid($invoice, null);
             });
         });
     });
