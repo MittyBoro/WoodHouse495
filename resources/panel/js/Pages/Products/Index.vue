@@ -3,7 +3,6 @@
     <IndexSection>
       <template #buttons>
         <div class="grid gap-6 sm:grid-flow-col">
-          <MLanguageRow globLang />
           <Link :href="currentRoute('create')" class="btn">Добавить</Link>
         </div>
       </template>
@@ -27,7 +26,6 @@
             <TData>{{ sp.element.title }}</TData>
             <TData>
               {{ formatPrice(sp.element.price) }}
-              {{ currencyByLang(sp.element.lang) }}
             </TData>
             <TData mini>
               <FSwitcher

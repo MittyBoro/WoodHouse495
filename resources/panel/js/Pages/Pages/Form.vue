@@ -4,7 +4,7 @@
       :submit="submit"
       :form="form"
       :tabs="['Основное', 'SEO', ...(isEdit ? ['Дополнительно'] : [])]"
-      mini
+      middle
     >
       <template #content="sb">
         <TabMain v-show="sb.activeTab == 'Основное'" :form="form" />
@@ -42,7 +42,6 @@
           slug: null,
           is_hidden: false,
           view: null,
-          lang: null,
 
           description: null,
 

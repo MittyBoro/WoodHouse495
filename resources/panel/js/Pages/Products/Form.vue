@@ -7,8 +7,6 @@
       mini
     >
       <template #content="sb">
-        <MLanguageRow v-if="sb.activeTab != 'Варианты'" class="mb-2" />
-
         <TabMain
           v-show="sb.activeTab == 'Основное'"
           :form="form"

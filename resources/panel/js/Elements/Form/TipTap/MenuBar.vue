@@ -174,6 +174,17 @@
             },
             isActive: () => this.isSource,
           },
+          // {
+          //   hidden: this.mini,
+          //   icon: 'table',
+          //   title: 'Table',
+          //   action: () =>
+          //     this.editor
+          //       .chain()
+          //       .focus()
+          //       .insertTable({ rows: 3, cols: 3, withHeaderRow: true })
+          //       .run(),
+          // },
         ],
       }
     },

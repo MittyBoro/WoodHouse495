@@ -3,7 +3,6 @@
     <IndexSection mini>
       <template #buttons>
         <div class="grid gap-6 sm:grid-flow-col">
-          <MLanguageRow withAll globLang />
           <Link :href="currentRoute('create')" class="btn">Добавить</Link>
         </div>
       </template>

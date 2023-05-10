@@ -1,9 +1,10 @@
 <template>
-  <div
+  <component
     v-if="editor"
     class="editor form-text notranslate"
     :class="{ focus: focus }"
     @click="focus || editor.view.dom.focus()"
+    :is="isSource ? 'label' : 'div'"
   >
     <MenuBar
       class="editor__header"
@@ -13,14 +14,27 @@
       :toggleSource="toggleSource"
     />
 
-    <EditorContent v-if="!isSource" class="editor__content" :editor="editor" />
-    <textarea v-else class="editor__raw_content" v-model="content"></textarea>
+    <EditorContent
+      v-if="!isSource"
+      class="editor__content"
+      :class="{ mini: mini }"
+      :editor="editor"
+    />
+    <textarea
+      v-else
+      class="editor__raw_content"
+      v-model="content"
+      ref="textarea"
+      :class="{ mini: mini }"
+      @focus="focus = true"
+      @blur="focus = false"
+    ></textarea>
 
     <div class="editor__footer">
       <span class="mr-3">Слов: {{ editor.storage.characterCount.words() }}</span>
       <span>Символов: {{ editor.storage.characterCount.characters() }}</span>
     </div>
-  </div>
+  </component>
 </template>
 
 <script>
@@ -28,6 +42,12 @@
   import CharacterCount from '@tiptap/extension-character-count'
   import Highlight from '@tiptap/extension-highlight'
   import Image from '@tiptap/extension-image'
+
+  import Table from '@tiptap/extension-table'
+  import TableHeader from '@tiptap/extension-table-header'
+  import TableCell from '@tiptap/extension-table-cell'
+  import TableRow from '@tiptap/extension-table-row'
+
   import { Editor, EditorContent } from '@tiptap/vue-3'
 
   import MenuBar from './TipTap/MenuBar.vue'
@@ -74,7 +94,16 @@
     mounted() {
       this.editor = new Editor({
         content: this.content,
-        extensions: [StarterKit.configure(), CharacterCount.configure(), Highlight, Image],
+        extensions: [
+          StarterKit.configure(),
+          CharacterCount.configure(),
+          Highlight,
+          Image,
+          Table,
+          TableHeader,
+          TableCell,
+          TableRow,
+        ],
         onUpdate: ({ editor }) => {
           this.content = editor.getHTML()
         },
@@ -90,6 +119,11 @@
     methods: {
       toggleSource() {
         this.isSource = !this.isSource
+        if (this.isSource) {
+          setTimeout(() => {
+            this.$refs.textarea.focus()
+          }, 40)
+        }
       },
     },
 
@@ -106,28 +140,34 @@
     flex-direction: column;
     padding: 0;
     max-height: 36rem;
-
+  }
+  .editor {
     &__header {
-      border-bottom: theme('borderWidth.DEFAULT') solid;
-      padding-left: theme('spacing.2');
-      padding-right: theme('spacing.2');
+      background: theme('colors.white');
+      position: sticky;
+      top: 0;
+      border-bottom: theme('borderWidth.DEFAULT') solid theme('borderColor.DEFAULT');
+      padding: theme('spacing[1.5]') theme('spacing.2');
       display: flex;
       align-items: center;
       flex: 0 0 auto;
       flex-wrap: wrap;
+      z-index: 5;
     }
 
     &__content,
     &__raw_content {
-      min-height: 10rem;
+      min-height: 20rem;
+      &.mini {
+        min-height: 10rem;
+      }
     }
 
     &__content {
-      padding-left: theme('spacing.4');
-      padding-right: theme('spacing.4');
+      padding: theme('spacing.5') theme('spacing.4');
       flex: 1 1 auto;
       overflow-x: hidden;
-      overflow-y: auto;
+      overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
 
       &::-webkit-scrollbar-thumb {
@@ -149,13 +189,15 @@
     }
 
     &__raw_content {
-      background-color: theme('colors.gray.50' / 30%);
+      background-color: theme('colors.gray.50' / 70%);
       font-family: theme('fontFamily.mono');
       outline: 0;
       border: 0;
-
       &:focus {
-        box-shadow: 0;
+        box-shadow: none;
+        outline: 0;
+        border: 0;
+        background-color: theme('colors.gray.50' / 25%);
       }
     }
 
@@ -234,10 +276,7 @@
     pre {
       background-color: theme('colors.gray.700');
       font-family: theme('fontFamily.mono');
-      padding-left: theme('spacing.2');
-      padding-right: theme('spacing.2');
-      padding-top: theme('spacing.1');
-      padding-bottom: theme('spacing.1');
+      padding: theme('spacing.1') theme('spacing.2');
       border-radius: theme('borderRadius.DEFAULT');
       color: theme('colors.white');
       code {
@@ -291,6 +330,22 @@
         > div {
           flex: 1 1 auto;
         }
+      }
+    }
+    table {
+      margin: theme('spacing.4') 0;
+      table-layout: auto;
+      border: 1px solid theme('colors.gray.200');
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      th {
+        background: theme('colors.gray.50');
+      }
+      th,
+      td {
+        padding: 0.3rem 0.5rem;
+        border: 1px solid theme('colors.gray.200');
       }
     }
   }

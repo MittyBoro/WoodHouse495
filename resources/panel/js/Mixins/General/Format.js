@@ -10,20 +10,6 @@ export default {
   },
 
   methods: {
-    currencyByLang(lang) {
-      let key = this.$page.props.currencies[lang]
-      return this.currencySymbol(key)
-    },
-
-    currencySymbol(key) {
-      let val = key
-      if (key == 'usd') val = '$'
-      else if (key == 'rub') val = '₽'
-      else val = key.toUpperCase()
-
-      return val
-    },
-
     formatPrice() {
       let price = [...arguments].reduce((a, b) => parseFloat(a) + parseFloat(b), 0)
 

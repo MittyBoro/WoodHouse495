@@ -2,7 +2,7 @@
   <form
     @submit.prevent="submit"
     class="loading bg-white shadow-lg rounded-xl sm:rounded-2xl border-gray-200"
-    :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle }"
+    :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle, 'max-w-6xl': big }"
   >
     <div
       v-if="hasHeaderSlots"
@@ -14,6 +14,7 @@
             <slot v-if="$slots.title" name="title"></slot>
             <template v-else>{{ $panel.title }}</template>
             <Link
+              v-if="showLink"
               :href="showLink"
               target="_blank"
               class="text-gray-500 hover-link ml-2 mt-0.5 text-sm"
@@ -89,6 +90,7 @@
       hideAdder: Boolean,
       mini: Boolean,
       middle: Boolean,
+      big: Boolean,
       hiddenTitle: Boolean,
     },
 
@@ -111,12 +113,13 @@
           !this.hiddenTitle
         )
       },
-
       showLink() {
         let showRoute = this.currentRouteStr('show')
 
-        if (route().has(showRoute) && this.form.id) return route(showRoute, this.form.id)
-        return null
+        if (route().has(this.currentRouteStr('show')) && this.form.id) {
+          return this.$route(showRoute, this.form.id)
+        }
+        return false
       },
     },
 

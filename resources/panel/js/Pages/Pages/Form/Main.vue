@@ -5,18 +5,12 @@
     </FNotice> -->
     <FTitleSlug :form="form" />
 
-    <FLabel as="div" title="Язык" :error="form.errors.lang">
-      <FSelect :options="$page.props.langs" v-model="form.lang" required />
-      <div v-if="form.alt_langs" class="text-xs mt-2">
-        <span>Другие языки:</span>
-        <span v-for="alt in form.alt_langs" :key="alt.id" class="uppercase ml-1 link font-bold">
-          <Link :href="$panelRoute('pages.edit', alt.id)">{{ alt.lang }}</Link>
-        </span>
-      </div>
+    <FLabel title="Мини описание" :error="form.errors.description" as="div">
+      <FTextareaEditor v-model="form.mini_description" mini />
     </FLabel>
 
-    <FLabel title="Описание" :error="form.errors.description" as="div">
-      <FTextareaEditor v-model="form.description" mini />
+    <FLabel title="Контент(если нужно: прайс и т.п.)" :error="form.errors.description" as="div">
+      <FTextareaEditor v-model="form.description" />
     </FLabel>
 
     <FLabel title="Имя шаблона" :error="form.errors.view">

@@ -16,7 +16,12 @@ return new class extends Migration
 
             $table->string('slug')->nullable()->index();
 
-            $table->string('meta_title')->nullable();
+            $table->string('title');
+            $table->text('mini_description')->nullable();
+            $table->text('description')->nullable();
+
+
+            $table->string('meta_title');
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
 
