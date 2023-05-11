@@ -42,6 +42,6 @@ class ConfirmablePasswordController extends Controller
 
         $request->session()->put('auth.password_confirmed_at', time());
 
-        return redirect()->intended($this->toHome($request));
+        return redirect()->intended(to_home($request));
     }
 }

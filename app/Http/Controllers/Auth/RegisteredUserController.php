@@ -57,6 +57,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect($this->toHome($request));
+        return redirect(to_home($request));
     }
 }

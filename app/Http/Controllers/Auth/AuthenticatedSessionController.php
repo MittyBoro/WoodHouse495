@@ -39,7 +39,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->away($this->toHome($request));
+        return redirect()->away(to_home($request));
     }
 
     /**
@@ -56,6 +56,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->away($this->toHome($request));
+        return redirect()->away(to_home($request));
     }
 }
