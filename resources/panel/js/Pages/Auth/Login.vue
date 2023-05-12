@@ -27,8 +27,8 @@
       <!-- <a :href="route('oauth.vk')" class="btn-vk w-full mt-4">Вход через ВК</a> -->
 
       <div class="flex items-center mt-4">
-        <Link :href="$panelRoute('register')" class="hover-link mr-4 text-sm">Регистрация</Link>
-        <Link :href="$panelRoute('password.request')" class="hover-link ml-auto text-sm">
+        <Link :href="$panelRoute('register')" class="link-hover mr-4 text-sm">Регистрация</Link>
+        <Link :href="$panelRoute('password.request')" class="link-hover ml-auto text-sm">
           Забыли пароль?
         </Link>
       </div>

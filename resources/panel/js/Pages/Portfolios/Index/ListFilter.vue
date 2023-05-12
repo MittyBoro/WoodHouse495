@@ -2,9 +2,9 @@
   <div class="flex flex-wrap px-6 md:px-10 py-3">
     <label class="mr-8 my-2">
       <FSelect
-        :options="categories"
+        :options="pages"
         :keys="['id', 'title']"
-        v-model.lazy="filter.category"
+        v-model.lazy="filter.page_id"
         @update:modelValue="setFilter"
       />
     </label>
@@ -21,17 +21,20 @@
       let urlParams = new URLSearchParams(location.search)
       let filter = {
         q: urlParams.get('q'),
-        category: urlParams.get('category') || '',
+        page_id: urlParams.get('page_id') ?? null,
       }
 
-      let categories = [{ id: '', title: 'Все категории' }, ...this.$page.props.categories]
-
       return {
-        categories: categories,
+        pages: [
+          { id: null, title: 'Все страницы' },
+          { id: '', title: 'Не указано' },
+          ...this.$page.props.pages,
+        ],
+
         filter: Object.assign(
           {
             q: '',
-            category: '',
+            page_id: '',
           },
           filter
         ),

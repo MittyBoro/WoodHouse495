@@ -106,7 +106,7 @@
         <div>
           <a
             v-if="item.product"
-            class="hover-link"
+            class="link-hover"
             target="_blank"
             :href="'/product/' + item.product.slug"
           >

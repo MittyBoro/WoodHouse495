@@ -47,27 +47,31 @@ export default {
       // + "." + milliseconds;
     },
 
+    moment(date) {
+      return moment(date)
+    },
+
     formatDateTime(date) {
-      return moment(date).format('L LT')
+      return this.moment(date).format('L LT')
     },
 
     formatDate(date) {
-      return moment(date).format('L')
+      return this.moment(date).format('L')
     },
 
     dateToInput(date) {
       if (!date) return
-      return moment(date).format('YYYY-MM-DD')
+      return this.moment(date).format('YYYY-MM-DD')
     },
 
     dateTimeToInput(date) {
       if (!date) return
-      return moment(date).format('YYYY-MM-DDTHH:mm')
+      return this.moment(date).format('YYYY-MM-DDTHH:mm')
     },
 
     inputDateToUTC(date) {
       if (!date) return
-      return moment(date).utc().format()
+      return this.moment(date).utc().format()
     },
   },
 }

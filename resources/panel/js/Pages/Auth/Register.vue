@@ -36,7 +36,7 @@
       </FLabel>
 
       <div class="flex items-center justify-between mt-4">
-        <Link :href="$panelRoute('login')" class="hover-link text-sm">Уже зарегистрированы?</Link>
+        <Link :href="$panelRoute('login')" class="link-hover text-sm">Уже зарегистрированы?</Link>
 
         <FButton class="ml-4" :disabled="form.processing">Регистрация</FButton>
       </div>

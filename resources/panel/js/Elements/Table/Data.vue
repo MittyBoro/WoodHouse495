@@ -12,6 +12,9 @@
         />
       </div>
     </div>
+    <div v-else-if="date" :title="date" class="whitespace-nowrap">
+      {{ moment(date).calendar() }}
+    </div>
     <template v-else>
       <slot></slot>
     </template>
@@ -24,6 +27,7 @@
       modelValue: [String, Number],
       mini: Boolean,
       disabled: Boolean,
+      date: String,
     },
 
     emits: ['update:modelValue'],

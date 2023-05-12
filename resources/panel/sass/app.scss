@@ -87,7 +87,7 @@ body {
   @apply opacity-40;
 }
 .form-grid {
-  @apply grid gap-4;
+  @apply grid gap-6;
 }
 .form-input,
 .form-textarea,
@@ -129,7 +129,7 @@ body {
     @apply text-primary-700 underline;
   }
 }
-.hover-link {
+.link-hover {
   @apply cursor-pointer transition-colors;
   &:hover {
     @apply text-primary-700;

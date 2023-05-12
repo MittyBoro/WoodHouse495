@@ -33,6 +33,18 @@
                 <TData v-if="sortEnable" class="sort-td" mini>
                   <Icon icon="arrows-up-down-left-right" class="drag-handle" />
                 </TData>
+                <TData v-if="hasThumb" mini>
+                  <div class="relative flex h-10 w-10 rounded border bg-gray-200 overflow-hidden">
+                    <img
+                      v-if="element.thumb"
+                      :src="element.thumb"
+                      class="object-cover inset-0 m-auto absolute"
+                      alt=""
+                    />
+                    <Icon v-else icon="image" class="text-gray-500/50 m-auto object-contain" />
+                  </div>
+                </TData>
+
                 <slot name="row" :element="element"></slot>
                 <TData v-if="routes.show" mini>
                   <Link :href="route(routes.show, element.id)">
@@ -92,6 +104,7 @@
         items: null,
         destroyRoute: null,
 
+        hasThumb: false,
         sortEnable: false,
         routes: {
           sort: null,
@@ -118,8 +131,14 @@
     methods: {
       setVariables() {
         this.headers = [...this.table.headers]
+
         this.items = this.table.items
         this.pagination = this.table.pagination
+
+        if (this.items.find((el) => 'thumb' in el)) {
+          this.hasThumb = true
+          this.headers.unshift({})
+        }
 
         Object.keys(this.routes).forEach((key) => {
           let routeValue = this.currentRouteStr(key)

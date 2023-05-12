@@ -2,7 +2,7 @@
   <form
     @submit.prevent="submit"
     class="loading bg-white shadow-lg rounded-xl sm:rounded-2xl border-gray-200"
-    :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle, 'max-w-6xl': big }"
+    :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle, 'max-w-5xl': big }"
   >
     <div
       v-if="hasHeaderSlots"
@@ -17,7 +17,7 @@
               v-if="showLink"
               :href="showLink"
               target="_blank"
-              class="text-gray-500 hover-link ml-2 mt-0.5 text-sm"
+              class="text-gray-500 link-hover ml-2 mt-0.5 text-sm"
             >
               <Icon icon="eye" />
             </Link>

@@ -7,10 +7,10 @@
       middle
     >
       <template #content="sb">
-        <FNotice>
-          Укажите
+        <FNotice v-if="sb.activeTab == 'SEO'">
+          <span>Укажите </span>
           <code class="monfont-mono font-semibold">%replace%</code>
-          , для замены на значение из дочернего элемента
+          <span>, для замены на значение из дочернего элемента</span>
         </FNotice>
         <TabMain v-show="sb.activeTab == 'Основное'" :form="form" />
         <MTabSeo v-show="sb.activeTab == 'SEO'" :form="form" />

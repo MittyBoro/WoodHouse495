@@ -1,7 +1,7 @@
 <template>
   <div
     class="bg-white shadow-lg rounded-xl sm:rounded-2xl pb-10 border-gray-200"
-    :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle }"
+    :class="{ 'max-w-2xl': mini, 'max-w-3xl': middle, 'max-w-5xl': big }"
   >
     <div
       v-if="($slots.title || $panel.title || $slots.buttons) && !hiddenTitle"
@@ -31,6 +31,7 @@
       hiddenTitle: Boolean,
       mini: Boolean,
       middle: Boolean,
+      big: Boolean,
     },
   }
 </script>

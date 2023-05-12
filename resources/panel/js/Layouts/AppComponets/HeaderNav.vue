@@ -21,7 +21,7 @@
     <a
       :href="frontUrl()"
       target="_blank"
-      class="whitespace-nowrap ml-auto pl-4 text-xs md:text-base bold font-semibold hover-link"
+      class="whitespace-nowrap ml-auto pl-4 text-xs md:text-base bold font-semibold link-hover"
     >
       На сайт
     </a>
