@@ -16,13 +16,13 @@ return new class extends Migration
 
             $table->string('slug')->index()->unique();
 
-            $table->string('meta_title')->nullable();
-            $table->text('meta_description')->nullable();
-            $table->string('meta_keywords')->nullable();
-
             $table->string('title')->nullable();
             $table->text('mini_description')->nullable();
             $table->text('description')->nullable();
+
+            $table->string('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
 
             $table->boolean('is_published')->default(false);
             $table->timestamp('published_at')->nullable();

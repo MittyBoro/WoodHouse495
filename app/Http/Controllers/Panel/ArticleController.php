@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Http\Requests\Panel\PageRequest;
-use App\Models\Panel\Page;
+use App\Http\Requests\Panel\ArticleRequest;
+use App\Models\Panel\Article;
 use Illuminate\Http\Request;
 
 use Inertia\Inertia;
@@ -14,53 +14,54 @@ class ArticleController extends Controller
 
     public function index(Request $request)
     {
-        $pages = Page::orderByStr($request->get('sort'))
+        $articles = Article::orderByStr($request->get('sort'))
+            ->filter($request->all())
             ->customPaginate($request->get('perPage', 20));
 
-        return Inertia::render('Pages/Index', [
-            'list' => $pages,
+        return Inertia::render('Articles/Index', [
+            'list' => $articles,
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Pages/Form');
+        return Inertia::render('Articles/Form');
     }
 
-    public function store(PageRequest $request)
+    public function store(ArticleRequest $request)
     {
         $data = $request->validated();
-        $created = Page::create($data);
+        $created = Article::create($data);
 
-        return redirect(route('panel.pages.edit', $created->id));
+        return redirect(route('panel.articles.edit', $created->id));
     }
 
-    public function show(Page $page)
+    public function show(Article $article)
     {
-        return redirect()->route('front.pages', $page->slug);
+        return redirect()->route('front.articles', $article->slug);
     }
 
-    public function edit(Page $page)
+    public function edit(Article $article)
     {
-        $page->load(['props']);
+        $article->load(['props']);
 
-        return Inertia::render('Pages/Form', [
-            'item' => $page,
+        return Inertia::render('Articles/Form', [
+            'item' => $article,
         ]);
     }
 
-    public function update(PageRequest $request, Page $page)
+    public function update(ArticleRequest $request, Article $article)
     {
         $data = $request->validated();
-        $page->update($data);
-        $page->saveAfter($data);
+        $article->update($data);
+        $article->saveAfter($data);
 
         return back();
     }
 
-    public function destroy(Page $page)
+    public function destroy(Article $article)
     {
-        $page->delete();
+        $article->delete();
 
         return back();
     }

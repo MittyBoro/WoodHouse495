@@ -9,11 +9,11 @@
         :key="header.key"
       >
         <Link
-          class="inline-flex items-center py-2"
+          class="inline-flex items-center py-2 link-hover"
           v-if="header.sortable"
           :href="urlWithSorting(header.key)"
         >
-          <Icon v-if="header.fa" :icon="header.fa" class="opacity-60" />
+          <Icon v-if="header.fa" :icon="header.fa" class="opacity-70 scale-125" />
           <span v-else v-text="header.text"></span>
 
           <Icon

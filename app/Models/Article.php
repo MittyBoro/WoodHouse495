@@ -2,27 +2,30 @@
 
 namespace App\Models;
 
+use App\Services\SpatieMedia\InteractsWithCustomMedia;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Image\Manipulations;
+use Spatie\MediaLibrary\HasMedia;
 
-class Article extends Model
+class Article extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithCustomMedia;
 
     const MEDIA_COLLECTION = 'article';
 
     protected $fillable = [
         'slug',
 
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
-
         'title',
         'mini_description',
         'description',
+
+        'meta_title',
+        'meta_description',
+        'meta_keywords',
 
         'is_published',
         'published_at',
@@ -79,7 +82,7 @@ class Article extends Model
     protected function thumb(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION, 'medium')
+            get: fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION, 'thumb')
         );
     }
 

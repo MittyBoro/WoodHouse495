@@ -4,7 +4,7 @@ namespace App\Models\Panel;
 
 use App\Models\Page as Model;
 use App\Models\Traits\ExtractingTrait;
-
+use Illuminate\Support\Str;
 
 class Page extends Model
 {
@@ -16,8 +16,11 @@ class Page extends Model
     {
         parent::boot();
         static::saving(function ($query) {
-            if (empty($query->meta_title))
+            if (empty($query->meta_title)) {
                 $query->meta_title = $query->title;
+            }
+
+            $query->slug = Str::slug($query->slug);
         });
     }
 

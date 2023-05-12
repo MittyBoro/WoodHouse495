@@ -8,7 +8,7 @@
       </template>
 
       <template #content>
-        <ListFilter class="border-t bg-gray-50" />
+        <ListFilter v-if="table.items.length" class="border-t bg-gray-50" />
 
         <TTable :table="table">
           <template #pagination />
