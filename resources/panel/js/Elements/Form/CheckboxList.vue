@@ -27,6 +27,7 @@
       modelValue: [Array, Number, String],
       list: Array,
       single: Boolean,
+      notArray: Boolean,
       type: {
         type: String,
         default: 'submit',
@@ -53,7 +54,8 @@
           })
         },
         set(value) {
-          this.$emit('update:modelValue', this.single ? value.slice(-1) : value)
+          let array = this.single ? value.slice(-1) : value
+          this.$emit('update:modelValue', this.notArray ? array[0] || '' : array)
         },
       },
     },

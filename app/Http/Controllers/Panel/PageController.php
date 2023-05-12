@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Panel;
 use App\Http\Requests\Panel\PageRequest;
 use App\Models\Panel\Page;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 
@@ -60,6 +60,10 @@ class PageController extends Controller
 
     public function destroy(Page $page)
     {
+        if (!Auth::user()->is_admin) {
+            return back()->withErrors(['У Вас нет прав на удаление']);
+        }
+
         $page->delete();
 
         return back();

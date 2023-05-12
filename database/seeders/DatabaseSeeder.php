@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
         ]);
 
-        \App\Models\Portfolio::factory(25)->create();
+        \App\Models\Portfolio::factory(35)->create();
         \App\Models\Article::factory(25)->create();
 
         // \App\Models\User::factory()->create([

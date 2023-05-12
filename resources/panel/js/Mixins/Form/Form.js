@@ -52,7 +52,6 @@ export default {
     },
 
     store() {
-      console.log('this.form', this.form)
       this.form.post(this.currentRoute('store'), {
         preserveState: (page) => Object.keys(page.props.errors).length,
         preserveScroll: true,

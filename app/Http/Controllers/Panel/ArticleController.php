@@ -60,8 +60,9 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         if (!Auth::user()->is_admin) {
-            return back()->withErrors(['Вы не имеете прав для удаления']);
+            return back()->withErrors(['У Вас нет прав на удаление']);
         }
+
         $article->delete();
 
         return back();

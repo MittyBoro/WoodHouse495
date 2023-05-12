@@ -19,7 +19,7 @@
             <FFileInput v-model="form.gallery" multiple imagesOnly />
           </FLabel>
           <FLabel title="Страница" :error="form.errors.page_id" as="div">
-            <FCheckboxList v-model="form.page_id" :list="pages" single />
+            <FCheckboxList v-model="form.page_id" :list="pages" single notArray />
           </FLabel>
         </div>
       </template>
@@ -55,46 +55,6 @@
           gallery: [],
         }),
       }
-    },
-
-    computed: {
-      options() {
-        let attrs = [
-          {
-            id: 1,
-            title: 1,
-          },
-          {
-            id: 2,
-            title: 1,
-          },
-          {
-            id: 3,
-            title: 1,
-          },
-        ]
-
-        return attrs
-
-        this.$page.props.options.forEach((el) => {
-          let value = {
-            id: el.id,
-            title: el.value,
-          }
-          let typeIndex = attrs.findIndex((attr) => attr.type == el.type)
-
-          if (typeIndex === -1) {
-            attrs.push({
-              type: el.type,
-              values: [value],
-            })
-          } else {
-            attrs[typeIndex].values.push(value)
-          }
-        })
-
-        return attrs
-      },
     },
   }
 </script>

@@ -6,7 +6,7 @@ use App\Http\Requests\Panel\PortfolioRequest;
 use App\Models\Panel\Portfolio;
 use App\Models\Panel\Page;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 
@@ -36,9 +36,10 @@ class PortfolioController extends Controller
     public function store(PortfolioRequest $request)
     {
         $data = $request->validated();
-        $created = Portfolio::create($data);
+        $portfolio = Portfolio::create($data);
+        $portfolio->saveAfter($data);
 
-        return redirect(route('panel.portfolios.edit', $created->id));
+        return redirect(route('panel.portfolios.edit', $portfolio->id));
     }
 
     public function show(Portfolio $portfolio)
@@ -48,10 +49,8 @@ class PortfolioController extends Controller
 
     public function edit(Portfolio $portfolio)
     {
-        $portfolio->load(['props']);
-
         return Inertia::render('Portfolios/Form', [
-            'item' => $portfolio,
+            'item' => $portfolio->append('gallery'),
             'pages' => Page::get(['id', 'title'])
         ]);
     }
@@ -67,6 +66,10 @@ class PortfolioController extends Controller
 
     public function destroy(Portfolio $portfolio)
     {
+        if (!Auth::user()->is_admin) {
+            return back()->withErrors(['У Вас нет прав на удаление']);
+        }
+
         $portfolio->delete();
 
         return back();
