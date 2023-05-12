@@ -1,8 +1,5 @@
 <template>
   <div class="form-grid">
-    <!-- <FNotice>
-      Укажите <code class="monfont-mono font-semibold">%replace%</code>, для замены на значение из дочернего элемента
-    </FNotice> -->
     <FTitleSlug :form="form" />
 
     <FLabel title="Мини описание" :error="form.errors.mini_description" as="div">

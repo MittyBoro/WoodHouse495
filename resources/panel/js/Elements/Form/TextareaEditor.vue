@@ -106,6 +106,9 @@
           TableCell,
           TableRow,
         ],
+        onCreate: ({ editor }) => {
+          this.editorHeight = editor.options.element.offsetHeight
+        },
         onUpdate: ({ editor }) => {
           this.content = editor.getHTML()
 
