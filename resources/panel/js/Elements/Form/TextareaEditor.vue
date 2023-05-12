@@ -26,6 +26,7 @@
       v-model="content"
       ref="textarea"
       :class="{ mini: mini }"
+      :style="{ minHeight: editorHeight + 'px' }"
       @focus="focus = true"
       @blur="focus = false"
     ></textarea>
@@ -69,6 +70,7 @@
         editor: null,
         focus: false,
         isSource: false,
+        editorHeight: 0,
       }
     },
 
@@ -106,6 +108,8 @@
         ],
         onUpdate: ({ editor }) => {
           this.content = editor.getHTML()
+
+          this.editorHeight = editor.options.element.offsetHeight
         },
         onFocus: ({ editor, event }) => {
           this.focus = true
@@ -114,6 +118,7 @@
           this.focus = false
         },
       })
+      this.editor.$el
     },
 
     methods: {
@@ -212,10 +217,6 @@
       font-size: theme('fontSize.xs');
       flex: 0 0 auto;
     }
-  }
-
-  .editor__content {
-    overflow: hidden;
   }
 
   .ProseMirror {

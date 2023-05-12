@@ -110,14 +110,18 @@ body {
     @apply h-8 px-3 pr-4 text-xs;
   }
 }
+.form-radio,
 .form-checkbox {
-  @apply cursor-pointer rounded border-gray-300 text-primary-600 shadow-sm;
+  @apply cursor-pointer rounded w-5 h-5 border-gray-300 text-primary-600 shadow-sm transition-colors;
   &:checked {
     @apply border-primary-600 bg-primary-600;
   }
   &:focus {
     @apply border-primary-300 outline-none ring ring-primary-100 ring-offset-0;
   }
+}
+.form-radio {
+  @apply rounded-full;
 }
 .link {
   @apply cursor-pointer text-primary-600 transition-colors;
@@ -224,5 +228,25 @@ body {
   }
   input[type='number'] {
     appearance: textfield;
+  }
+}
+
+.nprogress-busy {
+  .loading {
+    position: relative;
+    pointer-events: none;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      opacity: 1;
+      @apply animate-pulse;
+    }
+
+    &::after {
+      content: '';
+      @apply animate-spin;
+      opacity: 1;
+    }
   }
 }

@@ -5,7 +5,7 @@
     </FNotice> -->
     <FTitleSlug :form="form" />
 
-    <FLabel title="Мини описание" :error="form.errors.description" as="div">
+    <FLabel title="Мини описание" :error="form.errors.mini_description" as="div">
       <FTextareaEditor v-model="form.mini_description" mini />
     </FLabel>
 

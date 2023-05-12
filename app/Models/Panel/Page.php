@@ -10,7 +10,7 @@ class Page extends Model
 {
     use RetrievingTrait;
 
-    protected $sortable = ['slug', 'lang', 'title'];
+    protected $sortable = ['slug', 'title'];
 
     protected static function boot()
     {
@@ -30,15 +30,6 @@ class Page extends Model
     {
         return Model::class;
     }
-
-    public function getAltLangsAttribute()
-    {
-        $pages = self::where('slug', $this->slug)
-            ->where('lang', '!=', $this->lang)
-            ->get(['lang', 'id']);
-        return $pages;
-    }
-
 
     public function saveAfter($data)
     {

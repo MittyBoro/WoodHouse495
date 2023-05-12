@@ -12,8 +12,8 @@
           <template #pagination />
 
           <template #row="sp">
-            <TData v-text="sp.element.title" />
-            <TData v-text="sp.element.slug" />
+            <TData v-model="sp.element.title" @update:modelValue="update(sp.element)" />
+            <TData v-model="sp.element.slug" @update:modelValue="update(sp.element)" />
           </template>
         </TTable>
       </template>
@@ -45,6 +45,18 @@
           items: this.$page.props.list.data,
           pagination: this.$page.props.list,
         }
+      },
+    },
+
+    methods: {
+      update(item) {
+        item.index_edit = true
+
+        let form = this.$inertia.form(item)
+
+        form.put(this.currentRoute('update', item.id), {
+          preserveScroll: true,
+        })
       },
     },
   }

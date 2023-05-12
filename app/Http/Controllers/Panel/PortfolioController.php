@@ -17,14 +17,16 @@ class PortfolioController extends Controller
         $pages = Page::orderByStr($request->get('sort'))
             ->customPaginate($request->get('perPage', 20));
 
-        return Inertia::render('Pages/Index', [
+        return Inertia::render('Portfolios/Index', [
             'list' => $pages,
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Pages/Form');
+        return Inertia::render('Portfolios/Form', [
+            'pages' => Page::get(['title', 'id'])
+        ]);
     }
 
     public function store(PageRequest $request)
@@ -32,19 +34,19 @@ class PortfolioController extends Controller
         $data = $request->validated();
         $created = Page::create($data);
 
-        return redirect(route('panel.pages.edit', $created->id));
+        return redirect(route('panel.portfolios.edit', $created->id));
     }
 
     public function show(Page $page)
     {
-        return redirect()->route('front.pages', $page->slug);
+        return redirect()->route('pages', $page->slug);
     }
 
     public function edit(Page $page)
     {
         $page->load(['props']);
 
-        return Inertia::render('Pages/Form', [
+        return Inertia::render('Portfolios/Form', [
             'item' => $page,
         ]);
     }

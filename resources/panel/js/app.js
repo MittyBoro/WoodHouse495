@@ -10,6 +10,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ZiggyVue } from 'ziggy'
 
 import Toast from 'vue-toastification'
+import TextareaAutosize from 'vue-textarea-autosize'
 
 import Icon from './Elements/Icon'
 
@@ -31,6 +32,7 @@ createInertiaApp({
       .use(plugin)
       .use(ZiggyVue, Ziggy)
       .use(Toast)
+      .use(TextareaAutosize)
 
       .mixin(MixinFormat)
       .mixin(MixinMain)

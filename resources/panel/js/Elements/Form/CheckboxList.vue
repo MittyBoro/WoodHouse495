@@ -1,13 +1,19 @@
 <template>
   <div class="shadow-sm h-full rounded-md py-3 border max-h-96">
-    <div class="px-5 h-full overflow-auto">
+    <div class="grid px-4 h-full overflow-auto">
       <label
-        class="flex items-center my-1 cursor-pointer select-none"
+        class="flex px-1 py-1 items-center cursor-pointer transition-colors rounded select-none hover:bg-gray-50"
         :style="{ marginLeft: 0.9 * item.depth + 'em' }"
         v-for="item in list"
         :key="item.id"
       >
-        <input type="checkbox" class="form-checkbox" v-model="values" :value="item.id" />
+        <input
+          type="checkbox"
+          class="text-pink-500"
+          :class="single ? 'form-radio' : 'form-checkbox'"
+          v-model="values"
+          :value="item.id"
+        />
         <span class="pl-2 text" v-html="item.title"></span>
       </label>
     </div>

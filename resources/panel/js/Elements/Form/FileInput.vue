@@ -30,20 +30,20 @@
       </template>
     </Draggable>
 
-    <label :class="{ 'drop-area': drop, 'md:col-span-5': isSingleImage }">
-      <div class="form-input flex-wrap">
+    <label class="form-input" :class="{ 'drop-area': drop, 'md:col-span-5': isSingleImage }">
+      <Icon icon="cloud-arrow-up" class="text-5xl opacity-90" />
+      <span class="font-semibold">
         <span v-if="multiple">Выберите файлы</span>
         <span v-else>Выберите файл</span>
         <span v-if="drop"> или перетащите сюда</span>
-        <Icon icon="cloud-arrow-up" class="ml-1 opacity-60" />
-        <input
-          type="file"
-          @change="addFiles"
-          class="hidden"
-          :accept="imagesOnly ? 'image/jpeg,image/png' : accept"
-          :multiple="multiple"
-        />
-      </div>
+      </span>
+      <input
+        type="file"
+        @change="addFiles"
+        class="hidden"
+        :accept="imagesOnly ? 'image/jpeg,image/png' : accept"
+        :multiple="multiple"
+      />
     </label>
   </div>
 </template>
@@ -107,7 +107,7 @@
         return [
           this.imagesOnly ? 'gap-3' : 'gap-1 max-w-xs',
           {
-            'grid-cols-3 sm:grid-cols-4 md:grid-cols-6': !this.isSingleImage && this.imagesOnly,
+            'grid-cols-3 sm:grid-cols-4 md:grid-cols-5': !this.isSingleImage && this.imagesOnly,
             'w-28 md:w-auto': this.isSingleImage,
           },
         ]
@@ -242,38 +242,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: theme('colors.gray.50');
-    padding-top: theme('spacing.3');
-    font-size: theme('fontSize.xs');
-    height: auto;
-    max-height: none !important;
-
-    &:hover {
-      background-color: theme('colors.gray.50');
-      border-width: 4px;
-      border-color: theme('colors.primary.600' / 20%);
-    }
-  }
-
-  .drop-area {
-    display: flex;
     width: 100%;
+    flex-direction: column;
+    height: auto;
+    background: theme('colors.gray.50');
+    padding: 0;
+    color: theme('colors.gray.500');
+    border: 0;
+    box-shadow: 0;
     cursor: pointer;
-    justify-content: center;
-    border-radius: theme('borderRadius.lg');
     border-width: 4px;
-    border-style: dashed;
+    border-style: solid;
     border-color: theme('colors.gray.300');
-    transition-property: background-color;
+    transition-property: theme('transitionProperty.colors');
+    transition-duration: theme('transitionDuration.DEFAULT');
     padding: theme('spacing.3') theme('spacing.4');
-
-    span {
-      display: inline-block;
-      text-align: center;
-    }
-
+    border-radius: theme('borderRadius.lg');
     &:hover {
-      background-color: theme('colors.gray.50');
+      background-color: theme('colors.primary.50');
+      color: theme('colors.primary.600');
+      border-color: theme('colors.primary.500' / 60%);
     }
 
     @media (min-width: theme('screens.sm')) {
@@ -281,9 +269,15 @@
     }
   }
 
+  .drop-area {
+    border-style: dashed;
+  }
+
   .drop-area.highlight {
-    border-color: theme('colors.primary.700');
+    border-color: theme('colors.primary.600');
     background-color: theme('colors.primary.500');
+    color: theme('colors.white');
+    border-style: solid;
   }
 
   .file-image {

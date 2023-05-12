@@ -7,6 +7,11 @@
       middle
     >
       <template #content="sb">
+        <FNotice>
+          Укажите
+          <code class="monfont-mono font-semibold">%replace%</code>
+          , для замены на значение из дочернего элемента
+        </FNotice>
         <TabMain v-show="sb.activeTab == 'Основное'" :form="form" />
         <MTabSeo v-show="sb.activeTab == 'SEO'" :form="form" />
         <TabProps v-show="sb.activeTab == 'Дополнительно'" :form="form" />

@@ -84,7 +84,10 @@
     &::before {
       content: '';
       position: absolute;
-      inset: -3px 0;
+      top: -5px;
+      left: 0;
+      right: 0;
+      bottom: -5px;
       background-color: theme('colors.white' / 90%);
       z-index: 30;
       border-radius: theme('borderRadius.DEFAULT');
@@ -94,38 +97,20 @@
     &::after {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
-      margin-top: -5px;
-      margin-left: -5px;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      margin-left: -15px;
       border: 4px solid theme('colors.primary.500');
-      border-radius: 9999px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-radius: 50%;
       z-index: 40;
       top: 50%;
       left: 50%;
-      border-left-color: transparent;
-      border-right-color: transparent;
     }
   }
 
-  .nprogress-busy {
-    .loading {
-      position: relative;
-      pointer-events: none;
-      overflow: hidden;
-
-      &::before {
-        opacity: 1;
-        animation: pulse 2s infinite;
-      }
-
-      &::after {
-        content: '';
-        animation: spin 1s infinite linear;
-        opacity: 1;
-      }
-    }
-  }
   .Vue-Toastification__toast-body {
     align-self: center;
     font-size: 14px;
