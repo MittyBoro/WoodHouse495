@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Panel;
 use App\Http\Requests\Panel\ArticleRequest;
 use App\Models\Panel\Article;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 
 class ArticleController extends Controller
 {
-
     public function index(Request $request)
     {
         $articles = Article::orderByStr($request->get('sort'))
             ->filter($request->all())
+            ->orderByStr($request->get('sort'))
             ->customPaginate($request->get('perPage', 20));
 
         return Inertia::render('Articles/Index', [
@@ -32,8 +32,9 @@ class ArticleController extends Controller
     {
         $data = $request->validated();
         $created = Article::create($data);
+        $created->saveAfter($data);
 
-        return redirect(route('panel.articles.edit', $created->id));
+        return redirect()->route('panel.articles.edit', $created->id);
     }
 
     public function show(Article $article)
@@ -43,10 +44,8 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-        $article->load(['props']);
-
         return Inertia::render('Articles/Form', [
-            'item' => $article,
+            'item' => $article->append(['gallery']),
         ]);
     }
 
@@ -61,6 +60,9 @@ class ArticleController extends Controller
 
     public function destroy(Article $article)
     {
+        if (!Auth::user()->is_admin) {
+            return back()->withErrors(['Вы не имеете прав для удаления']);
+        }
         $article->delete();
 
         return back();

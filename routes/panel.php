@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['roles:admin'])
+Route::middleware(['roles:editor'])
     ->group(function () {
 
         Route::get('/', 'DashboardController@index')->name('dashboard');

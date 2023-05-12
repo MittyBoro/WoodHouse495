@@ -8,7 +8,7 @@ trait ExtractingTrait
 {
     public function scopeOrderByStr(Builder $query, $sort = 'id-desc')
     {
-        $sort = empty($column) ? ($this->defaultSort ?: $sort) : $sort;
+        $sort = ($this->defaultSort ?: $sort) ?: $this->sortable[0] ?? '';
 
         if (!$sort)
             return;

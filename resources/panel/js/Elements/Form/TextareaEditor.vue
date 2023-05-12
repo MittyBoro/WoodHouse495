@@ -167,7 +167,7 @@
     &__raw_content {
       min-height: 20rem;
       &.mini {
-        min-height: 10rem;
+        min-height: 8rem;
       }
     }
 

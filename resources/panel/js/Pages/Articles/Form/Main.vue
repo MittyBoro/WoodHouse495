@@ -11,6 +11,7 @@
     </FLabel>
 
     <FLabel
+      as="div"
       title="Фото"
       subtitle="(первое - заглавное, остальное - для контента)"
       :error="form.errors.gallery"

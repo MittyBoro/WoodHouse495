@@ -32,13 +32,11 @@ class Roles
         }
 
         if ($rightRole == 'editor' && !$user->is_editor) {
-            Auth::logout();
-            return redirect()->route('panel.login')->withErrors('Вы не являетесь редактором');
+            return abort(403);
         }
 
         if ($rightRole == 'admin' && !$user->is_admin) {
-            Auth::logout();
-            return redirect()->route('panel.login')->withErrors('Вы не являетесь администратором');
+            return abort(403);
         }
 
         return $next($request);

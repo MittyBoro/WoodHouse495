@@ -31,7 +31,9 @@ class Article extends Model implements HasMedia
         'published_at',
     ];
 
-    protected $sortable = ['published_at', 'created_at'];
+    protected $sortable = ['published_at'];
+    protected $defaultSort = 'published_at-desc';
+
     protected $hidden = ['media'];
 
     public function registerMediaCollections(): void
@@ -41,7 +43,7 @@ class Article extends Model implements HasMedia
             ->registerMediaConversions(function () {
                 $this
                     ->addMediaConversion('thumb')
-                    ->fit(Manipulations::FIT_CROP, 394, 525);
+                    ->fit(Manipulations::FIT_MAX, 400, 400);
                 $this
                     ->addMediaConversion('medium')
                     ->fit(Manipulations::FIT_MAX, 700, 700);

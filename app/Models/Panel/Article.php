@@ -13,8 +13,6 @@ class Article extends Model
     use ExtractingTrait;
     use SearchableTrait;
 
-    protected $sortable = ['title', 'is_published', 'created_at'];
-
     protected $appends = [
         'thumb'
     ];
@@ -29,6 +27,10 @@ class Article extends Model
             'articles.meta_keywords' => 1,
         ],
     ];
+
+    protected $sortable = ['created_at', 'title', 'is_published',];
+    protected $defaultSort = 'created_at-desc';
+
 
     protected static function boot()
     {

@@ -34,8 +34,11 @@
           slug: null,
           mini_description: null,
           description: null,
+
           is_published: false,
           published_at: null,
+
+          gallery: [],
 
           meta_title: null,
           meta_description: null,
