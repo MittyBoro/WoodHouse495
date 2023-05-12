@@ -1,6 +1,13 @@
 export default {
   data() {
-    return {}
+    return {
+      userRoles: {
+        admin: 'Администратор',
+        editor: 'Редактор',
+        user: 'Пользователь',
+        blocked: 'Заблокирован',
+      },
+    }
   },
 
   computed: {
@@ -10,6 +17,9 @@ export default {
   },
 
   methods: {
+    getUserRole(role) {
+      return this.userRoles[role] || role
+    },
     editorTitle(isEdit) {
       return isEdit ? 'Редактировать' : 'Добавить'
     },

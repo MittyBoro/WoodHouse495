@@ -30,6 +30,7 @@ return new class extends Migration
             [
                 'name' => 'Dima Boro',
                 'email' => 'iboro770@gmail.com',
+                'email_verified_at' => now(),
                 'password' => Hash::make('password'),
                 'role' => User::ROLE_ADMIN,
                 'email_notification' => 1,
@@ -38,9 +39,11 @@ return new class extends Migration
             [
                 'name' => 'Demo',
                 'email' => 'demo@example.com',
+                'email_verified_at' => now(),
                 'password' => Hash::make('password'),
+
                 'role' => User::ROLE_ADMIN,
-                'email_notification' => 0,
+                'email_notification' => 1,
                 'created_at' => now(),
             ],
         ]);

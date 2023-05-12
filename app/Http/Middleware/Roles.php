@@ -28,8 +28,7 @@ class Roles
 
         // нельзя в админку - выкинуть
         if (!in_array($user->role, User::ROLES)) {
-            Auth::logout();
-            return redirect()->route('panel.login')->withErrors('У вас нет доступа к панели управления');
+            return abort(403);
         }
 
         if ($rightRole == 'editor' && !$user->is_editor) {

@@ -29,10 +29,10 @@ class User extends Authenticatable
 
     protected $fillable = [
         'name',
-        'username',
         'email',
         'password',
         'role',
+        'email_notification',
     ];
 
     /**
@@ -60,7 +60,9 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($val)
     {
-        $this->attributes['password'] = Hash::make($val);
+        if ($val) {
+            $this->attributes['password'] = Hash::make($val);
+        }
     }
 
     public function getIsAdminAttribute()

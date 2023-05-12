@@ -12,9 +12,12 @@
         />
       </div>
     </div>
-    <div v-else-if="date" :title="date" class="whitespace-nowrap">
-      {{ moment(date).calendar() }}
-    </div>
+    <template v-else-if="date">
+      <div :title="date" class="whitespace-nowrap">
+        {{ moment(date).calendar() }}
+      </div>
+      <slot></slot>
+    </template>
     <template v-else>
       <slot></slot>
     </template>

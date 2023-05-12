@@ -8,7 +8,7 @@ Route::middleware(['roles:admin'])
 
         Route::get('/', 'DashboardController@index')->name('dashboard');
 
-        Route::resource('users', 'UserController')->except(['create', 'store', 'show']);
+        Route::resource('users', 'UserController')->except(['show']);
         Route::post('users/{user}/verify', 'UserController@verify')->name('users.verify');
 
         Route::resource('media', 'MediaController')->only(['store', 'destroy']);

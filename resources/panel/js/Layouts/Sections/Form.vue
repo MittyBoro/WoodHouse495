@@ -39,7 +39,10 @@
       </div>
     </div>
 
-    <div v-if="tabs" class="px-4 py-4 sm:px-8 border-b border-gray-100 flex flex-wrap">
+    <div
+      v-if="tabs && tabs.length"
+      class="px-4 py-4 sm:px-8 border-b border-gray-100 flex flex-wrap"
+    >
       <div
         class="px-5 py-2 text-sm mr-3 my-2 rounded-md shadow-md shrink-0 transition tab"
         :class="{
@@ -85,13 +88,15 @@
         default: {},
       },
       tabs: Array,
+
       hideFix: Boolean,
       hideButtons: Boolean,
       hideAdder: Boolean,
+      hiddenTitle: Boolean,
+
       mini: Boolean,
       middle: Boolean,
       big: Boolean,
-      hiddenTitle: Boolean,
     },
 
     emits: ['update:activeTab'],

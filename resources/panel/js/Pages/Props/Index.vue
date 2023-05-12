@@ -1,13 +1,21 @@
 <template>
   <AppLayout title="Параметры">
-    <FormSection class="max-w-3xl load-opacity" :tabs="tabs" :submit="updateList" :form="form">
+    <FormSection
+      class="max-w-3xl load-opacity"
+      :tabs="tabs"
+      :submit="updateList"
+      :form="form"
+      :hideButtons="!form.props.lengh"
+    >
       <template #content="sp">
         <MPropsList
+          v-if="form.props.lengh"
           :activeTab="sp.activeTab"
           :errors="form.errorsObj?.props"
           :list="form.props"
           @update="form.props = $event"
         />
+        <div class="py-8 text-lg text-center text-gray-700" v-else>Параметров ещё нет</div>
       </template>
     </FormSection>
   </AppLayout>

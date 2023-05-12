@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('roles:panel', ['except' => ['edit', 'update']]);
-    }
-
     public function index(Request $request)
     {
         $users = User::filter($request->all())
@@ -24,24 +19,29 @@ class UserController extends Controller
             ->customPaginate($request->get('perPage', 20));
 
         return Inertia::render('Users/Index', [
-            'roles' => User::roleList(),
             'list' => $users,
         ]);
+    }
+
+    public function create()
+    {
+        return Inertia::render('Users/Form');
+    }
+    public function store(UserRequest $request)
+    {
+        User::create($request->validated());
+        return redirect()->route('panel.users.index');
     }
 
     public function edit(User $user)
     {
         return Inertia::render('Users/Form', [
-            'roles' => User::roleList(),
-            'item' => $user->append('panel_avatar'),
+            'item' => $user,
         ]);
     }
-
-
     public function update(UserRequest $request, User $user)
     {
-        $user->updateUser($request->validated());
-
+        $user->update($request->validated());
         return back();
     }
 
@@ -57,10 +57,12 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        if ($user->id == 1)
-            return back()->withErrors(['Нельзя удалить первого']);
-        if ($user->id == Auth::user()->id)
-            return back()->withErrors(['Нельзя удалить себя']);
+        if ($user->id == 1) {
+            return back()->withErrors(['Невозможно удалить этого пользователя']);
+        }
+        if ($user->id == Auth::user()->id) {
+            return back()->withErrors(['Невозможно удалить себя']);
+        }
 
         $user->delete();
 

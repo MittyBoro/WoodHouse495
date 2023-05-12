@@ -1,52 +1,11 @@
 <template>
-  <AppLayout title="Редактировать">
-    <div class="grid grid-cols-6 gap-4 items-start">
-      <FormSection :submit="submit" :form="form" class="col-span-6 sm:col-span-3" hideFix hideAdder>
-        <template #title>Пользовательские данные</template>
-
-        <template #content>
-          <div class="col-span-full grid gap-4">
-            <template v-if="0">
-              <FLabel title="Аватар" :error="form.errors.panel_avatar">
-                <FFileInput :imagesOnly="true" v-model="form.panel_avatar" />
-              </FLabel>
-            </template>
-
-            <FLabel title="Имя" :error="form.errors.name">
-              <FInput type="text" v-model="form.name" />
-            </FLabel>
-
-            <FLabel title="Email" :error="form.errors.email">
-              <FInput type="email" v-model="form.email" />
-            </FLabel>
-
-            <FLabel title="Роль" :error="form.errors.role">
-              <FSelect :options="roles" v-model="form.role" />
-            </FLabel>
-          </div>
-        </template>
-      </FormSection>
-
-      <FormSection :submit="updatePass" :form="formP" class="col-span-6 sm:col-span-3" hideFix>
-        <template #title>Пароль</template>
-
-        <template #content>
-          <div class="col-span-full grid gap-4">
-            <FLabel v-if="isCurrent" title="Текущий пароль" :error="formP.errors.current_password">
-              <FInput type="password" v-model="formP.current_password" />
-            </FLabel>
-
-            <FLabel title="Новый пароль" :error="formP.errors.password">
-              <FInput type="password" v-model="formP.password" />
-            </FLabel>
-
-            <FLabel title="Подтверждение пароля" :error="formP.errors.password_confirmation">
-              <FInput type="password" v-model="formP.password_confirmation" />
-            </FLabel>
-          </div>
-        </template>
-      </FormSection>
-    </div>
+  <AppLayout :title="editorTitle(isEdit)">
+    <FormSection :submit="submit" :form="form" :tabs="['Основное', 'Пароль']" mini>
+      <template #content="sb">
+        <TabMain v-show="sb.activeTab == 'Основное'" :form="form" />
+        <TabPassword v-show="sb.activeTab == 'Пароль'" :form="form" />
+      </template>
+    </FormSection>
   </AppLayout>
 </template>
 
@@ -54,58 +13,43 @@
   import AppLayout from '@/Layouts/AppLayout.vue'
   import FormSection from '@/Layouts/Sections/Form.vue'
 
+  import TabMain from './Form/Main.vue'
+  import TabPassword from './Form/Password.vue'
+
+  import Form from '@/Mixins/Form/Form.js'
+
   export default {
+    mixins: [Form],
+
     components: {
       AppLayout,
       FormSection,
+      TabMain,
+      TabPassword,
     },
 
     data() {
+      if (this.$page.props.item) {
+        this.$page.props.item = Object.assign(
+          {
+            current_password: '',
+            password: '',
+            password_confirmation: '',
+          },
+          this.$page.props.item
+        )
+      }
       return {
-        form: this.$inertia.form(this.$page.props.item),
-        formP: this.$inertia.form({
-          current_password: '',
+        form: this.setForm({
+          name: '',
+          email: '',
+          email_notification: false,
+          role: '',
+
           password: '',
           password_confirmation: '',
         }),
-
-        roles: this.$page.props.roles,
-
-        isEdit: !!this.$page.props.item,
-        isCurrent: this.$page.props.item.id == this.$page.props.auth.user.id,
       }
-    },
-
-    methods: {
-      submit() {
-        this.update()
-      },
-
-      update() {
-        this.form
-          .transform((data) => ({
-            ...data,
-            _method: 'PUT',
-          }))
-          .post(this.currentRoute('update', this.$page.props.item.id), {
-            preserveScroll: true,
-          })
-      },
-
-      unpinVK() {
-        this.form.vk_id = null
-      },
-
-      updatePass() {
-        this.formP.put(this.currentRoute('update', this.$page.props.item.id), {
-          preserveScroll: true,
-          onSuccess: () => {
-            this.formP.reset('current_password')
-            this.formP.reset('password')
-            this.formP.reset('password_confirmation')
-          },
-        })
-      },
     },
   }
 </script>
