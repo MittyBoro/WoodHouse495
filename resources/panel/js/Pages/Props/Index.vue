@@ -9,7 +9,7 @@
     >
       <template #content="sp">
         <MPropsList
-          v-if="form.props.lengh"
+          v-if="form.props.length"
           :activeTab="sp.activeTab"
           :errors="form.errorsObj?.props"
           :list="form.props"
@@ -37,7 +37,6 @@
 
     data() {
       return {
-        // tabs: Object.values(this.$page.props.tabs),
         form: this.setForm({}),
       }
     },

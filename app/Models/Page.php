@@ -13,10 +13,15 @@ class Page extends Model
 
     protected $fillable = [
         'slug',
+
         'title',
+        'mini_description',
+        'description',
+
         'meta_title',
         'meta_description',
         'meta_keywords',
+
         'view',
     ];
 

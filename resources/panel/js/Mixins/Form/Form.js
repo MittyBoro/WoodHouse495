@@ -33,9 +33,18 @@ export default {
       return object
     },
 
-    setForm(defaultValue) {
-      let value = JSON.parse(JSON.stringify(this.$page.props.item || defaultValue))
-      return this.$inertia.form(value)
+    setForm(defaultForm) {
+      let newForm = JSON.parse(JSON.stringify(this.$page.props.item || defaultForm))
+
+      if (this.$page.props.item) {
+        for (const key in defaultForm) {
+          if (!newForm.hasOwnProperty(key)) {
+            newForm[key] = defaultForm[key]
+          }
+        }
+      }
+
+      return this.$inertia.form(newForm)
     },
 
     submit() {

@@ -53,12 +53,11 @@ class Prop extends Model
         return Model::class;
     }
 
-    protected function modelTypeKey(): Attribute
+    protected function modelType(): Attribute
     {
         return Attribute::make(
-            get: fn () => array_search($this->model_type, self::MODELS) ?: null,
             set: fn ($value) => [
-                'model_type' => self::MODELS[$value] ?? null
+                'model_type' => self::MODELS[$value] ?? $value ?? null
             ],
         );
     }

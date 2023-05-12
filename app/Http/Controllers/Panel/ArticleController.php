@@ -15,7 +15,6 @@ class ArticleController extends Controller
     {
         $articles = Article::orderByStr($request->get('sort'))
             ->filter($request->all())
-            ->orderByStr($request->get('sort'))
             ->customPaginate($request->get('perPage', 20));
 
         return Inertia::render('Articles/Index', [

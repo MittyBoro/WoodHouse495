@@ -13,8 +13,6 @@ class ArticleRequest extends FormRequest
 
     public function rules()
     {
-        $id = $this->article ? $this->article->id : '';
-
         $rules = [
             'title'        => 'required|string|max:255',
             'is_published' => 'required|boolean',
@@ -25,7 +23,7 @@ class ArticleRequest extends FormRequest
         }
 
         $rules += [
-            'slug' => 'required|string|max:255|unique:articles,slug,' . $id,
+            'slug' => 'required|string|max:255|unique:articles,slug,' . $this->article?->id,
 
             'mini_description' => 'string|nullable',
             'description'      => 'string|nullable',

@@ -28,7 +28,7 @@ class PropRequest extends FormRequest
             ...$rules,
             'type'       => ['required', 'string', Rule::in(array_keys(Prop::TYPES))],
             'model_id'   => 'nullable',
-            'model_type_key' => ['nullable', 'string', Rule::in(array_keys(Prop::MODELS))],
+            'model_type' => ['nullable', 'string', Rule::in([...array_keys(Prop::MODELS), ...Prop::MODELS])],
         ];
     }
 }
