@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
+use App\Services\SpatieMedia\InteractsWithCustomMedia;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Image\Manipulations;
+use Spatie\MediaLibrary\HasMedia;
 
-class Portfolio extends Model
+class Portfolio extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithCustomMedia;
 
     const MEDIA_COLLECTION = 'portfolio';
 
@@ -36,7 +39,7 @@ class Portfolio extends Model
             ->registerMediaConversions(function () {
                 $this
                     ->addMediaConversion('thumb')
-                    ->fit(Manipulations::FIT_CROP, 394, 525);
+                    ->fit(Manipulations::FIT_CROP, 400, 300);
                 $this
                     ->addMediaConversion('medium')
                     ->fit(Manipulations::FIT_MAX, 700, 700);
@@ -55,29 +58,19 @@ class Portfolio extends Model
 
     public function page()
     {
-        return $this->hasOne(Page::class);
+        return $this->belongsTo(Page::class);
     }
 
     public function getGalleryAttribute()
     {
-        $gallery = $this->getMediaUrlsConversions(self::MEDIA_COLLECTION, ['thumb', 'medium', 'big']);
-
-        if ($gallery->count()) {
-            return $gallery;
-        }
-
-        return collect([[
-            'thumb' => '',
-            'medium' => '',
-            'big' => '',
-        ]]);
+        return $this->getMediaUrlsConversions(self::MEDIA_COLLECTION, ['thumb', 'medium', 'big']);
     }
 
     // запрос не дублируется
-    protected function preview(): Attribute
+    protected function thumb(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION, 'medium')
+            get: fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION, 'thumb')
         );
     }
 

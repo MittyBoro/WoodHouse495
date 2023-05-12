@@ -2,12 +2,12 @@
 
 namespace App\Models\Panel;
 
-use App\Models\Traits\RetrievingTrait;
+use App\Models\Traits\ExtractingTrait;
 use App\Models\User as BaseUser;
 
 class User extends BaseUser
 {
-    use RetrievingTrait;
+    use ExtractingTrait;
 
     protected $sortable = [
         'created_at', 'id', 'email', 'name', 'role',

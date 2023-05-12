@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Http\Requests\Panel\PageRequest;
+use App\Http\Requests\Panel\PortfolioRequest;
+use App\Models\Panel\Portfolio;
 use App\Models\Panel\Page;
 use Illuminate\Http\Request;
 
@@ -14,55 +15,59 @@ class PortfolioController extends Controller
 
     public function index(Request $request)
     {
-        $pages = Page::orderByStr($request->get('sort'))
+        $portfolios = Portfolio::orderByStr($request->get('sort'))
+            ->filter($request->all())
+            ->with(['media', 'page'])
             ->customPaginate($request->get('perPage', 20));
 
         return Inertia::render('Portfolios/Index', [
-            'list' => $pages,
+            'list' => $portfolios,
+            'pages' => Page::get(['id', 'title'])
         ]);
     }
 
     public function create()
     {
         return Inertia::render('Portfolios/Form', [
-            'pages' => Page::get(['title', 'id'])
+            'pages' => Page::get(['id', 'title'])
         ]);
     }
 
-    public function store(PageRequest $request)
+    public function store(PortfolioRequest $request)
     {
         $data = $request->validated();
-        $created = Page::create($data);
+        $created = Portfolio::create($data);
 
         return redirect(route('panel.portfolios.edit', $created->id));
     }
 
-    public function show(Page $page)
+    public function show(Portfolio $portfolio)
     {
-        return redirect()->route('pages', $page->slug);
+        return redirect()->route('portfolios', $portfolio->slug);
     }
 
-    public function edit(Page $page)
+    public function edit(Portfolio $portfolio)
     {
-        $page->load(['props']);
+        $portfolio->load(['props']);
 
         return Inertia::render('Portfolios/Form', [
-            'item' => $page,
+            'item' => $portfolio,
+            'pages' => Page::get(['id', 'title'])
         ]);
     }
 
-    public function update(PageRequest $request, Page $page)
+    public function update(PortfolioRequest $request, Portfolio $portfolio)
     {
         $data = $request->validated();
-        $page->update($data);
-        $page->saveAfter($data);
+        $portfolio->update($data);
+        $portfolio->saveAfter($data);
 
         return back();
     }
 
-    public function destroy(Page $page)
+    public function destroy(Portfolio $portfolio)
     {
-        $page->delete();
+        $portfolio->delete();
 
         return back();
     }

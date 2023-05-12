@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PageSeeder::class,
         ]);
-        // \App\Models\User::factory(10)->create();
+
+        \App\Models\Portfolio::factory(25)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

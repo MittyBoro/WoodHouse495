@@ -76,7 +76,7 @@ class Article extends Model
     }
 
     // запрос не дублируется
-    protected function preview(): Attribute
+    protected function thumb(): Attribute
     {
         return Attribute::make(
             get: fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION, 'medium')

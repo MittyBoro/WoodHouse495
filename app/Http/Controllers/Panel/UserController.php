@@ -14,13 +14,12 @@ class UserController extends Controller
 
     public function __construct()
     {
-        $this->middleware('panel.role:panel', ['except' => ['edit', 'update']]);
+        $this->middleware('roles:panel', ['except' => ['edit', 'update']]);
     }
 
     public function index(Request $request)
     {
         $users = User::filter($request->all())
-            ->with(['media'])
             ->orderByStr($request->get('sort'))
             ->customPaginate($request->get('perPage', 20));
 

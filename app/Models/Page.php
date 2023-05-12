@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\Traits\RetrievingTrait;
+use App\Models\Traits\ExtractingTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Page extends Model
 {
     use HasFactory;
-    use RetrievingTrait;
+    use ExtractingTrait;
 
     protected $fillable = [
         'slug',

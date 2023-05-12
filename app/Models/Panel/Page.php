@@ -3,12 +3,12 @@
 namespace App\Models\Panel;
 
 use App\Models\Page as Model;
-use App\Models\Traits\RetrievingTrait;
+use App\Models\Traits\ExtractingTrait;
 
 
 class Page extends Model
 {
-    use RetrievingTrait;
+    use ExtractingTrait;
 
     protected $sortable = ['slug', 'title'];
 

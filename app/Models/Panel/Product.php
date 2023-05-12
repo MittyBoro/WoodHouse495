@@ -15,7 +15,7 @@ class Product extends Model
     protected $sortable = ['position', 'id', 'created_at', 'is_published', 'price', 'title'];
 
     protected $appends = [
-        'preview',
+        'thumb',
     ];
 
     public function getMorphClass()

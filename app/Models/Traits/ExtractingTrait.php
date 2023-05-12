@@ -4,7 +4,7 @@ namespace App\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 
-trait RetrievingTrait
+trait ExtractingTrait
 {
     public function scopeOrderByStr(Builder $query, $sort = 'id-desc')
     {

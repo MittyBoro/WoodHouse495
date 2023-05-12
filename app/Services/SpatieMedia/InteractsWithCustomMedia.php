@@ -145,7 +145,10 @@ trait InteractsWithCustomMedia
             return collect($urls);
         });
 
-        return $media;
+        if ($media->count()) {
+            return $media;
+        }
+        return collect([$sizes]);
     }
 
     public function getMediaUrls(string $collectionName = 'default', string $conversion = '')

@@ -13,7 +13,7 @@ class ProductCategory extends Model
     use TranslationTrait;
 
     protected $appends = [
-        'title', 'preview'
+        'title', 'thumb'
     ];
 
     public static function boot()
@@ -46,7 +46,7 @@ class ProductCategory extends Model
         return $this->translations->first()?->title;
     }
 
-    protected function preview(): Attribute
+    protected function thumb(): Attribute
     {
         return Attribute::make(
             get: fn () => $this->getPanelMedia(self::MEDIA_COLLECTION, 'thumb')
@@ -87,8 +87,8 @@ class ProductCategory extends Model
         if (array_key_exists('translations', $data)) {
             $this->saveTranslations($data['translations']);
         }
-        if (array_key_exists('preview', $data)) {
-            $this->syncMedia($data['preview'], self::MEDIA_COLLECTION);
+        if (array_key_exists('thumb', $data)) {
+            $this->syncMedia($data['thumb'], self::MEDIA_COLLECTION);
         }
     }
 }
