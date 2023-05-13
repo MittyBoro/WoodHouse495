@@ -2,7 +2,7 @@
   <AppLayout :title="editorTitle(isEdit)">
     <FormSection :submit="submit" :form="form" mini>
       <template #content>
-        <FTitleSlug :form="form" :slugKey="'key'" :slugName="'Ключ'" />
+        <FTitleSlug :form="form" :slugKey="'key'" :slugName="'Ключ'" slugReplacement="_" />
 
         <FLabel title="Тип" :error="form.errors.type">
           <FSelect :options="types" v-model="form.type" />

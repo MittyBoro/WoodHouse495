@@ -26,6 +26,10 @@
         type: String,
         default: 'Ярлык',
       },
+      slugReplacement: {
+        type: String,
+        default: '-',
+      },
     },
 
     emits: ['update:slug'],
@@ -42,7 +46,11 @@
           return this.currentFormSlug[this.slugKey]
         },
         set(val) {
-          let slugVal = slugify(val || '', { lower: true, strict: true })
+          let slugVal = slugify(val || '', {
+            lower: true,
+            strict: true,
+            replacement: this.slugReplacement,
+          })
           this.currentFormSlug[this.slugKey] = slugVal
           this.$emit('update:slug', slugVal)
         },

@@ -5,7 +5,7 @@
       :tabs="tabs"
       :submit="updateList"
       :form="form"
-      :hideButtons="!form.props.lengh"
+      :hideButtons="!form.props.length"
     >
       <template #content="sp">
         <MPropsList

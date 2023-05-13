@@ -10,7 +10,7 @@
           >
             {{ item.title }}
           </span>
-          <code class="text-xs text-gray-400">
+          <code class="ml-1 inline-flex text-xs text-gray-400">
             [
             <span contenteditable @input="item.key = $event.currentTarget.textContent">
               {{ item.key }}

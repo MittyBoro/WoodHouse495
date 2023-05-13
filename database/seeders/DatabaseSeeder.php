@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PageSeeder::class,
+            PropSeeder::class,
         ]);
 
         \App\Models\Portfolio::factory(35)->create();
