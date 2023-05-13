@@ -9,6 +9,9 @@
           <FLabel title="Расположение" :error="form.errors.location">
             <FInput v-model="form.location" />
           </FLabel>
+
+          <FPublishedDate :form="form" />
+
           <FLabel title="Мини описание" :error="form.errors.mini_description" as="div">
             <FTextareaEditor v-model="form.mini_description" mini />
           </FLabel>

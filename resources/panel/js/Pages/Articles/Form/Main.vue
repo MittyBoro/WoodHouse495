@@ -2,6 +2,8 @@
   <div class="form-grid">
     <FTitleSlug :form="form" />
 
+    <FPublishedDate :form="form" />
+
     <FLabel title="Мини описание" :error="form.errors.mini_description">
       <FTextareaEditor v-model="form.mini_description" mini />
     </FLabel>

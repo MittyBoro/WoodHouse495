@@ -2,12 +2,11 @@
   <nav
     class="flex justify-between px-3 md:px-0 pt-0 md:pt-1 items-center h-16 md:h-20 border-b border-gray-300"
   >
-    <div class="flex items-center font-bold pr-7 pt-0 text-gray-700 leading-tight">
+    <div class="flex flex-wrap items-center font-bold pr-7 pt-0 text-gray-700 leading-tight">
       <Link :href="$panelRoute('dashboard')" class="link"><Icon icon="house" /></Link>
       <div class="text-sm opacity-50 mx-2">/</div>
-
       <div
-        class="flex flex-wrap items-center"
+        class="flex items-center"
         v-for="item in breadCrumbs"
         v-show="item.name != title"
         :key="item.route"

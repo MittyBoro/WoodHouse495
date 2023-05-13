@@ -28,6 +28,10 @@ class Portfolio extends Model implements HasMedia
         'published_at',
     ];
 
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
     protected $sortable = ['published_at', 'created_at'];
 
     protected $hidden = ['media'];

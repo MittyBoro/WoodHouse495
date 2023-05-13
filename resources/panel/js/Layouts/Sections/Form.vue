@@ -8,8 +8,8 @@
       v-if="hasHeaderSlots"
       class="px-4 py-6 sm:px-8 md:flex md:items-center border-b border-gray-100"
     >
-      <div>
-        <div class="font-bold text-xl">
+      <div class="grid gap-4 mb-4 md:mb-0 self-center">
+        <div class="font-semibold text-xl">
           <div class="flex items-center">
             <slot v-if="$slots.title" name="title"></slot>
             <template v-else>{{ $panel.title }}</template>
@@ -23,17 +23,13 @@
             </Link>
           </div>
         </div>
-        <div v-if="$slots.subtitle" class="mt-4 grid gap-1">
+        <div v-if="$slots.subtitle" class="grid gap-1">
           <slot name="subtitle"></slot>
         </div>
       </div>
       <div v-if="$slots.buttons || !hideAdder" class="ml-auto md:pl-4 self-start flex flex-col">
         <slot name="buttons"></slot>
-        <Link
-          v-if="form.id && !hideAdder"
-          :href="currentRoute('create')"
-          class="btn btn-gray ml-auto"
-        >
+        <Link v-if="form.id && !hideAdder" :href="currentRoute('create')" class="btn btn-gray">
           Добавить ещё
         </Link>
       </div>

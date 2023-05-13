@@ -31,6 +31,10 @@ class Article extends Model implements HasMedia
         'published_at',
     ];
 
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
     protected $sortable = ['published_at'];
     protected $defaultSort = 'published_at-desc';
 
