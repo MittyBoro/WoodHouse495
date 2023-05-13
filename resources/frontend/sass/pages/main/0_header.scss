@@ -3,13 +3,13 @@
   top: -92px;
   z-index: 100;
   background: #fff;
-  box-shadow: 0 1px 0 1px #F4F8FB;
+  box-shadow: 0 1px 0 1px #f4f8fb;
 
   .top-row {
     display: flex;
     align-items: center;
     height: 92px;
-    border-bottom: 1px solid #DDE3ED;
+    border-bottom: 1px solid #dde3ed;
   }
 
   .sublogo-col {
@@ -109,8 +109,41 @@
         }
 
         // display: none
-     
       }
+    }
+  }
+}
+
+.page-articles,
+.page-article,
+.page-errors,
+.page-default {
+  .header-box {
+    top: 0;
+    .wood-logo {
+      height: auto;
+    }
+    .top-row {
+      border-bottom: 0;
+    }
+    .menu-row {
+      display: none;
+    }
+  }
+}
+@media (min-width: 1240px) {
+  .page-index {
+    .menu-item {
+      order: 5;
+    }
+    .menu-item:nth-child(1) {
+      order: 0;
+    }
+    .menu-item:nth-child(2) {
+      order: 2;
+    }
+    .menu-item:nth-child(3) {
+      order: 1;
     }
   }
 }

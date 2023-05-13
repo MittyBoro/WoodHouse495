@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('meta_title', '404')
-@section('body_class', 'page-white')
+@section('body_class', 'page-errors')
 
 @section('content')
 

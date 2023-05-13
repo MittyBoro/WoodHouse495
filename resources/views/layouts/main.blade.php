@@ -94,7 +94,7 @@
     <div class="loading-text">Загрузка...</div>
   </div>
 
-  <div class="wrapper @yield('wrapper_class')">
+  <div class="wrapper">
 
     <!-- 0_header -->
     <div class="header-box">
@@ -153,7 +153,6 @@
               alt="">
             <span>Главная</span>
           </a>
-          <a class="menu-item" href="#skills">что мы умеем</a>
           <div class="menu-item menu-dropdown">
             <span class="mid-name a">
               услуги
@@ -176,11 +175,9 @@
                 планкеном</a>
             </div>
           </div>
-          <a class="menu-item visible-xl" href="#building">строительство
-            домов</a>
-          <a class="menu-item" href="#reviews">отзывы</a>
-          <a class="menu-item" href="#process">Этапы работы</a>
-          <a class="menu-item" href="#portfolio">выполненные проекты</a>
+
+          @yield('menu_items')
+
           <a class="menu-item" href="#contacts">Контакты</a>
         </div>
       </div>
@@ -263,13 +260,9 @@
         </div>
 
         <ul class="menu-col visible-xl">
-          <a class="menu-item" href="#">Главная</a>
-          <a class="menu-item" href="#skills">что мы умеем</a>
-          <a class="menu-item" href="#services">услуги</a>
-          <a class="menu-item" href="#building">строительство домов</a>
-          <a class="menu-item" href="#reviews">отзывы</a>
-          <a class="menu-item" href="#process">Этапы работы</a>
-          <a class="menu-item" href="#portfolio">выполненные проекты</a>
+          <a class="menu-item" href="/">Главная</a>
+          @yield('menu_items')
+          <a class="menu-item" href="/articles">Полезные статьи</a>
           <a class="menu-item" href="#contacts">Контакты</a>
         </ul>
 
@@ -305,7 +298,7 @@
         </div>
         <div class="copy-col">
           <a class="link" href="/offer">Договор оферты</a>
-          <a class="link" href="/policy">Политика конфиденциальности</a>
+          <a class="link" href="/privacy">Политика конфиденциальности</a>
           <div class="copy-info">© 2008 — {{ date('Y') }} «WOODHOUSE495»
           </div>
         </div>
@@ -584,11 +577,8 @@
                 планкеном</a>
             </div>
           </div>
-          <a class="menu-item" href="#skills">что мы умеем</a>
-          <a class="menu-item" href="#building">строительство домов</a>
-          <a class="menu-item" href="#reviews">отзывы</a>
-          <a class="menu-item" href="#process">Этапы работы</a>
-          <a class="menu-item" href="#portfolio">выполненные проекты</a>
+          @yield('menu_items')
+          <a class="menu-item" href="/articles">Полезные статьи</a>
           <a class="menu-item" href="#contacts">Контакты</a>
         </div>
 

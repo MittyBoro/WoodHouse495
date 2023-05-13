@@ -4,13 +4,21 @@
 @section('meta_description', $page['meta_description'] ?? '')
 @section('meta_keywords', $page['meta_keywords'] ?? '')
 
+@section('menu_items')
+  <a class="menu-item" href="#wasistdas">Что такое окосячка</a>
+  <a class="menu-item" href="#process">Этапы работы</a>
+  <a class="menu-item" href="#price">Прайс</a>
+  <a class="menu-item" href="#about">Преимущества</a>
+@endsection
+
 @section('content')
 
   <!-- 1_home -->
   <div class="home-box okosyachka-home-box">
     <div class="container grid-with-form grid grid-md-12">
       <img class="visible-md rellax absolute left-sliver" data-rellax-speed="1"
-        loading="lazy" src="{{ Vite::image('general/hanging/1_home_sliver.png') }}"
+        loading="lazy"
+        src="{{ Vite::image('general/hanging/1_home_sliver.png') }}"
         alt="">
 
       <div class="left-col">
@@ -48,7 +56,7 @@
   </div>
 
   <!-- 19_okosyachka -->
-  <div class="okosyachka-box">
+  <div class="okosyachka-box" id="wasistdas">
     <div class="container grid-lg-2">
       <img class="visible-md rellax absolute partners-green-2"
         data-rellax-speed="2" loading="lazy"
@@ -158,15 +166,16 @@
           </div>
           <div class="pi-title">Выполняем работу
           </div>
-          <div class="pi-description">Наши специалисты приезжают и начинают работу
+          <div class="pi-description">Наши специалисты приезжают и начинают
+            работу
             над Вашей задачей
             в назначенный срок</div>
         </div>
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">05</span>
-            <img loading="lazy" src="{{ Vite::image('general/process/5.png') }}"
-              alt="">
+            <img loading="lazy"
+              src="{{ Vite::image('general/process/5.png') }}" alt="">
           </div>
           <div class="pi-title">Сдаём объект</div>
           <div class="pi-description">После окончания всех работ мы убираем за
@@ -182,7 +191,7 @@
   </div>
 
   <!-- 16_price -->
-  <div class="price-box okosyachka-price-box">
+  <div class="price-box okosyachka-price-box" id="price">
     <div class="container">
       <img class="visible-md rellax absolute right-shaving"
         data-rellax-speed="-2" loading="lazy"
@@ -295,7 +304,7 @@
   </div>
 
   <!-- 2_about -->
-  <div class="about-box alt-about okosyachka-about-box">
+  <div class="about-box alt-about okosyachka-about-box" id="about">
     <img class="hidden-md rellax absolute right-green" data-rellax-speed="1"
       loading="lazy"
       src="{{ Vite::image('general/hanging/about_green_mobile.png') }}"
@@ -479,7 +488,8 @@
   </div>
 
   <!-- 12_articles -->
-  <div class="articles-box alt-articles-box okosyachka-articles-box">
+  <div class="articles-box alt-articles-box okosyachka-articles-box"
+    id="articles">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute article-green-1" data-rellax-speed="2"

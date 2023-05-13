@@ -4,15 +4,26 @@
 @section('meta_description', $page['meta_description'] ?? '')
 @section('meta_keywords', $page['meta_keywords'] ?? '')
 
+@section('menu_items')
+  <a class="menu-item" href="#skills">что мы умеем</a>
+  <a class="menu-item visible-xl" href="#building">строительство
+    домов</a>
+  <a class="menu-item" href="#reviews">отзывы</a>
+  <a class="menu-item" href="#process">Этапы работы</a>
+  <a class="menu-item" href="#portfolio">выполненные проекты</a>
+@endsection
+
 @section('content')
 
   <!-- 1_home -->
   <div class="home-box index-home-box">
     <div class="container grid-with-form grid grid-md-12">
       <img class="visible-md absolute left-green" loading="lazy"
-        src="{{ Vite::image('general/hanging/home_green_1.png') }}" alt="">
+        src="{{ Vite::image('general/hanging/home_green_1.png') }}"
+        alt="">
       <img class="visible-md absolute right-green" loading="lazy"
-        src="{{ Vite::image('general/hanging/home_green_2.png') }}" alt="">
+        src="{{ Vite::image('general/hanging/home_green_2.png') }}"
+        alt="">
       <img class="visible-md rellax absolute left-shaving" data-rellax-speed="1"
         loading="lazy" src="{{ Vite::image('general/hanging/home_shaving.png') }}"
         alt="">
@@ -63,7 +74,7 @@
   </div>
 
   <!-- 2_about -->
-  <div class="about-box">
+  <div class="about-box" id="about">
     <img class="hidden-md rellax absolute right-green" data-rellax-speed="1"
       loading="lazy"
       src="{{ Vite::image('general/hanging/about_green_mobile.png') }}"
@@ -138,7 +149,8 @@
       <div class="advantages-list">
         <div class="advantages-item">
           <div class="ai-image"><img loading="lazy"
-              src="{{ Vite::image('general/advantages/1.png') }}" alt="">
+              src="{{ Vite::image('general/advantages/1.png') }}"
+              alt="">
           </div>
           <div class="ai-title">Строители из <br>
             Республики<br>
@@ -1095,7 +1107,7 @@
   </div>
 
   <!-- 12_articles -->
-  <div class="articles-box">
+  <div class="articles-box" id="articles">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute article-green-1" data-rellax-speed="2"

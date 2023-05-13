@@ -4,13 +4,21 @@
 @section('meta_description', $page['meta_description'] ?? '')
 @section('meta_keywords', $page['meta_keywords'] ?? '')
 
+@section('menu_items')
+  <a class="menu-item" href="#portfolio">Примеры работ</a>
+  <a class="menu-item" href="#process">Этапы работы</a>
+  <a class="menu-item" href="#price">Прайс</a>
+  <a class="menu-item" href="#about">Преимущества</a>
+@endsection
+
 @section('content')
 
   <!-- 1_home -->
   <div class="home-box sanding-home-box">
     <div class="container grid-with-form grid grid-md-12">
       <img class="visible-md absolute left-green" loading="lazy"
-        src="{{ Vite::image('general/hanging/home_green_1.png') }}" alt="">
+        src="{{ Vite::image('general/hanging/home_green_1.png') }}"
+        alt="">
       <img class="visible-md absolute right-green" loading="lazy"
         src="{{ Vite::image('general/hanging/home_green_2_alt_1.png') }}"
         alt="">
@@ -313,7 +321,7 @@
   </div>
 
   <!-- 16_price -->
-  <div class="price-box sanding-price-box">
+  <div class="price-box sanding-price-box" id="price">
     <div class="container">
 
       <div class="price-discount visible-xxl">
@@ -537,7 +545,7 @@
   </div>
 
   <!-- 2_about -->
-  <div class="about-box alt-about sanding-about-box">
+  <div class="about-box alt-about sanding-about-box" id="about">
     <img class="hidden-md rellax absolute right-green" data-rellax-speed="1"
       loading="lazy"
       src="{{ Vite::image('general/hanging/about_green_mobile.png') }}"
@@ -729,7 +737,7 @@
   </div>
 
   <!-- 12_articles -->
-  <div class="articles-box alt-articles-box">
+  <div class="articles-box alt-articles-box" id="articles">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute article-green-1" data-rellax-speed="2"

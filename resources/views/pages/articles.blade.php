@@ -7,7 +7,7 @@
 @section('content')
 
   <!-- 12_articles -->
-  <div class="articles-box list-articles-box">
+  <div class="articles-box list-articles-box" id="articles">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute article-green-1" data-rellax-speed="2"
