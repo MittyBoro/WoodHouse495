@@ -1,0 +1,66 @@
+.sanding-home-box {
+  background-image: url(../images/backgrounds/1_home.png);
+
+  .container {
+    height: 820px;
+  }
+
+  .left-sliver {
+    top: 335px;
+    left: -295px;
+  }
+}
+
+.sanding-portfolio-box {
+  padding: 148px 0 3px;
+}
+
+.sanding-process-box {
+  background-color: #F9F9F9;
+}
+
+.sanding-partners-box {
+  @media (min-width: 1240px) {
+    padding-bottom: 70px;
+
+    .title-row {
+      padding-top: 5px;
+    }
+  }
+}
+
+.sanding-price-box {
+  .price-table {
+    table {
+      td:last-child {
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media (min-width: 1240px) {
+    .price-table table td:first-child {
+      max-width: 783px;
+      width: 783px;
+    }
+  }
+}
+
+.sanding-about-box {
+  @media (min-width: 1240px) {
+    padding: 91px 0 33px;
+
+    .sub-h {
+      max-width: 540px;
+      margin-bottom: 27px;
+    }
+
+    .format-text {
+      line-height: 160%;
+    }
+
+    .right-col {
+      margin-top: -26px;
+    }
+  }
+}

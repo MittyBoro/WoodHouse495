@@ -15,7 +15,6 @@ class Page extends Model
         'slug',
 
         'title',
-        'mini_description',
         'description',
 
         'meta_title',
@@ -25,22 +24,28 @@ class Page extends Model
         'view',
     ];
 
-    protected $hidden = [
-        'properties',
-    ];
+    protected $hidden = ['properties'];
 
     public function properties()
     {
-        return $this->morphMany(Prop::class, 'model')->with('media')
-            ->select('id', 'key', 'model_type', 'model_id', 'type', 'value_string', 'value_text');
+        return $this->morphMany(Prop::class, 'model')
+            ->with('media')
+            ->select(
+                'id',
+                'key',
+                'model_type',
+                'model_id',
+                'type',
+                'value_string',
+                'value_text',
+            );
     }
 
     public function getPropsAttribute()
     {
-        return $this->properties->keyBy('key')
-            ->map(function ($item) {
-                return $item->value;
-            });
+        return $this->properties->keyBy('key')->map(function ($item) {
+            return $item->value;
+        });
     }
 
     public function scopeFindForFront($query, $slug)
@@ -48,12 +53,22 @@ class Page extends Model
         $page = $query
             ->where('slug', $slug)
             ->with('properties')
-            ->firstOrFail(
-                ['id', 'view', 'slug', 'title', 'description', 'meta_title', 'meta_description', 'meta_keywords'],
-            );
+            ->firstOrFail([
+                'slug',
 
-        if ($page)
+                'title',
+                'description',
+
+                'meta_title',
+                'meta_description',
+                'meta_keywords',
+
+                'view',
+            ]);
+
+        if ($page) {
             $page->append('props');
+        }
 
         return $page;
     }
@@ -72,7 +87,7 @@ class Page extends Model
             ])
             ->get(['title', 'slug'])
             ->keyBy('slug')
-            ->map(fn ($v) => $v->title);
+            ->map(fn($v) => $v->title);
 
         return $result;
     }

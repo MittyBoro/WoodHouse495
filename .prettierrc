@@ -5,6 +5,26 @@
   "singleQuote": true,
   "vueIndentScriptAndStyle": true,
   "htmlWhitespaceSensitivity": "ignore",
+  "sortHtmlAttributes": "idiomatic",
   "printWidth": 100,
-  "phpVersion": "8.1"
+  "overrides": [
+    {
+      "files": ["*.php"],
+      "options": {
+        "phpVersion": "8.1",
+        "parser": "php",
+        "tabWidth": 4,
+        "trailingCommaPHP": true,
+        "printWidth": 80,
+        "braceStyle": "psr-2"
+      }
+    },
+    {
+      "files": ["*.blade.php"],
+      "options": {
+        "parser": "blade",
+        "tabWidth": 2
+      }
+    }
+  ]
 }

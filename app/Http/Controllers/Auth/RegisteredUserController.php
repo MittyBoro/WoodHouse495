@@ -36,8 +36,11 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->phone)
-            $request->merge(['phone' => PhoneNumber::make($request->phone)->formatE164()]);
+        if ($request->phone) {
+            $request->merge([
+                'phone' => PhoneNumber::make($request->phone)->formatE164(),
+            ]);
+        }
 
         $request->validate([
             'name' => 'nullable|string|max:255',

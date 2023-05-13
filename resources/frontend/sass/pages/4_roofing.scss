@@ -1,0 +1,101 @@
+.roofing-home-box {
+  background-image: url(../images/backgrounds/4_home.png);
+
+  .container {
+    height: 821px;
+  }
+
+  .h1 {
+    max-width: 500px;
+  }
+
+  .left-col {
+    .sub-h {
+      margin-top: 38px;
+    }
+  }
+}
+
+.roofing-process-box {
+  padding-bottom: 93px;
+
+  .process-list {
+    grid-template-columns: 10fr 10fr 12fr 9fr 9fr 10fr;
+    gap: 35px;
+  }
+}
+
+.roofing-partners-box {
+  .partners-image {
+    @media (min-width: 1240px) {
+      img {
+        margin: (-28px) -40px 11px 0;
+        max-width: none;
+      }
+    }
+  }
+}
+
+.roofing-price-box {
+  padding-bottom: 88px;
+
+  .price-table table td:first-child {
+    padding-left: 139px;
+  }
+
+  @media (min-width: 1240px) {
+    .price-table table td:first-child {
+      width: 643px;
+    }
+
+    .price-table {
+      table {
+        td {
+          padding: 12.53px 20px;
+        }
+      }
+    }
+  }
+}
+
+.roofing-cost-box {
+  .cost-device {
+    top: -467px;
+  }
+
+  @media (min-width: 1240px) {
+    padding-bottom: 143px;
+
+    .title-row {
+      grid-template-columns: 342fr 250fr;
+    }
+
+    .cost-form {
+      grid-template-columns: 205fr 250fr;
+    }
+  }
+}
+
+.roofing-about-box {
+  padding-top: 87px;
+
+  @media (min-width: 1240px) {
+    padding-bottom: 16px;
+
+    .h2 {
+      margin-right: -20px;
+    }
+
+    .right-col {
+      padding-top: 125px;
+    }
+  }
+
+  .sub-h {
+    max-width: 540px;
+  }
+
+  .text-item {
+    line-height: 158%;
+  }
+}

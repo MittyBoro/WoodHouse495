@@ -1,0 +1,95 @@
+.price-box {
+  padding-bottom: 70px;
+
+  .right-shaving {
+    right: -365px;
+    bottom: -173px;
+    z-index: 5;
+  }
+
+  .title-row {
+    border-top: 1px solid #E0E6EC;
+    padding-top: 87px;
+    margin-bottom: 53px;
+
+    .h2 {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+  }
+
+  .price-discount {
+    position: absolute;
+    top: 200px;
+    right: -297px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 1770px) {
+      right: -205px;
+    }
+
+    @media (max-width: 1600px) {
+      display: none;
+    }
+
+    p {
+      position: absolute;
+      top: 71px;
+      padding: 0 5px;
+      max-width: 200px;
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .big {
+      padding-right: 0.11em;
+      font-size: 158px;
+      top: 162px;
+      font-family: "Bebas Neue", "Helvetica", $font-family, sans-serif;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  .price-table {
+    table {
+      border-spacing: 0;
+      width: 100%;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      td {
+        padding: 23.2px 20px;
+      }
+
+      tr:nth-child(odd) td {
+        background: #FAFAFA;
+      }
+
+      td:first-child {
+        padding-left: 110px;
+        padding-right: 93px;
+        border-right: 1px solid #F5F7F9;
+        border-radius: 10px 0 0 10px;
+      }
+
+      td:last-child {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 20px;
+        text-align: center;
+        white-space: nowrap;
+        border-radius: 0 10px 10px 0;
+
+        small {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

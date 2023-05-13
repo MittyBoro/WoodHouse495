@@ -1,0 +1,36 @@
+.partners-box {
+  padding: 89px 0 75px;
+
+  .partners-green {
+    top: -375px;
+    right: -365px;
+  }
+
+  .partners-green-1 {
+    top: 112px;
+    left: -365px;
+    z-index: 2;
+  }
+
+  .partners-green-2 {
+    top: -235px;
+    right: -365px;
+    z-index: 2;
+  }
+
+  .title-row {
+    max-width: 769px;
+
+    .sub-h {
+      max-width: 488px;
+      margin: 24px auto 0;
+    }
+  }
+
+  .partners-image {
+    margin-top: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

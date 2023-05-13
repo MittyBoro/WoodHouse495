@@ -1,0 +1,47 @@
+.list-articles-box {
+  padding-bottom: 80px;
+
+  .articles-item:nth-child(2) ~ .articles-item {
+    display: block;
+  }
+}
+
+.pagination {
+  display: flex;
+  margin-top: 46px;
+  font-size: 16px;
+
+  li {
+    margin: 0 5px;
+    color: $body-color;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 4px 8px;
+      background: #F9FAFB;
+    }
+
+    &.disabled {
+      display: none;
+
+      &.prev {
+        svg {
+          transform: scaleX(-1);
+        }
+      }
+    }
+
+    &.active {
+      color: $secondary;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    svg {
+      margin: 0 6px;
+      width: 5px;
+      height: 9px;
+    }
+  }
+}

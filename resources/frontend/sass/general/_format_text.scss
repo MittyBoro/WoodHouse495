@@ -1,0 +1,76 @@
+.format-text {
+  font-size: 14px;
+  line-height: 143.5%;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 2em 0 1.75em;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  ul, ol {
+    margin: 10px 0 20px;
+  }
+
+  li {
+    margin: 8px 0;
+  }
+
+  ul {
+    li {
+      position: relative;
+      padding-left: 23px;
+      list-style: none;
+
+      &:not(:last-child) {
+        margin-bottom: 17px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.35em;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        box-sizing: border-box;
+        border: 1.5px solid #84C57A;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  ol li {
+    list-style: decimal inside;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 1.4em;
+    }
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}

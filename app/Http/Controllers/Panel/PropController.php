@@ -11,7 +11,6 @@ use Inertia\Inertia;
 
 class PropController extends Controller
 {
-
     public function index()
     {
         return Inertia::render('Props/Index', [
@@ -24,9 +23,7 @@ class PropController extends Controller
 
     public function create()
     {
-        return Inertia::render('Props/Form', [
-            ...$this->editorData()
-        ]);
+        return Inertia::render('Props/Form', [...$this->editorData()]);
     }
 
     public function store(PropRequest $request, Prop $prop)
@@ -35,9 +32,11 @@ class PropController extends Controller
 
         $created = $prop->create($data);
 
-        return redirect(route('panel.props.edit', [
-            'prop' => $created->id,
-        ]));
+        return redirect(
+            route('panel.props.edit', [
+                'prop' => $created->id,
+            ]),
+        );
     }
 
     public function edit(Prop $prop)
@@ -45,7 +44,7 @@ class PropController extends Controller
         return Inertia::render('Props/Form', [
             'item' => $prop,
 
-            ...$this->editorData()
+            ...$this->editorData(),
         ]);
     }
 
@@ -64,7 +63,6 @@ class PropController extends Controller
 
         return back();
     }
-
 
     public function destroy(Prop $prop)
     {

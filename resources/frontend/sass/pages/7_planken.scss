@@ -1,0 +1,60 @@
+.planken-home-box {
+  background-image: url(../images/backgrounds/7_home.png);
+
+  .h1 {
+    max-width: 600px;
+  }
+
+  .sub-h {
+    max-width: 600px;
+  }
+}
+
+.planken-price-box .title-row {
+  border-top: none;
+}
+
+.planken-about-box {
+  .left-col {
+    grid-column: 1 / -1;
+  }
+
+  .h2 {
+    margin-bottom: 28px;
+  }
+
+  .sub-h {
+    max-width: none;
+    margin-top: 0;
+  }
+
+  .big-content {
+    column-count: 2;
+    column-gap: 70px;
+  }
+
+  .text-item {
+    max-width: none;
+  }
+
+  .right-col {
+    padding-top: 0;
+
+    .swiper-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.planken-advantages-box {
+  background: #F9F9F9;
+  padding-bottom: 80px;
+}
+
+.planken-articles-box {
+  padding-top: 0;
+
+  .title-row {
+    border-top: 0;
+  }
+}

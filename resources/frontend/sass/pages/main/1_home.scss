@@ -1,0 +1,64 @@
+.home-box {
+  background: url(../images/backgrounds/home-1.png) no-repeat 50% 100%;
+  background-size: cover;
+
+  .container {
+    padding-top: 80px;
+    height: 866px;
+  }
+
+  .left-green {
+    top: 0;
+    left: -365px;
+  }
+
+  .right-green {
+    right: -365px;
+    bottom: 0;
+  }
+
+  .left-shaving {
+    left: -305px;
+    bottom: 338px;
+  }
+
+  .left-shaving-alt {
+    left: -399px;
+    bottom: 310px;
+
+    img {
+      transform: rotate(32.17deg);
+    }
+  }
+
+  .right-shaving {
+    right: -365px;
+    bottom: -193px;
+    z-index: 5;
+  }
+
+  .left-col {
+    .sub-h {
+      margin-top: 24px;
+    }
+
+    .sub-h-alt {
+      padding: 20px 30px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(9.5px);
+      border-radius: 10px;
+      line-height: 139.5%;
+      color: #929292;
+    }
+  }
+
+  .down-circle-row {
+    position: relative;
+    align-self: end;
+  }
+
+  .down-circle {
+    position: absolute;
+    top: -56px;
+  }
+}

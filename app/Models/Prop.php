@@ -21,21 +21,20 @@ class Prop extends Model implements HasMedia
     const MEDIA_COLLECTION_FILE = 'file';
     const MEDIA_COLLECTION_IMAGE = 'image';
 
-
     const MODELS = [
-        'pages'    => \App\Models\Page::class,
+        'pages' => \App\Models\Page::class,
     ];
 
     const TYPES = [
-        'string'      => 'Строка',
-        'text'        => 'Текст',
+        'string' => 'Строка',
+        'text' => 'Текст',
         'format_text' => 'Форматируемый текст',
-        'text_array'  => 'Текстовый массив',
-        'boolean'     => 'Выключатель',
-        'file'        => 'Файл',
-        'files'       => 'Файлы',
-        'image'        => 'Изображение',
-        'images'       => 'Изображения',
+        'text_array' => 'Текстовый массив',
+        'boolean' => 'Выключатель',
+        'file' => 'Файл',
+        'files' => 'Файлы',
+        'image' => 'Изображение',
+        'images' => 'Изображения',
     ];
 
     protected $fillable = [
@@ -48,37 +47,23 @@ class Prop extends Model implements HasMedia
         'value_string',
         'value_text',
         'value',
-        'position'
+        'position',
     ];
 
-    protected $hidden = [
-        'value_string',
-        'value_text',
-        'media',
-    ];
+    protected $hidden = ['value_string', 'value_text', 'media'];
 
-    protected $appends = [
-        'value',
-    ];
-
+    protected $appends = ['value'];
 
     public function registerMediaCollections(): void
     {
-        $this
-            ->addMediaCollection(self::MEDIA_COLLECTION_FILE);
-        $this
-            ->addMediaCollection(self::MEDIA_COLLECTION_IMAGE)
-            ->registerMediaConversions(function () {
-                $this
-                    ->addMediaConversion('thumb')
-                    ->fit(Manipulations::FIT_CROP, 400, 400);
-                $this
-                    ->addMediaConversion('medium')
-                    ->fit(Manipulations::FIT_CROP, 640, 640);
-                $this
-                    ->addMediaConversion('big')
-                    ->fit(Manipulations::FIT_MAX, 1280, 1280);
-            });
+        $this->addMediaCollection(self::MEDIA_COLLECTION_FILE);
+        $this->addMediaCollection(self::MEDIA_COLLECTION_IMAGE)->registerMediaConversions(
+            function () {
+                $this->addMediaConversion('thumb')->fit(Manipulations::FIT_CROP, 400, 400);
+                $this->addMediaConversion('medium')->fit(Manipulations::FIT_CROP, 640, 640);
+                $this->addMediaConversion('big')->fit(Manipulations::FIT_MAX, 1280, 1280);
+            },
+        );
     }
 
     public function model()
@@ -90,22 +75,23 @@ class Prop extends Model implements HasMedia
     {
         $type = $this->attributes['type'];
 
-        if ($type == 'string')
+        if ($type == 'string') {
             return $this->value_string;
-        elseif ($type == 'boolean')
-            return (bool)$this->value_string;
-        elseif ($type == 'file')
+        } elseif ($type == 'boolean') {
+            return (bool) $this->value_string;
+        } elseif ($type == 'file') {
             return $this->file;
-        elseif ($type == 'files')
+        } elseif ($type == 'files') {
             return $this->files;
-        elseif ($type == 'image')
+        } elseif ($type == 'image') {
             return $this->image;
-        elseif ($type == 'images')
+        } elseif ($type == 'images') {
             return $this->images;
-        elseif ($type == 'text_array')
+        } elseif ($type == 'text_array') {
             return $this->text_array;
-        else
+        } else {
             return $this->value_text;
+        }
     }
 
     public function getFileAttribute()
@@ -130,10 +116,9 @@ class Prop extends Model implements HasMedia
         return json_decode($this->value_text);
     }
 
-
     public function scopeQueryByKeys(Builder $query, string|array $keys)
     {
-        $keys = is_string($keys) ?  explode(',', $keys) : $keys;
+        $keys = is_string($keys) ? explode(',', $keys) : $keys;
 
         return $query
             ->select('id', 'type', 'key', 'value_string', 'value_text')
@@ -143,23 +128,17 @@ class Prop extends Model implements HasMedia
     public function scopeQueryByModel(Builder $query, Model $model = null)
     {
         if ($model) {
-            return $query->where([
-                ['model_type', $model::class],
-                ['model_id', $model->id],
-            ]);
+            return $query->where([['model_type', $model::class], ['model_id', $model->id]]);
         }
 
-        return $query
-            ->whereNull('model_type')
-            ->whereNull('model_id');
+        return $query->whereNull('model_type')->whereNull('model_id');
     }
 
     public static function findByKey(string $key, Model $model = null)
     {
         return self::queryByKeys($key)
             ->queryByModel($model)
-            ->first()
-            ?->value;
+            ->first()?->value;
     }
 
     public static function list(Model $model = null)
@@ -167,7 +146,7 @@ class Prop extends Model implements HasMedia
         return self::queryByModel($model)
             ->get()
             ->keyBy('key')
-            ->map(fn ($m) => $m->value);
+            ->map(fn($m) => $m->value);
     }
 
     public static function getByKeys($keys, Model $model = null)
@@ -178,7 +157,7 @@ class Prop extends Model implements HasMedia
             ->queryByModel($model)
             ->get()
             ->keyBy('key')
-            ->map(fn ($m) => $m->value);
+            ->map(fn($m) => $m->value);
 
         foreach ($keys as $key) {
             if (!$data->has($key)) {

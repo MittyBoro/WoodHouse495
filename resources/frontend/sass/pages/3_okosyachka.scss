@@ -1,0 +1,71 @@
+.okosyachka-home-box {
+  background-image: url(../images/backgrounds/3_home.png);
+
+  .left-sliver {
+    left: -295px;
+    bottom: 333px;
+  }
+
+  .container {
+    height: 804px;
+  }
+
+  .h1 {
+    max-width: 582px;
+  }
+
+  .left-col {
+    .sub-h {
+      margin-top: 18px;
+      max-width: 613px;
+    }
+  }
+}
+
+.okosyachka-price-box {
+  padding-bottom: 0;
+
+  .container {
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 103px;
+      border-bottom: 1px solid #E0E6EC;
+    }
+  }
+
+  .title-row {
+    border-top: none;
+  }
+
+  .portfolio-bottom .pb-info {
+    margin-top: 47px;
+    max-width: 320px;
+  }
+
+  .price-discount p {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  @media (min-width: 1240px) {
+    .price-table table td:first-child {
+      padding-left: 188px;
+      width: 643px;
+    }
+
+    .price-table {
+      table {
+        td {
+          padding: 14px 20px;
+        }
+      }
+    }
+  }
+}
+
+.okosyachka-about-box {
+  padding-top: 87px;
+  padding-bottom: 15px;
+}

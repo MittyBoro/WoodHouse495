@@ -1,0 +1,116 @@
+.header-box {
+  position: sticky;
+  top: -92px;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 0 1px #F4F8FB;
+
+  .top-row {
+    display: flex;
+    align-items: center;
+    height: 92px;
+    border-bottom: 1px solid #DDE3ED;
+  }
+
+  .sublogo-col {
+    margin-left: 51px;
+    font-size: 14px;
+    max-width: 16.5em;
+  }
+
+  .icons-callback {
+    display: none;
+  }
+
+  .icons {
+    margin: auto;
+  }
+
+  .contacts-col {
+    margin-left: 31px;
+    margin-right: 23px;
+  }
+
+  .menu-row {
+    display: flex;
+    justify-content: space-between;
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      height: 63px;
+      padding-bottom: 3px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      line-height: 1;
+      cursor: pointer;
+
+      img {
+        margin-top: -3px;
+        margin-left: 1px;
+        margin-right: 13px;
+      }
+    }
+
+    .menu-dropdown {
+      position: relative;
+
+      &:hover {
+        .mid-arrow {
+          transform: rotate(180deg);
+        }
+
+        .mid-list {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .mid-name {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .mid-arrow {
+        position: absolute;
+        right: -14px;
+        margin-top: -2px;
+        transition: transform 0.25s;
+        pointer-events: auto;
+      }
+
+      .mid-list {
+        position: absolute;
+        top: 100%;
+        left: -45px;
+        margin-top: -10px;
+        display: grid;
+        gap: 8px;
+        padding: 25px 46px;
+        background: #fff;
+        color: $body-color;
+        border-radius: 4px;
+        transition: all 0.25s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 4;
+        cursor: default;
+
+        .mid-item {
+          margin-right: 5px;
+          padding: 10px 0;
+          font-size: 14px;
+          letter-spacing: normal;
+          text-transform: none;
+          white-space: nowrap;
+        }
+
+        // display: none
+     
+      }
+    }
+  }
+}

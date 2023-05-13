@@ -8,7 +8,11 @@ export default defineConfig({
     require('autoprefixer'),
     require('tailwindcss'),
     laravel({
-      input: ['resources/panel/js/app.js'],
+      input: [
+        'resources/frontend/sass/style.scss',
+        'resources/frontend/js/app.js',
+        'resources/panel/js/app.js',
+      ],
       refresh: true,
     }),
     vue({

@@ -1,0 +1,21 @@
+$font-family: "Montserrat";
+$font-folder: "../fonts/";
+
+@include font-face($font-family, $font-folder + "Montserrat-BlackItalic", 900, italic);
+@include font-face($font-family, $font-folder + "Montserrat-Black", 900);
+@include font-face($font-family, $font-folder + "Montserrat-ExtraBoldItalic", 800, italic);
+@include font-face($font-family, $font-folder + "Montserrat-ExtraBold", 800);
+@include font-face($font-family, $font-folder + "Montserrat-BoldItalic", 700, italic);
+@include font-face($font-family, $font-folder + "Montserrat-Bold", 700);
+@include font-face($font-family, $font-folder + "Montserrat-SemiBoldItalic", 600, italic);
+@include font-face($font-family, $font-folder + "Montserrat-SemiBold", 600);
+@include font-face($font-family, $font-folder + "Montserrat-MediumItalic", 500, italic);
+@include font-face($font-family, $font-folder + "Montserrat-Medium", 500);
+@include font-face($font-family, $font-folder + "Montserrat-Italic", 400, italic);
+@include font-face($font-family, $font-folder + "Montserrat-Regular", 400);
+@include font-face($font-family, $font-folder + "Montserrat-LightItalic", 300, italic);
+@include font-face($font-family, $font-folder + "Montserrat-Light", 300);
+@include font-face($font-family, $font-folder + "Montserrat-ExtraLightItalic", 200, italic);
+@include font-face($font-family, $font-folder + "Montserrat-ExtraLight", 200);
+@include font-face($font-family, $font-folder + "Montserrat-ThinItalic", 100, italic);
+@include font-face($font-family, $font-folder + "Montserrat-Thin", 100);

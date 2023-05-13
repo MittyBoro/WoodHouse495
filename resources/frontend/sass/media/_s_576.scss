@@ -1,0 +1,273 @@
+@media (max-width: 575.98px) {
+	:root {
+		--padding-side: 10px;
+	}
+
+	.h3 {
+		font-size: 20px;
+	}
+
+	.form-wrapper {
+		margin: 0 -20px;
+	}
+
+	.grid-with-form .right-col .form-wrapper .sub-h {
+		margin: 9px 0 -10px;
+	}
+
+	.home-box .container {
+		padding-top: 30px;
+		padding-bottom: 167px;
+	}
+
+	.home-box .form-wrapper {
+		padding-bottom: 34px;
+
+		.h3 {
+			max-width: 300px;
+		}
+
+		.btn {
+			margin-top: -4px;
+		}
+	}
+
+	.home-box .left-col .sub-h {
+		margin-top: 16px;
+		line-height: 139.5%;
+	}
+
+	.home-box .left-col .sub-h-alt {
+		margin-left: -20px;
+		margin-right: -20px;
+		font-size: 15px;
+	}
+
+	.home-box .mobile-shaving {
+		left: -120px;
+	}
+
+	.painting-home-box .h1 {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+
+	.services-box .title-row .sub-h {
+		margin-top: 19px;
+	}
+
+	.services-box .services-list {
+		margin: 28px auto 42px;
+	}
+
+	.services-box .services-extra {
+		margin: 0 -25px;
+	}
+
+	.building-box .left-side .sub-h {
+		margin: 15px 0 33px;
+	}
+
+	.building-box .building-list {
+		row-gap: 23px;
+	}
+
+	.partners-box {
+		padding-top: 43px;
+	}
+
+	.partners-box .title-row .sub-h {
+		margin: 15px auto;
+	}
+
+	.process-box .process-list {
+		display: flex;
+	}
+
+	.process-box .process-item {
+		max-width: none;
+		margin: 0 0 42px;
+	}
+
+	.process-box .pi-image img {
+		max-width: 108px;
+	}
+
+	.process-box .title-row {
+		margin-bottom: 27px;
+	}
+
+	.process-box .pi-title {
+		margin: 18px 0 17px;
+	}
+
+	.process-box .pi-description {
+		max-width: 275px;
+	}
+
+	.process-box .process-btn {
+		margin-top: -20px;
+
+		.btn {
+			max-width: 300px;
+		}
+	}
+
+	.calculation-box .left-col .sub-h {
+		margin: 18px 0 -15px;
+	}
+
+	.portfolio-box .title-row {
+		margin-bottom: 20px;
+	}
+
+	.portfolio-box .portfolio-list {
+		margin: 0 -22px;
+	}
+
+	.portfolio-box .portfolio-item {
+		padding-bottom: 31px;
+	}
+
+	.portfolio-box .portfolio-item .pi-title {
+		margin-top: 23px;
+	}
+
+	.portfolio-box .portfolio-item .pi-descrition {
+		padding: 8px 0 13px;
+	}
+
+	.portfolio-box .portfolio-bottom .pb-info {
+		margin: 27px 0 25px;
+	}
+
+	.btn-instagram {
+		line-height: 1.1;
+	}
+
+	.btn-instagram img {
+		max-width: 23px;
+		margin-right: 10px;
+	}
+
+	.measurer-box {
+		.container {
+			gap: 2px;
+		}
+
+		.right-col .form-wrapper {
+			.title-row {
+				margin-bottom: 13px;
+			}
+
+			.h3 {
+				margin-top: -3px;
+			}
+
+			.sub-h {
+				display: inline-block;
+				max-width: 265px;
+			}
+
+			.btn {
+				margin-top: -4px;
+			}
+		}
+	}
+
+	.popup .container {
+		max-width: 361px;
+	}
+}
+
+@media (max-width: 414px) {
+	.home-box {
+		background-image: url(../images/backgrounds/home_mobile.png);
+	}
+
+	.building-box .big-container {
+		background-image: url(../images/backgrounds/building_mobile.png);
+	}
+
+	.calculation-box .big-container {
+		background-image: url(../images/backgrounds/calculate_mobile.png);
+	}
+
+	.measurer-box .big-container {
+		background-image: url(../images/backgrounds/measurer_mobile.png);
+	}
+
+	.sanding-home-box {
+		background-image: url(../images/backgrounds/1_home_mobile.png);
+	}
+
+	.painting-home-box {
+		background-image: url(../images/backgrounds/2_home_mobile.png);
+	}
+
+	.okosyachka-home-box {
+		background-image: url(../images/backgrounds/3_home_mobile.png);
+	}
+
+	.roofing-home-box {
+		background-image: url(../images/backgrounds/4_home_mobile.png);
+	}
+
+	.reconstruction-home-box {
+		background-image: url(../images/backgrounds/5_home_mobile.png);
+	}
+
+	.outbuildings-home-box {
+		background-image: url(../images/backgrounds/6_home_mobile.png);
+	}
+
+	.planken-home-box {
+		background-image: url(../images/backgrounds/7_home_mobile.png);
+	}
+
+	.reconstruction-portfolio-box .portfolio-item {
+		padding-bottom: 20px;
+	}
+}
+
+@media (max-width: 389.98px) {
+	img {
+		pointer-events: auto;
+	}
+
+	.about-box .right-green {
+		right: -20px;
+	}
+
+	.building-box {
+		.hang-green-left {
+			left: -30px;
+		}
+
+		.hang-green-right {
+			right: -20px;
+		}
+
+		.hang-skrew-right {
+			right: -146px;
+		}
+	}
+
+	.calculation-box .calc-green-m-1 {
+		top: -50px;
+	}
+
+	.calculation-box .calc-green-m-2 {
+		top: -10px;
+	}
+
+	.popup {
+		padding: 60px 0;
+	}
+}
+
+@media (max-width: 359.98px) {
+	.painting-home-box .h1 {
+		margin: 0;
+	}
+}

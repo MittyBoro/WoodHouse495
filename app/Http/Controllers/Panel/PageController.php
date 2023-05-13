@@ -8,14 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-
 class PageController extends Controller
 {
-
     public function index(Request $request)
     {
-        $pages = Page::orderByStr($request->get('sort'))
-            ->customPaginate($request->get('perPage', 20));
+        $pages = Page::orderByStr($request->get('sort'))->customPaginate(
+            $request->get('perPage', 20),
+        );
 
         return Inertia::render('Pages/Index', [
             'list' => $pages,

@@ -1,0 +1,44 @@
+.painting-box {
+  padding: 149px 0 101px;
+
+  .partners-green-1 {
+    top: 244px;
+    left: -365px;
+    z-index: 2;
+  }
+
+  .partners-green-2 {
+    top: -103px;
+    right: -365px;
+    z-index: 2;
+  }
+
+  .left-side {
+    grid-column: span 5;
+  }
+
+  .h2 {
+    margin-bottom: 30px;
+  }
+
+  .sub-h {
+    font-size: inherit;
+    line-height: 151.5%;
+  }
+
+  .right-side {
+    grid-column: span 7;
+    gap: 30px;
+
+    @media (min-width: 1240px) {
+      padding-top: 16px;
+      padding-left: 13px;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding: 62.62135% 0;
+      border-radius: 15px;
+    }
+  }
+}

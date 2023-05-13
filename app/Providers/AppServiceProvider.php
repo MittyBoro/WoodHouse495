@@ -26,10 +26,7 @@ class AppServiceProvider extends ServiceProvider
 
         Password::defaults(function () {
             $rule = Password::min(8);
-
-            return app()->isProduction()
-                ? $rule->letters()->numbers()
-                : $rule;
+            return app()->isProduction() ? $rule->letters()->numbers() : $rule;
         });
     }
 }

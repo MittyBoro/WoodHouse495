@@ -23,13 +23,13 @@ class PropSeeder extends Seeder
                 'tab' => Prop::DEFAULT_TAB,
                 'type' => 'text',
                 'title' => 'Код перед </head>',
-                'key' => 'head_end',
+                'key' => 'head_end_code',
             ],
             [
                 'tab' => Prop::DEFAULT_TAB,
                 'type' => 'text',
                 'title' => 'Код перед </body>',
-                'key' => 'body_end',
+                'key' => 'body_end_code',
             ],
         ];
 

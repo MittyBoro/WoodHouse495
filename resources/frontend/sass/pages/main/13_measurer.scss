@@ -1,0 +1,72 @@
+.measurer-box {
+  z-index: 3;
+
+  & + .contacts-box::before {
+    top: -656px;
+  }
+
+  .down-circle-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .down-circle {
+    margin: 55px 0 -55px;
+  }
+
+  .front-container {
+    z-index: 2;
+  }
+
+  .measurer-green {
+    top: 0;
+    left: -365px;
+  }
+
+  .home-shaving {
+    top: 378px;
+    left: -272px;
+  }
+
+  .home-shaving-blur {
+    right: -123px;
+    bottom: -119px;
+  }
+
+  .big-container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    background-image: url(../images/backgrounds/measurer.png);
+  }
+
+  .left-col {
+    .h2 {
+      max-width: 520px;
+    }
+
+    .sub-h {
+      margin-top: 22px;
+      margin-bottom: 26px;
+      max-width: 270px;
+      font-size: 15px;
+      line-height: 147%;
+      color: inherit;
+
+      .three-dots {
+        margin-left: 44px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .right-col {
+    @media (min-width: 1240px) {
+      .form-wrapper {
+        .btn {
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+}

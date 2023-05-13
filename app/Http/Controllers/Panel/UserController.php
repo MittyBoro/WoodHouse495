@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-
     public function index(Request $request)
     {
         $users = User::filter($request->all())
@@ -54,11 +53,12 @@ class UserController extends Controller
         return back();
     }
 
-
     public function destroy(User $user)
     {
         if ($user->id == 1) {
-            return back()->withErrors(['Невозможно удалить этого пользователя']);
+            return back()->withErrors([
+                'Невозможно удалить этого пользователя',
+            ]);
         }
         if ($user->id == Auth::user()->id) {
             return back()->withErrors(['Невозможно удалить себя']);

@@ -1,0 +1,139 @@
+.reviews-box {
+  padding-top: 94px;
+
+  .wood-piece {
+    top: 904px;
+    left: -434px;
+    z-index: 7;
+  }
+
+  .title-row {
+    max-width: 613px;
+
+    .sub-h {
+      margin: 23px 0 77px;
+    }
+  }
+
+  .reviews-video-wrapper {
+    position: relative;
+  }
+
+  .reviews-video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 27.8448% 0;
+
+    .rv-green {
+      position: absolute;
+      top: -212px;
+      margin-left: -9px;
+      max-width: none;
+    }
+
+    .rv-preview {
+      @include absfull;
+
+      border-radius: 15px;
+      overflow: hidden;
+
+      img {
+        @extend .img-cover;
+      }
+    }
+
+    .rv-circle {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url(../images/backgrounds/play-circle.png) no-repeat 50%;
+      margin-top: -12px;
+      width: 134px;
+      height: 134px;
+      border-radius: 50%;
+      box-shadow: inset 8px 8px 24px rgba(255, 255, 255, 0.47);
+      cursor: pointer;
+      transition: all 0.25s;
+
+      &::before {
+        content: url(../images/icons/play_triangle.svg);
+        position: absolute;
+        margin-bottom: -5px;
+        margin-left: 3px;
+      }
+
+      &:hover {
+        box-shadow: inset 8px 8px 33px rgba(255, 255, 255, 0.76);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .rv-name {
+    position: absolute;
+    left: 49px;
+    bottom: 43px;
+    padding: 16px 21px;
+    background: #fff;
+    border-radius: 6px;
+    z-index: 3;
+
+    .rv-title {
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+  }
+
+  .reviews-list {
+    align-items: stretch;
+    padding-top: 31px;
+    row-gap: 29px;
+  }
+
+  .reviews-item {
+    padding: 23px 39px 30px 33px;
+    background: #FAFAFA;
+    border-radius: 8px;
+
+    .ri-top {
+      display: grid;
+      grid-template-columns: 88px auto;
+      gap: 20px;
+      margin-bottom: 26px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #DCE2E8;
+
+      .rit-image {
+        overflow: hidden;
+        border-radius: 100px;
+      }
+    }
+
+    .ri-info {
+      padding-top: 7px;
+    }
+
+    .ri-name {
+      margin-bottom: 6px;
+      margin-right: -25px;
+      font-size: 20px;
+    }
+
+    .ri-green {
+      color: $secondary;
+    }
+
+    .ri-text {
+      font-size: 15px;
+      line-height: 153.5%;
+
+      @media (min-width: 1240px) {
+        margin-right: -6px;
+      }
+    }
+  }
+}

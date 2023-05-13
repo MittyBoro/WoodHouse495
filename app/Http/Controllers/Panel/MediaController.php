@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +17,6 @@ use Pion\Laravel\ChunkUpload\Receiver\FileReceiver;
 
 class MediaController extends Controller
 {
-
     /**
      * пока не требуется
      */
@@ -39,8 +37,9 @@ class MediaController extends Controller
     {
         $media = Media::find($id);
 
-        if (!$media)
+        if (!$media) {
             return back()->withErrors(['Файл не найден']);
+        }
 
         $model_type = $media->model_type;
 
@@ -58,12 +57,10 @@ class MediaController extends Controller
 
         $modelClass = 'App\\Models\\' . $modelName;
 
-        if (
-            !class_exists($modelClass) ||
-            !($model = $modelClass::find($id))
-        ) {
-
-            throw ValidationException::withMessages(['type_id' => 'Неверное имя поля']);
+        if (!class_exists($modelClass) || !($model = $modelClass::find($id))) {
+            throw ValidationException::withMessages([
+                'type_id' => 'Неверное имя поля',
+            ]);
         }
         return $model;
     }

@@ -1,0 +1,35 @@
+.okosyachka-box {
+  padding: 143px 0 84px;
+
+  .partners-green-2 {
+    top: -157px;
+    right: -365px;
+    z-index: 2;
+  }
+
+  .h2 {
+    margin-bottom: 31px;
+  }
+
+  .okos-image {
+    position: relative;
+    padding: 33.39552% 0;
+    border-radius: 15px;
+  }
+
+  .left-side {
+    @media (min-width: 1240px) {
+      padding-right: 24px;
+    }
+  }
+
+  .right-side {
+    @media (min-width: 1240px) {
+      padding-top: 23px;
+
+      .format-text {
+        line-height: 152.5%;
+      }
+    }
+  }
+}

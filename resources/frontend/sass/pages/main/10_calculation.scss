@@ -1,0 +1,47 @@
+.calculation-box {
+  .calc-green-1 {
+    top: 0px;
+    left: -365px;
+    z-index: 5;
+  }
+
+  .calc-green-2 {
+    top: 9px;
+    right: -365px;
+    z-index: 5;
+  }
+
+  .big-container {
+    padding-top: 94px;
+    background-image: url(../images/backgrounds/calculation.png);
+  }
+
+  .calc-hand {
+    left: -289px;
+    bottom: 0;
+  }
+
+  .left-col {
+    padding-top: 72px;
+
+    .sub-h {
+      max-width: 450px;
+      margin-top: 24px;
+    }
+  }
+
+  .right-col {
+    padding-bottom: 174px;
+  }
+
+  .form-wrapper {
+    position: relative;
+    z-index: 6;
+  }
+
+  @media (min-width: 1240px) {
+    .form-wrapper {
+      padding-bottom: 32px;
+    }
+  }
+}

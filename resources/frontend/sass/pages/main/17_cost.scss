@@ -1,0 +1,72 @@
+.cost-box {
+  padding: 88px 0;
+  background: #F7F8FA url(../images/backgrounds/process-calculation.png) no-repeat 50% 50%;
+  background-size: cover;
+
+  .cost-green-left {
+    top: -298px;
+    left: -365px;
+  }
+
+  .cost-green-right {
+    top: -107px;
+    right: -365px;
+  }
+
+  .cost-device {
+    top: -169px;
+    right: -365px;
+  }
+
+  .title-row {
+    margin-bottom: 42px;
+
+    @media (min-width: 993px) {
+      display: grid;
+      grid-template-columns: 287fr 250fr;
+      gap: 50px;
+      margin-left: 0;
+      max-width: 950px;
+      text-align: left;
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    align-items: start;
+    gap: 46px;
+  }
+
+  .form-input {
+    max-width: 454px;
+  }
+
+  .form-checkbox-grid {
+    display: grid;
+    gap: 28px;
+
+    @media (min-width: 1240px) {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1240px) {
+    .fcg-wrap {
+      grid-template-columns: 87fr 100fr;
+    }
+  }
+
+  .cost-form {
+    column-gap: 92px;
+    grid-template-columns: 185fr 250fr;
+  }
+
+  .btn {
+    width: 100%;
+
+    @media (min-width: 1240px) {
+      margin-top: -5px;
+      max-width: 397px;
+    }
+  }
+}

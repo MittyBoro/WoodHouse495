@@ -1,0 +1,235 @@
+.reconstruction-home-box {
+  background-image: url(../images/backgrounds/5_home.png);
+
+  .container {
+    height: 782px;
+  }
+
+  .left-col {
+    .sub-h {
+      margin-top: 9px;
+      max-width: 613px;
+    }
+  }
+}
+
+.reconstruction-portfolio-box {
+  padding-top: 118px;
+  padding-bottom: 27px;
+  z-index: 5;
+
+  .reco-green-left {
+    top: -161px;
+    left: -365px;
+  }
+
+  .reco-green-right {
+    right: -365px;
+    bottom: -164px;
+  }
+
+  .reco-device {
+    right: -365px;
+    bottom: -237px;
+  }
+
+  .title-row {
+    margin-bottom: 43px;
+  }
+
+  .portfolio-item {
+    padding-bottom: 20px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @media (min-width: 1240px) {
+      .pi-title {
+        padding-top: 2px;
+        margin-bottom: -4px;
+        font-size: 22px;
+      }
+
+      .pi-title,
+      .pi-descrition {
+        margin-left: 21px;
+        margin-right: 0px;
+      }
+    }
+
+    .pi-descrition {
+      margin-top: 0;
+      padding-bottom: 0;
+      line-height: 118%;
+      color: #96ABBE;
+      font-size: inherit;
+    }
+  }
+}
+
+.reconstruction-skills-box {
+  background-color: transparent;
+  background-image: url(../images/backgrounds/castle.png);
+
+  .sign-list {
+    height: 887px;
+
+    .sign-item:nth-child(1) {
+      top: 223px;
+      left: 699px;
+
+      .sign-circle {
+        top: -38px;
+        left: -287px;
+      }
+
+      .sign-line {
+        top: 5px;
+        left: -273px;
+        width: 300px;
+        transform: rotate(-167.35deg);
+      }
+    }
+
+    .sign-item:nth-child(2) {
+      top: 393px;
+      left: 531px;
+
+      .sign-circle {
+        top: -13px;
+        left: -100px;
+      }
+
+      .sign-line {
+        top: 11px;
+        left: -88px;
+        width: 100px;
+        transform: rotate(19.07deg);
+      }
+    }
+
+    .sign-item:nth-child(3) {
+      top: 663px;
+      left: 582px;
+
+      .sign-circle {
+        top: -139px;
+        left: -47px;
+      }
+
+      .sign-line {
+        top: -60px;
+        left: -66px;
+        width: 190px;
+        transform: rotate(-133.93deg);
+      }
+    }
+
+    .sign-item:nth-child(4) {
+      top: 644px;
+      left: 53px;
+
+      .sign-circle {
+        top: -120px;
+        left: 119px;
+      }
+
+      .sign-line {
+        top: -43px;
+        left: 28px;
+        width: 135px;
+        transform: rotate(118.85deg);
+      }
+    }
+
+    .sign-item:nth-child(5) {
+      top: 321px;
+      left: auto;
+      right: 0;
+
+      .sign-circle {
+        top: 174px;
+        left: -56px;
+      }
+
+      .sign-line {
+        top: 116px;
+        left: -72px;
+        width: 193px;
+        transform: rotate(134.58deg);
+      }
+    }
+
+    .sign-item:nth-child(6) {
+      top: 349px;
+      left: 57px;
+      right: auto;
+
+      .sign-circle {
+        top: -100px;
+        left: 181px;
+      }
+
+      .sign-line {
+        top: -37px;
+        left: 45px;
+        width: 160px;
+        transform: rotate(-40.04deg);
+      }
+    }
+  }
+}
+
+.reconstruction-second-portfolio-box {
+  padding-top: 84px;
+  padding-bottom: 7px;
+  z-index: 0;
+}
+
+.reconstruction-price-box {
+  padding-bottom: 88px;
+
+  @media (min-width: 1240px) {
+    .price-table {
+      table {
+        td:first-child {
+          max-width: 783px;
+        }
+
+        td {
+          padding: 14.5px 20px;
+        }
+      }
+    }
+  }
+}
+
+.reconstruction-about-box {
+  padding-top: 87px;
+
+  @media (min-width: 1240px) {
+    padding-bottom: 16px;
+
+    .left-col {
+      p {
+        margin-bottom: 10px;
+      }
+    }
+
+    .h2 {
+      margin-right: -50px;
+    }
+
+    .right-col {
+      padding-top: 125px;
+    }
+  }
+
+  .sub-h {
+    max-width: 540px;
+  }
+
+  .text-item {
+    line-height: 158%;
+  }
+}

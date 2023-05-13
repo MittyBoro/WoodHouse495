@@ -9,10 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
-
 class PortfolioController extends Controller
 {
-
     public function index(Request $request)
     {
         $portfolios = Portfolio::orderByStr($request->get('sort'))
@@ -22,14 +20,14 @@ class PortfolioController extends Controller
 
         return Inertia::render('Portfolios/Index', [
             'list' => $portfolios,
-            'pages' => Page::get(['id', 'title'])
+            'pages' => Page::get(['id', 'title']),
         ]);
     }
 
     public function create()
     {
         return Inertia::render('Portfolios/Form', [
-            'pages' => Page::get(['id', 'title'])
+            'pages' => Page::get(['id', 'title']),
         ]);
     }
 
@@ -51,7 +49,7 @@ class PortfolioController extends Controller
     {
         return Inertia::render('Portfolios/Form', [
             'item' => $portfolio->append('gallery'),
-            'pages' => Page::get(['id', 'title'])
+            'pages' => Page::get(['id', 'title']),
         ]);
     }
 

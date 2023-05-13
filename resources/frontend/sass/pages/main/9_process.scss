@@ -1,0 +1,88 @@
+.process-calculation-bg {
+  background: url(../images/backgrounds/process-calculation.png) no-repeat 50% 0%;
+}
+
+.process-box {
+  padding: 94px 0 99px;
+
+  .process-green {
+    top: -501px;
+    left: -365px;
+    z-index: 2;
+  }
+
+  .process-sliver {
+    top: -134px;
+    left: -312px;
+    z-index: 2;
+  }
+
+  .title-row {
+    margin-bottom: 36px;
+  }
+
+  .process-list {
+    display: grid;
+    grid-template-columns: 212fr 198fr 187fr 198fr 167fr;
+    gap: 64px;
+    margin-bottom: 12px;
+  }
+
+  .process-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &:nth-child(even) {
+      margin-top: 54px;
+    }
+
+    &:hover {
+      .pi-image {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .pi-image {
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .pi-int {
+    position: absolute;
+    top: -4px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 600;
+    color: $gray;
+  }
+
+  .pi-title {
+    max-width: 130px;
+    margin: 18px 0 16px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 132%;
+  }
+
+  .pi-description {
+    font-size: 15px;
+    line-height: 139.5%;
+    color: $gray;
+  }
+
+  .process-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+}

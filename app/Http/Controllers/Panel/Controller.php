@@ -17,7 +17,7 @@ class Controller extends BaseController
             'sorted' => 'required|array',
             'sorted.*.id' => 'required|exists:' . $tableName . ',id',
             'sorted.*.position' => 'required|integer',
-            ...$addToValidate
+            ...$addToValidate,
         ]);
 
         $data = $validated['sorted'];

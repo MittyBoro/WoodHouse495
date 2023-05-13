@@ -39,11 +39,13 @@ class HandleInertiaRequests extends Middleware
         $request->headers->set('Is-Inertia', true);
 
         return array_merge(parent::share($request), [
-            'config' => fn () => config('panel'),
+            'config' => fn() => config('panel'),
 
             'auth' => [
-                'user' => fn () => $request->user()
-                    ? $request->user()->only('id', 'name', 'email', 'role', 'avatar')
+                'user' => fn() => $request->user()
+                    ? $request
+                        ->user()
+                        ->only('id', 'name', 'email', 'role', 'avatar')
                     : null,
             ],
         ]);

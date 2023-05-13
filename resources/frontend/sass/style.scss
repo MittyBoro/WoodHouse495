@@ -1,0 +1,59 @@
+@import 'core/mixins';
+
+$body-color: #333;
+
+$primary: #f2a250;
+$secondary: #84c57a;
+$secondary-alt: #74bd68;
+
+$gray: #96abbe;
+
+@import 'core/lark';
+
+@import 'core/fonts';
+
+@import 'general/_main';
+
+@import 'general/buttons';
+@import 'general/forms';
+@import 'general/format_text';
+@import 'general/plugins';
+@import 'general/animations';
+
+@import 'general/popups';
+
+@import 'pages/main/0_header';
+@import 'pages/main/1_home';
+@import 'pages/main/2_about';
+@import 'pages/main/3_advantages';
+@import 'pages/main/4_skills';
+@import 'pages/main/5_services';
+@import 'pages/main/6_building';
+@import 'pages/main/7_reviews';
+@import 'pages/main/8_partners';
+@import 'pages/main/9_process';
+@import 'pages/main/10_calculation';
+@import 'pages/main/11_portfolio';
+@import 'pages/main/12_articles';
+@import 'pages/main/13_measurer';
+@import 'pages/main/14_contacts';
+@import 'pages/main/15_footer';
+@import 'pages/main/16_price';
+@import 'pages/main/17_cost';
+@import 'pages/main/18_painting';
+@import 'pages/main/19_okosyachka';
+
+@import 'pages/1_sanding';
+@import 'pages/2_painting';
+@import 'pages/3_okosyachka';
+@import 'pages/4_roofing';
+@import 'pages/5_reconstruction';
+@import 'pages/6_outbuildings';
+@import 'pages/7_planken';
+@import 'pages/8_articles';
+@import 'pages/9_article';
+
+@import 'media/s_1200';
+@import 'media/s_992';
+@import 'media/s_768';
+@import 'media/s_576';
