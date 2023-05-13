@@ -25,8 +25,9 @@
         src="{{ Vite::image('general/hanging/home_shaving_mobile.png') }}"
         alt="">
       <div class="left-col">
-        <h1 class="h1"><b>Строительство и отделка деревянных домов</b>
-          в Москве и МО</h1>
+        <div class="h1"><b>Строительство <br class="hidden-sm">и отделка
+            деревянных домов</b>
+          в Москве и МО</div>
         <div class="sub-h">
           <div class="three-dots"><i></i><i></i><i></i></div>
           <div>Гарантируем качество и лучшую цену на рынке. Предлагаем
@@ -302,24 +303,22 @@
           объёма и сложности работ — расценки могут корректироваться</div>
       </div>
       <div class="services-list grid grid-md-3 grid-lg-4">
-        <div class="services-item">
+        <a class="services-item" href="/sanding">
           <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+            <div class="link orange show-more">
+              <span>Подробнее</span> <img class="to-svg" loading="lazy"
+                src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
+            </div>
             <img loading="lazy" src="{{ Vite::image('tmp/services/1.png') }}"
               alt="">
           </div>
           <div class="si-title">Шлифовка деревянных срубов, домов, бань</div>
-          <a class="si-link link">посмотреть прайс <img class="to-svg"
+          <span class="a si-link link">посмотреть прайс <img class="to-svg"
               loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-              alt=""></a>
-        </div>
+              alt=""></span>
+        </a>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/2.png') }}"
               alt="">
           </div>
@@ -328,10 +327,7 @@
           <div class="si-price">от 70 руб/м²</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/3.png') }}"
               alt="">
           </div>
@@ -340,10 +336,7 @@
           <div class="si-price">от 80 руб/м.п.</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/4.png') }}"
               alt="">
           </div>
@@ -352,10 +345,7 @@
         </div>
 
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/5.png') }}"
               alt="">
           </div>
@@ -364,10 +354,7 @@
           <div class="si-price">от 100 руб/м.п.</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/6.png') }}"
               alt="">
           </div>
@@ -376,10 +363,7 @@
           <div class="si-price">от 350 руб/м²</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/7.png') }}"
               alt="">
           </div>
@@ -387,10 +371,7 @@
           <div class="si-price">от 400 руб/м²</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/8.png') }}"
               alt="">
           </div>
@@ -400,10 +381,7 @@
         </div>
 
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/9.png') }}"
               alt="">
           </div>
@@ -412,10 +390,7 @@
           <div class="si-price">от 350 руб/м²</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/10.png') }}"
               alt="">
           </div>
@@ -423,23 +398,21 @@
             сайдинга</div>
           <div class="si-price">от 320 руб/м²</div>
         </div>
-        <div class="services-item">
+        <a class="services-item" href="/okosyachka">
           <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+            <div class="link orange show-more">
+              <span>Подробнее</span> <img class="to-svg" loading="lazy"
+                src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
+            </div>
             <img loading="lazy" src="{{ Vite::image('tmp/services/11.png') }}"
               alt="">
           </div>
           <div class="si-title">Окосячка деревянных<br>
             домов</div>
-          <a class="si-link link">посмотреть прайс</a>
-        </div>
+          <span class="si-link link">посмотреть прайс</span>
+        </a>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/12.png') }}"
               alt="">
           </div>
@@ -449,10 +422,7 @@
         </div>
 
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/13.png') }}"
               alt="">
           </div>
@@ -461,10 +431,7 @@
           <div class="si-price">от 2200 руб/шт</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/14.png') }}"
               alt="">
           </div>
@@ -473,10 +440,7 @@
           <div class="si-price">от 1600 руб/шт</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/15.png') }}"
               alt="">
           </div>
@@ -484,10 +448,7 @@
           <div class="si-price">от 1100 руб/шт</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/16.png') }}"
               alt="">
           </div>
@@ -497,10 +458,7 @@
         </div>
 
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/17.png') }}"
               alt="">
           </div>
@@ -509,10 +467,7 @@
           <div class="si-price">от 250 руб/м²</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/18.png') }}"
               alt="">
           </div>
@@ -521,10 +476,7 @@
           <div class="si-price">от 1100 руб/м²</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/19.png') }}"
               alt="">
           </div>
@@ -533,10 +485,7 @@
           <div class="si-price">от 550 руб/м.п.</div>
         </div>
         <div class="services-item">
-          <div class="si-img img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
+          <div class="si-img img-cover-wrap">
             <img loading="lazy" src="{{ Vite::image('tmp/services/20.png') }}"
               alt="">
           </div>
@@ -923,8 +872,9 @@
           </div>
         </div>
         <div class="process-btn">
-          <a class="btn btn-orange" data-popup=".popup-measurer"><span>Бесплатно
-              вызвать замерщика</span></a>
+          <div class="btn btn-orange" data-popup=".popup-measurer">
+            <span>Бесплатно вызвать замерщика</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1200,11 +1150,10 @@
         <div class="articles-item">
           <div class="ai-image img-cover-wrap hover">
             <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy"
-                src="{{ Vite::image('icons/link-arrow.svg') }}"
+                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
-            <img loading="lazy"
-              src="{{ Vite::image('tmp/articles/3.png') }}" alt="">
+            <img loading="lazy" src="{{ Vite::image('tmp/articles/3.png') }}"
+              alt="">
           </div>
           <div class="ai-bottom">
             <div class="ai-title">Утепление
@@ -1213,14 +1162,15 @@
               темой строительства, то знаете, что правильный выбор утеплителя
               является ключевым пунктом...</div>
             <div class="ai-link link">Читать подробнее <img class="to-svg"
-                loading="lazy"
-                src="{{ Vite::image('icons/link-arrow.svg') }}"
+                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
           </div>
         </div>
       </div>
       <div class="articles-btn">
-        <div class="btn btn-orange btn-alt"><span>Посмотреть еще</span></div>
+        <a class="btn btn-orange btn-alt" href="/articles">
+          <span>Посмотреть еще</span>
+        </a>
       </div>
     </div>
   </div>
@@ -1253,8 +1203,8 @@
           alt="">
 
         <div class="left-col">
-          <h1 class="h2"><b>Закажите бесплатный выезд замерщика</b>
-            на объект</h1>
+          <div class="h2"><b>Закажите бесплатный выезд замерщика</b>
+            на объект</div>
           <div class="sub-h">
             <div class="three-dots"><i></i></div>
             <div>Специалист проведет все замеры, оценит объем и сложность работы

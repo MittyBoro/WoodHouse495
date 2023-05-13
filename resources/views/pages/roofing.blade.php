@@ -7,7 +7,7 @@
 @section('content')
 
   <!-- 1_home -->
-  <div class="home-box reconstruction-home-box">
+  <div class="home-box roofing-home-box">
     <div class="container grid-with-form grid grid-md-12">
       <div class="visible-md rellax absolute left-shaving-alt"
         data-rellax-speed="1">
@@ -21,12 +21,12 @@
         alt="">
 
       <div class="left-col">
-        <h1 class="h1"><b>Реконструкция и достройка домов</b> в Москве и МО
-        </h1>
-        <div class="sub-h sub-h-alt">
-          Реконструкция дома позволяет полностью или частично перестроить дом,
-          добавить какие-то функциональные элементы, расширить или уменьшить его
-          габариты
+        <div class="h1"><b>Кровельные работы</b> в Москве и области</div>
+        <div class="sub-h">
+          <div class="three-dots"><i></i><i></i><i></i></div>
+          <div>Профессиональные кровельные работы в Москве и Подмосковье. Все виды
+            покрытий от металла до мягкой черепицы. Сделаем все быстро и
+            качественно.</div>
         </div>
       </div>
       <div class="right-col">
@@ -51,140 +51,14 @@
         </form>
       </div>
       <div class="down-circle-row down-circle-center col-full">
-        <div class="down-circle down-circle-alt"></div>
+        <div class="down-circle"></div>
       </div>
-    </div>
-  </div>
-
-  <!-- 11_portfolio -->
-  <div class="portfolio-box reconstruction-portfolio-box" id="portfolio">
-    <div class="container">
-      <div class="visible-md">
-        <img class="rellax absolute reco-green-left" data-rellax-speed="-1"
-          loading="lazy"
-          src="{{ Vite::image('general/hanging/cost_green_left.png') }}"
-          alt="">
-        <img class="rellax absolute reco-green-right" data-rellax-speed="-1"
-          loading="lazy"
-          src="{{ Vite::image('general/hanging/castlle_green.png') }}"
-          alt="">
-        <img class="rellax absolute reco-device" data-rellax-speed="1"
-          loading="lazy"
-          src="{{ Vite::image('general/hanging/castlle_device.png') }}"
-          alt="">
-      </div>
-      <div class="title-row">
-        <div class="h2"><b>Работаем со всеми</b><br>типами домов</div>
-      </div>
-      <div class="portfolio-list grid-lg-3 grid-md-2">
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap">
-            <img loading="lazy"
-              src="{{ Vite::image('tmp/reconstruction_types/1.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">Каркасные</div>
-          <div class="pi-descrition format-text">
-            <ul>
-              <li>рамная конструкция с перекрытиями</li>
-              <li>каркас с неразрезными стойками</li>
-              <li>стоечно-балочная конструкция</li>
-              <li>каркасно-стоечная конструкция</li>
-            </ul>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap">
-            <img loading="lazy"
-              src="{{ Vite::image('tmp/reconstruction_types/2.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">Деревянные</div>
-          <div class="pi-descrition format-text">
-            <ul>
-              <li>из клееного бруса</li>
-              <li>из оцилиндрованного бревна</li>
-              <li>утепленные дома из простого бруса</li>
-              <li>комбинированные дома</li>
-            </ul>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap">
-            <img loading="lazy"
-              src="{{ Vite::image('tmp/reconstruction_types/3.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">Каменные</div>
-          <div class="pi-descrition format-text">
-            <ul>
-              <li>из кирпича и блоков всех типов</li>
-              <li>из пенобетона и газосиликата</li>
-              <li>из керамических блоков</li>
-              <li>монолитные и комбинированные</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4_skills -->
-  <div class="skills-box reconstruction-skills-box" id="skills">
-    <div class="container">
-      <div class="title-row">
-        <div class="h2"><b>Превратим Ваш дом</b> в замок!</div>
-        <div class="sub-h">Профессиональные мастера-отделочники выполнят любую
-          работу, которая связанная со строительством и отделкой деревянных домов
-        </div>
-      </div>
-      <div class="sign-list">
-        <div class="sign-item">
-          <div class="sign-circle"></div>
-          <div class="sign-line"></div>
-          <div class="sign-text">Замена кровли</div>
-        </div>
-        <div class="sign-item">
-          <div class="sign-circle"></div>
-          <div class="sign-line"></div>
-          <div class="sign-text">Замена пола</div>
-        </div>
-        <div class="sign-item">
-          <div class="sign-circle"></div>
-          <div class="sign-line"></div>
-          <div class="sign-text">Монтаж перегородок</div>
-        </div>
-        <div class="sign-item">
-          <div class="sign-circle"></div>
-          <div class="sign-line"></div>
-          <div class="sign-text">Замена окон</div>
-        </div>
-        <div class="sign-item">
-          <div class="sign-circle"></div>
-          <div class="sign-line"></div>
-          <div class="sign-text">Монтаж дверей</div>
-        </div>
-        <div class="sign-item">
-          <div class="sign-circle"></div>
-          <div class="sign-line"></div>
-          <div class="sign-text">Ремонт стен</div>
-        </div>
-      </div>
-
-      <img class="rellax absolute wood-piece-blur" data-rellax-speed="1"
-        loading="lazy"
-        src="{{ Vite::image('general/hanging/skills_wood_piece_blur.png') }}"
-        alt="">
-      <img class="rellax absolute wood-piece" data-rellax-speed="2"
-        loading="lazy"
-        src="{{ Vite::image('general/hanging/skills_wood_piece.png') }}"
-        alt="">
     </div>
   </div>
 
   <!-- 11_portfolio -->
   <div
-    class="portfolio-box alt-portfolio-box reconstruction-second-portfolio-box"
+    class="portfolio-box alt-portfolio-box sanding-portfolio-box roofing-portfolio-box"
     id="portfolio">
     <div class="container">
       <div class="title-row">
@@ -192,8 +66,7 @@
       </div>
       <div class="portfolio-list grid-lg-3 grid-md-2">
         <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
+          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
             <div class="link orange show-more">Подробнее <img class="to-svg"
                 loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
@@ -209,8 +82,7 @@
           </div>
         </div>
         <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
+          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
             <div class="link orange show-more">Подробнее <img class="to-svg"
                 loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
@@ -226,8 +98,7 @@
           </div>
         </div>
         <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
+          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
             <div class="link orange show-more">Подробнее <img class="to-svg"
                 loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
@@ -244,8 +115,7 @@
         </div>
 
         <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
+          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
             <div class="link orange show-more">Подробнее <img class="to-svg"
                 loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
@@ -298,21 +168,21 @@
       <div class="portfolio-bottom">
         <div class="pb-info gray">Больше реализованных проектов смотрите в нашем
           Instagram</div>
-        <div class="btn btn-orange btn-instagram">
+        <a class="btn btn-orange btn-instagram" target="_blank"
+          href="https://www.instagram.com/woodhouse495/">
           <span>
             <img loading="lazy"
               src="{{ Vite::image('icons/instagram-btn.svg') }}"
               alt="">
             Подписывайтесь на нас
           </span>
-        </div>
+        </a>
       </div>
     </div>
   </div>
 
   <!-- 9_process -->
-  <div class="process-box sanding-process-box reconstruction-process-box"
-    id="process">
+  <div class="process-box sanding-process-box" id="process">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute process-green" data-rellax-speed="-1"
@@ -385,14 +255,15 @@
         </div>
       </div>
       <div class="process-btn">
-        <a class="btn btn-orange" href="#measurer"><span>Бесплатно вызвать
-            замерщика</span></a>
+        <div class="btn btn-orange" data-popup=".popup-measurer">
+          <span>Бесплатно вызвать замерщика</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- 8_partners -->
-  <div class="partners-box">
+  <div class="partners-box roofing-partners-box">
     <div class="hidden-md">
       <img class="rellax absolute partners-green-left" data-rellax-speed="4"
         loading="lazy"
@@ -437,7 +308,7 @@
   </div>
 
   <!-- 16_price -->
-  <div class="price-box reconstruction-price-box">
+  <div class="price-box roofing-price-box">
     <div class="container">
 
       <div class="price-discount visible-xxl">
@@ -448,131 +319,138 @@
       </div>
 
       <div class="title-row">
-        <div class="h2"><b>Актуальный прайс</b><br> по реконструкции дома
+        <div class="h2"><b>Актуальный прайс</b><br>по кровельным работам
         </div>
       </div>
       <div class="price-table">
         <table>
           <tbody>
             <tr>
-              <td>Разборка старой кровли</td>
-              <td>от 350 р м²</td>
+              <td>Демонтаж окна, двери</td>
+              <td>300р м² <small>(не включая мягкую кровлю)</small></td>
             </tr>
             <tr>
-              <td>Демонтаж существующей обрешётки</td>
-              <td>от 100 р м²</td>
+              <td>Монтаж окон, дверей</td>
+              <td>50р м²</td>
             </tr>
             <tr>
-              <td>Укрепление стропильной системы</td>
-              <td>от 650 р м²</td>
+              <td>Монтаж кровли + пароизоляция, контробрешетка, пошаговая
+                обрешетка (без утепления)</td>
+              <td>
+                <p><small>Ондулин, гофролист</small> — 500р м²</p>
+                <p><small>Шифер</small> — 400р м²</p>
+                <p><small>Металлочерепица<span class="visible-sm">,
+                      профнастил</span></small> — 450р м²</p>
+                <p><small>Мягкая черепица</small> — 600р м²</p>
+                <p><small>Укладка рубероида</small> — от 150р м²</p>
             </tr>
             <tr>
-              <td>Переделка каркаса фронтонов</td>
-              <td>от 850 р м²</td>
+              <td>Укладка утеплителя(100мм)</td>
+              <td>100р м²</td>
             </tr>
             <tr>
-              <td>Демонтаж водосточной системы</td>
-              <td>от 150 р м.п.</td>
+              <td>Внутреннее утепление крыши(до 100мм)</td>
+              <td>100р м²</td>
             </tr>
             <tr>
-              <td>Демонтаж отделки стен</td>
-              <td>от 350 р м²</td>
+              <td>Устройство внутренней поддерживающей обрешетки</td>
+              <td>100р м²</td>
             </tr>
             <tr>
-              <td>Монтаж и отделка карнизов софитами</td>
-              <td>от 650 р м²</td>
+              <td>Укладка ветро влаго защиты</td>
+              <td>50р м²</td>
             </tr>
             <tr>
-              <td>Утепление дома базальтовой ватой</td>
-              <td>от 150 р м²</td>
+              <td>Укладка пароизоляции</td>
+              <td>50р м²</td>
             </tr>
             <tr>
-              <td>Монтаж защитной мембраны (ветро-влаго защита)</td>
-              <td>от 70 р м²</td>
+              <td>Устройство гидроизоляции</td>
+              <td>70р м²</td>
             </tr>
             <tr>
-              <td>Монтаж вентиляционной обрешётки по стенам из бруска</td>
-              <td>от 150 р м²</td>
+              <td>Устройство снегозадержателей</td>
+              <td>250р мп</td>
             </tr>
             <tr>
-              <td>Изготовление навесной обрешётки по стропилам из доски</td>
-              <td>от 150 р м²</td>
+              <td>Монтаж водосточных желобов</td>
+              <td>350р мп</td>
             </tr>
             <tr>
-              <td>Монтаж винилового сайдинга</td>
-              <td>от 450 р м²</td>
+              <td>Монтаж водосливных труб</td>
+              <td>350р мп</td>
             </tr>
             <tr>
-              <td>Монтаж ветрозащитной плиты изоплат по наружным стенам</td>
-              <td>от 250 р м²</td>
+              <td>Подшивка карнизов</td>
+              <td>600р мп</td>
             </tr>
             <tr>
-              <td>Монтаж имитации бруса по готовому основанию</td>
-              <td>от 450 р м²</td>
+              <td>Монтаж стропильной системы</td>
+              <td>от 500р м²</td>
             </tr>
             <tr>
-              <td>Покраска доски и имитации в 1 слой</td>
-              <td>от 100 р м²</td>
+              <td>Монтаж мауэрлата</td>
+              <td>200р мп</td>
             </tr>
             <tr>
-              <td>Отделка цоколя с устройством обрешётки из профиля</td>
-              <td>от 850 р м²</td>
+              <td>Анти-септирование</td>
+              <td>70р м²</td>
             </tr>
             <tr>
-              <td>Установка металлического отлива по цоколю</td>
-              <td>от 150 р м²</td>
+              <td>Устройство ендов</td>
+              <td>350р мп</td>
             </tr>
             <tr>
-              <td>Монтаж кровли из металлочерепицы по готовому основанию</td>
-              <td>от 500 р м²</td>
+              <td>Монтаж конька</td>
+              <td>150р мп</td>
             </tr>
             <tr>
-              <td>Монтаж конька, карнизных и торцевых планок на крыше</td>
-              <td>от 200 р м.п.</td>
+              <td>Монтаж копейника</td>
+              <td>150р мп</td>
             </tr>
             <tr>
-              <td>Отделка окон готовым наличником</td>
-              <td>от 350 р м²</td>
+              <td>Монтаж капельника</td>
+              <td>150р мп</td>
             </tr>
             <tr>
-              <td>Монтаж отлива на окно с герметизацией</td>
-              <td>от 150 р м.п.</td>
+              <td>Устройство сплошного основания под мягкую кровлю</td>
+              <td>250р м²</td>
             </tr>
             <tr>
-              <td>Изготовление полов с утеплением (сборка полного пирога)</td>
-              <td>от 1200 р м²</td>
+              <td>Устройство аэрозольного конька</td>
+              <td>350р мп</td>
             </tr>
             <tr>
-              <td>Сборка каркаса стен и перегородок без чистовой отделки</td>
-              <td>от 850 р м²</td>
+              <td>Обход труб</td>
+              <td>2000р шт</td>
             </tr>
             <tr>
-              <td>Обработка доски и бруса антисептиком перед установкой</td>
-              <td>от 50 р м²</td>
+              <td>Отделка дымохода на крыше</td>
+              <td>800р м²</td>
             </tr>
             <tr>
-              <td>Монтаж снегозадержателя на крыше</td>
-              <td>от 350 р м.п.</td>
+              <td>Установка вытяжной трубы</td>
+              <td>от 1000р шт</td>
             </tr>
             <tr>
-              <td>Установка желоба (пластик и металл)</td>
-              <td>от 450 р м.п.</td>
+              <td>Установка кровельных лестниц</td>
+              <td>500р мп</td>
             </tr>
             <tr>
-              <td>Монтаж водосточной трубы (пластик и металл)</td>
-              <td>от 450 р м.п.</td>
+              <td>Установка мансардного окна</td>
+              <td>от 4000р</td>
             </tr>
             <tr>
-              <td>Монтаж металлической входной двери</td>
-              <td>от 3500 р шт</td>
+              <td>Монтаж заземления</td>
+              <td>Договорная</td>
             </tr>
             <tr>
-              <td>Установка пластикового окна среднего размера</td>
-              <td>от 3000 р шт</td>
+              <td>Реконструкция старой крыши</td>
+              <td>Договорная</td>
             </tr>
             <tr>
-              <td>Сборка и разборка строительных лесов из обрезной доски</td>
-              <td>от 200 р м.п.</td>
+              <td>Ремонт старой кровли</td>
+              <td>Договорная</td>
             </tr>
           </tbody>
         </table>
@@ -580,42 +458,142 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="gray-line"></div>
+  <!-- 17_cost -->
+  <div class="cost-box roofing-cost-box">
+    <img class="hidden-md rellax absolute cost-green-left-mobile"
+      data-rellax-speed="-1" loading="lazy"
+      src="{{ Vite::image('general/hanging/cost_green_left_mobile.png') }}"
+      alt="">
+    <div class="container">
+      <div class="visible-md">
+        <img class="rellax absolute cost-green-left" data-rellax-speed="-1"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/cost_green_left.png') }}"
+          alt="">
+        <img class="rellax absolute cost-green-right" data-rellax-speed="-2"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/cost_green_right.png') }}"
+          alt="">
+        <img class="rellax absolute cost-device" data-rellax-speed="1"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/cost_device_4.png') }}"
+          alt="">
+      </div>
+
+      <div class="title-row">
+        <div class="h2"><b>Рассчитайте стоимость</b> кровельных работ</div>
+        <div class="sub-h">Все, что Вам нужно — заполнить форму ниже и мы вышлем
+          предварительную смету по Вашей задаче</div>
+      </div>
+
+      <div class="cost-form form-grid">
+        <div class="left-side form-grid">
+          <div class="form-input-wrap">
+            <div class="form-input-title">Площадь кровли (м²)</div>
+            <div class="form-input form-input-alt form-input-alt-with-buttons">
+              <div class="form-minus"
+                onclick="this.nextElementSibling.stepDown()"></div>
+              <input type="number" min="1" value="100" required>
+              <div class="form-plus"
+                onclick="this.previousElementSibling.stepUp()"></div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Кровельный материал</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Металлочерепица</div>
+                <div class="options-value">Мягкая кровля</div>
+                <div class="options-value">Ещё не определился</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Стропильная система</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Нужна</div>
+                <div class="options-value">Не нужна</div>
+                <div class="options-value">Необходима консультация</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-side form-grid">
+          <div class="form-input-wrap">
+            <div class="form-input-title">Демонтаж старой крыши</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Да</div>
+                <div class="options-value">Нет</div>
+                <div class="options-value">Требуется консультация</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Требуется утепление</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Да</div>
+                <div class="options-value">Нет</div>
+                <div class="options-value">Не знаю</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-col">
+            <button class="btn btn-orange"><span>рассчитать
+                стоимость</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- 2_about -->
-  <div class="about-box alt-about reconstruction-about-box">
+  <div class="about-box alt-about roofing-about-box">
     <img class="hidden-md rellax absolute right-green" data-rellax-speed="1"
       loading="lazy"
       src="{{ Vite::image('general/hanging/about_green_mobile.png') }}"
       alt="">
     <div class="container grid-2">
       <div class="left-col">
-        <div class="h2"><b>Пришло время</b> перестроить!</div>
+        <div class="h2"><b>Идеальная кровля — залог </b> Вашей безопасности!
+        </div>
         <div class="sub-h">
-          Одним из главных направлений деятельности у компании Woodhouse495
-          является реконструкция и реставрация как деревянных, так и кирпичных и
-          каменных домов.
+          Профессиональные строители-кровельщики из Беларуси более 10 лет
+          занимаются устройством кровли, реконструкцией старой крыши и устройством
+          стропильных систем любой сложности. Наши мастера обладают всеми
+          навыками, необходимыми для монтажа кровельных материалов. Они знают и
+          учитывают их особенности, а также тип крыши. Кровельщики строго
+          придерживаются правил техники безопасности и делают все на высшем
+          уровне.
         </div>
         <div class="text-item format-text text-to-hide text-to-hide-alt">
-          <p>Во время нашей первой встречи мы вместе с Вами делаем анализ
-            имеющегося дома и договариваемся о том, что мы будем изменять. Вы со
-            своей стороны скажете все пожелания, а мы предоставим информацию о
-            том, как это сделать максимально профессионально.</p>
-          <p class="green">Мы готовы оказать полный спектр услуг по:</p>
-          <p>- <b>пристройкам</b>: терраса, веранда, дополнительное помещение
-            (баня, гараж, летняя кухня и многое другое), балкон;</p>
-          <p>- <b>достройке</b>, в том числе достройка этажа;</p>
-          <p>- <b>утепление</b> (снаружи, внутри, утепление перегородок, отдельно
-            мансарды, перекрытий);</p>
-          <p>- наружная и внутренняя <b>отделка</b>;</p>
-          <p>- <b>перепланировка</b> внутри строения;</p>
-          <p>- <b>замена</b> кровельного покрытия.</p>
-          <p>На этом спектр оказываемых нами услуг по достройке и реконструкции
-            дома не ограничивается. Вы всегда можете позвонить нам и узнать
-            стоимость и возможность выполнения тех или иных работ, а мы с радостью
-            вам в этом поможем.</p>
+          <p>Компания WoodHouse495 выполняет различные виды кровельных работ в
+            Москве и МО, а также предоставляет дополнительные услуги. Специалисты
+            в короткие сроки производят монтаж основных и вспомогательных
+            конструкций, оборудования. Проведение кровельных работ включает весь
+            комплекс операций, в том числе укладку паро-, тепло- и гидроизоляции,
+            защитного покрытия, утепление. Любые мероприятия выполняются в
+            кратчайшие сроки с применением современного оборудования и материалов.
+          </p>
+          <p class="green"><b>Крыша — это надежная защита вашего дома от
+              различных природных явлений, поэтому не стремитесь сэкономить на
+              своем комфорте и безопасности. Доверьте кровельные работы
+              профессионалам!</b></p>
         </div>
         <div class="read-more link hidden-md">
           <img class="to-svg" src="{{ Vite::image('icons/menu-arrow.svg') }}"
@@ -628,16 +606,8 @@
             <div class="swiper-slide">
               <div class="about-info-col">
                 <div class="aic-big">><span class="int-js"
-                    data-end="1400">1400</span></div>
-                <div class="aic-info">Выполненных проектов по отделке и
-                  строительству деревянных домов</div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="about-info-col">
-                <div class="aic-big"><span class="int-js"
-                    data-end="19">19</span> лет</div>
-                <div class="aic-info">в сфере строительства деревянных домов
+                    data-end="500">500</span></div>
+                <div class="aic-info">выполненных устройств кровли "под ключ"
                 </div>
               </div>
             </div>
@@ -645,15 +615,22 @@
               <div class="about-info-col">
                 <div class="aic-big"><span class="int-js"
                     data-end="10">10</span> лет</div>
-                <div class="aic-info">гарантии на выполненные работы</div>
+                <div class="aic-info">гарантия на выполненные работы</div>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="about-info-col">
                 <div class="aic-big"><span class="int-js"
-                    data-end="8750">8750</span>м²</div>
-                <div class="aic-info">объектов общей площадью сдано в 2021 году
-                </div>
+                    data-end="19">19</span> лет</div>
+                <div class="aic-info">в области строительства и реконструкции
+                  кровли</div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="about-info-col">
+                <div class="aic-big"><span class="int-js"
+                    data-end="5000">5000</span>м²</div>
+                <div class="aic-info">выполненных работ за последние 10 лет</div>
               </div>
             </div>
           </div>
@@ -846,7 +823,9 @@
         </div>
       </div>
       <div class="articles-btn">
-        <div class="btn btn-orange btn-alt"><span>Посмотреть еще</span></div>
+        <a class="btn btn-orange btn-alt" href="/articles">
+          <span>Посмотреть еще</span>
+        </a>
       </div>
     </div>
   </div>

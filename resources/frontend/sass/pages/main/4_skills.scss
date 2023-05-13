@@ -1,203 +1,203 @@
 .skills-box {
-	padding-top: 60px;
-	background: #f9f9f9 url(../images/backgrounds/skills-house.png) no-repeat 50%
-		100%;
-	z-index: 3;
+  padding-top: 60px;
+  background: #f9f9f9 url(../images/backgrounds/skills-house.png) no-repeat 50%
+    100%;
+  z-index: 3;
 
-	.sub-h {
-		margin-top: 20px;
-		display: inline-block;
-		max-width: 626px;
-	}
+  .sub-h {
+    margin-top: 20px;
+    display: inline-block;
+    max-width: 626px;
+  }
 
-	.wood-piece {
-		left: -213px;
-		bottom: -254px;
-	}
+  .wood-piece {
+    left: -213px;
+    bottom: -254px;
+  }
 
-	.wood-piece-blur {
-		left: -494px;
-		bottom: -166px;
-	}
+  .wood-piece-blur {
+    left: -494px;
+    bottom: -166px;
+  }
 
-	.sign-list {
-		position: relative;
-		top: -20px;
-		height: 969px;
+  .sign-list {
+    position: relative;
+    top: -20px;
+    height: 969px;
 
-		.sign-item {
-			position: absolute;
-			cursor: pointer;
+    .sign-item {
+      position: absolute;
+      cursor: pointer;
 
-			&:hover {
-				.sign-circle {
-					transform: scale(1.2);
-				}
+      &:hover {
+        .sign-circle {
+          transform: scale(1.2);
+        }
 
-				.sign-text {
-					transform: scale(1.1);
-				}
+        .sign-text {
+          transform: scale(1.1);
+        }
 
-				.sign-line {
-					height: 3px;
-				}
-			}
-		}
+        .sign-line {
+          height: 3px;
+        }
+      }
+    }
 
-		.sign-circle {
-			position: absolute;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 23px;
-			height: 23px;
-			background: linear-gradient(to bottom, #add8a7, #84c57a);
-			border-radius: 50%;
-			transition: transform 0.25s;
-			z-index: 2;
+    .sign-circle {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 23px;
+      height: 23px;
+      background: linear-gradient(to bottom, #add8a7, #84c57a);
+      border-radius: 50%;
+      transition: transform 0.25s;
+      z-index: 2;
 
-			&::before {
-				position: absolute;
-				content: '';
-				width: 13px;
-				height: 13px;
-				background: #fff;
-				border-radius: 50%;
-			}
-		}
+      &::before {
+        position: absolute;
+        content: '';
+        width: 13px;
+        height: 13px;
+        background: #fff;
+        border-radius: 50%;
+      }
+    }
 
-		.sign-line {
-			position: absolute;
-			height: 2px;
-			background: #fff;
-			transition: height 0.25s;
-			pointer-events: none;
-		}
+    .sign-line {
+      position: absolute;
+      height: 2px;
+      background: #fff;
+      transition: height 0.25s;
+      pointer-events: none;
+    }
 
-		.sign-text {
-			position: relative;
-			padding: 17px 22px;
-			background: #fff;
-			border-radius: 6px;
-			transition: transform 0.25s;
-		}
+    .sign-text {
+      position: relative;
+      padding: 17px 22px;
+      background: #fff;
+      border-radius: 6px;
+      transition: transform 0.25s;
+    }
 
-		.sign-item:nth-child(1) {
-			top: 303px;
-			left: 449px;
+    .sign-item:nth-child(1) {
+      top: 303px;
+      left: 449px;
 
-			.sign-circle {
-				top: -145px;
-				left: 49px;
-			}
+      .sign-circle {
+        top: -145px;
+        left: 49px;
+      }
 
-			.sign-line {
-				top: -57px;
-				left: 17px;
-				width: 163px;
-				transform: matrix(-0.44, -0.9, 0.91, -0.42, 0, 0);
-			}
-		}
+      .sign-line {
+        top: -57px;
+        left: 17px;
+        width: 163px;
+        transform: matrix(-0.44, -0.9, 0.91, -0.42, 0, 0);
+      }
+    }
 
-		.sign-item:nth-child(2) {
-			top: 806px;
-			left: 329px;
+    .sign-item:nth-child(2) {
+      top: 806px;
+      left: 329px;
 
-			.sign-circle {
-				top: -293px;
-				left: 178px;
-			}
+      .sign-circle {
+        top: -293px;
+        left: 178px;
+      }
 
-			.sign-line {
-				top: -126px;
-				left: -18px;
-				width: 312px;
-				transform: matrix(-0.31, 0.95, -0.96, -0.29, 0, 0);
-			}
-		}
+      .sign-line {
+        top: -126px;
+        left: -18px;
+        width: 312px;
+        transform: matrix(-0.31, 0.95, -0.96, -0.29, 0, 0);
+      }
+    }
 
-		.sign-item:nth-child(3) {
-			top: 683px;
-			left: 0;
+    .sign-item:nth-child(3) {
+      top: 683px;
+      left: 0;
 
-			.sign-circle {
-				top: 68px;
-				left: 332px;
-			}
+      .sign-circle {
+        top: 68px;
+        left: 332px;
+      }
 
-			.sign-line {
-				top: 63px;
-				left: 192px;
-				width: 157px;
-				transform: matrix(-0.98, -0.21, 0.22, -0.98, 0, 0);
-			}
-		}
+      .sign-line {
+        top: 63px;
+        left: 192px;
+        width: 157px;
+        transform: matrix(-0.98, -0.21, 0.22, -0.98, 0, 0);
+      }
+    }
 
-		.sign-item:nth-child(4) {
-			top: 607px;
-			left: 581px;
+    .sign-item:nth-child(4) {
+      top: 607px;
+      left: 581px;
 
-			.sign-circle {
-				top: 18px;
-				left: -69px;
-			}
+      .sign-circle {
+        top: 18px;
+        left: -69px;
+      }
 
-			.sign-line {
-				top: 29px;
-				left: -54px;
-				width: 74px;
-			}
-		}
+      .sign-line {
+        top: 29px;
+        left: -54px;
+        width: 74px;
+      }
+    }
 
-		.sign-item:nth-child(5) {
-			top: 398px;
-			left: 0;
+    .sign-item:nth-child(5) {
+      top: 398px;
+      left: 0;
 
-			.sign-circle {
-				top: -83px;
-				left: 254px;
-			}
+      .sign-circle {
+        top: -83px;
+        left: 254px;
+      }
 
-			.sign-line {
-				top: -34px;
-				left: 127px;
-				width: 156px;
-				transform: matrix(-0.85, 0.52, -0.54, -0.84, 0, 0);
-			}
-		}
+      .sign-line {
+        top: -34px;
+        left: 127px;
+        width: 156px;
+        transform: matrix(-0.85, 0.52, -0.54, -0.84, 0, 0);
+      }
+    }
 
-		.sign-item:nth-child(6) {
-			top: 260px;
-			right: 0;
+    .sign-item:nth-child(6) {
+      top: 260px;
+      right: 0;
 
-			.sign-circle {
-				top: 133px;
-				left: -306px;
-			}
+      .sign-circle {
+        top: 133px;
+        left: -306px;
+      }
 
-			.sign-line {
-				top: 87px;
-				left: -307px;
-				width: 329px;
-				transform: matrix(-0.93, 0.35, -0.37, -0.93, 0, 0);
-			}
-		}
+      .sign-line {
+        top: 87px;
+        left: -307px;
+        width: 329px;
+        transform: matrix(-0.93, 0.35, -0.37, -0.93, 0, 0);
+      }
+    }
 
-		.sign-item:nth-child(7) {
-			top: 772px;
-			right: 0;
+    .sign-item:nth-child(7) {
+      top: 772px;
+      right: 0;
 
-			.sign-circle {
-				top: -182px;
-				left: 250px;
-			}
+      .sign-circle {
+        top: -182px;
+        left: 250px;
+      }
 
-			.sign-line {
-				top: -80px;
-				left: 100px;
-				width: 209px;
-				transform: matrix(0.52, -0.86, 0.87, 0.5, 0, 0);
-			}
-		}
-	}
+      .sign-line {
+        top: -80px;
+        left: 100px;
+        width: 209px;
+        transform: matrix(0.52, -0.86, 0.87, 0.5, 0, 0);
+      }
+    }
+  }
 }

@@ -7,7 +7,7 @@
 @section('content')
 
   <!-- 1_home -->
-  <div class="home-box roofing-home-box planken-home-box">
+  <div class="home-box roofing-home-box outbuildings-home-box">
     <div class="container grid-with-form grid grid-md-12">
       <div class="visible-md rellax absolute left-shaving-alt"
         data-rellax-speed="1">
@@ -21,12 +21,12 @@
         alt="">
 
       <div class="left-col">
-        <h1 class="h1"><b>Отделка дома планкеном</b> в Москве и области</h1>
+        <div class="h1"><b>Строительство пристроек</b> в Москве и области
+        </div>
         <div class="sub-h">
           <div class="three-dots"><i></i><i></i><i></i></div>
-          <div>Выполним отделку планкеном на вашем доме. Сделаем качественно
-            выполненный ремонт<br>
-            и превратим ваш дом в дворец!</div>
+          <div>Выполним пристройки любой сложности к вашему деревянному или
+            кирпичному дому. Звоните и мы сделаем все за вас!</div>
         </div>
       </div>
       <div class="right-col">
@@ -58,7 +58,7 @@
 
   <!-- 11_portfolio -->
   <div
-    class="portfolio-box alt-portfolio-box sanding-portfolio-box roofing-portfolio-box planken-portfolio-box"
+    class="portfolio-box alt-portfolio-box sanding-portfolio-box roofing-portfolio-box outbuildings-portfolio-box"
     id="portfolio">
     <div class="container">
       <div class="title-row">
@@ -168,14 +168,15 @@
       <div class="portfolio-bottom">
         <div class="pb-info gray">Больше реализованных проектов смотрите в нашем
           Instagram</div>
-        <div class="btn btn-orange btn-instagram">
+        <a class="btn btn-orange btn-instagram" target="_blank"
+          href="https://www.instagram.com/woodhouse495/">
           <span>
             <img loading="lazy"
               src="{{ Vite::image('icons/instagram-btn.svg') }}"
               alt="">
             Подписывайтесь на нас
           </span>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -255,14 +256,60 @@
         </div>
       </div>
       <div class="process-btn">
-        <a class="btn btn-orange" href="#measurer"><span>Бесплатно вызвать
-            замерщика</span></a>
+        <div class="btn btn-orange" data-popup=".popup-measurer">
+          <span>Бесплатно вызвать замерщика</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8_partners -->
+  <div class="partners-box roofing-partners-box outbuildings-partners-box">
+    <div class="hidden-md">
+      <img class="rellax absolute partners-green-left" data-rellax-speed="4"
+        loading="lazy"
+        src="{{ Vite::image('general/hanging/partners_green_left_mobile.png') }}"
+        alt="">
+      <img class="rellax absolute partners-green-right" data-rellax-speed="3"
+        loading="lazy"
+        src="{{ Vite::image('general/hanging/partners_green_right_mobile.png') }}"
+        alt="">
+    </div>
+
+    <div class="container">
+      <div class="visible-md">
+        <img class="rellax absolute partners-green-1" data-rellax-speed="1"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/partners_alt_green_1.png') }}"
+          alt="">
+        <img class="rellax absolute partners-green-2" data-rellax-speed="2"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/partners_alt_green_2.png') }}"
+          alt="">
+      </div>
+
+      <div class="title-row">
+        <div class="h2">
+          <b>Мы работаем <span class="visible-md">только</span></b>
+          с проверенными производителями
+        </div>
+        <div class="sub-h">Выбираем в первую очередь качество, проверенное
+          годами</div>
+      </div>
+      <div class="partners-image visible-md">
+        <img loading="lazy" src="{{ Vite::image('tmp/partners/roofing.png') }}"
+          alt="Производители">
+      </div>
+      <div class="partners-image hidden-md">
+        <img loading="lazy"
+          src="{{ Vite::image('tmp/partners/roofing_mobile.png') }}"
+          alt="Производители">
       </div>
     </div>
   </div>
 
   <!-- 16_price -->
-  <div class="price-box roofing-price-box planken-price-box">
+  <div class="price-box roofing-price-box outbuildings-price-box">
     <div class="container">
 
       <div class="price-discount visible-xxl">
@@ -273,69 +320,47 @@
       </div>
 
       <div class="title-row">
-        <div class="h2"><b>Актуальный прайс</b><br>по монтажу
-          планкена</div>
+        <div class="h2"><b>Актуальный прайс</b><br>по строительству пристроек
+        </div>
       </div>
       <div class="price-table">
         <table>
           <tbody>
             <tr>
-              <td>Монтаж обрешетки на деревянную стену (Брус-OSB/бревно)</td>
-              <td>от 200р м²</td>
+              <td>Монтаж винтовых свай</td>
+              <td>от 6500 р шт</td>
             </tr>
             <tr>
-              <td>Монтаж обрешетки на каменную стену (бетон/кирпич)</td>
-              <td>от 300р м²</td>
+              <td>Устройство ленточного фундамента</td>
+              <td>от 3500 р м.п.</td>
             </tr>
             <tr>
-              <td>Монтаж обрешетки для подшивной доски крыши</td>
-              <td>от 200р м²</td>
+              <td>Обвязка каркасной пристройки</td>
+              <td>от 650 р м²</td>
             </tr>
             <tr>
-              <td>Утепление стен (1 слой)</td>
-              <td>от 70р (50мм) м²</td>
+              <td>Монтаж каркаса стен и потолка пристройки</td>
+              <td>от 850 р м²</td>
             </tr>
             <tr>
-              <td>Ветрозащитная плита или мембрана (снаружи)/пароизоляция (внутри)
-              </td>
-              <td>от 50р м²</td>
+              <td>Утепление каркаса</td>
+              <td>от 100 р слой (50мм)</td>
             </tr>
             <tr>
-              <td>Монтаж вагонки штиль (потолок, внутренняя отделка, на кляймеры)
-              </td>
-              <td>от 350р м²</td>
+              <td>Монтаж гидро- пароизоляции стен</td>
+              <td>от 70 р м²</td>
             </tr>
             <tr>
-              <td>Монтаж скандинавской фасадной доски (гвозди в пласть доски)</td>
-              <td>от 350р м²</td>
+              <td>Монтаж стропильной системы</td>
+              <td>от 850 р м²</td>
             </tr>
             <tr>
-              <td>Монтаж имитации бруса (саморезы в шип)</td>
-              <td>от 500р м²</td>
+              <td>Монтаж обрешетки</td>
+              <td>250 р м²</td>
             </tr>
             <tr>
-              <td>Монтаж планкена (скрытый крепеж Змейка)</td>
-              <td>от 650р м²</td>
-            </tr>
-            <tr>
-              <td>Монтаж подшивной доски крыши (планкен и т.п.)</td>
-              <td>от 550р м²</td>
-            </tr>
-            <tr>
-              <td>Установка наличника, угловой доски</td>
-              <td>от 250р м.п.</td>
-            </tr>
-            <tr>
-              <td>Отделка оконных и дверных проемов</td>
-              <td>от 250р м.п.</td>
-            </tr>
-            <tr>
-              <td>Демонтаж старой обшивки</td>
-              <td>от 150р м²</td>
-            </tr>
-            <tr>
-              <td>Покраска планкена (1 слой)</td>
-              <td>от 100р м²</td>
+              <td>Монтаж металлочерепицы и всех комплектующих</td>
+              <td>500 р м²</td>
             </tr>
           </tbody>
         </table>
@@ -343,65 +368,138 @@
     </div>
   </div>
 
+  <!-- 17_cost -->
+  <div class="cost-box roofing-cost-box outbuildings-cost-box">
+    <img class="hidden-md rellax absolute cost-green-left-mobile"
+      data-rellax-speed="-1" loading="lazy"
+      src="{{ Vite::image('general/hanging/cost_green_left_mobile.png') }}"
+      alt="">
+    <div class="container">
+      <div class="visible-md">
+        <img class="rellax absolute cost-green-left" data-rellax-speed="-1"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/cost_green_left.png') }}"
+          alt="">
+        <img class="rellax absolute cost-green-right" data-rellax-speed="-2"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/cost_green_right.png') }}"
+          alt="">
+        <img class="rellax absolute cost-device" data-rellax-speed="1"
+          loading="lazy"
+          src="{{ Vite::image('general/hanging/cost_device_4.png') }}"
+          alt="">
+      </div>
+
+      <div class="title-row">
+        <div class="h2"><b>Рассчитайте стоимость</b> строительных работ</div>
+        <div class="sub-h">Все, что Вам нужно — заполнить форму ниже и мы вышлем
+          предварительную смету по Вашей задаче</div>
+      </div>
+
+      <div class="cost-form form-grid">
+        <div class="left-side form-grid">
+          <div class="form-input-wrap">
+            <div class="form-input-title">Площадь кровли (м²)</div>
+            <div class="form-input form-input-alt form-input-alt-with-buttons">
+              <div class="form-minus"
+                onclick="this.nextElementSibling.stepDown()"></div>
+              <input type="number" min="1" value="100" required>
+              <div class="form-plus"
+                onclick="this.previousElementSibling.stepUp()"></div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Кровельный материал</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Металлочерепица</div>
+                <div class="options-value">Мягкая кровля</div>
+                <div class="options-value">Ещё не определился</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Стропильная система</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Нужна</div>
+                <div class="options-value">Не нужна</div>
+                <div class="options-value">Необходима консультация</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-side form-grid">
+          <div class="form-input-wrap">
+            <div class="form-input-title">Демонтаж старой крыши</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Да</div>
+                <div class="options-value">Нет</div>
+                <div class="options-value">Требуется консультация</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Требуется утепление</div>
+            <div class="form-input form-input-alt form-options">
+              <input type="text" readonly required>
+              <img class="to-svg icon"
+                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+              <div class="options-list">
+                <div class="options-value">Да</div>
+                <div class="options-value">Нет</div>
+                <div class="options-value">Не знаю</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-col">
+            <button class="btn btn-orange"><span>рассчитать
+                стоимость</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 2_about -->
-  <div class="about-box alt-about-box roofing-about-box planken-about-box">
+  <div class="about-box alt-about roofing-about-box outbuildings-about-box">
     <img class="hidden-md rellax absolute right-green" data-rellax-speed="1"
       loading="lazy"
       src="{{ Vite::image('general/hanging/about_green_mobile.png') }}"
       alt="">
-    <div class="container grid">
+    <div class="container grid-2">
       <div class="left-col">
-        <div class="h2"><b>Отделка дома</b> планкеном</div>
-        <div class="big-content">
-          <div class="sub-h">
-            Необходимо отметить, что любое строение можно обшить планкеном. То
-            есть это может быть каменный дом, деревянный сруб или каркасная
-            постройка. Этот универсальный материал, как и вагонка, монтируется
-            только на обрешетку, которую устанавливают и крепят к стенам дома.
-            Поэтому мы можем выполнить монтаж планкена на доме из любого
-            материала.
-          </div>
-          <div class="text-item format-text text-to-hide">
-            <p>
-            <h4>Существует два основных способа монтажа планкена:</h4>
-            </p>
-            <p><b class="green">Закрытый</b>. Этот способ используется для
-              монтажа скошенных досок. Он достаточно трудоемкий, но результатом
-              будет эффект монолитной стены из дерева. После завершения монтажа на
-              поверхности не будет стыков, крепежные элементы не будут заметны.
-              Если нет навыков работы с планкеном, то лучше доверить процесс
-              монтажа профессионалам. При монтаже планкена закрытым способом
-              используют такие виды крепежных элементов:</p>
-            <p><b>"Мост"</b>. Он подходит для крепления скошенного планкена. По
-              своему виду крепеж напоминает маленький мостик с прямоугольной
-              пластиной, которая соединяет два усика;</p>
-            <p><b>"Ключ"</b>. Это простой тип крепежа, для работы с которым не
-              нужны специализированные инструменты или определенные навыки. По
-              виду крепежный элемент похож на замочный ключ, в котором есть
-              отверстия для самореза.
-              Еще в нем есть вертикальный стопор, обеспечивающий вентиляционный
-              зазор между отдельными панелями;</p>
-
-            <p><b>"Змейка"</b>. Крепеж подходит не только для скошенной, но и для
-              прямой доски. Это металлическая пластина, имеющая отверстия для
-              гвоздей и саморезов. На каждой планке есть стопор, обеспечивающий
-              небольшой зазор для вентиляции фасада. Благодаря этому крепежному
-              элементу облицовка из планкена надолго сохранит свой вид;</p>
-            <p><b>"Краб"</b>. Крепежный элемент состоит из металлической основы и
-              двух Г-образных отбортовок.</p>
-            <p><b>Открытый</b>. Это наиболее простой способ монтажа скошенного
-              планкена. Он заключается в том, что каждая доска фиксируется на
-              обрешетке при помощи гвоздей или саморезов сквозным методом. Причем
-              шляпки крепежных элементов остаются открытыми на лицевой стороне
-              досок. Благодаря открытому способу отделки фасада планкеном из
-              лиственницы процесс не отнимет много времени, поскольку не требуется
-              специальных знаний и инструментов. Основное преимущество этого
-              способа заключается в простоте демонтажа при необходимости замены
-              панелей с дефектами.</p>
-            <p>Если вам нужно будет сделать отделку планкеном любым способом и вы
-              решите обратится к профессионалам, то позвоните в компанию
-              Woodhouse495 и мы выполним ваш заказ любой сложности.</p>
-          </div>
+        <div class="h2"><b>Пристройки и надстройки к Вашему дому!</b>
+          Строители из Беларуси</div>
+        <div class="sub-h">
+          Человеку свойственно расширять вокруг себя зону комфорта. Проживая в
+          частном доме, у владельца может возникнуть необходимость пристроить
+          веранду для летнего отдыха, импровизированный миниатюрный спортзал или
+          вынести котельную за пределы дома.
+        </div>
+        <div class="text-item format-text text-to-hide text-to-hide-alt">
+          <p>На первый взгляд, это всего лишь легкая пристройка, но она потребует
+            закладки фундамента, утепления стен, монтажа дверей и окон, установки
+            кровли по всем правилам.</p>
+          <p>Если Вам нужен профессиональный подход к задуманному и вы хотите,
+            чтобы этим занимались настоящие профессионалы своего дела - звоните
+            нам!</p>
+          <p>Мы сделаем все максимально качественно и в кратчайшие сроки. А после
+            сданного объекта дадим гарантию на выполненные работы.</p>
+          <p>Мы расскажем из чего лучше сделать пристройку к любому дому и что
+            будет служить вам веками. Звоните и мы ответим на все Ваши вопросы!
+          </p>
         </div>
         <div class="read-more link hidden-md">
           <img class="to-svg" src="{{ Vite::image('icons/menu-arrow.svg') }}"
@@ -450,7 +548,7 @@
   </div>
 
   <!-- 3_advantages -->
-  <div class="advantages-box sanding-advantages-box planken-advantages-box">
+  <div class="advantages-box sanding-advantages-box">
     <div class="container">
       <img class="rellax absolute partners-green-1" data-rellax-speed="2"
         loading="lazy"
@@ -563,7 +661,7 @@
   </div>
 
   <!-- 12_articles -->
-  <div class="articles-box alt-articles-box planken-articles-box">
+  <div class="articles-box alt-articles-box">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute article-green-1" data-rellax-speed="2"
@@ -632,7 +730,9 @@
         </div>
       </div>
       <div class="articles-btn">
-        <div class="btn btn-orange btn-alt"><span>Посмотреть еще</span></div>
+        <a class="btn btn-orange btn-alt" href="/articles">
+          <span>Посмотреть еще</span>
+        </a>
       </div>
     </div>
   </div>

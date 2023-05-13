@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
   )
 
   // document.addEventListener('scroll', e => {
-  // 	// переменная ширины кастомного скролла
-  // 	setScrollbarWidth('--scrollbar-width', 'custom-scroll');
-  // 	setScrollbarWidth();
+  //   // переменная ширины кастомного скролла
+  //   setScrollbarWidth('--scrollbar-width', 'custom-scroll');
+  //   setScrollbarWidth();
   // });
   // setScrollbarWidth();
   // setScrollbarWidth('--scrollbar-width', 'custom-scroll');

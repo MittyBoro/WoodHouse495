@@ -74,6 +74,10 @@ class PageSeeder extends Seeder
                 'title' => 'Политика конфиденциальности',
                 'slug' => 'privacy',
             ],
+            [
+                'title' => 'Договор оферты',
+                'slug' => 'offer',
+            ],
         ];
 
         return $pages;

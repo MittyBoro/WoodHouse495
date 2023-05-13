@@ -21,6 +21,7 @@
     align-items: center;
     margin-bottom: 44px;
     text-align: center;
+    color: currentColor;
 
     &:nth-child(8) ~ .services-item {
       display: none;
@@ -64,7 +65,8 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 34px 56px;
     padding: 55px 44px 56px;
-    background: #F4F7FA url(../images/backgrounds/contacts-gray.png) no-repeat 50%;
+    background: #f4f7fa url(../images/backgrounds/contacts-gray.png) no-repeat
+      50%;
     background-size: cover;
     border-radius: 8px;
     text-align: center;

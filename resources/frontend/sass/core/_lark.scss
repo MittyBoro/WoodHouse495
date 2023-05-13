@@ -6,59 +6,59 @@
  ******************** */
 
 :root {
-	--padding-side: 15px;
-	--content-width: calc(100vw - 10px);
-	--body-width: calc(100vw - var(--scrollbar-width));
-	--side-width: calc((var(--body-width) - var(--content-width) + 30px) / 2);
-	--scrollbar-width: 17px;
+  --padding-side: 15px;
+  --content-width: calc(100vw - 10px);
+  --body-width: calc(100vw - var(--scrollbar-width));
+  --side-width: calc((var(--body-width) - var(--content-width) + 30px) / 2);
+  --scrollbar-width: 17px;
 }
 
 $mediaWidth: 365px 320px 'xs', 576px 375px 'sm', 768px 740px 'md',
-	992px 960px 'lg', 1240px 1190px 'xl', 1540px 1190px 'xxl';
+  992px 960px 'lg', 1240px 1190px 'xl', 1540px 1190px 'xxl';
 
 *::selection {
-	background: #333;
-	color: #fff;
+  background: #333;
+  color: #fff;
 }
 
 *:active {
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body,
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 html {
-	touch-action: manipulation;
-	overflow-x: hidden;
+  touch-action: manipulation;
+  overflow-x: hidden;
 
-	&.noscroll {
-		overflow: hidden !important;
-		padding-right: var(--scrollbar-width);
-	}
+  &.noscroll {
+    overflow: hidden !important;
+    padding-right: var(--scrollbar-width);
+  }
 }
 
 body:not(.preload) {
-	.preload-box {
-		visibility: hidden;
-		opacity: 0;
-		transition: all 0.4s;
-	}
+  .preload-box {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s;
+  }
 }
 
 [class*='-box'] {
-	position: relative;
+  position: relative;
 }
 
 // ------- Reset Styles -------
 * {
-	margin: 0;
-	padding: 0;
-	outline: none;
-	border: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  box-sizing: border-box;
 }
 
 input,
@@ -67,49 +67,49 @@ select,
 pre,
 blockquote,
 button {
-	font: inherit;
-	background: transparent;
+  font: inherit;
+  background: transparent;
 }
 
 input {
-	appearance: none;
+  appearance: none;
 
-	&::-webkit-outer-spin-button,
-	&::-webkit-inner-spin-button {
-		appearance: none;
-		margin: 0;
-	}
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
 
-	&[type='number'] {
-		appearance: textfield;
-	}
+  &[type='number'] {
+    appearance: textfield;
+  }
 }
 
 textarea {
-	resize: none;
+  resize: none;
 }
 
 :focus {
-	outline: 0;
+  outline: 0;
 }
 
 [hidden] {
-	display: none;
+  display: none;
 }
 
 [draggable='false'] {
-	user-select: none;
+  user-select: none;
 }
 
 img {
-	vertical-align: middle;
-	max-width: 100%;
-	height: auto;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
 }
 
 img,
 svg {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 h1,
@@ -118,133 +118,133 @@ h3,
 h4,
 h5,
 h6 {
-	font: inherit;
+  font: inherit;
 }
 
 a {
-	color: currentColor;
+  color: currentColor;
 }
 
 a,
 a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 li {
-	list-style: none;
+  list-style: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 p,
 .p {
-	&:not(:last-child) {
-		margin-bottom: 1.45em;
-	}
+  &:not(:last-child) {
+    margin-bottom: 1.45em;
+  }
 }
 
 .preload * {
-	transition: none !important;
+  transition: none !important;
 }
 
 .tal {
-	text-align: left;
+  text-align: left;
 }
 
 .tac {
-	text-align: center;
+  text-align: center;
 }
 
 .tar {
-	text-align: right;
+  text-align: right;
 }
 
 .absolute {
-	position: absolute;
+  position: absolute;
 }
 
 .relative {
-	position: relative;
+  position: relative;
 }
 
 .static {
-	position: static;
+  position: static;
 }
 
 img,
 svg {
-	pointer-events: none;
-	user-select: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 img.to-svg {
-	opacity: 0;
+  opacity: 0;
 }
 
 .img-cover-wrap {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 
-	&.hover {
-		cursor: pointer;
-		background: linear-gradient(
-			0deg,
-			rgba(40, 47, 63, 0.8),
-			rgba(40, 47, 63, 0.8)
-		);
+  &.hover {
+    cursor: pointer;
+    background: linear-gradient(
+      0deg,
+      rgba(40, 47, 63, 0.8),
+      rgba(40, 47, 63, 0.8)
+    );
 
-		img {
-			transition: all 0.25s;
-		}
+    img {
+      transition: all 0.25s;
+    }
 
-		.show-more {
-			position: absolute;
-			pointer-events: none;
-			transition: opacity 0.25s;
-			z-index: 2;
-			opacity: 0;
-		}
+    .show-more {
+      position: absolute;
+      pointer-events: none;
+      transition: opacity 0.25s;
+      z-index: 2;
+      opacity: 0;
+    }
 
-		&:hover {
-			img {
-				transform: scale(1.05);
-				opacity: 0.2;
-				filter: blur(3px);
-			}
+    &:hover {
+      img {
+        transform: scale(1.05);
+        opacity: 0.2;
+        filter: blur(3px);
+      }
 
-			.show-more {
-				opacity: 1;
-			}
-		}
-	}
+      .show-more {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .img-cover-wrap img,
 .img-cover-wrap video,
 .img-cover {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	pointer-events: none;
-	transition: all 0.25s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: all 0.25s;
 }
 
 @mixin grid-values {
-	display: grid;
-	align-items: start;
-	gap: 40px;
+  display: grid;
+  align-items: start;
+  gap: 40px;
 }
 
 .grid-12,
@@ -253,167 +253,167 @@ img.to-svg {
 .grid-3,
 .grid-2,
 .grid {
-	@include grid-values;
+  @include grid-values;
 }
 
 .grid-12 {
-	grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
 }
 
 .grid-6 {
-	grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .grid-4 {
-	grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .grid-3 {
-	grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .grid-2 {
-	grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .col-full {
-	grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 // ------- Flex-grid -------
 .row {
-	padding-left: var(--padding-side);
-	padding-right: var(--padding-side);
+  padding-left: var(--padding-side);
+  padding-right: var(--padding-side);
 }
 
 .container,
 .container-full {
-	position: relative;
-	padding-left: var(--padding-side);
-	padding-right: var(--padding-side);
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
+  position: relative;
+  padding-left: var(--padding-side);
+  padding-right: var(--padding-side);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .container {
-	max-width: var(--content-width);
+  max-width: var(--content-width);
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 @each $screenW, $containerW, $name in $mediaWidth {
-	.grid-#{$name}-12,
-	.grid-#{$name}-6,
-	.grid-#{$name}-4,
-	.grid-#{$name}-3,
-	.grid-#{$name}-2,
-	.grid-#{$name} {
-		@include grid-values;
-	}
+  .grid-#{$name}-12,
+  .grid-#{$name}-6,
+  .grid-#{$name}-4,
+  .grid-#{$name}-3,
+  .grid-#{$name}-2,
+  .grid-#{$name} {
+    @include grid-values;
+  }
 
-	@media (min-width: #{$screenW}) {
-		:root {
-			--screen-name: #{$name};
-			--content-width: #{$containerW};
-		}
+  @media (min-width: #{$screenW}) {
+    :root {
+      --screen-name: #{$name};
+      --content-width: #{$containerW};
+    }
 
-		.hidden-#{$name} {
-			display: none !important;
-		}
+    .hidden-#{$name} {
+      display: none !important;
+    }
 
-		.grid-#{$name}-12 {
-			grid-template-columns: repeat(12, 1fr);
-		}
+    .grid-#{$name}-12 {
+      grid-template-columns: repeat(12, 1fr);
+    }
 
-		.grid-#{$name}-6 {
-			grid-template-columns: repeat(6, 1fr);
-		}
+    .grid-#{$name}-6 {
+      grid-template-columns: repeat(6, 1fr);
+    }
 
-		.grid-#{$name}-4 {
-			grid-template-columns: repeat(4, 1fr);
-		}
+    .grid-#{$name}-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-		.grid-#{$name}-3 {
-			grid-template-columns: repeat(3, 1fr);
-		}
+    .grid-#{$name}-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-		.grid-#{$name}-2 {
-			grid-template-columns: repeat(2, 1fr);
-		}
+    .grid-#{$name}-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-		.col-#{$name}-full {
-			grid-column: 1 / -1;
-		}
-	}
+    .col-#{$name}-full {
+      grid-column: 1 / -1;
+    }
+  }
 
-	@media (max-width: calc( $screenW - 0.01px)) {
-		.visible-#{$name} {
-			display: none !important;
-		}
-	}
+  @media (max-width: calc( $screenW - 0.01px)) {
+    .visible-#{$name} {
+      display: none !important;
+    }
+  }
 }
 
 // ------- Sizing -------
 .w-100 {
-	width: 100% !important;
+  width: 100% !important;
 }
 
 .w-50 {
-	width: 50% !important;
+  width: 50% !important;
 }
 
 .w-25 {
-	width: 25% !important;
+  width: 25% !important;
 }
 
 .w-0 {
-	width: 0 !important;
+  width: 0 !important;
 }
 
 .w-auto {
-	width: auto !important;
+  width: auto !important;
 }
 
 // tabs
 [tabs-here] {
-	[data-tab-name] {
-		&:not(.tab-active) {
-			cursor: pointer;
-		}
-	}
+  [data-tab-name] {
+    &:not(.tab-active) {
+      cursor: pointer;
+    }
+  }
 
-	[data-tab-content] {
-		&:not(.tab-active) {
-			display: none;
-		}
-	}
+  [data-tab-content] {
+    &:not(.tab-active) {
+      display: none;
+    }
+  }
 }
 
 // toggling
 [toggling] {
-	[toggle-click] {
-		cursor: pointer;
+  [toggle-click] {
+    cursor: pointer;
 
-		.icon {
-			flex-shrink: 0;
-			transition: transform 0.2s;
-		}
-	}
+    .icon {
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+  }
 
-	&:not(.initialized):not(.active) {
-		[toggle-el] {
-			display: none;
-		}
-	}
+  &:not(.initialized):not(.active) {
+    [toggle-el] {
+      display: none;
+    }
+  }
 
-	&.active {
-		[toggle-click] {
-			.icon {
-				transform: rotate(180deg);
-			}
-		}
-	}
+  &.active {
+    [toggle-click] {
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }

@@ -6,7 +6,6 @@ use Illuminate\Validation\Rule;
 
 class PageRequest extends FormRequest
 {
-
     public function authorize()
     {
         return true;
@@ -15,15 +14,15 @@ class PageRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'title'       => 'nullable|string|max:255',
-            'slug' => 'required|string|max:255|unique:pages,slug,' . $this->page?->id,
+            'title' => 'nullable|string|max:255',
+            'slug' =>
+                'required|string|max:255|unique:pages,slug,' . $this->page?->id,
 
-            'mini_description' => 'string|nullable',
-            'description'      => 'string|nullable',
+            'description' => 'string|nullable',
 
             ...$this->validationSEO(),
 
-            ...(new PropListRequest)->rules()
+            ...(new PropListRequest())->rules(),
         ];
 
         return $rules;

@@ -83,7 +83,7 @@
 
 <body class="preload page-{{ $viewName }} @yield('body_class')">
   @auth
-    @includeWhen(Auth::user()->is_editor, 'elements.paneline')
+    {{-- @includeWhen(Auth::user()->is_editor, 'elements.paneline') --}}
   @endauth
 
   <div class="preload-box">
@@ -94,7 +94,7 @@
     <div class="loading-text">Загрузка...</div>
   </div>
 
-  <div class="wrapper page-{{ $viewName }}  @yield('wrapper_class')">
+  <div class="wrapper @yield('wrapper_class')">
 
     <!-- 0_header -->
     <div class="header-box">
@@ -109,16 +109,25 @@
             деревянных домов
           </div>
           <div class="icons icons-orange">
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/instagram.svg') }}"
-                alt=""></a>
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/youtube.svg') }}" alt=""></a>
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/vk.svg') }}" alt=""></a>
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/whatsapp.svg') }}"
-                alt=""></a>
+            <a class="icon" target="_blank"
+              href="https://www.instagram.com/woodhouse495/">
+              <img loading="lazy" src="{{ Vite::image('icons/instagram.svg') }}"
+                alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://www.youtube.com/channel/UCY3DgGd_4AmYLk39tM2XsLg">
+              <img loading="lazy" src="{{ Vite::image('icons/youtube.svg') }}"
+                alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://vk.com/woodhouse495">
+              <img loading="lazy" src="{{ Vite::image('icons/vk.svg') }}"
+                alt="">
+            </a>
+            <a class="icon" target="_blank" href="https://wa.me/79251918160">
+              <img loading="lazy" src="{{ Vite::image('icons/whatsapp.svg') }}"
+                alt="">
+            </a>
           </div>
           <div class="contacts-col">
             <a class="phone-row" href="tel:+79169168078">+7 (916) 916-80-78</a>
@@ -152,18 +161,18 @@
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
             </span>
             <div class="mid-list">
-              <a class="mid-item" href="/1_sanding.html">Шлифовка деревянного
+              <a class="mid-item" href="/sanding">Шлифовка деревянного
                 дома</a>
-              <a class="mid-item" href="/2_painting.html">Покраска деревянного
+              <a class="mid-item" href="/painting">Покраска деревянного
                 дома</a>
-              <a class="mid-item" href="/3_okosyachka.html">Окосячка деревянного
+              <a class="mid-item" href="/okosyachka">Окосячка деревянного
                 дома</a>
-              <a class="mid-item" href="/4_roofing.html">Кровельные работы</a>
-              <a class="mid-item" href="/5_reconstruction.html">Реконструкция
+              <a class="mid-item" href="/roofing">Кровельные работы</a>
+              <a class="mid-item" href="/reconstruction">Реконструкция
                 домов</a>
-              <a class="mid-item" href="/6_outbuildings.html">Строительство
+              <a class="mid-item" href="/outbuildings">Строительство
                 пристроек</a>
-              <a class="mid-item" href="/7_planken.html">Отделка дома
+              <a class="mid-item" href="/planken">Отделка дома
                 планкеном</a>
             </div>
           </div>
@@ -193,7 +202,8 @@
                   alt=""></span>
             </div>
             <div class="ci-title">E-mail:</div>
-            <div class="ci-text"><a href="#">info@woodhouse495.ru</a>
+            <div class="ci-text"><a
+                href="mailto:info@woodhouse495.ru">info@woodhouse495.ru</a>
             </div>
           </div>
           <div class="contacts-item">
@@ -213,7 +223,8 @@
                   alt=""></span>
             </div>
             <div class="ci-title">Наш телефон:</div>
-            <div class="ci-text"><a class="a-phone" href="#">+7 (916)
+            <div class="ci-text"><a class="a-phone"
+                href="tel:+79169168078">+7 (916)
                 916-80-78</a></div>
           </div>
           <div class="contacts-item">
@@ -264,17 +275,27 @@
 
         <div class="contacts-col">
           <div class="icons icons-orange">
-            <a class="icon" href="#"><img loading="lazy"
+            <a class="icon" target="_blank"
+              href="https://www.instagram.com/woodhouse495/">
+              <img loading="lazy"
                 src="{{ Vite::image('icons/instagram.svg') }}"
-                alt=""></a>
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/youtube.svg') }}"
-                alt=""></a>
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/vk.svg') }}" alt=""></a>
-            <a class="icon" href="#"><img loading="lazy"
-                src="{{ Vite::image('icons/whatsapp.svg') }}"
-                alt=""></a>
+                alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://www.youtube.com/channel/UCY3DgGd_4AmYLk39tM2XsLg">
+              <img loading="lazy"
+                src="{{ Vite::image('icons/youtube.svg') }}" alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://vk.com/woodhouse495">
+              <img loading="lazy" src="{{ Vite::image('icons/vk.svg') }}"
+                alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://wa.me/79251918160">
+              <img loading="lazy"
+                src="{{ Vite::image('icons/whatsapp.svg') }}" alt="">
+            </a>
           </div>
           <a class="phone-row" href="tel:+79169168078">+7 (916) 916-80-78</a>
           <a class="mail-row"
@@ -283,9 +304,10 @@
             звонок</div>
         </div>
         <div class="copy-col">
-          <a class="link" href="#">Договор оферты</a>
-          <a class="link" href="#">Политика конфиденциальности</a>
-          <div class="copy-info">© 2008 — 2022 «WOODHOUSE495»</div>
+          <a class="link" href="/offer">Договор оферты</a>
+          <a class="link" href="/policy">Политика конфиденциальности</a>
+          <div class="copy-info">© 2008 — {{ date('Y') }} «WOODHOUSE495»
+          </div>
         </div>
       </div>
     </div>
@@ -547,18 +569,18 @@
                 alt="">
             </div>
             <div class="mid-list">
-              <a class="mid-item" href="/1_sanding.html">Шлифовка деревянного
+              <a class="mid-item" href="/sanding">Шлифовка деревянного
                 дома</a>
-              <a class="mid-item" href="/2_painting.html">Покраска деревянного
+              <a class="mid-item" href="/painting">Покраска деревянного
                 дома</a>
-              <a class="mid-item" href="/3_okosyachka.html">Окосячка
-                деревянного дома</a>
-              <a class="mid-item" href="/4_roofing.html">Кровельные работы</a>
-              <a class="mid-item" href="/5_reconstruction.html">Реконструкция
+              <a class="mid-item" href="/okosyachka">Окосячка деревянного
+                дома</a>
+              <a class="mid-item" href="/roofing">Кровельные работы</a>
+              <a class="mid-item" href="/reconstruction">Реконструкция
                 домов</a>
-              <a class="mid-item" href="/6_outbuildings.html">Строительство
+              <a class="mid-item" href="/outbuildings">Строительство
                 пристроек</a>
-              <a class="mid-item" href="/7_planken.html">Отделка дома
+              <a class="mid-item" href="/planken">Отделка дома
                 планкеном</a>
             </div>
           </div>
@@ -581,17 +603,27 @@
 
         <div class="icons-row">
           <div class="icons icons-white">
-            <a class="icon" href="#"><img class="to-svg"
+            <a class="icon" target="_blank"
+              href="https://www.instagram.com/woodhouse495/">
+              <img class="to-svg" loading="lazy"
                 src="{{ Vite::image('icons/instagram.svg') }}"
-                alt=""></a>
-            <a class="icon" href="#"><img class="to-svg"
-                src="{{ Vite::image('icons/youtube.svg') }}"
-                alt=""></a>
-            <a class="icon" href="#"><img class="to-svg"
-                src="{{ Vite::image('icons/vk.svg') }}" alt=""></a>
-            <a class="icon" href="#"><img class="to-svg"
-                src="{{ Vite::image('icons/whatsapp.svg') }}"
-                alt=""></a>
+                alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://www.youtube.com/channel/UCY3DgGd_4AmYLk39tM2XsLg">
+              <img class="to-svg" loading="lazy"
+                src="{{ Vite::image('icons/youtube.svg') }}" alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://vk.com/woodhouse495">
+              <img class="to-svg" loading="lazy"
+                src="{{ Vite::image('icons/vk.svg') }}" alt="">
+            </a>
+            <a class="icon" target="_blank"
+              href="https://wa.me/79251918160">
+              <img class="to-svg" loading="lazy"
+                src="{{ Vite::image('icons/whatsapp.svg') }}" alt="">
+            </a>
           </div>
         </div>
       </div>

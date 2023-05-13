@@ -7,27 +7,29 @@
 @section('content')
 
   <!-- 1_home -->
-  <div class="home-box painting-home-box">
+  <div class="home-box sanding-home-box">
     <div class="container grid-with-form grid grid-md-12">
-      <div class="visible-md rellax absolute left-shaving-alt"
-        data-rellax-speed="1">
-        <img loading="lazy"
-          src="{{ Vite::image('general/hanging/home_shaving.png') }}"
-          alt="">
-      </div>
+      <img class="visible-md absolute left-green" loading="lazy"
+        src="{{ Vite::image('general/hanging/home_green_1.png') }}" alt="">
+      <img class="visible-md absolute right-green" loading="lazy"
+        src="{{ Vite::image('general/hanging/home_green_2_alt_1.png') }}"
+        alt="">
+      <img class="visible-md rellax absolute left-sliver" data-rellax-speed="1"
+        loading="lazy"
+        src="{{ Vite::image('general/hanging/1_home_sliver.png') }}"
+        alt="">
       <img class="hidden-md rellax absolute mobile-shaving" data-rellax-speed="-2"
         loading="lazy"
         src="{{ Vite::image('general/hanging/home_shaving_mobile.png') }}"
         alt="">
 
       <div class="left-col">
-        <h1 class="h1"><b>Покраска деревянных домов</b> в Москве и МО</h1>
-        <div class="sub-h sub-h-alt">
-          Специалисты-плотники с опытом работ более 15 лет профессионально
-          покрасят ваш дом лучшими маслами, которые есть на рынке. Мы знаем плюсы
-          и минусы каждого производителя от Тиккурилы до Осмо и других
-          премиум-компаний. Сделаем все на высшем уровне и максимально
-          качественно.
+        <div class="h1"><b>Шлифовка деревянных домов</b> в Москве и МО</div>
+        <div class="sub-h">
+          <div class="three-dots"><i></i><i></i><i></i></div>
+          <div>Шлифовка и покраска деревянных домов от специалистов-плотников с
+            опытом работ более 15 лет. Бесплатный выезд замерщика на объект.
+            Работа по договору.</div>
         </div>
       </div>
       <div class="right-col">
@@ -52,65 +54,17 @@
         </form>
       </div>
       <div class="down-circle-row down-circle-center col-full">
-        <div class="down-circle down-circle-alt"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 18_painting -->
-  <div class="painting-box">
-    <div class="container grid-lg-12">
-      <img class="visible-md rellax absolute partners-green-1"
-        data-rellax-speed="1" loading="lazy"
-        src="{{ Vite::image('general/hanging/partners_alt_green_1.png') }}"
-        alt="">
-      <img class="visible-md rellax absolute partners-green-2"
-        data-rellax-speed="2" loading="lazy"
-        src="{{ Vite::image('general/hanging/partners_alt_green_2.png') }}"
-        alt="">
-      <div class="left-side">
-        <div class="h2"><b>Профессиональный подбор</b> красок</div>
-        <div class="sub-h text-to-hide text-to-hide-alt">
-          <p>После каждого принятого звонка от клиента мы тщательно готовимся к
-            каждому выезду. У нас всегда с собой в наличии несколько сотен
-            пробников разных красок и масел. Мы готовы показать вам любой цвет
-            именно на вашей древесине, чтобы потом не получилось неприятных
-            сюрпризов, что в шоуруме вы увидели одно, а у вас получилось
-            совершенно другое.</p>
-          <p>Мы только за, когда вы просите у нас зашлифовать одно-два бревна и
-            покрасить в выбранный Вами цвет. Во время нашего первого знакомства мы
-            расскажем все плюсы и минусы каждого производителя, не скрывая
-            ничего.<br>
-            Подберем краску на любой бюджет даже для самого тяжелого случая прямо
-            у вас на объекте! Звоните, а остальные проблемы мы решим сами.</p>
-        </div>
-        <div class="read-more link hidden-md">
-          <img class="to-svg" src="{{ Vite::image('icons/menu-arrow.svg') }}"
-            alt="">
-        </div>
-      </div>
-      <div class="right-side grid-md-2">
-        <div class="video-wrap img-cover-wrap">
-          <img src="{{ Vite::image('tmp/paints/1.png') }}" alt="">
-          <video loading="lazy" poster="{{ Vite::image('tmp/paints/1.png') }}"
-            src="{{ Vite::image('../videos/2_1.mp4') }}" autoplay muted
-            loop></video>
-        </div>
-        <div class="video-wrap img-cover-wrap">
-          <img src="{{ Vite::image('tmp/paints/2.png') }}" alt="">
-          <video loading="lazy" poster="{{ Vite::image('tmp/paints/2.png') }}"
-            src="{{ Vite::image('../videos/2_2.mp4') }}" autoplay muted
-            loop></video>
-        </div>
+        <div class="down-circle"></div>
       </div>
     </div>
   </div>
 
   <!-- 11_portfolio -->
   <div
-    class="portfolio-box alt-portfolio-box sanding-portfolio-box painting-portfolio-box"
+    class="portfolio-box alt-portfolio-box alt-sanding-portfolio-box sanding-portfolio-box"
     id="portfolio">
     <div class="container">
+
       <div class="title-row">
         <div class="h2"><b>Примеры</b> работ</div>
       </div>
@@ -148,8 +102,7 @@
           </div>
         </div>
         <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
+          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
             <div class="link orange show-more">Подробнее <img class="to-svg"
                 loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
                 alt=""></div>
@@ -220,21 +173,21 @@
       <div class="portfolio-bottom">
         <div class="pb-info gray">Больше реализованных проектов смотрите в нашем
           Instagram</div>
-        <div class="btn btn-orange btn-instagram">
+        <a class="btn btn-orange btn-instagram" target="_blank"
+          href="https://www.instagram.com/woodhouse495/">
           <span>
             <img loading="lazy"
               src="{{ Vite::image('icons/instagram-btn.svg') }}"
               alt="">
             Подписывайтесь на нас
           </span>
-        </div>
+        </a>
       </div>
     </div>
   </div>
 
   <!-- 9_process -->
-  <div class="process-box sanding-process-box painting-process-box"
-    id="process">
+  <div class="process-box sanding-process-box" id="process">
     <div class="container">
       <div class="visible-md">
         <img class="rellax absolute process-green" data-rellax-speed="-1"
@@ -250,14 +203,14 @@
         <div class="h2"><b>Как мы</b> работаем</div>
       </div>
       <div class="process-list">
-        <div class="hidden"></div>
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">01</span>
             <img loading="lazy"
               src="{{ Vite::image('general/process/1.png') }}" alt="">
           </div>
-          <div class="pi-title">Оставляете заявку</div>
+          <div class="pi-title">Оставляете заявку
+          </div>
           <div class="pi-description">После заявки наш менеджер перезвонит Вам в
             течение 30 минут для обсуждения деталей</div>
         </div>
@@ -267,25 +220,14 @@
             <img loading="lazy"
               src="{{ Vite::image('general/process/2.png') }}" alt="">
           </div>
-          <div class="pi-title">Выезд замерщика</div>
+          <div class="pi-title">Выезд замерщика
+          </div>
           <div class="pi-description">Наш специалист бесплатно выезжает на объект
             для составления замеров и объема работ</div>
         </div>
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">03</span>
-            <img loading="lazy"
-              src="{{ Vite::image('general/process/3_alt.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">Подбор краски (масла)</div>
-          <div class="pi-description">Покажем каждую краску в наличии, подберем
-            лучший цвет на вашей древесине и просчитаем точную стоимость от
-            производителя без посредников</div>
-        </div>
-        <div class="process-item">
-          <div class="pi-image">
-            <span class="pi-int">04</span>
             <img loading="lazy"
               src="{{ Vite::image('general/process/3.png') }}" alt="">
           </div>
@@ -296,7 +238,7 @@
         </div>
         <div class="process-item">
           <div class="pi-image">
-            <span class="pi-int">05</span>
+            <span class="pi-int">04</span>
             <img loading="lazy"
               src="{{ Vite::image('general/process/4.png') }}" alt="">
           </div>
@@ -308,7 +250,7 @@
         </div>
         <div class="process-item">
           <div class="pi-image">
-            <span class="pi-int">06</span>
+            <span class="pi-int">05</span>
             <img loading="lazy"
               src="{{ Vite::image('general/process/5.png') }}" alt="">
           </div>
@@ -318,14 +260,15 @@
         </div>
       </div>
       <div class="process-btn">
-        <a class="btn btn-orange" href="#measurer"><span>Бесплатно вызвать
-            замерщика</span></a>
+        <div class="btn btn-orange" data-popup=".popup-measurer">
+          <span>Бесплатно вызвать замерщика</span>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- 8_partners -->
-  <div class="partners-box painting-partners-box">
+  <div class="partners-box sanding-partners-box">
     <div class="hidden-md">
       <img class="rellax absolute partners-green-left" data-rellax-speed="4"
         loading="lazy"
@@ -370,7 +313,7 @@
   </div>
 
   <!-- 16_price -->
-  <div class="price-box painting-price-box">
+  <div class="price-box sanding-price-box">
     <div class="container">
 
       <div class="price-discount visible-xxl">
@@ -381,35 +324,57 @@
       </div>
 
       <div class="title-row">
-        <div class="h2"><b>Актуальный прайс<br> по покраске</b> деревянных
-          домов</div>
+        <div class="h2">
+          <b>Актуальный прайс по шлифовке</b>
+          деревянного дома
+        </div>
       </div>
       <div class="price-table">
         <table>
           <tbody>
             <tr>
-              <td>Покраска деревянного дома в 1 слой</td>
-              <td>от 100р м²</td>
+              <td>Грубая шлифовка угловой шлифовальной машиной (УШМ) лепистковыми
+                кругами зерном 40 - 60 с выборкой углов
+                стамеской и дошлифовкой утюжком</td>
+              <td>от 250р м²</td>
             </tr>
             <tr>
-              <td>Покраска ветошью</td>
+              <td>Шлифовка наждачной бумагой (зерно 25 - 40)</td>
+              <td>от 200р м²</td>
+            </tr>
+            <tr>
+              <td>Финишная шлифовка наждачной бумагой (зерно 80 - 100)</td>
+              <td>от 200р м²</td>
+            </tr>
+            <tr>
+              <td>Проход в ручную после поднятия ворса (зерно 100 - 120)</td>
               <td>от 150р м²</td>
             </tr>
             <tr>
-              <td>Грунтование перед покраской</td>
-              <td>от 90р м²</td>
+              <td>Обычная шлифовка (зерном 60)</td>
+              <td>от 250р м²</td>
             </tr>
             <tr>
-              <td>Антисептирование древесины</td>
-              <td>от 50р м²</td>
+              <td>Снятие старой покраски (УШМ, болгаркой зерном 40 - 60)</td>
+              <td>от 350р м²</td>
             </tr>
             <tr>
-              <td>Отбеливание древесины</td>
-              <td>от 80р м²</td>
+              <td>Чистая шлифовка вибрационной шлиф-машинкой (зерном 60 - 80)</td>
+              <td>от 200р м²</td>
             </tr>
             <tr>
-              <td>Нанесение защиты для торцов</td>
-              <td>от 150р м.п.</td>
+              <td>Шлифовка (УШМ,болгаркой лепестковыми кругами зерном 25 - 40)
+              </td>
+              <td>от 250р м²</td>
+            </tr>
+            <tr>
+              <td>Чистовая шлифовка торцов (виброшлифмашинкой зерном 80 - 100)
+              </td>
+              <td>от 150р м²</td>
+            </tr>
+            <tr>
+              <td>Обеспыливание</td>
+              <td>от 10р м²</td>
             </tr>
           </tbody>
         </table>
@@ -418,7 +383,7 @@
   </div>
 
   <!-- 17_cost -->
-  <div class="cost-box painting-cost-box">
+  <div class="cost-box">
     <img class="hidden-md rellax absolute cost-green-left-mobile"
       data-rellax-speed="-1" loading="lazy"
       src="{{ Vite::image('general/hanging/cost_green_left_mobile.png') }}"
@@ -435,12 +400,12 @@
           alt="">
         <img class="rellax absolute cost-device" data-rellax-speed="1"
           loading="lazy"
-          src="{{ Vite::image('general/hanging/cost_device_2.png') }}"
+          src="{{ Vite::image('general/hanging/cost_device.png') }}"
           alt="">
       </div>
 
       <div class="title-row">
-        <div class="h2"><b>Рассчитайте стоимость</b> покраски дома</div>
+        <div class="h2"><b>Рассчитайте<br> стоимость</b> шлифовки</div>
         <div class="sub-h">Все, что Вам нужно — заполнить форму ниже и мы вышлем
           предварительную смету по Вашей задаче</div>
       </div>
@@ -448,7 +413,7 @@
       <div class="cost-form form-grid">
         <div class="left-side form-grid">
           <div class="form-input-wrap">
-            <div class="form-input-title">Площадь стен (м²)</div>
+            <div class="form-input-title">Площадь дома (м²)</div>
             <div class="form-input form-input-alt form-input-alt-with-buttons">
               <div class="form-minus"
                 onclick="this.nextElementSibling.stepDown()"></div>
@@ -458,60 +423,107 @@
             </div>
           </div>
           <div class="form-input-wrap">
-            <div class="form-input-title">Подбор материала</div>
+            <div class="form-input-title">из чего фасад</div>
             <div class="form-input form-input-alt form-options">
               <input type="text" readonly required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
-                <div class="options-value">Да</div>
-                <div class="options-value">Нет</div>
+                <div class="options-value">Рубленное бревно</div>
+                <div class="options-value">Оцилиндрованное бревно</div>
+                <div class="options-value">Клееный брус</div>
+                <div class="options-value">Профилированный брус</div>
               </div>
             </div>
           </div>
           <div class="form-input-wrap">
-            <div class="form-input-title">Производитель ЛКМ</div>
+            <div class="form-input-title">Чем вы хотите покрасить дом</div>
             <div class="form-input form-input-alt form-options">
               <input type="text" readonly required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
-                <div class="options-value">Saicos</div>
-                <div class="options-value">Renner</div>
-                <div class="options-value">G-nature</div>
-                <div class="options-value">Biofa</div>
-                <div class="options-value">Osmo</div>
-                <div class="options-value">Tikkurila</div>
+                <div class="options-value">Маслом</div>
+                <div class="options-value">Краской</div>
+                <div class="options-value">Лаком</div>
                 <div class="options-value">Другое</div>
               </div>
+            </div>
+          </div>
+          <div class="form-input-wrap">
+            <div class="form-input-title">Возраст дома (лет)</div>
+            <div class="form-input form-input-alt form-input-alt-with-buttons">
+              <div class="form-minus"
+                onclick="this.nextElementSibling.stepDown()"></div>
+              <input type="number" min="0" value="0" required>
+              <div class="form-plus"
+                onclick="this.previousElementSibling.stepUp()"></div>
             </div>
           </div>
         </div>
 
         <div class="right-side form-grid">
           <div class="form-input-wrap">
-            <div class="form-input-title">Грунтовка</div>
+            <div class="form-input-title">Был ли дом покрашен ранее</div>
             <div class="form-input form-input-alt form-options">
               <input type="text" readonly required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
-                <div class="options-value">Да</div>
-                <div class="options-value">Нет</div>
-                <div class="options-value">Требуется консультация</div>
+                <div class="options-value">Нет, ещё не был окрашен</div>
+                <div class="options-value">Да, окрашен</div>
               </div>
             </div>
           </div>
-          <div class="form-input-wrap">
-            <div class="form-input-title">Антисептирование</div>
-            <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
-              <img class="to-svg icon"
-                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
-              <div class="options-list">
-                <div class="options-value">Да</div>
-                <div class="options-value">Нет</div>
-                <div class="options-value">Требуется консультация</div>
+          <div class="fcg-wrap form-grid">
+            <div class="form-input-wrap">
+              <div class="form-input-title">Шлифовка дома</div>
+              <div class="form-checkbox-grid">
+                <label class="form-checkbox">
+                  <input type="radio" name="aaaaaaa"
+                    value="Стандартная шлифовка" required>
+                  <span>Стандартная шлифовка</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="radio" name="aaaaaaa"
+                    value="Глубокая шлифовка" required>
+                  <span>Глубокая шлифовка</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="radio" name="aaaaaaa" value="Не нужна"
+                    required>
+                  <span>Не нужна</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="radio" name="aaaaaaa"
+                    value="Затрудняюсь ответить" required>
+                  <span>Затрудняюсь ответить</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-input-wrap">
+              <div class="form-input-title">Дополнительные опции</div>
+              <div class="form-checkbox-grid">
+                <label class="form-checkbox">
+                  <input type="checkbox" name="bbbbbbbb"
+                    value="Покраска наличников" required>
+                  <span>Покраска наличников</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="bbbbbbbb" value="Теплый шов"
+                    required>
+                  <span>Теплый шов</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="bbbbbbbb"
+                    value="Герметизация торцов" required>
+                  <span>Герметизация торцов</span>
+                </label>
+                <label class="form-checkbox">
+                  <input type="checkbox" name="bbbbbbbb"
+                    value="Покраска свесов кровли" required>
+                  <span>Покраска свесов кровли</span>
+                </label>
               </div>
             </div>
           </div>
@@ -525,38 +537,35 @@
   </div>
 
   <!-- 2_about -->
-  <div class="about-box alt-about painting-about-box">
+  <div class="about-box alt-about sanding-about-box">
     <img class="hidden-md rellax absolute right-green" data-rellax-speed="1"
       loading="lazy"
       src="{{ Vite::image('general/hanging/about_green_mobile.png') }}"
       alt="">
     <div class="container grid-2">
       <div class="left-col">
-        <div class="h2"><b>Превратим избушку</b> в дворец!</div>
+        <div class="h2"><b>Нас выбирают<br>
+            клиенты</b> с 2003 года</div>
         <div class="sub-h">
-          Мы никогда не говорим своим клиентам "НЕТ"! Мы готовы взяться за любой
-          объект и довести его от начала до конца. Придерживаемся одного простого
-          правила "Клиент всегда прав, но иногда он слишком много читает
-          Интернета". А если это не объяснить с научной точки зрения то получается
-          не совсем профессионально.
+          Плотники из нашей компании знают как придать особого шика и красоты
+          вашему деревянному дому. Мы уберем все изъяны и покрасим идеально даже
+          самый сложный объект.
         </div>
         <div class="text-item format-text text-to-hide text-to-hide-alt">
-          <p>Наша компания работает с 2003 года по покраске деревянных домов.
-            Создание экологически чистой атмосферы в вашем доме - наше главное
-            задание. Мы знаем, чем покрасить дом, чтобы это не вредило вашим
-            детям. Мы проверили на себе тысячи производителей красок и масел и
-            знаем, чем можно покрывать дерево в бане, чтобы это не был столб химии
-            и пыли.<br>
-            Если вы не знаете каким маслом или другим ЛКМ хотите покрасить свой
-            деревянный дом - не волнуйтесь. Мы с радостью Вам в этом поможем.
-            Просто во время звонка предупредите, что Вам нужна помощь в выборе.
-            После этого на нашу встречу мы обязательно приедем с несколькими
-            чемоданами выкрасов разных фирм и вы увидите, в какой цвет будет
-            покрашен ваш дом на первом нашем знакомстве.
-          </p>
-          <p class="green"><b>Удивили? Пока что это только слова. Удивим, когда
-              выполним Вашу работу честно и на совесть. Звоните и мы сделаем все в
-              кратчайшие сроки!</b></p>
+          <p>За более чем 15 лет мы сумели пошлифовать в общей сложности более 150
+            полноценных коттеджных посёлков, использовали несколько сотен тонн
+            краски и израсходовали миллионы шлифовочных кругов.<br>
+            Мы знаем, как работать с деревом. А главное — до безумства любим свою
+            работу, что позволит вам удостовериться в том, что вы попали в
+            надежные руки. Мы прозрачно ведём свою работу от начала нашего
+            знакомства с Вами до полноценного расчёта и хотим, чтобы вы
+            рекомендовали нас вашим знакомым и близким.</p>
+          <p>Ведь дом каждого человека - что-то очень родное и магическое и когда
+            вы доверяете нам самое дорогое что у вас есть и ещё и советуете
+            знакомым - мы становимся в несколько миллион раз счастливей.</p>
+          <p class="green"><b>Поэтому, если вы все таки решили начать работу с
+              компанией WoodHouse495 можете быть уверенными, что это лучшее
+              принятое решение в этом году.</b></p>
         </div>
         <div class="read-more link hidden-md">
           <img class="to-svg" src="{{ Vite::image('icons/menu-arrow.svg') }}"
@@ -727,6 +736,10 @@
           loading="lazy"
           src="{{ Vite::image('general/hanging/articles_green_1.png') }}"
           alt="">
+        <img class="rellax absolute article-green-2"
+          data-rellax-speeddata-rellax-speed="-2" loading="lazy"
+          src="{{ Vite::image('general/hanging/articles_green_2.png') }}"
+          alt="">
       </div>
       <div class="title-row">
         <div class="h2"><b>Полезные</b> статьи</div>
@@ -789,7 +802,9 @@
         </div>
       </div>
       <div class="articles-btn">
-        <div class="btn btn-orange btn-alt"><span>Посмотреть еще</span></div>
+        <a class="btn btn-orange btn-alt" href="/articles">
+          <span>Посмотреть еще</span>
+        </a>
       </div>
     </div>
   </div>

@@ -1,82 +1,82 @@
 .about-box {
-	padding-top: 108px;
+  padding-top: 108px;
 
-	.sub-h {
-		margin: 23px 0 15px;
-	}
+  .sub-h {
+    margin: 23px 0 15px;
+  }
 
-	.text-item {
-		max-width: 544px;
-	}
+  .text-item {
+    max-width: 544px;
+  }
 
-	.right-col {
-		padding-top: 64px;
-		min-width: 1px;
+  .right-col {
+    padding-top: 64px;
+    min-width: 1px;
 
-		.swiper {
-			overflow: visible;
-		}
+    .swiper {
+      overflow: visible;
+    }
 
-		.swiper-wrapper {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 20px 22px;
-		}
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 22px;
+    }
 
-		.swiper-slide {
-			display: flex;
-			height: auto;
-			width: auto;
-		}
+    .swiper-slide {
+      display: flex;
+      height: auto;
+      width: auto;
+    }
 
-		.swiper-pagination {
-			display: none;
-		}
-	}
+    .swiper-pagination {
+      display: none;
+    }
+  }
 
-	.about-info-col {
-		padding: 12px 31px 28px;
-		background: #fafafa;
-		border-radius: 8px;
-		min-height: 177px;
-		width: 100%;
+  .about-info-col {
+    padding: 12px 31px 28px;
+    background: #fafafa;
+    border-radius: 8px;
+    min-height: 177px;
+    width: 100%;
 
-		@media (min-width: 1240px) {
-			&.p-change {
-				padding-top: 27px;
-			}
-		}
+    @media (min-width: 1240px) {
+      &.p-change {
+        padding-top: 27px;
+      }
+    }
 
-		.aic-big {
-			margin-right: -40px;
+    .aic-big {
+      margin-right: -40px;
 
-			@include text-gradient('180deg, #ADD8A7 0%, #84C57A 100%');
+      @include text-gradient('180deg, #ADD8A7 0%, #84C57A 100%');
 
-			font-weight: 500;
-			font-size: 63px;
-			color: $secondary;
-			white-space: nowrap;
-		}
+      font-weight: 500;
+      font-size: 63px;
+      color: $secondary;
+      white-space: nowrap;
+    }
 
-		.aic-info {
-			font-size: 14px;
-			line-height: 128%;
-			color: $gray;
+    .aic-info {
+      font-size: 14px;
+      line-height: 128%;
+      color: $gray;
 
-			small {
-				display: inline-block;
-				font-size: 0.8571em;
-				line-height: 132%;
-			}
-		}
-	}
+      small {
+        display: inline-block;
+        font-size: 0.8571em;
+        line-height: 132%;
+      }
+    }
+  }
 }
 
 .page-index .about-box,
 .alt-about-box {
-	background: #f9f9f9;
+  background: #f9f9f9;
 
-	.about-info-col {
-		background: #fff;
-	}
+  .about-info-col {
+    background: #fff;
+  }
 }

@@ -33,11 +33,13 @@ class ViewServiceProvider extends ServiceProvider
 
         Vite::macro(
             'image',
-            fn(string $asset) => Vite::asset("resources/frontend/images/{$asset}"),
+            fn(string $asset) => Vite::asset(
+                "resources/frontend/images/{$asset}",
+            ),
         );
 
         View::composer(
-            ['*.php', 'layouts.main', 'layouts.email', 'errors::404'],
+            ['layouts.email', 'errors::404', 'pages.*'],
             FrontComposer::class,
         );
     }

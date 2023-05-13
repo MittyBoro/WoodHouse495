@@ -14,7 +14,7 @@
         alt="">
 
       <div class="left-col">
-        <h1 class="h1"><b>Окосячка деревянных домов</b> в Москве и МО</h1>
+        <div class="h1"><b>Окосячка деревянных домов</b> в Москве и МО</div>
         <div class="sub-h sub-h-alt">
           Окосячка деревянных домов от специалистов-плотников с опытом работ более
           15 лет. Бесплатный выезд замерщика на объект. Работа по договору.
@@ -174,8 +174,9 @@
         </div>
       </div>
       <div class="process-btn">
-        <a class="btn btn-orange" href="#measurer"><span>Бесплатно вызвать
-            замерщика</span></a>
+        <div class="btn btn-orange" data-popup=".popup-measurer">
+          <span>Бесплатно вызвать замерщика</span>
+        </div>
       </div>
     </div>
   </div>
@@ -280,14 +281,15 @@
       <div class="portfolio-bottom visible-md">
         <div class="pb-info gray">Смотрите реализованные
           проекты в нашем Instagram</div>
-        <div class="btn btn-orange btn-instagram">
+        <a class="btn btn-orange btn-instagram" target="_blank"
+          href="https://www.instagram.com/woodhouse495/">
           <span>
             <img loading="lazy"
               src="{{ Vite::image('icons/instagram-btn.svg') }}"
               alt="">
             Подписывайтесь на нас
           </span>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -546,7 +548,9 @@
         </div>
       </div>
       <div class="articles-btn">
-        <div class="btn btn-orange btn-alt"><span>Посмотреть еще</span></div>
+        <a class="btn btn-orange btn-alt" href="/articles">
+          <span>Посмотреть еще</span>
+        </a>
       </div>
     </div>
   </div>
