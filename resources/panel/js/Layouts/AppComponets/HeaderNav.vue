@@ -100,7 +100,7 @@
 
     methods: {
       logout() {
-        axios.post($panelRoute('logout')).then(() => (location.href = $panelRoute('login')))
+        axios.post(this.$panelRoute('logout')).then(() => (location.href = this.$panelRoute('login')))
       },
 
       findItemInMenu(menu, routeStart) {

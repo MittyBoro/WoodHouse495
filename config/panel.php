@@ -6,7 +6,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'path' => env('PANEL_PATH', '@thepanel'),
+    'path' => env('PANEL_PATH', '/@thepanel'),
 
     'menu' => [
         [
