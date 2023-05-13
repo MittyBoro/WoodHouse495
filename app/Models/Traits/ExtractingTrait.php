@@ -8,10 +8,11 @@ trait ExtractingTrait
 {
     public function scopeOrderByStr(Builder $query, $sort = 'id-desc')
     {
-        $sort = ($sort ?: $this->defaultSort) ?: $this->sortable[0] ?? '';
+        $sort = $sort ?: $this->defaultSort ?: $this->sortable[0] ?? '';
 
-        if (!$sort)
+        if (!$sort) {
             return;
+        }
 
         [$column, $direction] = array_pad(explode('-', $sort, 2), 2, 'asc');
 
@@ -19,7 +20,7 @@ trait ExtractingTrait
 
         $query->orderBy(
             in_array($column, $sortableColumns) ? $column : $sortableColumns[0],
-            $direction
+            $direction,
         );
     }
 
@@ -33,7 +34,7 @@ trait ExtractingTrait
             ->onEachSide(1);
 
         if ($append) {
-            $result->through(fn ($item) => $item->append($append));
+            $result->through(fn($item) => $item->append($append));
         }
 
         return $result;

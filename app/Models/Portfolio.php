@@ -38,26 +38,30 @@ class Portfolio extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this
-            ->addMediaCollection(self::MEDIA_COLLECTION)
-            ->registerMediaConversions(function () {
-                $this
-                    ->addMediaConversion('thumb')
-                    ->fit(Manipulations::FIT_CROP, 400, 300);
-                $this
-                    ->addMediaConversion('medium')
-                    ->fit(Manipulations::FIT_MAX, 700, 700);
-                $this
-                    ->addMediaConversion('big')
-                    ->fit(Manipulations::FIT_MAX, 1500, 1500);
-            });
+        $this->addMediaCollection(
+            self::MEDIA_COLLECTION,
+        )->registerMediaConversions(function () {
+            $this->addMediaConversion('thumb')->fit(
+                Manipulations::FIT_CROP,
+                400,
+                300,
+            );
+            $this->addMediaConversion('medium')->fit(
+                Manipulations::FIT_MAX,
+                700,
+                700,
+            );
+            $this->addMediaConversion('big')->fit(
+                Manipulations::FIT_MAX,
+                1500,
+                1500,
+            );
+        });
     }
 
     public function mediaCollectionsWithDeletingOriginal(): array
     {
-        return [
-            self::MEDIA_COLLECTION,
-        ];
+        return [self::MEDIA_COLLECTION];
     }
 
     public function page()
@@ -67,28 +71,36 @@ class Portfolio extends Model implements HasMedia
 
     public function getGalleryAttribute()
     {
-        return $this->getMediaUrlsConversions(self::MEDIA_COLLECTION, ['thumb', 'medium', 'big']);
+        return $this->getMediaUrlsConversions(self::MEDIA_COLLECTION, [
+            'thumb',
+            'medium',
+            'big',
+        ]);
     }
 
     // запрос не дублируется
     protected function thumb(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl(self::MEDIA_COLLECTION, 'thumb')
+            get: fn() => $this->getFirstMediaUrl(
+                self::MEDIA_COLLECTION,
+                'thumb',
+            ),
         );
     }
 
     protected function similars(): Attribute
     {
-        return Attribute::make(get: function () {
+        return Attribute::make(
+            get: function () {
+                // $result = self::limit(4)
+                //             ->where('products.id', '!=', $this->id)
+                //             ->getFrontList();
 
-            // $result = self::limit(4)
-            //             ->where('products.id', '!=', $this->id)
-            //             ->getFrontList();
-
-            // $result->append(['gallery']);
-            // return $result;
-        });
+                // $result->append(['gallery']);
+                // return $result;
+            },
+        );
     }
 
     public function scopeIsPublished($query)
@@ -96,11 +108,12 @@ class Portfolio extends Model implements HasMedia
         $query->where('is_published', 1);
     }
 
-    public function scopeGetFrontList($query, $paginate = true, $append = 'gallery')
-    {
-        $query
-            ->isPublished()
-            ->with('media');
+    public function scopeGetFrontList(
+        $query,
+        $paginate = true,
+        $append = 'gallery',
+    ) {
+        $query->isPublished()->with('media');
 
         if ($paginate) {
             $result = $query->customPaginate(6, $append);

@@ -7,15 +7,12 @@ use App\Models\Traits\ExtractingTrait;
 use Illuminate\Support\Str;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
-
 class Article extends Model
 {
     use ExtractingTrait;
     use SearchableTrait;
 
-    protected $appends = [
-        'thumb'
-    ];
+    protected $appends = ['thumb'];
 
     protected $searchable = [
         'columns' => [
@@ -28,9 +25,8 @@ class Article extends Model
         ],
     ];
 
-    protected $sortable = ['created_at', 'title', 'is_published',];
+    protected $sortable = ['created_at', 'title', 'is_published'];
     protected $defaultSort = 'created_at-desc';
-
 
     protected static function boot()
     {

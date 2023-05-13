@@ -41,6 +41,16 @@ class Page extends Model
             );
     }
 
+    public function portfolios()
+    {
+        return $this->hasMany(Portfolio::class)->select(
+            'id',
+            'slug',
+            'title',
+            'mini_description',
+        );
+    }
+
     public function getPropsAttribute()
     {
         return $this->properties->keyBy('key')->map(function ($item) {

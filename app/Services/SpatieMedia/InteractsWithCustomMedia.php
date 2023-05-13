@@ -14,17 +14,26 @@ trait InteractsWithCustomMedia
 
     private $collectionsWithDeletingOriginal = [];
 
-    public function syncMedia($data, $collectionName = 'default', $diskName = ''): Collection
-    {
-        $collect = collect($data)->filter(function ($value) {
-            return !isset($value['del']);
-        })->values();
+    public function syncMedia(
+        $data,
+        $collectionName = 'default',
+        $diskName = '',
+    ): Collection {
+        $collect = collect($data)
+            ->filter(function ($value) {
+                return !isset($value['del']);
+            })
+            ->values();
 
-        $collect = $collect->map(function ($item, $order) use ($collectionName, $diskName) {
+        $collect = $collect->map(function ($item, $order) use (
+            $collectionName,
+            $diskName,
+        ) {
             $media = $this->syncSingleMedia($item, $collectionName, $diskName);
 
-            if (!$media->id)
+            if (!$media->id) {
                 return false;
+            }
 
             if ($media->order_column != $order) {
                 $media->order_column = $order;
@@ -39,10 +48,17 @@ trait InteractsWithCustomMedia
         return $collect;
     }
 
-    public function syncSingleMedia(array $singleMedia, $collectionName = 'default', $diskName = ''): Media
-    {
+    public function syncSingleMedia(
+        array $singleMedia,
+        $collectionName = 'default',
+        $diskName = '',
+    ): Media {
         if (Arr::hasAny($singleMedia, ['file', 'path', 'url'])) {
-            $mediaModel = $this->addSingleMedia($singleMedia, $collectionName, $diskName);
+            $mediaModel = $this->addSingleMedia(
+                $singleMedia,
+                $collectionName,
+                $diskName,
+            );
         } elseif (isset($singleMedia['id'])) {
             $mediaModel = Media::find($singleMedia['id']);
         } else {
@@ -52,31 +68,33 @@ trait InteractsWithCustomMedia
         return $mediaModel;
     }
 
-    public function addSingleMedia($singleMedia, $collectionName = 'default', $diskName = ''): Media
-    {
+    public function addSingleMedia(
+        $singleMedia,
+        $collectionName = 'default',
+        $diskName = '',
+    ): Media {
         if (isset($singleMedia['file'])) {
-            $mediaModel = $this
-                ->addMedia($singleMedia['file']);
+            $mediaModel = $this->addMedia($singleMedia['file']);
         } elseif (isset($singleMedia['url'])) {
             try {
-                $mediaModel = $this
-                    ->addMediaFromUrl($singleMedia['url']);
+                $mediaModel = $this->addMediaFromUrl($singleMedia['url']);
             } catch (\Throwable $th) {
                 \Log::error($th);
-                return new Media;
+                return new Media();
             }
         } elseif (isset($singleMedia['path'])) {
-            $mediaModel = $this
-                ->addMediaFromDisk($singleMedia['path'], $singleMedia['disk'] ?? null);
+            $mediaModel = $this->addMediaFromDisk(
+                $singleMedia['path'],
+                $singleMedia['disk'] ?? null,
+            );
         } else {
             throw new \Exception('Undefinded $singleMedia key');
         }
 
-
-
-        $mediaModel = $mediaModel->sanitizingFileName(function ($fileName) {
-            return rename_file($fileName);
-        })
+        $mediaModel = $mediaModel
+            ->sanitizingFileName(function ($fileName) {
+                return rename_file($fileName);
+            })
             ->toMediaCollection($collectionName, $diskName);
 
         $this->removeOriginalMedia($mediaModel);
@@ -86,15 +104,16 @@ trait InteractsWithCustomMedia
 
     private function removeOriginalMedia($mediaModel)
     {
-        if (!method_exists($this, 'mediaCollectionsWithDeletingOriginal'))
+        if (!method_exists($this, 'mediaCollectionsWithDeletingOriginal')) {
             return;
+        }
 
         $collections = $this->mediaCollectionsWithDeletingOriginal();
 
         foreach ($collections as $collection_name) {
-
-            if ($collection_name != $mediaModel->collection_name)
+            if ($collection_name != $mediaModel->collection_name) {
                 continue;
+            }
 
             $disk = $mediaModel->disk;
             $relativePath = $this->getRelativePath($mediaModel);
@@ -114,30 +133,38 @@ trait InteractsWithCustomMedia
         return $relativePath;
     }
 
+    public function getPanelMedia(
+        string $collectionName = 'default',
+        string $conversion = '',
+        array|callable $filters = [],
+    ) {
+        return $this->getMedia($collectionName, $filters)->map(function (
+            $singleMedia,
+        ) use ($conversion) {
+            $data = [
+                'id' => $singleMedia->id,
+                'url' => $singleMedia->getFullUrl($conversion),
+                'name' => $singleMedia->file_name,
+                'collection_name' => $singleMedia->collection_name,
+                'size' => $singleMedia->size,
+                'custom' => $singleMedia->custom_properties,
+            ];
 
-    public function getPanelMedia(string $collectionName = 'default', string $conversion = '', array|callable $filters = [])
-    {
-        return $this->getMedia($collectionName, $filters)
-            ->map(function ($singleMedia) use ($conversion) {
-                $data = [
-                    'id' => $singleMedia->id,
-                    'url' => $singleMedia->getFullUrl($conversion),
-                    'name' => $singleMedia->file_name,
-                    'collection_name' => $singleMedia->collection_name,
-                    'size' => $singleMedia->size,
-                    'custom' => $singleMedia->custom_properties,
-                ];
-
-                return $data;
-            });
+            return $data;
+        });
     }
 
-    public function getMediaUrlsConversions(string $collectionName = 'default', array $sizes = ['original'])
-    {
-        $media = $this->getMedia($collectionName)->map(function ($item) use ($sizes) {
+    public function getMediaUrlsConversions(
+        string $collectionName = 'default',
+        array $sizes = ['original'],
+    ) {
+        $media = $this->getMedia($collectionName)->map(function ($item) use (
+            $sizes,
+        ) {
             foreach ($sizes as $s) {
-                if ($s == 'original')
+                if ($s == 'original') {
                     $s = '';
+                }
 
                 $urls[$s] = $item->getFullUrl($s);
             }
@@ -151,9 +178,13 @@ trait InteractsWithCustomMedia
         return collect([$sizes]);
     }
 
-    public function getMediaUrls(string $collectionName = 'default', string $conversion = '')
-    {
-        $media = $this->getMedia($collectionName)->map(function ($item) use ($conversion) {
+    public function getMediaUrls(
+        string $collectionName = 'default',
+        string $conversion = '',
+    ) {
+        $media = $this->getMedia($collectionName)->map(function ($item) use (
+            $conversion,
+        ) {
             return $item->getFullUrl($conversion);
         });
         return $media;

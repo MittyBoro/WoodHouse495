@@ -10,7 +10,12 @@ class User extends BaseUser
     use ExtractingTrait;
 
     protected $sortable = [
-        'created_at', 'id', 'email', 'name', 'role', 'email_notification',
+        'created_at',
+        'id',
+        'email',
+        'name',
+        'role',
+        'email_notification',
     ];
     protected $defaultSort = 'id-desc';
 

@@ -57,13 +57,25 @@ class Prop extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection(self::MEDIA_COLLECTION_FILE);
-        $this->addMediaCollection(self::MEDIA_COLLECTION_IMAGE)->registerMediaConversions(
-            function () {
-                $this->addMediaConversion('thumb')->fit(Manipulations::FIT_CROP, 400, 400);
-                $this->addMediaConversion('medium')->fit(Manipulations::FIT_CROP, 640, 640);
-                $this->addMediaConversion('big')->fit(Manipulations::FIT_MAX, 1280, 1280);
-            },
-        );
+        $this->addMediaCollection(
+            self::MEDIA_COLLECTION_IMAGE,
+        )->registerMediaConversions(function () {
+            $this->addMediaConversion('thumb')->fit(
+                Manipulations::FIT_CROP,
+                400,
+                400,
+            );
+            $this->addMediaConversion('medium')->fit(
+                Manipulations::FIT_CROP,
+                640,
+                640,
+            );
+            $this->addMediaConversion('big')->fit(
+                Manipulations::FIT_MAX,
+                1280,
+                1280,
+            );
+        });
     }
 
     public function model()
@@ -109,7 +121,9 @@ class Prop extends Model implements HasMedia
     }
     public function getImagesAttribute()
     {
-        return $this->getMedia(self::MEDIA_COLLECTION_IMAGE)?->map->getFullUrl();
+        return $this->getMedia(
+            self::MEDIA_COLLECTION_IMAGE,
+        )?->map->getFullUrl();
     }
     public function getTextArrayAttribute()
     {
@@ -128,7 +142,10 @@ class Prop extends Model implements HasMedia
     public function scopeQueryByModel(Builder $query, Model $model = null)
     {
         if ($model) {
-            return $query->where([['model_type', $model::class], ['model_id', $model->id]]);
+            return $query->where([
+                ['model_type', $model::class],
+                ['model_id', $model->id],
+            ]);
         }
 
         return $query->whereNull('model_type')->whereNull('model_id');

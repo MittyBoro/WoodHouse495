@@ -6,7 +6,7 @@
   "vueIndentScriptAndStyle": true,
   "htmlWhitespaceSensitivity": "ignore",
   "sortHtmlAttributes": "idiomatic",
-  "printWidth": 100,
+  "printWidth": 80,
   "overrides": [
     {
       "files": ["*.php"],
@@ -15,7 +15,6 @@
         "parser": "php",
         "tabWidth": 4,
         "trailingCommaPHP": true,
-        "printWidth": 80,
         "braceStyle": "psr-2"
       }
     },

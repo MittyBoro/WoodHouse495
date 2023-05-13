@@ -40,10 +40,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
     /**
      * The attributes that should be cast.
@@ -54,9 +51,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $appends = [
-        'avatar',
-    ];
+    protected $appends = ['avatar'];
 
     public function setPasswordAttribute($val)
     {
@@ -71,7 +66,8 @@ class User extends Authenticatable
     }
     public function getIsEditorAttribute()
     {
-        return $this->role == self::ROLE_ADMIN || $this->role == self::ROLE_EDITOR;
+        return $this->role == self::ROLE_ADMIN ||
+            $this->role == self::ROLE_EDITOR;
     }
 
     public function getFirstNameAttribute()
@@ -81,8 +77,15 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
-        $ui = 'https://ui-avatars.com/api/?name=' . urlencode($this->name) . '&color=fff&background=AC2CDB';
-        $gravatar = 'https://www.gravatar.com/avatar/' . md5($this->email) . '?' . urlencode($ui);
+        $ui =
+            'https://ui-avatars.com/api/?name=' .
+            urlencode($this->name) .
+            '&color=fff&background=AC2CDB';
+        $gravatar =
+            'https://www.gravatar.com/avatar/' .
+            md5($this->email) .
+            '?' .
+            urlencode($ui);
 
         return $gravatar;
     }

@@ -8,18 +8,15 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 use Nicolaslopezj\Searchable\SearchableTrait;
 
-
 class Portfolio extends Model
 {
     use ExtractingTrait;
     use SearchableTrait;
 
-    protected $sortable = ['created_at', 'title', 'is_published',];
+    protected $sortable = ['created_at', 'title', 'is_published'];
     protected $defaultSort = 'created_at-desc';
 
-    protected $appends = [
-        'thumb', 'page_name'
-    ];
+    protected $appends = ['thumb', 'page_name'];
 
     protected $searchable = [
         'columns' => [
@@ -42,9 +39,7 @@ class Portfolio extends Model
 
     protected function pageName(): Attribute
     {
-        return Attribute::make(
-            get: fn () => $this->page?->title,
-        );
+        return Attribute::make(get: fn() => $this->page?->title);
     }
 
     public function getGalleryAttribute()

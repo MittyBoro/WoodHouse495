@@ -1,7 +1,6 @@
-import { CountUp } from 'countup.js';
+import { CountUp } from 'countup.js'
 
-
-document.querySelectorAll('.int-js').forEach(function(int) {
+document.querySelectorAll('.int-js').forEach(function (int) {
   let end = int.dataset.end
   let countUp = new CountUp(int, end, {
     duration: 2,
@@ -11,16 +10,15 @@ document.querySelectorAll('.int-js').forEach(function(int) {
     suffix: int.dataset.suffix || '',
     enableScrollSpy: true,
     scrollSpyDelay: 300,
-  });
-  
+  })
+
   const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        countUp.start();
+        countUp.start()
       }
-    });
-    });
-    
-  observer.observe(int);
-  
+    })
+  })
+
+  observer.observe(int)
 })

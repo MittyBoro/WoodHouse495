@@ -294,7 +294,7 @@
 
   <!-- popup -->
   <div class="popup-boxes">
-    <div class="popup popup-callback">
+    <div class="popup popup-callback popup-form">
       <div class="container">
         <form class="form-wrapper">
           <div class="close-popup close-btn"></div>
@@ -320,7 +320,7 @@
       </div>
     </div>
 
-    <div class="popup popup-consultation">
+    <div class="popup popup-consultation popup-form">
       <div class="container">
         <form class="form-wrapper">
           <div class="close-popup close-btn"></div>
@@ -345,7 +345,32 @@
       </div>
     </div>
 
-    <div class="popup popup-success">
+    <div class="popup popup-measurer popup-form">
+      <div class="container">
+        <form class="form-wrapper">
+          <div class="close-popup close-btn"></div>
+          <div class="title-row">
+            <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
+            <div class="sub-h">Заполните форму и мы перезвоним Вам в течение
+              30 мин</div>
+          </div>
+          <div class="form-input">
+            <input type="text" placeholder="Введите Ваше имя" required>
+          </div>
+          <div class="form-input">
+            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
+              required>
+          </div>
+          <button class="btn btn-orange"
+            data-popup=".popup-success"><span>Заказать бесплатный
+              выезд мастера</span></button>
+          <div class="form-policy">Нажимая на кнопку, вы даёте согласие
+            на обработку персональных данных</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-success popup-form">
       <div class="container">
         <div class="form-wrapper">
           <div class="close-popup close-btn"></div>
@@ -387,42 +412,48 @@
                       style="background-image: url('./src/images/tmp/portfolio/1_big.png')">
                       <img loading="lazy"
                         src="{{ Vite::image('tmp/portfolio/1_big.png') }}"
-                        alt=""></div>
+                        alt="">
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <div class="prf-image zoom-image"
                       style="background-image: url('./src/images/tmp/portfolio/2.png')">
                       <img loading="lazy"
                         src="{{ Vite::image('tmp/portfolio/2.png') }}"
-                        alt=""></div>
+                        alt="">
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <div class="prf-image zoom-image"
                       style="background-image: url('./src/images/tmp/portfolio/3.png')">
                       <img loading="lazy"
                         src="{{ Vite::image('tmp/portfolio/3.png') }}"
-                        alt=""></div>
+                        alt="">
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <div class="prf-image zoom-image"
                       style="background-image: url('./src/images/tmp/portfolio/4.png')">
                       <img loading="lazy"
                         src="{{ Vite::image('tmp/portfolio/4.png') }}"
-                        alt=""></div>
+                        alt="">
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <div class="prf-image zoom-image"
                       style="background-image: url('./src/images/tmp/portfolio/5.png')">
                       <img loading="lazy"
                         src="{{ Vite::image('tmp/portfolio/5.png') }}"
-                        alt=""></div>
+                        alt="">
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <div class="prf-image zoom-image"
                       style="background-image: url('./src/images/tmp/portfolio/6.png')">
                       <img loading="lazy"
                         src="{{ Vite::image('tmp/portfolio/6.png') }}"
-                        alt=""></div>
+                        alt="">
+                    </div>
                   </div>
                 </div>
               </div>

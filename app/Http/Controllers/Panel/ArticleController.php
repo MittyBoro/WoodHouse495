@@ -37,7 +37,7 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        return redirect()->route('front.articles', $article->slug);
+        return redirect()->route('articles', $article->slug);
     }
 
     public function edit(Article $article)

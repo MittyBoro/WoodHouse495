@@ -1,14 +1,15 @@
 .single-article-box {
   padding-bottom: 80px;
 
-  .h1 {
+  .h1,
+  .h2 {
     margin-bottom: 30px;
     text-align: left;
     font-weight: 500;
   }
 
   .content-wrap {
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
   }
 }

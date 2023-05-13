@@ -23,7 +23,7 @@
   bottom: 0;
   padding: 70px 10px;
   display: flex;
-  background: rgba(#292B31, 0.8);
+  background: rgba(#292b31, 0.8);
   overflow-y: scroll;
   overflow-x: hidden;
   transition: 0.35s;
@@ -73,6 +73,7 @@
   //   border-radius: 20px
 }
 
+.popup-form,
 .popup-callback,
 .popup-consultation,
 .popup-success {
@@ -202,7 +203,7 @@
     .pr-place {
       margin: 14px 0 30px;
       padding: 13px 16px;
-      background: #F2F4F7;
+      background: #f2f4f7;
       border-radius: 6px;
     }
 
@@ -219,15 +220,16 @@
 
 .popup-menu {
   padding: 22px 0 60px;
-  background: #84C57A;
+  background: #84c57a;
   color: #fff;
-  box-shadow: 0 0 100px 100px #84C57A;
+  box-shadow: 0 0 100px 100px #84c57a;
 
   &:not(.active) {
     transform: translateX(-100%);
   }
 
-  a:hover, .a:hover {
+  a:hover,
+  .a:hover {
     color: #fff;
     opacity: 0.5;
   }

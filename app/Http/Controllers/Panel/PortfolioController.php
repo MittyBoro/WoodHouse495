@@ -40,11 +40,6 @@ class PortfolioController extends Controller
         return redirect(route('panel.portfolios.edit', $portfolio->id));
     }
 
-    public function show(Portfolio $portfolio)
-    {
-        return redirect()->route('portfolios', $portfolio->slug);
-    }
-
     public function edit(Portfolio $portfolio)
     {
         return Inertia::render('Portfolios/Form', [

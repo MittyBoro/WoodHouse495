@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
 
     protected $panelNamespace = 'App\Http\Controllers\Panel';
     protected $apiNamespace = 'App\Http\Controllers\Api';
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers\Frontend';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -59,7 +59,9 @@ class RouteServiceProvider extends ServiceProvider
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+            return Limit::perMinute(60)->by(
+                $request->user()?->id ?: $request->ip(),
+            );
         });
     }
 }

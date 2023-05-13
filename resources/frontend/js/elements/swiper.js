@@ -1,5 +1,3 @@
-
-
 import Swiper, {
   Navigation,
   Thumbs,
@@ -8,24 +6,15 @@ import Swiper, {
   Pagination,
 } from 'swiper'
 
-Swiper.use([
-  Navigation,
-  Thumbs,
-  Keyboard,
-  EffectFade,
-  Pagination,
-]);
+Swiper.use([Navigation, Thumbs, Keyboard, EffectFade, Pagination])
 
-
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-
+import 'swiper/css'
+import 'swiper/css/effect-fade'
 
 // popup-gallery
-document.querySelectorAll('.popup-project .left-col').forEach(el => {
-
+document.querySelectorAll('.popup-project .left-col').forEach((el) => {
   // слайдер товары
-  let thumbContainer = el.querySelector('.thumbs-row .swiper');
+  let thumbContainer = el.querySelector('.thumbs-row .swiper')
 
   let galleryThumbs = new Swiper(thumbContainer, {
     spaceBetween: 7,
@@ -33,9 +22,9 @@ document.querySelectorAll('.popup-project .left-col').forEach(el => {
     breakpoints: {
       992: {
         spaceBetween: 11,
-      }
-    }
-  });
+      },
+    },
+  })
 
   let topContainer = el.querySelector('.full-row .swiper')
 
@@ -50,32 +39,28 @@ document.querySelectorAll('.popup-project .left-col').forEach(el => {
     thumbs: {
       swiper: galleryThumbs,
     },
-  });
-});
-
+  })
+})
 
 // about-mobile
-document.querySelectorAll('.about-box .swiper').forEach(el => {
-
+document.querySelectorAll('.about-box .swiper').forEach((el) => {
   let swiper = new Swiper(el, {
     slidesPerView: 'auto',
     spaceBetween: 20,
     enabled: true,
     loop: true,
-    
+
     pagination: {
       el: el.querySelector('.swiper-pagination'),
       clickable: true,
     },
-    
+
     breakpoints: {
       768: {
         enabled: false,
         loop: false,
         spaceBetween: 0,
-      }
-    }
-  });
-});
-
-
+      },
+    },
+  })
+})

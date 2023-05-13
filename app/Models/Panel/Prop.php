@@ -9,9 +9,7 @@ use Illuminate\Support\Str;
 
 class Prop extends Model
 {
-
     protected $sortable = ['position'];
-
 
     public static function boot()
     {
@@ -56,8 +54,8 @@ class Prop extends Model
     protected function modelType(): Attribute
     {
         return Attribute::make(
-            set: fn ($value) => [
-                'model_type' => self::MODELS[$value] ?? $value ?? null
+            set: fn($value) => [
+                'model_type' => self::MODELS[$value] ?? ($value ?? null),
             ],
         );
     }
@@ -67,25 +65,44 @@ class Prop extends Model
         $type = $this->attributes['type'];
         switch ($type) {
             case 'string':
-                return Attribute::make(get: fn () => ['string' => $this->value_string]);
+                return Attribute::make(
+                    get: fn() => ['string' => $this->value_string],
+                );
             case 'file':
             case 'files':
-                return Attribute::make(get: fn () => ['files' => $this->getPanelMedia(self::MEDIA_COLLECTION_FILE)]);
+                return Attribute::make(
+                    get: fn() => [
+                        'files' => $this->getPanelMedia(
+                            self::MEDIA_COLLECTION_FILE,
+                        ),
+                    ],
+                );
             case 'image':
             case 'images':
-                return Attribute::make(get: fn () => ['images' => $this->getPanelMedia(self::MEDIA_COLLECTION_IMAGE)]);
+                return Attribute::make(
+                    get: fn() => [
+                        'images' => $this->getPanelMedia(
+                            self::MEDIA_COLLECTION_IMAGE,
+                        ),
+                    ],
+                );
             case 'text_array':
-                return Attribute::make(get: fn () => ['text_array' => $this->text_array]);
+                return Attribute::make(
+                    get: fn() => ['text_array' => $this->text_array],
+                );
             default:
-                return Attribute::make(get: fn () => ['text' => $this->value_text]);
+                return Attribute::make(
+                    get: fn() => ['text' => $this->value_text],
+                );
         }
     }
 
     public function getTabAttribute($value)
     {
         $model = $this->model;
-        if ($model)
-            return $model->title . ($model->lang ? "[$model->lang]" : "");
+        if ($model) {
+            return $model->title . ($model->lang ? "[$model->lang]" : '');
+        }
 
         return $value;
     }
@@ -93,26 +110,35 @@ class Prop extends Model
     // syncMedia несработает при создании
     public function setValueAttribute($value)
     {
-        if (!is_array($value))
+        if (!is_array($value)) {
             return;
+        }
 
         $type = $this->attributes['type'];
 
         switch ($type) {
             case 'file':
             case 'files':
-                $this->syncMedia($value['files'] ?? null, self::MEDIA_COLLECTION_FILE);
+                $this->syncMedia(
+                    $value['files'] ?? null,
+                    self::MEDIA_COLLECTION_FILE,
+                );
                 break;
             case 'image':
             case 'images':
-                $this->syncMedia($value['images'] ?? null, self::MEDIA_COLLECTION_IMAGE);
+                $this->syncMedia(
+                    $value['images'] ?? null,
+                    self::MEDIA_COLLECTION_IMAGE,
+                );
                 break;
             case 'string':
             case 'boolean':
                 $this->attributes['value_string'] = $value['string'] ?? null;
                 break;
             case 'text_array':
-                $this->attributes['value_text'] = json_encode($value['text_array'] ?? null);
+                $this->attributes['value_text'] = json_encode(
+                    $value['text_array'] ?? null,
+                );
                 break;
             default:
                 $this->attributes['value_text'] = $value['text'] ?? null;
