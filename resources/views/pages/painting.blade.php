@@ -100,14 +100,14 @@
         <div class="video-wrap img-cover-wrap">
           <img src="{{ Vite::image('tmp/paints/1.png') }}" alt="">
           <video loading="lazy" poster="{{ Vite::image('tmp/paints/1.png') }}"
-            src="{{ Vite::image('../videos/2_1.mp4') }}" autoplay muted
-            loop></video>
+            src="{{ Vite::asset('resources/frontend/videos/2_1.mp4') }}" autoplay
+            muted loop></video>
         </div>
         <div class="video-wrap img-cover-wrap">
           <img src="{{ Vite::image('tmp/paints/2.png') }}" alt="">
           <video loading="lazy" poster="{{ Vite::image('tmp/paints/2.png') }}"
-            src="{{ Vite::image('../videos/2_2.mp4') }}" autoplay muted
-            loop></video>
+            src="{{ Vite::asset('resources/frontend/videos/2_2.mp4') }}" autoplay
+            muted loop></video>
         </div>
       </div>
     </div>

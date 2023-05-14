@@ -17,3 +17,4 @@ import './elements/portfolioPopup'
 // document.querySelectorAll('img').forEach(el => el.removeAttribute('loading'))
 
 import.meta.glob(['../images/**/*.*'])
+import.meta.glob(['../videos/**/*.*'])
