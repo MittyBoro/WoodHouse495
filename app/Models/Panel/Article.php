@@ -25,8 +25,8 @@ class Article extends Model
         ],
     ];
 
-    protected $sortable = ['created_at', 'title', 'is_published'];
-    protected $defaultSort = 'created_at-desc';
+    protected $sortable = ['id', 'created_at', 'title', 'is_published'];
+    protected $defaultSort = 'id-desc';
 
     protected static function boot()
     {

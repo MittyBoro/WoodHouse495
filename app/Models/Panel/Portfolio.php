@@ -13,8 +13,8 @@ class Portfolio extends Model
     use ExtractingTrait;
     use SearchableTrait;
 
-    protected $sortable = ['created_at', 'title', 'is_published'];
-    protected $defaultSort = 'created_at-desc';
+    protected $sortable = ['id', 'created_at', 'title', 'is_published'];
+    protected $defaultSort = 'id-desc';
 
     protected $appends = ['thumb', 'page_name'];
 

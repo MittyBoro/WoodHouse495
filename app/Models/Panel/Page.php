@@ -10,8 +10,8 @@ class Page extends Model
 {
     use ExtractingTrait;
 
-    protected $sortable = ['created_at', 'slug', 'title'];
-    protected $defaultSort = 'created_at-desc';
+    protected $sortable = ['id', 'created_at', 'slug', 'title'];
+    protected $defaultSort = 'id-desc';
 
     protected static function boot()
     {
