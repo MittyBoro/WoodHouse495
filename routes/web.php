@@ -23,7 +23,8 @@ Route::middleware('page')->group(function () {
 
     // Route::get('orders/{order:uuid}', 'OrderController@index')->name('orders');
 
-    // Route::get('faq', 'FAQController@index')->name('faq');
+    Route::get('articles', 'ArticleController@index')->name('articles');
+    Route::get('article/{slug}', 'ArticleController@show')->name('article');
 
     // все вставлять до этого!
     Route::get('{path}', 'PageController@index')

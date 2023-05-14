@@ -19,11 +19,6 @@ class User extends BaseUser
     ];
     protected $defaultSort = 'id-desc';
 
-    public function getMorphClass()
-    {
-        return Model::class;
-    }
-
     public function scopeFilter($query, array $filter)
     {
         if (isset($filter['role'])) {

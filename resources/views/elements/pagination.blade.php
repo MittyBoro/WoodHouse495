@@ -3,8 +3,7 @@
     {{-- Previous Page Link --}}
     <li class="prev {{ $paginator->onFirstPage() ? ' disabled' : '' }}">
       <a href="{{ $paginator->previousPageUrl() }}">
-        <img class="to-svg" src="@vite_asset('images/icons/arrow-line-right.svg')" alt="">
-        <span>@lang('front.pagination.prev')</span>
+        « Назад
       </a>
     </li>
     {{-- Pagination Elements --}}
@@ -28,8 +27,7 @@
 
     <li class="next {{ !$paginator->hasMorePages() ? ' disabled' : '' }}">
       <a href="{{ $paginator->nextPageUrl() }}">
-        <span>@lang('front.pagination.next')</span>
-        <img class="to-svg" src="@vite_asset('images/icons/arrow-line-right.svg')" alt="">
+        Вперёд »
       </a>
     </li>
   </ul>

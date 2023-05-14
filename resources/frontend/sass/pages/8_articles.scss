@@ -19,7 +19,11 @@
       display: flex;
       align-items: center;
       padding: 4px 8px;
-      background: #F9FAFB;
+      background: #f9fafb;
+      @media (min-width: 1240px) {
+        padding: 8px 15px;
+        margin: 0 3px;
+      }
     }
 
     &.disabled {
@@ -42,6 +46,14 @@
       margin: 0 6px;
       width: 5px;
       height: 9px;
+    }
+  }
+}
+
+@media (min-width: 1240px) {
+  .page-articles {
+    .articles-box .title-row {
+      padding-bottom: 20px;
     }
   }
 }

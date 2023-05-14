@@ -4,6 +4,13 @@
 @section('meta_description', $page['meta_description'] ?? '')
 @section('meta_keywords', $page['meta_keywords'] ?? '')
 
+@section('menu_items')
+  <a class="menu-item visible-lg" href="/sanding">Шлифовка дома</a>
+  <a class="menu-item visible-lg" href="/painting">Покраска дома</a>
+  <a class="menu-item visible-lg" href="/roofing">Кровельные работы</a>
+  <a class="menu-item visible-lg" href="/reconstruction">Реконструкция домов</a>
+@endsection
+
 @section('content')
 
   <div class="articles-box single-article-box" id="articles">

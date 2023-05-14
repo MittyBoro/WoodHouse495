@@ -22,11 +22,12 @@ class ArticleFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (Article $article) {
-            $data = [
-                'gallery' => $this->getGallery(rand(0, 2)),
-            ];
-
-            $article->saveAfter($data);
+            if ($article->is_published) {
+                $data = [
+                    'gallery' => $this->getGallery(rand(1, 2)),
+                ];
+                $article->saveAfter($data);
+            }
         });
     }
 }

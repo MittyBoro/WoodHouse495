@@ -741,61 +741,9 @@
         <div class="h2"><b>Полезные</b> статьи</div>
       </div>
       <div class="articles-list grid-lg-3 grid-md-2">
-        <div class="articles-item">
-          <div class="ai-image img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/articles/1.png') }}"
-              alt="">
-          </div>
-          <div class="ai-bottom">
-            <div class="ai-title">Окосячка деревянного дома</div>
-            <div class="ai-description">Окосячка проемов в деревянном доме в
-              колоду на сегодняшний день является самым трудоемким и сложным
-              процессом среди всех вариантов...</div>
-            <div class="ai-link link">Читать подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-          </div>
-        </div>
-        <div class="articles-item">
-          <div class="ai-image img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/articles/2.png') }}"
-              alt="">
-          </div>
-          <div class="ai-bottom">
-            <div class="ai-title">Шливофка деревянного дома</div>
-            <div class="ai-description">Шлифовка деревянного дома
-              Выполним шлифовку деревянного дома от специалистов с многолетним
-              опытом работ...</div>
-            <div class="ai-link link">Читать подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-          </div>
-        </div>
-        <div class="articles-item">
-          <div class="ai-image img-cover-wrap hover">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/articles/3.png') }}"
-              alt="">
-          </div>
-          <div class="ai-bottom">
-            <div class="ai-title">Утепление
-              каркасного дома</div>
-            <div class="ai-description">Если вы не в первый раз сталкиваетесь с
-              темой строительства, то знаете, что правильный выбор утеплителя
-              является ключевым пунктом...</div>
-            <div class="ai-link link">Читать подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-          </div>
-        </div>
+        @foreach ($articles as $article)
+          @include('elements.article')
+        @endforeach
       </div>
       <div class="articles-btn">
         <a class="btn btn-orange btn-alt" href="/articles">

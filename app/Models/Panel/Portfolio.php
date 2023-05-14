@@ -37,6 +37,11 @@ class Portfolio extends Model
         });
     }
 
+    public function getMorphClass()
+    {
+        return Model::class;
+    }
+
     protected function pageName(): Attribute
     {
         return Attribute::make(get: fn() => $this->page?->title);

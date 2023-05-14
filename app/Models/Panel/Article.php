@@ -44,6 +44,11 @@ class Article extends Model
         });
     }
 
+    public function getMorphClass()
+    {
+        return Model::class;
+    }
+
     public function getGalleryAttribute()
     {
         return $this->getPanelMedia(self::MEDIA_COLLECTION, 'thumb');

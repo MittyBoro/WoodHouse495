@@ -42,9 +42,9 @@ class Portfolio extends Model implements HasMedia
             self::MEDIA_COLLECTION,
         )->registerMediaConversions(function () {
             $this->addMediaConversion('thumb')->fit(
-                Manipulations::FIT_CROP,
+                Manipulations::FIT_MAX,
                 400,
-                300,
+                400,
             );
             $this->addMediaConversion('medium')->fit(
                 Manipulations::FIT_MAX,

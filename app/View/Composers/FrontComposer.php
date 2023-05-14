@@ -2,6 +2,7 @@
 
 namespace App\View\Composers;
 
+use App\Models\Article;
 use App\Models\Prop;
 use Illuminate\View\View;
 
@@ -13,8 +14,26 @@ class FrontComposer
     {
         $this->view = $view;
 
+        $view_array = explode('.', $this->view->getName());
+        $viewName = end($view_array);
+
+        $this->view->with([
+            'viewName' => $viewName,
+        ]);
+
+        if (!in_array($viewName, ['default', 'articles', 'single-article'])) {
+            $this->setArticles();
+        }
         $this->setLayoutValues();
-        $this->setViewName();
+    }
+
+    private function setArticles()
+    {
+        $articles = Article::limit(3)->getFrontList(false);
+
+        $this->view->with([
+            'articles' => $articles,
+        ]);
     }
 
     private function setLayoutValues()
@@ -24,16 +43,6 @@ class FrontComposer
         $this->view->with([
             'props' => $props->toArray(),
             'currentUrl' => url()->current(),
-        ]);
-    }
-
-    private function setViewName()
-    {
-        $view_array = explode('.', $this->view->getName());
-        $viewName = end($view_array);
-
-        $this->view->with([
-            'viewName' => $viewName,
         ]);
     }
 }

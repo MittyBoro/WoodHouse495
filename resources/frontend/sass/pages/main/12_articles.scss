@@ -17,7 +17,7 @@
   .title-row {
     padding-top: 79px;
     margin-bottom: 38px;
-    border-top: 1px solid #E0E6EC;
+    border-top: 1px solid #e0e6ec;
   }
 
   .articles-list {
@@ -25,10 +25,10 @@
   }
 
   .articles-item {
-    background: #F9FAFB;
+    background: #f9fafb;
     border-radius: 10px;
+    color: inherit;
     overflow: hidden;
-
     .ai-image {
       padding: 29.722% 0;
     }

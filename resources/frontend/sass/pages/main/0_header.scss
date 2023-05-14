@@ -2,20 +2,20 @@
   position: sticky;
   top: -92px;
   z-index: 100;
-  background: #fff;
   box-shadow: 0 1px 0 1px #f4f8fb;
+  background: #fff;
 
   .top-row {
     display: flex;
     align-items: center;
-    height: 92px;
     border-bottom: 1px solid #dde3ed;
+    height: 92px;
   }
 
   .sublogo-col {
     margin-left: 51px;
-    font-size: 14px;
     max-width: 16.5em;
+    font-size: 14px;
   }
 
   .icons-callback {
@@ -27,8 +27,8 @@
   }
 
   .contacts-col {
-    margin-left: 31px;
     margin-right: 23px;
+    margin-left: 31px;
   }
 
   .menu-row {
@@ -38,19 +38,19 @@
     .menu-item {
       display: flex;
       align-items: center;
-      height: 63px;
+      cursor: pointer;
       padding-bottom: 3px;
-      font-size: 12px;
+      height: 63px;
       font-weight: 600;
+      font-size: 12px;
+      line-height: 1;
       letter-spacing: 0.025em;
       text-transform: uppercase;
-      line-height: 1;
-      cursor: pointer;
 
       img {
         margin-top: -3px;
-        margin-left: 1px;
         margin-right: 13px;
+        margin-left: 1px;
       }
     }
 
@@ -63,41 +63,41 @@
         }
 
         .mid-list {
-          opacity: 1;
           visibility: visible;
+          opacity: 1;
         }
       }
 
       .mid-name {
-        position: relative;
         display: flex;
+        position: relative;
         align-items: center;
       }
 
       .mid-arrow {
         position: absolute;
         right: -14px;
-        margin-top: -2px;
         transition: transform 0.25s;
+        margin-top: -2px;
         pointer-events: auto;
       }
 
       .mid-list {
+        display: grid;
         position: absolute;
         top: 100%;
         left: -45px;
-        margin-top: -10px;
-        display: grid;
         gap: 8px;
-        padding: 25px 46px;
-        background: #fff;
-        color: $body-color;
-        border-radius: 4px;
-        transition: all 0.25s;
-        opacity: 0;
         visibility: hidden;
+        opacity: 0;
         z-index: 4;
+        transition: all 0.25s;
         cursor: default;
+        margin-top: -10px;
+        border-radius: 4px;
+        background: #fff;
+        padding: 25px 46px;
+        color: $body-color;
 
         .mid-item {
           margin-right: 5px;
@@ -115,7 +115,7 @@
 }
 
 .page-articles,
-.page-article,
+.page-single-article,
 .page-errors,
 .page-default {
   .header-box {

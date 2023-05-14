@@ -24,11 +24,12 @@ class PortfolioFactory extends Factory
     public function configure()
     {
         return $this->afterCreating(function (Portfolio $portfolio) {
-            $data = [
-                'gallery' => $this->getGallery(rand(0, 3)),
-            ];
-
-            $portfolio->saveAfter($data);
+            if ($portfolio->is_published) {
+                $data = [
+                    'gallery' => $this->getGallery(rand(2, 3)),
+                ];
+                $portfolio->saveAfter($data);
+            }
         });
     }
 }
