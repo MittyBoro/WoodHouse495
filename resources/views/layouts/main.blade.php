@@ -19,10 +19,14 @@
     <meta property="og:image" content="@yield('meta_image')" />
   @endif
 
-  {{-- <meta name="yandex-tableau-widget" content="logo=@vite_asset('images/icons/favicon.svg'), color=#ffffff">
-    <link rel="icon" type="image/x-icon" href="@vite_asset('images/icons/favicon.svg')">
-    <link rel="apple-touch-icon" sizes="152x152" href="@vite_asset('images/icons/favicon.svg')">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="@vite_asset('images/icons/favicon.svg')"> --}}
+  <meta name="yandex-tableau-widget"
+    content="logo={{ Vite::image('favicon.svg') }}, color=#ffffff">
+  <link rel="icon" type="image/x-icon"
+    href="{{ Vite::image('favicon.svg') }}">
+  <link rel="apple-touch-icon" sizes="152x152"
+    href="{{ Vite::image('favicon.svg') }}">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152"
+    href="{{ Vite::image('favicon.svg') }}">
 
   @vite('resources/frontend/sass/style.scss')
   @vite('resources/frontend/js/app.js')
