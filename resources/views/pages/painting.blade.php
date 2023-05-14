@@ -656,3 +656,15 @@
 
 @endsection
 
+@section('body_end_code')
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('video').forEach(video => {
+        video.play().then(function() {
+          video.muted = true;
+        });
+      });
+    });
+  </script>
+@endsection
+
