@@ -336,61 +336,16 @@ input[type='radio'] {
   }
 }
 
-form {
-  &.loading,
-  &.done {
-    .form-input,
-    .form-file,
-    .btn,
-    input,
-    select,
-    textarea,
-    button {
+.form {
+  &.loading {
+    & > * {
+      filter: blur(2px);
+      animation: blink 0.5s infinite alternate;
       pointer-events: none;
     }
-
-    .btn {
-      color: transparent !important;
-
-      .icon {
-        display: none;
-      }
-    }
-  }
-
-  &.loading {
-    pointer-events: none;
-    animation: blink 0.5s infinite alternate;
-
-    .btn {
-      filter: grayscale(100%);
-
-      &::after {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        border: 3px solid #fff;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        animation: round 1s linear infinite;
-      }
-    }
   }
 
   &.done {
-    .btn {
-      &::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        background: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.1454 0L5.01224 6.32097L1.99556 3.24593L0 5.03209L4.8736 10L14 1.92022L12.1454 0Z' fill='white'/%3E%3C/svg%3E")
-          no-repeat 50% 50%;
-        background-size: contain;
-        opacity: 0.7;
-      }
-    }
+    pointer-events: none;
   }
 }

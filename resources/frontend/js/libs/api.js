@@ -1,5 +1,5 @@
 export default {
-  base_url: '/api/' + $lang,
+  base_url: '/',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'application/json;charset=utf-8',
@@ -23,7 +23,9 @@ export default {
           throw new Error(errors.flat().join('\n'))
         }
       }
-      throw new Error('Something went wrong')
+      throw new Error(
+        'Что-то пошло не так.\nЕсли ошибка повторилась, свяжитесь с нами по телефону/почте или в соц.сетях'
+      )
     })
   },
 

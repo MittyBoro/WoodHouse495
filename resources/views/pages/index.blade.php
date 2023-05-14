@@ -47,19 +47,21 @@
         </div>
       </div>
       <div class="right-col">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name"
+            value="Строительство и отделка: Заказ мастера">
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
             <div class="sub-h">Заполните форму и мы перезвоним Вам в течение 30
               мин</div>
           </div>
           <div class="form-input visible-lg">
-            <input type="text" placeholder="Введите Ваше имя" minlength="1"
-              required>
+            <input type="text" name="name" placeholder="Введите Ваше имя"
+              minlength="1">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
           <button class="btn btn-orange"><span>Заказать бесплатный
               выезд мастера</span></button>
@@ -928,27 +930,29 @@
             </div>
           </div>
           <div class="right-col">
-            <form class="form-wrapper">
+            <form class="form form-wrapper">
+              <input type="hidden" name="form_name"
+                value="Строительство и отделка: предварительный расчет">
               <div class="form-input">
-                <input type="text" placeholder="Введите Ваше имя" required>
+                <input type="text" name="name"
+                  placeholder="Введите Ваше имя">
               </div>
               <div class="form-input">
-                <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-                  required>
+                <input type="text" name="phone"
+                  placeholder="+7 (___) ___ - __ - __" phone required>
               </div>
               <div class="form-input">
-                <textarea placeholder="Кратко опишите Вашу задачу"></textarea>
+                <textarea name="description" placeholder="Кратко опишите Вашу задачу"></textarea>
               </div>
               <label class="form-file">
                 <span class="link">
                   <img class="to-svg" loading="lazy"
                     src="{{ Vite::image('icons/clip.svg') }}" alt="">
-                  <input type="file" multiple>
+                  <input type="file" name="files[]" multiple maxlength="5">
                   <span>Прикрепить ТЗ/фото объекта</span>
                 </span>
               </label>
-              <button class="btn btn-orange"
-                data-popup=".popup-success"><span>Узнать предварительную
+              <button class="btn btn-orange"><span>Узнать предварительную
                   стоимость</span></button>
               <div class="form-policy">Нажимая на кнопку, вы даёте согласие
                 на обработку персональных данных</div>
@@ -1077,21 +1081,24 @@
           </div>
         </div>
         <div class="right-col">
-          <form class="form-wrapper">
+          <form class="form form-wrapper">
+            <input type="hidden" name="form_name"
+              value="Строительство и отделка: бесплатный вызов мастера">
             <div class="title-row">
-              <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
+              <div class="h3"><b>Закажите бесплатный вызов мастера</b>
+              </div>
               <div class="sub-h">Заполните форму и мы перезвоним Вам в течение
                 30 мин</div>
             </div>
             <div class="form-input">
-              <input type="text" placeholder="Введите Ваше имя" required>
+              <input type="text" name="name"
+                placeholder="Введите Ваше имя">
             </div>
             <div class="form-input">
-              <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-                required>
+              <input type="text" name="phone"
+                placeholder="+7 (___) ___ - __ - __" phone required>
             </div>
-            <button class="btn btn-orange"
-              data-popup=".popup-success"><span>Заказать бесплатный
+            <button class="btn btn-orange"><span>Заказать бесплатный
                 выезд мастера</span></button>
             <div class="form-policy">Нажимая на кнопку, вы даёте согласие
               на обработку персональных данных</div>

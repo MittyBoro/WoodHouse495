@@ -9,6 +9,7 @@ import './elements/menu'
 import './elements/readMore'
 import './elements/phone'
 import './elements/portfolioPopup'
+import './elements/form'
 
 // setTimeout(() => {
 //   openPopup('.popup-menu');

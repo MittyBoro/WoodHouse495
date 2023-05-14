@@ -19,7 +19,8 @@ body {
   overflow-x: clip;
 }
 
-a, .a {
+a,
+.a {
   transition: color 0.2s, opacity 0.2s;
   text-decoration: none;
   cursor: pointer;
@@ -30,11 +31,14 @@ a, .a {
   }
 }
 
-.color, .primary, .orange {
+.color,
+.primary,
+.orange {
   color: $primary;
 }
 
-.secondary, .green {
+.secondary,
+.green {
   color: $secondary;
 }
 
@@ -63,12 +67,19 @@ a, .a {
     text-decoration: underline;
   }
 
-  img, svg {
+  img,
+  svg {
     margin-left: 8px;
   }
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, .h {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.h {
   font-weight: 300;
   line-height: 118%;
 
@@ -94,14 +105,15 @@ a, .a {
   font-size: 18px;
 }
 
-b, strong {
+b,
+strong {
   font-weight: 700;
 }
 
 // скролл
 .custom-scroll {
   &::-webkit-scrollbar-thumb {
-    background: #F7DFDB;
+    background: #f7dfdb;
     background-clip: content-box;
     border-radius: 0;
   }
@@ -153,7 +165,7 @@ b, strong {
 
   &-orange {
     .icon {
-      background: linear-gradient(180deg, #F3AC62 0%, #EE8B2C 100%);
+      background: linear-gradient(180deg, #f3ac62 0%, #ee8b2c 100%);
       box-shadow: inset 0px 0px 21px rgba(255, 255, 255, 0.32);
 
       &:hover {
@@ -164,7 +176,7 @@ b, strong {
 
   &-green {
     .icon {
-      background: linear-gradient(180deg, #ADD8A7 0%, #84C57A 100%);
+      background: linear-gradient(180deg, #add8a7 0%, #84c57a 100%);
       box-shadow: inset 3px 3px 18px rgba(255, 255, 255, 0.64);
 
       &:hover {
@@ -263,26 +275,27 @@ b, strong {
   z-index: 10;
 
   &::before {
-    content: "";
+    content: '';
 
     @include absfull(10px);
 
-    border: 1px solid #96ABBE;
+    border: 1px solid #96abbe;
     border-radius: 50%;
     opacity: 0.1;
   }
 
   &-alt {
-    background-color: #F9FAFB;
+    background-color: #f9fafb;
 
     &::before {
-      border-color: #96ABBE;
+      border-color: #96abbe;
     }
   }
 }
 
 @keyframes backgroundArrowMove {
-  0%, 100% {
+  0%,
+  100% {
     background-position-y: 45%;
   }
 
@@ -311,11 +324,22 @@ b, strong {
   position: relative;
   max-width: min(1770px, calc(100vw - 30px));
   margin: 0 auto;
-  background: #F9F9F9 no-repeat 50%;
+  background: #f9f9f9 no-repeat 50%;
   background-size: cover;
   border-radius: 17px;
   overflow: hidden;
-  clip-path: polygon(0 0, calc(50% - 18px) 0, 50% 19px, calc(50% + 18px) 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(
+    0 0,
+    calc(50% - 18px) 0,
+    50% 19px,
+    calc(50% + 18px) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+  @media (min-width: 1340px) {
+    max-width: min(1770px, calc(100vw - 100px));
+  }
 }
 
 .lazy-width {
@@ -328,14 +352,14 @@ b, strong {
   color: $primary;
 
   &::before {
-    content: "Читать полностью";
+    content: 'Читать полностью';
   }
 }
 
 .read-active {
   .read-more {
     &::before {
-      content: "Скрыть";
+      content: 'Скрыть';
     }
   }
 
@@ -345,6 +369,6 @@ b, strong {
 }
 
 .gray-line {
-  border-bottom: 1px solid #E0E6EC;
+  border-bottom: 1px solid #e0e6ec;
   width: 100%;
 }

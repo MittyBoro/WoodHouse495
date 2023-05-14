@@ -3,6 +3,7 @@
 namespace App\Services\SpatieMedia;
 
 use Arr;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -21,7 +22,7 @@ trait InteractsWithCustomMedia
     ): Collection {
         $collect = collect($data)
             ->filter(function ($value) {
-                return !isset($value['del']);
+                return !is_array($value) || !isset($value['del']);
             })
             ->values();
 
@@ -49,11 +50,14 @@ trait InteractsWithCustomMedia
     }
 
     public function syncSingleMedia(
-        array $singleMedia,
+        array|UploadedFile $singleMedia,
         $collectionName = 'default',
         $diskName = '',
     ): Media {
-        if (Arr::hasAny($singleMedia, ['file', 'path', 'url'])) {
+        if (
+            $singleMedia instanceof UploadedFile ||
+            Arr::hasAny($singleMedia, ['file', 'path', 'url'])
+        ) {
             $mediaModel = $this->addSingleMedia(
                 $singleMedia,
                 $collectionName,
@@ -73,7 +77,9 @@ trait InteractsWithCustomMedia
         $collectionName = 'default',
         $diskName = '',
     ): Media {
-        if (isset($singleMedia['file'])) {
+        if ($singleMedia instanceof UploadedFile) {
+            $mediaModel = $this->addMedia($singleMedia);
+        } elseif (isset($singleMedia['file'])) {
             $mediaModel = $this->addMedia($singleMedia['file']);
         } elseif (isset($singleMedia['url'])) {
             try {

@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::post('callback_order/store', 'CallbackOrderController@store')->name(
+    'callback_order.store',
+);
 
 Route::middleware('page')->group(function () {
     // Route::get('/', 'HomeController@index')->name('home');
