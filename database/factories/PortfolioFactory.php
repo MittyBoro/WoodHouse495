@@ -26,7 +26,7 @@ class PortfolioFactory extends Factory
         return $this->afterCreating(function (Portfolio $portfolio) {
             if ($portfolio->is_published) {
                 $data = [
-                    'gallery' => $this->getGallery(rand(2, 3)),
+                    'gallery' => $this->getGallery(rand(2, 4)),
                 ];
                 $portfolio->saveAfter($data);
             }

@@ -1,6 +1,4 @@
 window.portfolioPopup = (json) => {
-  console.log('stringData', json)
-
   document.querySelectorAll('.popup-project').forEach((el) => {
     let topGalleryHTML = ''
     let thumbsGalleryHTML = ''
@@ -38,7 +36,24 @@ window.portfolioPopup = (json) => {
       popupTopGallery.slideTo(0)
       el.classList.remove('loading')
     }, 400)
+
+    el.querySelectorAll('.zoom-image').forEach((el) => {
+      el.addEventListener('mousemove', zoom)
+    })
   })
 
   openPopup('.popup-project')
+}
+
+function zoom(e) {
+  let zoomer = e.currentTarget
+  let offsetX, offsetY
+
+  e.offsetX ? (offsetX = e.offsetX) : (offsetX = e.touches[0].pageX)
+  e.offsetY ? (offsetY = e.offsetY) : (offsetX = e.touches[0].pageX)
+
+  let x = (offsetX / zoomer.offsetWidth) * 100
+  let y = (offsetY / zoomer.offsetHeight) * 100
+
+  zoomer.style.backgroundPosition = x + '% ' + y + '%'
 }

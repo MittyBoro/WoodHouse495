@@ -83,7 +83,7 @@
 
 <body class="preload page-{{ $viewName }} @yield('body_class')">
   @auth
-    {{-- @includeWhen(Auth::user()->is_editor, 'elements.paneline') --}}
+    @includeWhen(Auth::user()->is_editor, 'elements.paneline')
   @endauth
 
   <div class="preload-box">

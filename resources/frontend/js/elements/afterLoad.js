@@ -79,23 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
     .querySelectorAll('.form-input .options-value:first-child')
     .forEach((el) => el.click())
 
-  function zoom(e) {
-    let zoomer = e.currentTarget
-    let offsetX, offsetY
-
-    e.offsetX ? (offsetX = e.offsetX) : (offsetX = e.touches[0].pageX)
-    e.offsetY ? (offsetY = e.offsetY) : (offsetX = e.touches[0].pageX)
-
-    let x = (offsetX / zoomer.offsetWidth) * 100
-    let y = (offsetY / zoomer.offsetHeight) * 100
-
-    zoomer.style.backgroundPosition = x + '% ' + y + '%'
-  }
-
-  document.querySelectorAll('.zoom-image').forEach((el) => {
-    el.addEventListener('mousemove', zoom)
-  })
-
   // переход по якорю
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
@@ -108,13 +91,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       const target = document.querySelector(selector)
-      const offset = target.offsetTop - 30
 
-      // Анимируем плавный скролл до элемента
-      window.scrollTo({
-        top: offset,
-        behavior: 'smooth',
-      })
+      setTimeout(() => {
+        scrollTo(target)
+      }, 300)
+      scrollTo(target)
     })
   })
+  function scrollTo(target) {
+    const offset = target.offsetTop - 30
+
+    // Анимируем плавный скролл до элемента
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    })
+  }
 })

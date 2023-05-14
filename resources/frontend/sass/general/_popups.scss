@@ -119,6 +119,7 @@
       z-index: 20;
       opacity: 0;
       transition: 0.25s;
+      pointer-events: none;
     }
   }
 
@@ -170,6 +171,10 @@
 
         padding: 35.1606% 0;
         border-radius: 10px;
+      }
+
+      .swiper-slide {
+        z-index: 3;
       }
 
       .zoom-image {

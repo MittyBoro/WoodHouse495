@@ -2,17 +2,13 @@
   <div class="container">
     <a href="{{ route('panel.dashboard') }}" target="_blank">Панель управления</a>
 
-    @isset($product['id'])
-      <a href="{{ route('panel.roducts.edit', $product->id) }}"
+    @isset($article['id'])
+      <a href="{{ route('panel.articles.edit', $article->id) }}"
         target="_blank">Редактировать товар</a>
     @endisset
-    @if (isset($category_id))
-      <a href="{{ route('panel.roduct_categories.edit', $category_id) }}"
-        target="_blank">Редактировать категорию</a>
-    @endif
 
     @isset($page['id'])
-      <a href="{{ route('panel.ages.edit', $page->id) }}"
+      <a href="{{ route('panel.pages.edit', $page->id) }}"
         target="_blank">Редактировать страницу</a>
     @endisset
   </div>
