@@ -16,7 +16,7 @@ document.querySelectorAll('.popup-project .left-col').forEach((el) => {
   // слайдер товары
   let thumbContainer = el.querySelector('.thumbs-row .swiper')
 
-  let galleryThumbs = new Swiper(thumbContainer, {
+  window.popupThumbsGallery = new Swiper(thumbContainer, {
     spaceBetween: 7,
     slidesPerView: 4,
     breakpoints: {
@@ -28,8 +28,8 @@ document.querySelectorAll('.popup-project .left-col').forEach((el) => {
 
   let topContainer = el.querySelector('.full-row .swiper')
 
-  new Swiper(topContainer, {
-    loop: true,
+  window.popupTopGallery = new Swiper(topContainer, {
+    loop: false,
     effect: 'fade',
 
     navigation: {
@@ -37,7 +37,7 @@ document.querySelectorAll('.popup-project .left-col').forEach((el) => {
       prevEl: el.querySelector('.sw-prev'),
     },
     thumbs: {
-      swiper: galleryThumbs,
+      swiper: window.popupThumbsGallery,
     },
   })
 })

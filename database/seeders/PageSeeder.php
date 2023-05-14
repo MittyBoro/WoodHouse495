@@ -66,9 +66,12 @@ class PageSeeder extends Seeder
                 'view' => 'articles',
             ],
             [
-                'title' => 'Статья',
+                'title' => 'Одна статья',
                 'slug' => 'article',
                 'view' => 'single-article',
+                'meta_title' => '%replace% | WoodHouse495',
+                'meta_description' => '%replace%',
+                'meta_keywords' => '%replace%',
             ],
             [
                 'title' => 'Политика конфиденциальности',

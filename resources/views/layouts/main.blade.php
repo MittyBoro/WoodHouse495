@@ -7,7 +7,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>@yield('meta_title') | WoodHouse495</title>
+  <title>@yield('meta_title', 'WoodHouse495')</title>
 
   <meta name="description" content="@yield('meta_description', '')">
   <meta name="keywords" content="@yield('meta_keywords', '')" />
@@ -421,54 +421,8 @@
           <div class="left-col">
             <div class="full-row">
               <div class="swiper">
-                <div class="swiper-wrapper lightgallery">
+                <div class="swiper-wrapper lightgallery pl-top-gallery">
                   <div class="swiper-slide">
-                    <div class="prf-image zoom-image"
-                      style="background-image: url('./src/images/tmp/portfolio/1_big.png')">
-                      <img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/1_big.png') }}"
-                        alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prf-image zoom-image"
-                      style="background-image: url('./src/images/tmp/portfolio/2.png')">
-                      <img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/2.png') }}"
-                        alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prf-image zoom-image"
-                      style="background-image: url('./src/images/tmp/portfolio/3.png')">
-                      <img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/3.png') }}"
-                        alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prf-image zoom-image"
-                      style="background-image: url('./src/images/tmp/portfolio/4.png')">
-                      <img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/4.png') }}"
-                        alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prf-image zoom-image"
-                      style="background-image: url('./src/images/tmp/portfolio/5.png')">
-                      <img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/5.png') }}"
-                        alt="">
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prf-image zoom-image"
-                      style="background-image: url('./src/images/tmp/portfolio/6.png')">
-                      <img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/6.png') }}"
-                        alt="">
-                    </div>
                   </div>
                 </div>
               </div>
@@ -477,36 +431,8 @@
             </div>
             <div class="thumbs-row">
               <div class="swiper">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper pl-thumbs-gallery">
                   <div class="swiper-slide">
-                    <div class="prt-image"><img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/1.png') }}"
-                        alt=""></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prt-image"><img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/2.png') }}"
-                        alt=""></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prt-image"><img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/3.png') }}"
-                        alt=""></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prt-image"><img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/4.png') }}"
-                        alt=""></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prt-image"><img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/5.png') }}"
-                        alt=""></div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="prt-image"><img loading="lazy"
-                        src="{{ Vite::image('tmp/portfolio/6.png') }}"
-                        alt=""></div>
                   </div>
                 </div>
               </div>
@@ -514,17 +440,9 @@
           </div>
 
           <div class="right-col">
-            <div class="pr-title">«Название проекта»</div>
-            <div class="pr-place">Московская обл., р-н Серпуховский, д.
-              Воздвиженка</div>
-            <div class="pr-description">Двухэтажный коттедж “Адмирал”
-              впечатляет с первого взгляда.
-              Он подходит для узких участков, при этом обладает большой площадью
-              - 205 квадратных
-              метров. Дом выполнен в классическом стиле, и в стандартном проекте
-              всё в нём играет на
-              контрастах: двускатная крыша, дерево и камень на фасадах,
-              чёрно-белая расцветка.</div>
+            <div class="pr-title"></div>
+            <div class="pr-place"></div>
+            <div class="pr-description"></div>
             <button class="btn btn-orange"
               data-popup=".popup-consultation"><span>Получить
                 бесплатную консультацию специалиста</span></button>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\ExtractingTrait;
 use App\Services\SpatieMedia\InteractsWithCustomMedia;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,6 +13,7 @@ use Spatie\MediaLibrary\HasMedia;
 class Portfolio extends Model implements HasMedia
 {
     use HasFactory;
+    use ExtractingTrait;
     use InteractsWithCustomMedia;
 
     const MEDIA_COLLECTION = 'portfolio';
@@ -33,6 +35,9 @@ class Portfolio extends Model implements HasMedia
     ];
 
     protected $sortable = ['published_at', 'created_at'];
+    protected $defaultSort = 'published_at-desc';
+
+    protected $appends = ['thumb', 'gallery'];
 
     protected $hidden = ['media'];
 
@@ -89,54 +94,24 @@ class Portfolio extends Model implements HasMedia
         );
     }
 
-    protected function similars(): Attribute
-    {
-        return Attribute::make(
-            get: function () {
-                // $result = self::limit(4)
-                //             ->where('products.id', '!=', $this->id)
-                //             ->getFrontList();
-
-                // $result->append(['gallery']);
-                // return $result;
-            },
-        );
-    }
-
     public function scopeIsPublished($query)
     {
         $query->where('is_published', 1);
     }
 
-    public function scopeGetFrontList(
-        $query,
-        $paginate = true,
-        $append = 'gallery',
-    ) {
-        $query->isPublished()->with('media');
-
-        if ($paginate) {
-            $result = $query->customPaginate(6, $append);
-        } else {
-            $result = $query->get();
-            $result->append($append);
-        }
-
-        return $result;
-    }
-
-    // single
-    public function scopeFrontBySlug($query, $slug)
+    public function scopeQueryList($query)
     {
-        $result = $query
+        $query
+            ->orderByStr()
             ->isPublished()
-            ->whereSlug($slug)
-            ->with(['media', 'options'])
-            ->firstOrFail();
-
-        $result->append(['gallery', 'similars']);
-        $result->makeHidden(['options']);
-
-        return $result;
+            ->with('media')
+            ->select(
+                'id',
+                'page_id',
+                'title',
+                'mini_description',
+                'location',
+                'description',
+            );
     }
 }

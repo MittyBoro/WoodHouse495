@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 trait ExtractingTrait
 {
-    public function scopeOrderByStr(Builder $query, $sort = 'id-desc')
+    public function scopeOrderByStr(Builder $query, string $sort = null)
     {
         $sort = $sort ?: $this->defaultSort ?: $this->sortable[0] ?? '';
 

@@ -43,12 +43,7 @@ class Page extends Model
 
     public function portfolios()
     {
-        return $this->hasMany(Portfolio::class)->select(
-            'id',
-            'slug',
-            'title',
-            'mini_description',
-        );
+        return $this->hasMany(Portfolio::class)->queryList();
     }
 
     public function getPropsAttribute()
@@ -62,8 +57,10 @@ class Page extends Model
     {
         $page = $query
             ->where('slug', $slug)
-            ->with('properties')
+            ->with(['properties', 'portfolios'])
             ->firstOrFail([
+                'id',
+
                 'slug',
 
                 'title',

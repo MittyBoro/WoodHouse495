@@ -122,107 +122,9 @@
         <div class="h2"><b>Примеры</b> работ</div>
       </div>
       <div class="portfolio-list grid-lg-3 grid-md-2">
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/portfolio/1.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">«Название проекта»</div>
-          <div class="pi-descrition">Небольшое описание проекта всего в две-три
-            строки</div>
-          <div class="pi-link link">Посмотреть подробнее <img class="to-svg"
-              data-popup=".popup-project" loading="lazy"
-              src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover" data-popup=".popup-project">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/portfolio/2.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">«Название проекта»</div>
-          <div class="pi-descrition">Небольшое описание проекта всего в две-три
-            строки</div>
-          <div class="pi-link link" data-popup=".popup-project">Посмотреть
-            подробнее <img class="to-svg" loading="lazy"
-              src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/portfolio/3.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">«Название проекта»</div>
-          <div class="pi-descrition">Небольшое описание проекта всего в две-три
-            строки</div>
-          <div class="pi-link link" data-popup=".popup-project">Посмотреть
-            подробнее <img class="to-svg" loading="lazy"
-              src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/portfolio/4.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">«Название проекта»</div>
-          <div class="pi-descrition">Небольшое описание проекта всего в две-три
-            строки</div>
-          <div class="pi-link link" data-popup=".popup-project">Посмотреть
-            подробнее <img class="to-svg" loading="lazy"
-              src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/portfolio/5.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">«Название проекта»</div>
-          <div class="pi-descrition">Небольшое описание проекта всего в две-три
-            строки</div>
-          <div class="pi-link link" data-popup=".popup-project">Посмотреть
-            подробнее <img class="to-svg" loading="lazy"
-              src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="pi-image img-cover-wrap hover"
-            data-popup=".popup-project">
-            <div class="link orange show-more">Подробнее <img class="to-svg"
-                loading="lazy" src="{{ Vite::image('icons/link-arrow.svg') }}"
-                alt=""></div>
-            <img loading="lazy" src="{{ Vite::image('tmp/portfolio/6.png') }}"
-              alt="">
-          </div>
-          <div class="pi-title">«Название проекта»</div>
-          <div class="pi-descrition">Небольшое описание проекта всего в две-три
-            строки</div>
-          <div class="pi-link link" data-popup=".popup-project">Посмотреть
-            подробнее <img class="to-svg" loading="lazy"
-              src="{{ Vite::image('icons/link-arrow.svg') }}" alt="">
-          </div>
-        </div>
+        @foreach ($page->portfolios as $portfolio)
+          @include('elements.portfolio')
+        @endforeach
       </div>
       <div class="portfolio-bottom">
         <div class="pb-info gray">Больше реализованных проектов смотрите в нашем
@@ -231,8 +133,7 @@
           href="https://www.instagram.com/woodhouse495/">
           <span>
             <img loading="lazy"
-              src="{{ Vite::image('icons/instagram-btn.svg') }}"
-              alt="">
+              src="{{ Vite::image('icons/instagram-btn.svg') }}" alt="">
             Подписывайтесь на нас
           </span>
         </a>

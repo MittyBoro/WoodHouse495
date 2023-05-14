@@ -16,6 +16,7 @@ return new class extends Migration {
             $table
                 ->string('slug')
                 ->nullable()
+                ->unique()
                 ->index();
 
             $table->string('title');
@@ -28,8 +29,6 @@ return new class extends Migration {
             $table->string('view')->nullable();
 
             $table->timestamps();
-
-            $table->unique(['slug']);
         });
     }
 

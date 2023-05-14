@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Article;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index(Request $request)
     {
-        $articles = Article::limit(10)->getFrontList('preview');
+        $portfolios = Portfolio::take('6')
+            ->queryList()
+            ->get();
 
-        return view('index', [
-            'articles' => $articles,
+        return view('pages.index', [
+            'portfolios' => $portfolios,
         ]);
     }
 }

@@ -8,6 +8,7 @@ import './elements/integers'
 import './elements/menu'
 import './elements/readMore'
 import './elements/phone'
+import './elements/portfolioPopup'
 
 // setTimeout(() => {
 //   openPopup('.popup-menu');
