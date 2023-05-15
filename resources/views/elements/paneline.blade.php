@@ -2,11 +2,6 @@
   <div class="container">
     <a href="{{ route('panel.dashboard') }}" target="_blank">Панель управления</a>
 
-    @isset($article['id'])
-      <a href="{{ route('panel.articles.edit', $article->id) }}"
-        target="_blank">Редактировать товар</a>
-    @endisset
-
     @isset($page['id'])
       <a href="{{ route('panel.pages.edit', $page->id) }}"
         target="_blank">Редактировать страницу</a>
