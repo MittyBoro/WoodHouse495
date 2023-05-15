@@ -34,14 +34,20 @@
                   <Icon icon="arrows-up-down-left-right" class="drag-handle" />
                 </TData>
                 <TData v-if="hasThumb" mini>
-                  <div class="relative flex h-10 w-10 rounded border bg-gray-200 overflow-hidden">
+                  <div
+                    class="relative flex h-10 w-10 rounded border bg-gray-200 overflow-hidden"
+                  >
                     <img
                       v-if="element.thumb"
                       :src="element.thumb"
                       class="object-cover inset-0 m-auto absolute"
                       alt=""
                     />
-                    <Icon v-else icon="image" class="text-gray-500/50 m-auto object-contain" />
+                    <Icon
+                      v-else
+                      icon="image"
+                      class="text-gray-500/50 m-auto object-contain"
+                    />
                   </div>
                 </TData>
 
@@ -63,7 +69,11 @@
                   </Link>
                 </TData>
                 <TData v-if="routes.destroy" mini>
-                  <Link :href="route(routes.destroy, element.id)" method="delete" as="button">
+                  <Link
+                    :href="route(routes.destroy, element.id)"
+                    method="delete"
+                    as="button"
+                  >
                     <Icon
                       @click="confirm"
                       icon="trash-can"
@@ -84,12 +94,17 @@
       <div @click="saveSort" class="btn w-full">Сохранить сортировку</div>
     </div>
 
-    <TPagination ref="pagination" v-if="pagination && pagination.total" :pages="pagination" />
+    <TPagination
+      ref="pagination"
+      v-if="pagination && pagination.total"
+      :pages="pagination"
+    />
   </div>
 </template>
 
 <script>
   import Draggable from 'vuedraggable'
+  import Notify from '@/Mixins/Form/Notify'
 
   export default {
     components: {
@@ -97,6 +112,8 @@
     },
 
     props: ['table'],
+
+    mixins: [Notify],
 
     data() {
       return {
@@ -143,7 +160,10 @@
         Object.keys(this.routes).forEach((key) => {
           let routeValue = this.currentRouteStr(key)
 
-          if (!route().has(routeValue) || this.table.hideRoutes?.includes(key)) {
+          if (
+            !route().has(routeValue) ||
+            this.table.hideRoutes?.includes(key)
+          ) {
             delete this.routes[key]
           } else {
             this.routes[key] = routeValue
@@ -172,6 +192,7 @@
           preserveState: true,
           onSuccess: () => {
             this.sortToggle()
+            this.noticeSuccess()
           },
         })
       },

@@ -12,7 +12,7 @@ import { ZiggyVue } from 'ziggy'
 import Toast from 'vue-toastification'
 import TextareaAutosize from 'vue-textarea-autosize'
 
-import Icon from './Elements/Icon'
+import Icon from './Components/General/Icon.vue'
 
 import MixinFormat from './Mixins/General/Format.js'
 import MixinMain from './Mixins/General/Main.js'
@@ -22,7 +22,10 @@ import.meta.glob(['../images/favicon.svg'])
 
 createInertiaApp({
   resolve: (name) =>
-    resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
+    resolvePageComponent(
+      `./Pages/${name}.vue`,
+      import.meta.glob('./Pages/**/*.vue')
+    ),
   setup({ el, App, props, plugin }) {
     let createdApp = createApp({ render: () => h(App, props) })
 
@@ -40,9 +43,21 @@ createInertiaApp({
       .component('Icon', Icon)
       .component('Link', Link)
 
-    componentFromFolder(createdApp, import.meta.globEager('./Elements/Form/*.vue'), 'F')
-    componentFromFolder(createdApp, import.meta.globEager('./Elements/Table/*.vue'), 'T')
-    componentFromFolder(createdApp, import.meta.globEager('./Elements/Main/*.vue'), 'M')
+    componentFromFolder(
+      createdApp,
+      import.meta.globEager('./Components/Form/*.vue'),
+      'F'
+    )
+    componentFromFolder(
+      createdApp,
+      import.meta.globEager('./Components/Table/*.vue'),
+      'T'
+    )
+    componentFromFolder(
+      createdApp,
+      import.meta.globEager('./Components/Main/*.vue'),
+      'M'
+    )
 
     return createdApp.mount(el)
   },

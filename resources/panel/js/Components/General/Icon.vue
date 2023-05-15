@@ -34,7 +34,10 @@
 
     methods: {
       getIconUrl() {
-        let url = new URL(`../../images/sprites/${this.type}.svg`, import.meta.url).href
+        let url = new URL(
+          `../../../images/sprites/${this.type}.svg`,
+          import.meta.url
+        ).href
         let iconUrl = `${url}#${this.icon}`
         return iconUrl
       },

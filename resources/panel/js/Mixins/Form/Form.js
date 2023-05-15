@@ -1,12 +1,23 @@
 /**
  * подключать в конкретных случаях
  */
+
+import { router } from '@inertiajs/vue3'
+import Notify from './Notify'
+
 export default {
   data() {
     return {
       form: {},
+      removeStartEventListener: null,
+      beforeUnloadListener: (event) => {
+        event.preventDefault()
+        return (event.returnValue = '')
+      },
     }
   },
+
+  mixins: [Notify],
 
   computed: {
     isEdit() {
@@ -14,9 +25,45 @@ export default {
     },
   },
 
+  watch: {
+    'form.isDirty'(val) {
+      // закрытие страницы
+      if (val) {
+        addEventListener('beforeunload', this.beforeUnloadListener, {
+          once: true,
+        })
+      } else {
+        removeEventListener('beforeunload', this.beforeUnloadListener, {
+          once: true,
+        })
+      }
+    },
+  },
+
   created() {
-    this.$inertia.on('finish', (finish) => {
+    this.$inertia.on('finish', () => {
       this.form.errorsObj = this.errorKeysToObject(this.form.errors)
+    })
+  },
+
+  mounted() {
+    // переход внутри проложения
+    this.removeStartEventListener = router.on('before', (event) => {
+      if (event.detail.visit.method != 'get') {
+        return true
+      }
+      if (!this.form.isDirty) {
+        return true
+      }
+      return confirm(
+        'Вы действительно хотите уйти? Внесённые изменения не сохранятся.'
+      )
+    })
+  },
+  beforeUnmount() {
+    this.removeStartEventListener()
+    removeEventListener('beforeunload', this.beforeUnloadListener, {
+      once: true,
     })
   },
 
@@ -34,7 +81,9 @@ export default {
     },
 
     setForm(defaultForm) {
-      let newForm = JSON.parse(JSON.stringify(this.$page.props.item || defaultForm))
+      let newForm = JSON.parse(
+        JSON.stringify(this.$page.props.item || defaultForm)
+      )
 
       if (this.$page.props.item) {
         for (const key in defaultForm) {
@@ -55,6 +104,7 @@ export default {
       this.form.post(this.currentRoute('store'), {
         preserveState: (page) => Object.keys(page.props.errors).length,
         preserveScroll: true,
+        ...this.noticesForForm,
       })
     },
 
@@ -67,6 +117,7 @@ export default {
         .post(this.currentRoute('update', this.form.id), {
           preserveState: (page) => Object.keys(page.props.errors).length,
           preserveScroll: true,
+          ...this.noticesForForm,
         })
     },
   },

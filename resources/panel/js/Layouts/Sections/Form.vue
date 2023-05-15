@@ -27,9 +27,16 @@
           <slot name="subtitle"></slot>
         </div>
       </div>
-      <div v-if="$slots.buttons || !hideAdder" class="ml-auto md:pl-4 self-start flex flex-col">
+      <div
+        v-if="$slots.buttons || !hideAdder"
+        class="ml-auto md:pl-4 self-start flex flex-col"
+      >
         <slot name="buttons"></slot>
-        <Link v-if="form.id && !hideAdder" :href="currentRoute('create')" class="btn btn-gray">
+        <Link
+          v-if="form.id && !hideAdder"
+          :href="currentRoute('create')"
+          class="btn btn-gray"
+        >
           Добавить ещё
         </Link>
       </div>
@@ -66,11 +73,20 @@
         class="flex items-center rounded-b-md sm:rounded-b-xl justify-end bg-gray-50 text-right px-4 py-4 sm:px-8"
         :class="{ 'rounded-md sm:rounded-xl': !hasContentSlots }"
       >
-        <FButton class="w-full text-xs" :disabled="form.processing">Сохранить</FButton>
+        <FButton
+          class="w-full text-xs"
+          :disabled="form.processing || !form.isDirty"
+        >
+          Сохранить
+        </FButton>
         <slot v-if="$slots.actions" name="actions"></slot>
       </div>
 
-      <FButtonFixed v-if="form && !hideFix" :disabled="form.processing" />
+      <FButtonFixed
+        v-if="form && !hideFix"
+        :class="{ 'opacity-0 pointer-events-none': !form.isDirty }"
+        :disabled="form.processing"
+      />
     </template>
   </form>
 </template>
@@ -110,7 +126,10 @@
       },
       hasHeaderSlots() {
         return (
-          (this.$slots.title || this.$slots.subtitle || this.$slots.buttons || this.$panel.title) &&
+          (this.$slots.title ||
+            this.$slots.subtitle ||
+            this.$slots.buttons ||
+            this.$panel.title) &&
           !this.hiddenTitle
         )
       },

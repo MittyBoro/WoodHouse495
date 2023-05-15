@@ -22,14 +22,12 @@
 <script>
   import Sidebar from './AppComponets/Sidebar.vue'
   import HeaderNav from './AppComponets/HeaderNav.vue'
-  import Notify from './AppComponets/Notify.vue'
 
   export default {
     components: {
       Sidebar,
       HeaderNav,
     },
-    mixins: [Notify],
 
     props: {
       title: String,
@@ -39,7 +37,6 @@
       document.title = `${this.title} | ThePanel`
 
       this.$panel.title = this.title
-      this.addNotiEvents()
     },
 
     methods: {},
