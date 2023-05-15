@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Panel;
 use Illuminate\Http\Request;
 
 use App\Models\CallbackOrder;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class CallbackOrderController extends Controller
@@ -18,5 +19,16 @@ class CallbackOrderController extends Controller
         return Inertia::render('CallbackOrders/Index', [
             'list' => $orders,
         ]);
+    }
+
+    public function destroy(CallbackOrder $callbackOrder)
+    {
+        if (!Auth::user()->is_admin) {
+            return back()->withErrors(['У Вас нет прав на удаление']);
+        }
+
+        $callbackOrder->delete();
+
+        return back();
     }
 }

@@ -15,7 +15,7 @@ Route::middleware(['roles:editor'])->group(function () {
 
     Route::resource('callback_orders', 'CallbackOrderController')->only([
         'index',
-        'update',
+        'destroy',
     ]);
 
     Route::resource('portfolios', 'PortfolioController')->except(['show']);

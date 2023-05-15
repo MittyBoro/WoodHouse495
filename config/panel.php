@@ -3,7 +3,6 @@
 use App\Models\User;
 
 return [
-
     'url' => env('APP_URL', 'http://localhost'),
 
     'path' => env('PANEL_PATH', '/@thepanel'),
@@ -18,7 +17,7 @@ return [
         [
             'name' => 'Заявки',
             'route' => 'panel.callback_orders.index',
-            'icon' => 'phone-office',
+            'icon' => 'phone-rotary',
         ],
         [
             'name' => 'Страницы',
@@ -35,7 +34,6 @@ return [
             'route' => 'panel.articles.index',
             'icon' => 'newspaper',
         ],
-
 
         [
             'name' => 'Дополнительно',
@@ -59,6 +57,5 @@ return [
                 ],
             ],
         ],
-
     ],
 ];
