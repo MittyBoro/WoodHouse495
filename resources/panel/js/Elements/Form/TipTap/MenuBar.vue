@@ -1,5 +1,10 @@
 <template>
-  <div :class="{ big: isFullscreen }">
+  <div
+    :class="{
+      big: isFullscreen,
+      '-mb-9': editor.isActive('table') && !isFullscreen,
+    }"
+  >
     <template v-for="(item, index) in items">
       <template v-if="!item.hidden">
         <div
@@ -31,9 +36,12 @@
       v-if="editor.isActive('table')"
     >
       <template v-for="(item, index) in tableItems">
-        <template v-if="!item.isTable">
-          <MenuItem :key="index" v-bind="item" :disabled="isSource" />
-        </template>
+        <div
+          class="divider"
+          v-if="item.type === 'divider'"
+          :key="`divider${index}`"
+        />
+        <MenuItem v-else :key="index" v-bind="item" :disabled="isSource" />
       </template>
     </div>
   </div>
@@ -251,16 +259,6 @@
 
         tableItems: [
           {
-            icon: 'table',
-            title: 'Вставить таблицу',
-            action: () =>
-              this.editor
-                .chain()
-                .focus()
-                .insertTable({ rows: 3, cols: 3, withHeaderRow: false })
-                .run(),
-          },
-          {
             icon: 'left-from-line',
             title: 'Добавить столбец перед',
             action: () => this.editor.chain().focus().addColumnBefore().run(),
@@ -281,16 +279,7 @@
             action: () => this.editor.chain().focus().addRowAfter().run(),
           },
           {
-            icon: 'xmarks-lines',
-            classes: 'red rotate-90',
-            title: 'Удалить столбец',
-            action: () => this.editor.chain().focus().deleteColumn().run(),
-          },
-          {
-            icon: 'xmarks-lines',
-            classes: 'red',
-            title: 'Удалить строку',
-            action: () => this.editor.chain().focus().deleteRow().run(),
+            type: 'divider',
           },
           {
             icon: 'frame',
@@ -303,20 +292,41 @@
             action: () => this.editor.chain().focus().splitCell().run(),
           },
           {
-            icon: 'table-columns',
-            title: 'Переключить заголовок столбца',
-            action: () => this.editor.chain().focus().toggleHeaderRow().run(),
-            isActive: () => this.editor.isActive('th'),
+            type: 'divider',
           },
           {
             icon: 'diagram-cells',
-            title: 'Переключить заголовок ячейки',
-            action: () => this.editor.chain().focus().toggleHeaderCell().run(),
+            title: 'Переключить заголовок',
+            action: () => this.editor.chain().focus().toggleHeaderRow().run(),
+          },
+          {
+            type: 'divider',
           },
           {
             icon: 'wrench',
             title: 'Исправить таблицу',
             action: () => this.editor.chain().focus().fixTables().run(),
+          },
+          {
+            type: 'divider',
+          },
+          {
+            icon: 'table',
+            classes: 'red',
+            title: 'Удалить таблицу',
+            action: () => this.editor.chain().focus().deleteTable().run(),
+          },
+          {
+            icon: 'xmarks-lines',
+            classes: 'red rotate-90',
+            title: 'Удалить столбец',
+            action: () => this.editor.chain().focus().deleteColumn().run(),
+          },
+          {
+            icon: 'xmarks-lines',
+            classes: 'red',
+            title: 'Удалить строку',
+            action: () => this.editor.chain().focus().deleteRow().run(),
           },
         ],
       }
@@ -370,8 +380,12 @@
       background-color: theme('colors.gray.500');
       color: theme('colors.white');
     }
-    &.red:hover {
-      background-color: theme('colors.red.500');
+    &.red {
+      color: theme('colors.red.400');
+      &:hover {
+        background-color: theme('colors.red.500');
+        color: theme('colors.white');
+      }
     }
 
     &:hover {
