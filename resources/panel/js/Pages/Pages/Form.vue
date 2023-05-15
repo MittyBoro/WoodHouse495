@@ -12,9 +12,6 @@
           <code class="monfont-mono font-semibold">%replace%</code>
           <span>, для замены на значение из дочернего элемента</span>
         </FNotice>
-        <FNotice v-if="sb.activeTab == 'Основное'">
-          Поле «Название» отображается только в панели управления
-        </FNotice>
         <TabMain v-show="sb.activeTab == 'Основное'" :form="form" />
         <MTabSeo v-show="sb.activeTab == 'SEO'" :form="form" />
         <TabProps v-show="sb.activeTab == 'Дополнительно'" :form="form" />

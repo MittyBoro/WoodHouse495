@@ -1,5 +1,9 @@
 <template>
   <div class="form-grid">
+    <FNotice>
+      Поле «Название» обычно отображается только в панели управления
+    </FNotice>
+
     <FTitleSlug :form="form" />
 
     <FLabel

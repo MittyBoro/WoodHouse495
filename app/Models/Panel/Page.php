@@ -11,7 +11,7 @@ class Page extends Model
     use ExtractingTrait;
 
     protected $sortable = ['id', 'created_at', 'slug', 'title'];
-    protected $defaultSort = 'id-desc';
+    protected $defaultSort = 'id-asc';
 
     protected static function boot()
     {

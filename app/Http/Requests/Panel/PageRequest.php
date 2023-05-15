@@ -14,7 +14,7 @@ class PageRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'title' => 'nullable|string|max:255',
+            'title' => 'required|string|max:255',
             'slug' =>
                 'required|string|max:255|unique:pages,slug,' . $this->page?->id,
 
