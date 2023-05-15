@@ -55,6 +55,10 @@
   import TableCell from '@tiptap/extension-table-cell'
   import TableRow from '@tiptap/extension-table-row'
 
+  import TextStyle from '@tiptap/extension-text-style'
+  import Span from './TipTap/Extensoins/span'
+  import Small from './TipTap/Extensoins/small'
+
   import { Editor, EditorContent } from '@tiptap/vue-3'
 
   import MenuBar from './TipTap/MenuBar.vue'
@@ -104,7 +108,7 @@
       this.editor = new Editor({
         content: this.content,
         extensions: [
-          StarterKit.configure(),
+          StarterKit,
           CharacterCount.configure(),
           Highlight,
           Image,
@@ -116,6 +120,10 @@
           TableHeader,
           TableCell,
           TableRow,
+
+          Span,
+          Small,
+          TextStyle,
         ],
         onCreate: ({ editor }) => {
           this.editorHeight = editor.options.element.offsetHeight
@@ -315,6 +323,9 @@
     code {
       background-color: rgba(#616161, 0.1);
       color: #616161;
+    }
+    small {
+      font-size: 0.7em;
     }
     pre {
       background-color: theme('colors.gray.700');
