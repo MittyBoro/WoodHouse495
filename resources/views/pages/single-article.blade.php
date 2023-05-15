@@ -40,7 +40,7 @@
       <div class="title-row">
         <div class="h2"><span><b>Похожие</b> статьи</span></div>
       </div>
-      <div class="articles-list grid-lg-3 grid-md-2">
+      <div class="articles-list flex-list">
         @foreach ($articles as $article)
           @include('elements.article')
         @endforeach

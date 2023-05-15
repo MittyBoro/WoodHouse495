@@ -1,9 +1,5 @@
 .list-articles-box {
   padding-bottom: 80px;
-
-  .articles-item:nth-child(2) ~ .articles-item {
-    display: block;
-  }
 }
 
 .pagination {

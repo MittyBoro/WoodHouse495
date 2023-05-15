@@ -1,4 +1,5 @@
-<a class="articles-item" href="{{ route('article', $article->slug) }}">
+<a class="articles-item flex-list-item"
+  href="{{ route('article', $article->slug) }}">
   <div class="ai-image img-cover-wrap hover">
     <div class="link orange show-more">Подробнее <img class="to-svg" loading="lazy"
         src="{{ Vite::image('icons/link-arrow.svg') }}" alt=""></div>

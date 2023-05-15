@@ -25,7 +25,7 @@
       <div class="title-row">
         <div class="h1"><b>Последние</b> статьи</div>
       </div>
-      <div class="articles-list grid-lg-3 grid-md-2">
+      <div class="articles-list flex-list always-full-list">
         @foreach ($articles as $article)
           @include('elements.article')
         @endforeach

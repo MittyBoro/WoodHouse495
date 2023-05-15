@@ -1,4 +1,4 @@
-<div class="portfolio-item"
+<div class="portfolio-item flex-list-item"
   onclick='portfolioPopup(@json($portfolio))'>
   <div class="pi-image img-cover-wrap hover">
     <div class="link orange show-more">Подробнее <img class="to-svg" loading="lazy"

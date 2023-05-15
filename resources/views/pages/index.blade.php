@@ -989,7 +989,7 @@
       <div class="title-row">
         <div class="h2"><b>Выполненные</b> проекты</div>
       </div>
-      <div class="portfolio-list grid-lg-3 grid-md-2">
+      <div class="portfolio-list flex-list">
         @foreach ($portfolios as $portfolio)
           @include('elements.portfolio')
         @endforeach
@@ -1026,7 +1026,7 @@
       <div class="title-row">
         <div class="h2"><b>Полезные</b> статьи</div>
       </div>
-      <div class="articles-list grid-lg-3 grid-md-2">
+      <div class="articles-list flex-list">
         @foreach ($articles as $article)
           @include('elements.article')
         @endforeach

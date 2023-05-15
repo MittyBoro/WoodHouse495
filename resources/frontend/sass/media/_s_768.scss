@@ -29,6 +29,16 @@
     margin-bottom: 15px;
   }
 
+  .flex-list {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: -24px;
+    .flex-list-item {
+      margin: 0 0 24px;
+      width: 100%;
+    }
+  }
+
   .header-box .top-row .btn-col {
     .btn {
       display: none;
@@ -338,10 +348,6 @@
     padding: 63px 0 67px;
   }
 
-  .portfolio-box .portfolio-list {
-    gap: 24px;
-  }
-
   .portfolio-box .portfolio-item:nth-child(3) ~ .portfolio-item {
     display: none;
   }
@@ -360,10 +366,6 @@
 
   .articles-box .articles-item .ai-description {
     font-size: 14px;
-  }
-
-  .articles-box .articles-list {
-    gap: 24px;
   }
 
   .articles-box .articles-item .ai-image {
