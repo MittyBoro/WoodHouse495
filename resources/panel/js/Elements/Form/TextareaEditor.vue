@@ -2,9 +2,10 @@
   <component
     v-if="editor"
     class="editor form-text notranslate"
-    :class="{ focus: focus }"
+    :class="{ focus: focus, fullscreen: isFullscreen }"
     @click="focus || editor.view.dom.focus()"
     :is="isSource ? 'label' : 'div'"
+    ref="editor"
   >
     <MenuBar
       class="editor__header"
@@ -12,6 +13,8 @@
       :mini="mini"
       :isSource="isSource"
       :toggleSource="toggleSource"
+      :isFullscreen="isFullscreen"
+      :toggleFullScreen="toggleFullscreen"
     />
 
     <EditorContent
@@ -32,13 +35,16 @@
     ></textarea>
 
     <div class="editor__footer">
-      <span class="mr-3">Слов: {{ editor.storage.characterCount.words() }}</span>
+      <span class="mr-3">
+        Слов: {{ editor.storage.characterCount.words() }}
+      </span>
       <span>Символов: {{ editor.storage.characterCount.characters() }}</span>
     </div>
   </component>
 </template>
 
 <script>
+  import TextAlign from '@tiptap/extension-text-align'
   import StarterKit from '@tiptap/starter-kit'
   import CharacterCount from '@tiptap/extension-character-count'
   import Highlight from '@tiptap/extension-highlight'
@@ -70,6 +76,7 @@
         editor: null,
         focus: false,
         isSource: false,
+        isFullscreen: false,
         editorHeight: 0,
       }
     },
@@ -101,6 +108,10 @@
           CharacterCount.configure(),
           Highlight,
           Image,
+          TextAlign.configure({
+            types: ['heading', 'paragraph'],
+          }),
+
           Table,
           TableHeader,
           TableCell,
@@ -121,7 +132,12 @@
           this.focus = false
         },
       })
-      this.editor.$el
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          this.isFullscreen = false
+        }
+      })
     },
 
     methods: {
@@ -133,6 +149,9 @@
           }, 40)
         }
       },
+      toggleFullscreen() {
+        this.isFullscreen = !this.isFullscreen
+      },
     },
 
     beforeUnmount() {
@@ -141,7 +160,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .editor.form-text {
     background-color: theme('colors.white');
     display: flex;
@@ -150,11 +169,13 @@
     max-height: 36rem;
   }
   .editor {
+    overflow: hidden;
     &__header {
-      background: theme('colors.white');
+      background: theme('colors.gray.50');
       position: sticky;
       top: 0;
-      border-bottom: theme('borderWidth.DEFAULT') solid theme('borderColor.DEFAULT');
+      border-bottom: theme('borderWidth.DEFAULT') solid
+        theme('borderColor.DEFAULT');
       padding: theme('spacing[1.5]') theme('spacing.2');
       display: flex;
       align-items: center;
@@ -211,7 +232,8 @@
 
     &__footer {
       display: flex;
-      border-top: theme('borderWidth.DEFAULT') solid theme('borderColor.DEFAULT');
+      border-top: theme('borderWidth.DEFAULT') solid
+        theme('borderColor.DEFAULT');
       padding-left: theme('spacing.4');
       padding-right: theme('spacing.4');
       padding-top: theme('spacing.2');
@@ -222,6 +244,23 @@
     }
   }
 
+  .editor.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    z-index: 500;
+    max-height: none;
+    .editor__content {
+      height: 100%;
+      min-height: 0;
+    }
+  }
+</style>
+
+<style lang="scss">
   .ProseMirror {
     min-height: 100%;
     &:focus {
@@ -344,12 +383,15 @@
       border-collapse: collapse;
       border-radius: 10px;
       th {
-        background: theme('colors.gray.50');
+        background: theme('colors.gray.100');
       }
       th,
       td {
         padding: 0.3rem 0.5rem;
         border: 1px solid theme('colors.gray.200');
+      }
+      .selectedCell {
+        background: theme('colors.primary.100');
       }
     }
   }
