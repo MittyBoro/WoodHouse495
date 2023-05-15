@@ -37,19 +37,21 @@
         </div>
       </div>
       <div class="right-col">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name"
+            value="Реконструкция: Заказ мастера">
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
             <div class="sub-h">Заполните форму и мы перезвоним Вам в течение 30
               мин</div>
           </div>
           <div class="form-input visible-lg">
-            <input type="text" placeholder="Введите Ваше имя" minlength="1"
-              required>
+            <input type="text" name="name" placeholder="Введите Ваше имя"
+              minlength="1">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
           <button class="btn btn-orange"><span>Заказать бесплатный
               выезд мастера</span></button>
@@ -84,7 +86,7 @@
         <div class="h2"><b>Работаем со всеми</b><br>типами домов</div>
       </div>
       <div class="portfolio-list flex-list">
-        <div class="portfolio-item">
+        <div class="portfolio-item flex-list-item">
           <div class="pi-image img-cover-wrap">
             <img loading="lazy"
               src="{{ Vite::image('tmp/reconstruction_types/1.png') }}"
@@ -100,7 +102,7 @@
             </ul>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item flex-list-item">
           <div class="pi-image img-cover-wrap">
             <img loading="lazy"
               src="{{ Vite::image('tmp/reconstruction_types/2.png') }}"
@@ -116,7 +118,7 @@
             </ul>
           </div>
         </div>
-        <div class="portfolio-item">
+        <div class="portfolio-item flex-list-item">
           <div class="pi-image img-cover-wrap">
             <img loading="lazy"
               src="{{ Vite::image('tmp/reconstruction_types/3.png') }}"

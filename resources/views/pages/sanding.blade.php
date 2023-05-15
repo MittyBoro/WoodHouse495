@@ -41,19 +41,20 @@
         </div>
       </div>
       <div class="right-col">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name" value="Шлифовка: Заказ мастера">
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
             <div class="sub-h">Заполните форму и мы перезвоним Вам в течение 30
               мин</div>
           </div>
           <div class="form-input visible-lg">
-            <input type="text" placeholder="Введите Ваше имя" minlength="1"
-              required>
+            <input type="text" name="name" placeholder="Введите Ваше имя"
+              minlength="1">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
           <button class="btn btn-orange"><span>Заказать бесплатный
               выезд мастера</span></button>
@@ -273,14 +274,16 @@
           предварительную смету по Вашей задаче</div>
       </div>
 
-      <div class="cost-form form-grid">
+      <form class="form-calc cost-form form-grid">
+        <input type="hidden" name="Рассчёт" value="Шлифовка">
         <div class="left-side form-grid">
           <div class="form-input-wrap">
             <div class="form-input-title">Площадь дома (м²)</div>
             <div class="form-input form-input-alt form-input-alt-with-buttons">
               <div class="form-minus"
                 onclick="this.nextElementSibling.stepDown()"></div>
-              <input type="number" min="1" value="100" required>
+              <input type="number" min="1" value="100" required
+                name="Площадь дома м²">
               <div class="form-plus"
                 onclick="this.previousElementSibling.stepUp()"></div>
             </div>
@@ -288,7 +291,7 @@
           <div class="form-input-wrap">
             <div class="form-input-title">из чего фасад</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" readonly required name="Фасад">
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -302,7 +305,7 @@
           <div class="form-input-wrap">
             <div class="form-input-title">Чем вы хотите покрасить дом</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" readonly required name="Чем покрасить">
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -318,7 +321,8 @@
             <div class="form-input form-input-alt form-input-alt-with-buttons">
               <div class="form-minus"
                 onclick="this.nextElementSibling.stepDown()"></div>
-              <input type="number" min="0" value="0" required>
+              <input type="number" min="0" value="0" required
+                name="Возраст дома">
               <div class="form-plus"
                 onclick="this.previousElementSibling.stepUp()"></div>
             </div>
@@ -329,7 +333,7 @@
           <div class="form-input-wrap">
             <div class="form-input-title">Был ли дом покрашен ранее</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" readonly required name="Крашен ранее?">
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -343,22 +347,22 @@
               <div class="form-input-title">Шлифовка дома</div>
               <div class="form-checkbox-grid">
                 <label class="form-checkbox">
-                  <input type="radio" name="aaaaaaa"
+                  <input type="radio" name="Шлифовка дома"
                     value="Стандартная шлифовка" required>
                   <span>Стандартная шлифовка</span>
                 </label>
                 <label class="form-checkbox">
-                  <input type="radio" name="aaaaaaa"
+                  <input type="radio" name="Шлифовка дома"
                     value="Глубокая шлифовка" required>
                   <span>Глубокая шлифовка</span>
                 </label>
                 <label class="form-checkbox">
-                  <input type="radio" name="aaaaaaa" value="Не нужна"
+                  <input type="radio" name="Шлифовка дома" value="Не нужна"
                     required>
                   <span>Не нужна</span>
                 </label>
                 <label class="form-checkbox">
-                  <input type="radio" name="aaaaaaa"
+                  <input type="radio" name="Шлифовка дома"
                     value="Затрудняюсь ответить" required>
                   <span>Затрудняюсь ответить</span>
                 </label>
@@ -368,23 +372,23 @@
               <div class="form-input-title">Дополнительные опции</div>
               <div class="form-checkbox-grid">
                 <label class="form-checkbox">
-                  <input type="checkbox" name="bbbbbbbb"
-                    value="Покраска наличников" required>
+                  <input type="checkbox" name="Дополнительные опции"
+                    value="Покраска наличников">
                   <span>Покраска наличников</span>
                 </label>
                 <label class="form-checkbox">
-                  <input type="checkbox" name="bbbbbbbb" value="Теплый шов"
-                    required>
+                  <input type="checkbox" name="Дополнительные опции"
+                    value="Теплый шов">
                   <span>Теплый шов</span>
                 </label>
                 <label class="form-checkbox">
-                  <input type="checkbox" name="bbbbbbbb"
-                    value="Герметизация торцов" required>
+                  <input type="checkbox" name="Дополнительные опции"
+                    value="Герметизация торцов">
                   <span>Герметизация торцов</span>
                 </label>
                 <label class="form-checkbox">
-                  <input type="checkbox" name="bbbbbbbb"
-                    value="Покраска свесов кровли" required>
+                  <input type="checkbox" name="Дополнительные опции"
+                    value="Покраска свесов кровли">
                   <span>Покраска свесов кровли</span>
                 </label>
               </div>
@@ -395,7 +399,7 @@
                 стоимость</span></button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 

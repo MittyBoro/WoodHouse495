@@ -315,7 +315,9 @@
   <div class="popup-boxes">
     <div class="popup popup-callback popup-form">
       <div class="container">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name"
+            value="Бесплатный обратный звонок (popup)">
           <div class="close-popup close-btn"></div>
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатный обратный звонок</b>
@@ -324,15 +326,41 @@
               30 мин</div>
           </div>
           <div class="form-input">
-            <input type="text" placeholder="Введите Ваше имя" required>
+            <input type="text" name="name"
+              placeholder="Введите Ваше имя">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
-          <button class="btn btn-orange"
-            data-popup=".popup-success"><span>заказать бесплатный
+          <button class="btn btn-orange"><span>заказать бесплатный
               обратный звонок</span></button>
+          <div class="form-policy">Нажимая на кнопку, вы даёте согласие
+            на обработку персональных данных</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-calculation popup-form">
+      <div class="container">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name" value="Рассчёт стоимости">
+          <div class="close-popup close-btn"></div>
+          <div class="title-row">
+            <div class="h3"><b>Закажите рассчёт стоимости</b></div>
+            <div class="sub-h">Заполните форму и мы перезвоним Вам в ближайшее
+              время</div>
+          </div>
+          <div class="form-input">
+            <input type="text" name="name"
+              placeholder="Введите Ваше имя">
+          </div>
+          <div class="form-input">
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
+          </div>
+          <button class="btn btn-orange"><span>заказать бесплатный
+              рассчёт стоимости</span></button>
           <div class="form-policy">Нажимая на кнопку, вы даёте согласие
             на обработку персональных данных</div>
         </form>
@@ -341,7 +369,9 @@
 
     <div class="popup popup-consultation popup-form">
       <div class="container">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name"
+            value="Бесплатная консультация (popup)">
           <div class="close-popup close-btn"></div>
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатную консультацию</b></div>
@@ -349,14 +379,14 @@
               30 мин</div>
           </div>
           <div class="form-input">
-            <input type="text" placeholder="Введите Ваше имя" required>
+            <input type="text" name="name"
+              placeholder="Введите Ваше имя">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
-          <button class="btn btn-orange"
-            data-popup=".popup-success"><span>заказать бесплатную
+          <button class="btn btn-orange"><span>заказать бесплатную
               консультацию</span></button>
           <div class="form-policy">Нажимая на кнопку, вы даёте согласие
             на обработку персональных данных</div>
@@ -366,7 +396,9 @@
 
     <div class="popup popup-measurer popup-form">
       <div class="container">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name"
+            value="Бесплатный вызов мастера (popup)">
           <div class="close-popup close-btn"></div>
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
@@ -374,14 +406,14 @@
               30 мин</div>
           </div>
           <div class="form-input">
-            <input type="text" placeholder="Введите Ваше имя" required>
+            <input type="text" name="name"
+              placeholder="Введите Ваше имя">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
-          <button class="btn btn-orange"
-            data-popup=".popup-success"><span>Заказать бесплатный
+          <button class="btn btn-orange"><span>Заказать бесплатный
               выезд мастера</span></button>
           <div class="form-policy">Нажимая на кнопку, вы даёте согласие
             на обработку персональных данных</div>

@@ -28,6 +28,8 @@ class CallbackOrder extends Model implements HasMedia
     protected $sortable = ['created_at'];
     protected $defaultSort = 'created_at-desc';
 
+    protected $casts = ['extra' => 'array'];
+
     protected $appends = ['files'];
 
     public function registerMediaCollections(): void

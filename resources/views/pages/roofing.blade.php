@@ -37,19 +37,21 @@
         </div>
       </div>
       <div class="right-col">
-        <form class="form-wrapper">
+        <form class="form form-wrapper">
+          <input type="hidden" name="form_name"
+            value="Кровельные работы: Заказ мастера">
           <div class="title-row">
             <div class="h3"><b>Закажите бесплатный вызов мастера</b></div>
             <div class="sub-h">Заполните форму и мы перезвоним Вам в течение 30
               мин</div>
           </div>
           <div class="form-input visible-lg">
-            <input type="text" placeholder="Введите Ваше имя" minlength="1"
-              required>
+            <input type="text" name="name" placeholder="Введите Ваше имя"
+              minlength="1">
           </div>
           <div class="form-input">
-            <input type="text" placeholder="+7 (___) ___ - __ - __" phone
-              required>
+            <input type="text" name="phone"
+              placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
           <button class="btn btn-orange"><span>Заказать бесплатный
               выезд мастера</span></button>
@@ -266,14 +268,16 @@
           предварительную смету по Вашей задаче</div>
       </div>
 
-      <div class="cost-form form-grid">
+      <form class="form-calc cost-form form-grid">
+        <input type="hidden" name="Рассчёт" value="Кровельные работы">
         <div class="left-side form-grid">
           <div class="form-input-wrap">
             <div class="form-input-title">Площадь кровли (м²)</div>
             <div class="form-input form-input-alt form-input-alt-with-buttons">
               <div class="form-minus"
                 onclick="this.nextElementSibling.stepDown()"></div>
-              <input type="number" min="1" value="100" required>
+              <input type="number" min="1" name="Площадь кровли м²"
+                value="100" required>
               <div class="form-plus"
                 onclick="this.previousElementSibling.stepUp()"></div>
             </div>
@@ -281,7 +285,8 @@
           <div class="form-input-wrap">
             <div class="form-input-title">Кровельный материал</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" name="Кровельный материал" readonly
+                required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -294,7 +299,8 @@
           <div class="form-input-wrap">
             <div class="form-input-title">Стропильная система</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" name="Стропильная система" readonly
+                required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -310,7 +316,8 @@
           <div class="form-input-wrap">
             <div class="form-input-title">Демонтаж старой крыши</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" name="Демонтаж старой крыши" readonly
+                required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -323,7 +330,8 @@
           <div class="form-input-wrap">
             <div class="form-input-title">Требуется утепление</div>
             <div class="form-input form-input-alt form-options">
-              <input type="text" readonly required>
+              <input type="text" name="Требуется утепление" readonly
+                required>
               <img class="to-svg icon"
                 src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
               <div class="options-list">
@@ -338,7 +346,7 @@
                 стоимость</span></button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 

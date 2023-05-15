@@ -14,7 +14,7 @@ class CallbackOrderController extends Controller
             'name' => 'nullable|string',
             'phone' => 'required|string',
             'description' => 'nullable|string',
-            'extra' => 'nullable',
+            'extra' => 'nullable|array',
             'files' => 'nullable|array|max:10',
             'files.*' => [
                 'file',
