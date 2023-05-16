@@ -103,13 +103,13 @@
           <img src="{{ Vite::image('tmp/paints/1.png') }}" alt="">
           <video loading="lazy" poster="{{ Vite::image('tmp/paints/1.png') }}"
             src="{{ Vite::asset('resources/frontend/videos/2_1.mp4') }}" autoplay
-            muted loop></video>
+            muted playsinline loop></video>
         </div>
         <div class="video-wrap img-cover-wrap">
           <img src="{{ Vite::image('tmp/paints/2.png') }}" alt="">
           <video loading="lazy" poster="{{ Vite::image('tmp/paints/2.png') }}"
             src="{{ Vite::asset('resources/frontend/videos/2_2.mp4') }}" autoplay
-            muted loop></video>
+            muted playsinline loop></video>
         </div>
       </div>
     </div>
@@ -631,17 +631,5 @@
     </div>
   </div>
 
-@endsection
-
-@section('body_end_code')
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('video').forEach(video => {
-        video.play().then(function() {
-          video.muted = true;
-        });
-      });
-    });
-  </script>
 @endsection
 
