@@ -42,9 +42,8 @@ Route::middleware(['roles:editor'])->group(function () {
     // проверка внешнего вида писем
     Route::prefix('mail')->group(function () {
         Route::get('order/{id?}', function ($id = null) {
-            // $invoice = App\Models\Order::isPaid()->latest();
-            // $invoice = $id ? $invoice->findOrFail($id) : $invoice->first();
-            // return new App\Mail\OrderPaid($invoice, null);
+            $invoice = App\Models\CallbackOrder::findOrFail($id);
+            return new App\Mail\SendCallbackOrder($invoice, null);
         });
     });
 });

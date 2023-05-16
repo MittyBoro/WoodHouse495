@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+// prettier-ignore
 return [
     'accepted'             => 'Вы должны принять :attribute.',
     'accepted_if'          => 'Вы должны принять :attribute, когда :other соответствует :value.',
@@ -212,5 +213,6 @@ return [
         'updated_at'               => 'обновлено в',
         'username'                 => 'никнейм',
         'year'                     => 'год',
+        'phone'                    => 'Поле :attribute должно быть корректным.',
     ],
 ];

@@ -7,17 +7,22 @@
       v-model="files"
       :group="rand"
       item-key="id"
-      draggable=".drag-preview"
+      draggable=".drag-thumb"
     >
       <template #item="{ element, index }">
-        <div class="drag-preview" v-if="!element.del">
-          <div :class="[imagesOnly ? 'file-image' : 'file-simple']" :style="getStyle(element)">
+        <div class="drag-thumb" v-if="!element.del">
+          <div
+            :class="[imagesOnly ? 'file-image' : 'file-simple']"
+            :style="getStyle(element)"
+          >
             <div
               v-if="element.url"
               @click="openFile(element)"
               class="absolute inset-0 cursor-pointer opacity-10 transition hover:bg-gray-500"
             ></div>
-            <div v-if="!imagesOnly" class="text-sm text-gray-600">{{ element.name }}</div>
+            <div v-if="!imagesOnly" class="text-sm text-gray-600">
+              {{ element.name }}
+            </div>
             <span
               @click.prevent="removeAt(element, index)"
               class="flex h-3 w-3 cursor-pointer items-center justify-center rounded-sm bg-red-500 text-xs text-white shadow-sm"
@@ -30,7 +35,10 @@
       </template>
     </Draggable>
 
-    <label class="form-input" :class="{ 'drop-area': drop, 'md:col-span-5': isSingleImage }">
+    <label
+      class="form-input"
+      :class="{ 'drop-area': drop, 'md:col-span-5': isSingleImage }"
+    >
       <Icon icon="cloud-arrow-up" class="text-5xl opacity-90" />
       <span class="font-semibold">
         <span v-if="multiple">Выберите файлы</span>
@@ -90,7 +98,8 @@
     computed: {
       files: {
         get() {
-          if (!this.modelValue || !Object.keys(this.modelValue).length) return []
+          if (!this.modelValue || !Object.keys(this.modelValue).length)
+            return []
           let files = [...this.modelValue].filter((file) => !file.del)
           return files
         },
@@ -107,7 +116,8 @@
         return [
           this.imagesOnly ? 'gap-3' : 'gap-1 max-w-xs',
           {
-            'grid-cols-3 sm:grid-cols-4 md:grid-cols-5': !this.isSingleImage && this.imagesOnly,
+            'grid-cols-3 sm:grid-cols-4 md:grid-cols-5':
+              !this.isSingleImage && this.imagesOnly,
             'w-28 md:w-auto': this.isSingleImage,
           },
         ]
@@ -124,8 +134,10 @@
         let formFiles = []
 
         if (e.target && e.target.files) formFiles = e.target.files
-        else if (e.dataTransfer && e.dataTransfer.files) formFiles = e.dataTransfer.files
-        else if (e.clipboardData && e.clipboardData.files) formFiles = e.clipboardData.files
+        else if (e.dataTransfer && e.dataTransfer.files)
+          formFiles = e.dataTransfer.files
+        else if (e.clipboardData && e.clipboardData.files)
+          formFiles = e.clipboardData.files
 
         if (!formFiles.length) return
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Mail\SendCallbackOrder;
 use App\Models\CallbackOrder;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CallbackOrderController extends Controller
 {
@@ -12,7 +15,7 @@ class CallbackOrderController extends Controller
         $validated = $request->validate([
             'form_name' => 'required|string',
             'name' => 'nullable|string',
-            'phone' => 'required|string',
+            'phone' => 'required|string|phone',
             'description' => 'nullable|string',
             'extra' => 'nullable|array',
             'files' => 'nullable|array|max:10',
@@ -27,6 +30,11 @@ class CallbackOrderController extends Controller
 
         $order = CallbackOrder::create($validated);
         $order->saveAfter($validated);
+
+        $users = User::toNotify()->get();
+        if ($users->count()) {
+            Mail::to($users)->queue(new SendCallbackOrder($order));
+        }
 
         return true;
     }

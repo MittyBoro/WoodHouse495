@@ -89,4 +89,9 @@ class User extends Authenticatable
 
         return $gravatar;
     }
+
+    public function scopeToNotify($query)
+    {
+        $query->where('email_notification', true);
+    }
 }
