@@ -1,4 +1,8 @@
 User-agent:*
 Disallow: /?page=*
+Disallow: /privacy
+Disallow: /offer
 
 Host: woodhouse495.ru
+
+Sitemap: https://woodhouse495.su/sitemap.xml
