@@ -25,7 +25,9 @@ export default defineConfig({
       },
     }),
     ViteImageOptimizer({
-      /* pass your config */
+      svg: {
+        plugins: [],
+      },
     }),
   ],
   server: {
