@@ -3,6 +3,8 @@
 @section('meta_title', $page['meta_title'] ?? '')
 @section('meta_description', $page['meta_description'] ?? '')
 @section('meta_keywords', $page['meta_keywords'] ?? '')
+@section('meta_image', $article['thumb'] ?? '')
+@section('meta_type', 'article')
 
 @section('menu_items')
   <a class="menu-item visible-lg" href="/sanding">Шлифовка дома</a>

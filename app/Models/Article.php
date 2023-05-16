@@ -153,7 +153,7 @@ class Article extends Model implements HasMedia
             ->with(['media'])
             ->firstOrFail();
 
-        $result->append(['gallery', 'similars']);
+        $result->append(['thumb', 'similars']);
 
         return $result;
     }
