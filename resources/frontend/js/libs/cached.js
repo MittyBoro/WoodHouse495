@@ -1,6 +1,5 @@
 async function getCached(url) {
-  // !! убрать единицу
-  if (!('caches' in window) || 1) {
+  if (!('caches' in window)) {
     return fetch(url)
   }
 
