@@ -22,7 +22,7 @@
 
 <script>
   import draggable from 'vuedraggable'
-  import PropsItem from './Props/Item'
+  import PropsItem from './Props/Item.vue'
 
   export default {
     components: {
@@ -66,9 +66,9 @@
 </script>
 
 <style lang="scss" scoped>
-.drag {
-  :deep(.props-item) {
-    pointer-events: none;
+  .drag {
+    :deep(.props-item) {
+      pointer-events: none;
+    }
   }
-}
 </style>

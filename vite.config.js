@@ -35,6 +35,5 @@ export default defineConfig({
       '~': '/resources/js',
       ziggy: '/vendor/tightenco/ziggy/dist/vue.m',
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },
 })
