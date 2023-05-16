@@ -23,7 +23,7 @@ return new class extends Migration {
             $table->text('description')->nullable();
 
             $table->string('meta_title');
-            $table->string('meta_description')->nullable();
+            $table->text('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
 
             $table->string('view')->nullable();

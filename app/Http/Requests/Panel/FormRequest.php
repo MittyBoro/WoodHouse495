@@ -34,9 +34,9 @@ class FormRequest extends BaseFormRequest
     protected function validationSEO($preffix = ''): array
     {
         return [
-            $preffix . 'meta_title' => 'string|nullable|max:512',
-            $preffix . 'meta_description' => 'string|nullable|max:512',
-            $preffix . 'meta_keywords' => 'string|nullable|max:512',
+            $preffix . 'meta_title' => 'string|nullable|max:255',
+            $preffix . 'meta_description' => 'string|nullable|max:1024',
+            $preffix . 'meta_keywords' => 'string|nullable|max:255',
         ];
     }
 }
