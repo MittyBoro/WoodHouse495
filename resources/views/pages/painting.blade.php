@@ -47,11 +47,11 @@
               мин</div>
           </div>
           <div class="form-input visible-lg">
-            <input type="text" name="name" placeholder="Введите Ваше имя"
-              minlength="1">
+            <input type="text" name="name" autocomplete="name"
+              placeholder="Введите Ваше имя">
           </div>
           <div class="form-input">
-            <input type="text" name="phone"
+            <input type="text" name="phone" autocomplete="phone"
               placeholder="+7 (___) ___ - __ - __" phone required>
           </div>
           <button class="btn btn-orange"><span>Заказать бесплатный

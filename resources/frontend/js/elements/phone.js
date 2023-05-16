@@ -10,9 +10,9 @@ document.querySelectorAll('input[phone]').forEach((el) => {
   })
 
   el.addEventListener('focus', (e) => {
-    phoneMask.updateOptions({
-      lazy: false,
-    })
+    if (!el.value) {
+      return true
+    }
 
     if (e.relatedTarget) {
       el.click()
@@ -20,6 +20,9 @@ document.querySelectorAll('input[phone]').forEach((el) => {
   })
 
   el.addEventListener('input', () => {
+    phoneMask.updateOptions({
+      lazy: false,
+    })
     validate(el)
   })
   validate(el)
