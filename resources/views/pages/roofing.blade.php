@@ -113,8 +113,8 @@
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">01</span>
-            <img loading="lazy" src="{{ Vite::image('general/process/1.png') }}"
-              alt="">
+            <img loading="lazy" width="108" height="108"
+              src="{{ Vite::image('general/process/1.png') }}" alt="">
           </div>
           <div class="pi-title">Оставляете заявку
           </div>
@@ -124,8 +124,8 @@
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">02</span>
-            <img loading="lazy" src="{{ Vite::image('general/process/2.png') }}"
-              alt="">
+            <img loading="lazy" width="108" height="108"
+              src="{{ Vite::image('general/process/2.png') }}" alt="">
           </div>
           <div class="pi-title">Выезд замерщика
           </div>
@@ -135,8 +135,8 @@
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">03</span>
-            <img loading="lazy" src="{{ Vite::image('general/process/3.png') }}"
-              alt="">
+            <img loading="lazy" width="108" height="108"
+              src="{{ Vite::image('general/process/3.png') }}" alt="">
           </div>
           <div class="pi-title">Составляем смету</div>
           <div class="pi-description">После замеров
@@ -146,8 +146,8 @@
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">04</span>
-            <img loading="lazy" src="{{ Vite::image('general/process/4.png') }}"
-              alt="">
+            <img loading="lazy" width="108" height="108"
+              src="{{ Vite::image('general/process/4.png') }}" alt="">
           </div>
           <div class="pi-title">Выполняем работу
           </div>
@@ -158,8 +158,8 @@
         <div class="process-item">
           <div class="pi-image">
             <span class="pi-int">05</span>
-            <img loading="lazy" src="{{ Vite::image('general/process/5.png') }}"
-              alt="">
+            <img loading="lazy" width="108" height="108"
+              src="{{ Vite::image('general/process/5.png') }}" alt="">
           </div>
           <div class="pi-title">Сдаём объект</div>
           <div class="pi-description">После окончания всех работ мы убираем за
@@ -208,11 +208,12 @@
           годами</div>
       </div>
       <div class="partners-image visible-md">
-        <img loading="lazy" src="{{ Vite::image('tmp/partners/roofing.png') }}"
+        <img loading="lazy" width="1194" height="586"
+          src="{{ Vite::image('tmp/partners/roofing.png') }}"
           alt="Производители">
       </div>
       <div class="partners-image hidden-md">
-        <img loading="lazy"
+        <img loading="lazy" width="644" height="1012"
           src="{{ Vite::image('tmp/partners/roofing_mobile.png') }}"
           alt="Производители">
       </div>
@@ -442,9 +443,11 @@
 
       <div class="advantages-list">
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/1.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Строители из <br>
             Республики<br>
             Беларусь</div>
@@ -454,36 +457,44 @@
             и отделки деревянных домов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/2.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Бесплатный<br>
             выезд</div>
           <div class="ai-description">Нашы специалисты бесплатно выезжают на
             объект для составления замеров и объема работ</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/3.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Поэтапная<br>
             оплата</div>
           <div class="ai-description">Поэтапная оплата всех выполненных работ
             позволит Вам контроллировать все процессы на объекте</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/4.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Профессиональное оборудование</div>
           <div class="ai-description">Мы работаем исключительно на
             профессиональном
             и сертифицированном оборудовании</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/5.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Заключение<br>
             договора</div>
           <div class="ai-description">Мы составляем договор,
@@ -492,9 +503,11 @@
       </div>
       <div class="advantages-list">
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/6.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Убираем<br>
             мусор</div>
           <div class="ai-description">На последнем этапе производится уборка
@@ -502,17 +515,21 @@
             и остатков стройматериалов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/7.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Качественные материалы</div>
           <div class="ai-description">В своей работе используем только
             качественные материалы всемирно известных брендов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/8.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Контроль<br>
             качества</div>
           <div class="ai-description"> Вы будете уведомлены обо всех
@@ -520,18 +537,22 @@
           </div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/9.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Гарантия качества<br>
             и цены</div>
           <div class="ai-description">Мы закупаем все материалы у наших
             проверенных партнеров, что экономит на покупке материалов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/10.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Соблюдение технологий</div>
           <div class="ai-description">При работе
             наши мастера придерживаются всех технологий (SIP, экопан, брус, бревно

@@ -150,7 +150,8 @@
     <div class="container">
       <div class="advantages-list">
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/1.png') }}"
               alt="">
           </div>
@@ -163,36 +164,44 @@
             и отделки деревянных домов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/2.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Бесплатный<br>
             выезд</div>
           <div class="ai-description">Нашы специалисты бесплатно выезжают на
             объект для составления замеров и объема работ</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/3.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Поэтапная<br>
             оплата</div>
           <div class="ai-description">Поэтапная оплата всех выполненных работ
             позволит Вам контроллировать все процессы на объекте</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/4.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Профессиональное оборудование</div>
           <div class="ai-description">Мы работаем исключительно на
             профессиональном
             и сертифицированном оборудовании</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/5.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Заключение<br>
             договора</div>
           <div class="ai-description">Мы составляем договор,
@@ -201,9 +210,11 @@
       </div>
       <div class="advantages-list">
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/6.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Убираем<br>
             мусор</div>
           <div class="ai-description">На последнем этапе производится уборка
@@ -211,17 +222,21 @@
             и остатков стройматериалов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/7.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Качественные материалы</div>
           <div class="ai-description">В своей работе используем только
             качественные материалы всемирно известных брендов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/8.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Контроль<br>
             качества</div>
           <div class="ai-description"> Вы будете уведомлены обо всех
@@ -229,18 +244,22 @@
           </div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/9.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Гарантия качества<br>
             и цены</div>
           <div class="ai-description">Мы закупаем все материалы у наших
             проверенных партнеров, что экономит на покупке материалов</div>
         </div>
         <div class="advantages-item">
-          <div class="ai-image"><img loading="lazy"
+          <div class="ai-image">
+            <img loading="lazy" width="108" height="108"
               src="{{ Vite::image('general/advantages/10.png') }}"
-              alt=""></div>
+              alt="">
+          </div>
           <div class="ai-title">Соблюдение технологий</div>
           <div class="ai-description">При работе
             наши мастера придерживаются всех технологий (SIP, экопан, брус, бревно
@@ -518,39 +537,45 @@
       <div class="services-extra">
         <div class="se-title">Дополнительные услуги</div>
         <div class="se-item">
-          <div class="sei-image"><img loading="lazy"
+          <div class="sei-image">
+            <img loading="lazy" width="132" height="132"
               src="{{ Vite::image('general/services/1.png') }}" alt="">
           </div>
           <div class="sei-title">Электрика</div>
         </div>
         <div class="se-item">
-          <div class="sei-image"><img loading="lazy"
+          <div class="sei-image">
+            <img loading="lazy" width="132" height="132"
               src="{{ Vite::image('general/services/2.png') }}" alt="">
           </div>
           <div class="sei-title">Сантехника</div>
         </div>
         <div class="se-item">
-          <div class="sei-image"><img loading="lazy"
+          <div class="sei-image">
+            <img loading="lazy" width="132" height="132"
               src="{{ Vite::image('general/services/3.png') }}" alt="">
           </div>
           <div class="sei-title">Кровельные<br>
             работы</div>
         </div>
         <div class="se-item">
-          <div class="sei-image"><img loading="lazy"
+          <div class="sei-image">
+            <img loading="lazy" width="132" height="132"
               src="{{ Vite::image('general/services/4.png') }}" alt="">
           </div>
           <div class="sei-title">Фундаментные работы</div>
         </div>
         <div class="se-item">
-          <div class="sei-image"><img loading="lazy"
+          <div class="sei-image">
+            <img loading="lazy" width="132" height="132"
               src="{{ Vite::image('general/services/5.png') }}" alt="">
           </div>
           <div class="sei-title">Установка<br>
             заборов</div>
         </div>
         <div class="se-item">
-          <div class="sei-image"><img loading="lazy"
+          <div class="sei-image">
+            <img loading="lazy" width="132" height="132"
               src="{{ Vite::image('general/services/6.png') }}" alt="">
           </div>
           <div class="sei-title">Реконструкция</div>
@@ -684,9 +709,11 @@
       <div class="reviews-list grid-xl-3 grid-lg-2 grid visible-sm">
         <div class="reviews-item">
           <div class="ri-top">
-            <div class="rit-image"><img loading="lazy"
+            <div class="rit-image">
+              <img loading="lazy" width="88" height="88"
                 src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg"
-                alt=""></div>
+                alt="">
+            </div>
             <div class="ri-info">
               <div class="ri-name">Андрей Рыбаков</div>
               <div class="ri-green">Строительство дома из бруса</div>
@@ -699,9 +726,11 @@
         </div>
         <div class="reviews-item">
           <div class="ri-top">
-            <div class="rit-image"><img loading="lazy"
+            <div class="rit-image">
+              <img loading="lazy" width="88" height="88"
                 src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg"
-                alt=""></div>
+                alt="">
+            </div>
             <div class="ri-info">
               <div class="ri-name">Валерия Шишкина</div>
               <div class="ri-green">Отделка стен и потолка вагонкой</div>
@@ -715,9 +744,11 @@
         </div>
         <div class="reviews-item">
           <div class="ri-top">
-            <div class="rit-image"><img loading="lazy"
+            <div class="rit-image">
+              <img loading="lazy" width="88" height="88"
                 src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg"
-                alt=""></div>
+                alt="">
+            </div>
             <div class="ri-info">
               <div class="ri-name">Иван Малов</div>
               <div class="ri-green">Строительство каркасного дома </div>
@@ -731,9 +762,11 @@
 
         <div class="reviews-item">
           <div class="ri-top">
-            <div class="rit-image"><img loading="lazy"
+            <div class="rit-image">
+              <img loading="lazy" width="88" height="88"
                 src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg"
-                alt=""></div>
+                alt="">
+            </div>
             <div class="ri-info">
               <div class="ri-name">Валерия Шишкина</div>
               <div class="ri-green">Отделка стен и потолка вагонкой</div>
@@ -747,9 +780,11 @@
         </div>
         <div class="reviews-item">
           <div class="ri-top">
-            <div class="rit-image"><img loading="lazy"
+            <div class="rit-image">
+              <img loading="lazy" width="88" height="88"
                 src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg"
-                alt=""></div>
+                alt="">
+            </div>
             <div class="ri-info">
               <div class="ri-name">Иван Малов</div>
               <div class="ri-green">Строительство каркасного дома </div>
@@ -762,9 +797,11 @@
         </div>
         <div class="reviews-item">
           <div class="ri-top">
-            <div class="rit-image"><img loading="lazy"
+            <div class="rit-image">
+              <img loading="lazy" width="88" height="88"
                 src="https://abrakadabra.fun/uploads/posts/2021-12/thumbs/1640528649_39-abrakadabra-fun-p-serii-chelovek-na-avu-44.jpg"
-                alt=""></div>
+                alt="">
+            </div>
             <div class="ri-info">
               <div class="ri-name">Андрей Рыбаков</div>
               <div class="ri-green">Строительство дома из бруса</div>
@@ -805,10 +842,10 @@
           годами</div>
       </div>
       <div class="partners-image">
-        <img class="visible-md" loading="lazy"
+        <img class="visible-md" loading="lazy" width="1162" height="225"
           src="{{ Vite::image('tmp/partners/index.png') }}"
           alt="Производители">
-        <img class="hidden-md" loading="lazy"
+        <img class="hidden-md" loading="lazy" width="452" height="573"
           src="{{ Vite::image('tmp/partners/index_mobile.png') }}"
           alt="Производители">
       </div>
@@ -827,7 +864,7 @@
           <div class="process-item">
             <div class="pi-image">
               <span class="pi-int">01</span>
-              <img loading="lazy"
+              <img loading="lazy" width="108" height="108"
                 src="{{ Vite::image('general/process/1.png') }}"
                 alt="">
             </div>
@@ -839,7 +876,7 @@
           <div class="process-item">
             <div class="pi-image">
               <span class="pi-int">02</span>
-              <img loading="lazy"
+              <img loading="lazy" width="108" height="108"
                 src="{{ Vite::image('general/process/2.png') }}"
                 alt="">
             </div>
@@ -851,7 +888,7 @@
           <div class="process-item">
             <div class="pi-image">
               <span class="pi-int">03</span>
-              <img loading="lazy"
+              <img loading="lazy" width="108" height="108"
                 src="{{ Vite::image('general/process/3.png') }}"
                 alt="">
             </div>
@@ -863,7 +900,7 @@
           <div class="process-item">
             <div class="pi-image">
               <span class="pi-int">04</span>
-              <img loading="lazy"
+              <img loading="lazy" width="108" height="108"
                 src="{{ Vite::image('general/process/4.png') }}"
                 alt="">
             </div>
@@ -876,7 +913,7 @@
           <div class="process-item">
             <div class="pi-image">
               <span class="pi-int">05</span>
-              <img loading="lazy"
+              <img loading="lazy" width="108" height="108"
                 src="{{ Vite::image('general/process/5.png') }}"
                 alt="">
             </div>
