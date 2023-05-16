@@ -32,7 +32,9 @@ Route::middleware(['roles:editor'])->group(function () {
             Artisan::call('optimize:clear');
 
             if (config('app.environment') == 'production') {
-                Artisan::call('optimize');
+                Artisan::call('config:cache');
+                Artisan::call('route:cache');
+                Artisan::call('view:cache');
             }
 
             return back();

@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 import vue from '@vitejs/plugin-vue'
 import laravel from 'laravel-vite-plugin'
@@ -22,6 +23,9 @@ export default defineConfig({
           includeAbsolute: false,
         },
       },
+    }),
+    ViteImageOptimizer({
+      /* pass your config */
     }),
   ],
   server: {
