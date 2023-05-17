@@ -205,7 +205,7 @@
                                     <a href="{{ config('app.url') }}"
                                       target="_blank">
                                       <img align="center" border="0"
-                                        src="{{ Vite::image('logo.svg') }}"
+                                        src="{{ Vite::image('logo.png') }}"
                                         alt="{{ config('app.name') }}"
                                         title="{{ config('app.name') }}"
                                         style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 70%;max-width: 252px;"
