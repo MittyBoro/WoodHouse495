@@ -14,12 +14,18 @@
           <template #pagination />
 
           <template #row="sp">
-            <TData v-model="sp.element.title" @update:modelValue="update(sp.element)" />
+            <TData
+              v-model="sp.element.title"
+              @update:modelValue="update(sp.element)"
+            />
             <TData>
               <template v-if="sp.element.page_name">
                 <div class="flex">
                   <span>{{ sp.element.page_name }}</span>
-                  <Link :href="$panelRoute('pages.edit', sp.element, id)" class="link-hover ml-1">
+                  <Link
+                    :href="$panelRoute('pages.edit', sp.element, id)"
+                    class="link-hover ml-1"
+                  >
                     <Icon icon="pen" class="opacity-50 scale-75" />
                   </Link>
                 </div>
@@ -27,6 +33,13 @@
               <span v-else>-</span>
             </TData>
             <TData mini :date="sp.element.created_at" />
+            <TData mini>
+              <FSwitcher
+                v-model="sp.element.on_home"
+                @update:modelValue="update(sp.element)"
+                mini
+              />
+            </TData>
             <TData mini>
               <FSwitcher
                 v-model="sp.element.is_published"
@@ -68,6 +81,13 @@
             { key: 'title', text: 'Название', sortable: true },
             { key: 'page_name', text: 'Страница' },
             { key: 'created_at', text: 'Создано', sortable: true },
+            {
+              key: 'on_home',
+              text: 'Закрепить на главной',
+              fa: 'house',
+              sortable: true,
+              class: 'text-center',
+            },
             {
               key: 'is_published',
               text: 'Опубликовано',

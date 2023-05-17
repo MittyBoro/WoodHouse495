@@ -41,6 +41,7 @@
         get() {
           let value = []
 
+          console.log('this.modelValue', this.modelValue)
           if (this.modelValue) {
             if (Array.isArray(this.modelValue)) value = this.modelValue
             else value = [this.modelValue]
@@ -55,7 +56,9 @@
         },
         set(value) {
           let array = this.single ? value.slice(-1) : value
-          this.$emit('update:modelValue', this.notArray ? array[0] || '' : array)
+          let newValue = this.notArray ? array[0] || null : array
+          console.log('newValue', newValue)
+          this.$emit('update:modelValue', newValue)
         },
       },
     },

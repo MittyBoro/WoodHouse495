@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function index(Request $request)
     {
-        $portfolios = Portfolio::take('6')
+        $portfolios = Portfolio::onHome()
             ->queryList()
             ->get();
 

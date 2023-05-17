@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,13 +13,18 @@ return new class extends Migration
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('page_id')->nullable()->constrained()->nullOnDelete();
+            $table
+                ->foreignId('page_id')
+                ->nullable()
+                ->constrained()
+                ->nullOnDelete();
 
             $table->string('title')->nullable();
             $table->text('mini_description')->nullable();
             $table->text('description')->nullable();
             $table->string('location')->nullable();
 
+            $table->boolean('on_home')->default(false);
             $table->boolean('is_published')->default(false);
             $table->timestamp('published_at')->nullable();
 

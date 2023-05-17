@@ -7,10 +7,7 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use Carbon\Carbon;
 
-use App\Models\Product;
-use App\Models\ProductCategory;
 use App\Models\Page;
-use Arr;
 
 class SitemapService
 {

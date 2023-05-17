@@ -26,12 +26,15 @@ class Portfolio extends Model implements HasMedia
         'description',
         'location',
 
+        'on_home',
         'is_published',
         'published_at',
     ];
 
     protected $casts = [
         'published_at' => 'datetime',
+        'is_published' => 'boolean',
+        'on_home' => 'boolean',
     ];
 
     protected $sortable = ['published_at', 'created_at'];
@@ -92,6 +95,11 @@ class Portfolio extends Model implements HasMedia
                 'thumb',
             ),
         );
+    }
+
+    public function scopeOnHome($query)
+    {
+        $query->where('on_home', 1);
     }
 
     public function scopeIsPublished($query)
