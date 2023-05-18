@@ -5,4 +5,4 @@ Disallow: /offer
 
 Host: woodhouse495.ru
 
-Sitemap: https://woodhouse495.su/sitemap.xml
+Sitemap: https://woodhouse495.ru/sitemap.xml
