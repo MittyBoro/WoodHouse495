@@ -68,6 +68,7 @@
           mini_description: '',
           description: '',
           location: '',
+          on_home: false,
           is_published: false,
           published_at: '',
           page_id: null,

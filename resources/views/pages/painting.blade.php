@@ -101,7 +101,7 @@
       <div class="right-side grid-md-2">
         <div class="video-wrap img-cover-wrap">
           <img src="{{ Vite::image('tmp/paints/1.png') }}" alt="">
-          <video loading="lazy" poster="{{ Vite::image('tmp/paints/1.png') }}"
+          <video poster="{{ Vite::image('tmp/paints/1.png') }}"
             src="{{ Vite::asset('resources/frontend/videos/2_1.mp4') }}" autoplay
             muted playsinline loop></video>
         </div>
@@ -651,5 +651,16 @@
     </div>
   </div>
 
+@endsection
+
+@section('body_end_code')
+  <script>
+    window.addEventListener('load', function() {
+      document.querySelectorAll('video').forEach(video => {
+        video.muted = true;
+        video.play();
+      });
+    });
+  </script>
 @endsection
 

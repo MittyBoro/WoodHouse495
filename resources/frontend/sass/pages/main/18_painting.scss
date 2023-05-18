@@ -26,6 +26,10 @@
     line-height: 151.5%;
   }
 
+  video {
+    pointer-events: auto;
+  }
+
   .right-side {
     grid-column: span 7;
     gap: 30px;

@@ -11,7 +11,6 @@ use Propaganistas\LaravelPhone\PhoneNumber;
 
 class UserRequest extends FormRequest
 {
-
     public function authorize()
     {
         $user = $this->user;
@@ -25,6 +24,8 @@ class UserRequest extends FormRequest
             if ($user->id !== Auth::id() && !Auth::user()->is_admin) {
                 return false;
             }
+        } else {
+            return Auth::user()->is_admin;
         }
 
         return true;
@@ -35,36 +36,45 @@ class UserRequest extends FormRequest
         $user = $this->user;
 
         return [
-            'name'  => 'nullable|string|min:3|max:225',
-            'email' => 'email|min:3|max:225|unique:users,email,' . $user?->id,
+            'name' => 'nullable|string|min:3|max:225',
+            'email' => [
+                'email',
+                'min:3',
+                'max:225',
+                'unique:users,email,' . $user?->id,
+            ],
             'email_notification' => 'boolean',
             'role' => [
                 'required',
                 Rule::in(User::ROLES),
                 function ($attribute, $value, $fail) use ($user) {
                     // Проверяем, может ли пользователь изменить свою роль
-                    if ($user && $user->role === Auth::id() && $value !== User::ROLE_ADMIN) {
+                    if (
+                        $user &&
+                        $user->id === Auth::id() &&
+                        $value !== Auth::user()->role
+                    ) {
                         $fail('Вы не можете изменить свои права доступа.');
                     }
                 },
             ],
 
-            ...(($this->password || !$user) ?
-                [
-                    'current_password' => ['sometimes', Auth::id() == $user?->id ? 'required' : 'nullable', 'current_password'],
+            ...$this->password || !$user
+                ? [
+                    'current_password' => [
+                        'sometimes',
+                        Auth::id() == $user?->id ? 'required' : 'nullable',
+                        'current_password',
+                    ],
                     'password' => [
                         'sometimes',
                         'required',
                         'string',
                         'confirmed',
                         Password::defaults(),
-                        function ($attribute, $value, $fail) use ($user) {
-                            if ($user && Auth::id() !== 1 && $user->role === User::ROLE_ADMIN) {
-                                $fail('Вы не можете изменить пароль другого администратора.');
-                            }
-                        }
                     ],
-                ] : [])
+                ]
+                : [],
         ];
     }
 }
