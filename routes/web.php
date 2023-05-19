@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::redirect('index', '/');
+Route::redirect('shlifovka-derevyannyx-domov', 'sanding', 301);
+
+/* form submit */
 Route::post('callback_order/store', 'CallbackOrderController@store')->name(
     'callback_order.store',
 );
