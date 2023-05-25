@@ -22,6 +22,8 @@ document.querySelectorAll('form.form').forEach((form) => {
       })
     }
 
+    ym(93599554, 'reachGoal', 'zayavka')
+
     API.postFile('callback_order/store', formData)
       .then((res) => {
         openPopup('.popup-success')
