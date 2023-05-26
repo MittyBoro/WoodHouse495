@@ -2,7 +2,12 @@
   font-size: 14px;
   line-height: 143.5%;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 2em 0 1.75em;
     font-weight: 700;
     letter-spacing: 0;
@@ -24,12 +29,13 @@
     font-size: 18px;
   }
 
-  ul, ol {
+  ul,
+  ol {
     margin: 10px 0 20px;
   }
 
   li {
-    margin: 8px 0;
+    margin: 12px 0;
   }
 
   ul {
@@ -43,21 +49,24 @@
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0.35em;
         left: 0;
         width: 8px;
         height: 8px;
         box-sizing: border-box;
-        border: 1.5px solid #84C57A;
+        border: 1.5px solid #84c57a;
         border-radius: 50%;
       }
     }
   }
 
-  ol li {
-    list-style: decimal inside;
+  ol {
+    padding-left: 1em;
+    li {
+      list-style: decimal;
+    }
   }
 
   p {
