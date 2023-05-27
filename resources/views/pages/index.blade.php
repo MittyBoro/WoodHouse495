@@ -663,7 +663,8 @@
               <div class="bi-title">Беседки</div>
             </div>
           </div>
-          <div class="btn btn-orange" data-popup=".popup-consultation">
+          <div class="btn btn-orange" data-popup=".popup-consultation"
+            onclick="ym(93599554,'reachGoal','otkr-forma');">
             <span>Получить консультацию по строительству дома</span>
           </div>
 
@@ -949,7 +950,8 @@
           </div>
         </div>
         <div class="process-btn">
-          <div class="btn btn-orange" data-popup=".popup-measurer">
+          <div class="btn btn-orange" data-popup=".popup-measurer"
+            onclick="ym(93599554,'reachGoal','otkr-forma');">
             <span>Бесплатно вызвать замерщика</span>
           </div>
         </div>

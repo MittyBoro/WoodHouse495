@@ -167,7 +167,8 @@
         </div>
       </div>
       <div class="process-btn">
-        <div class="btn btn-orange" data-popup=".popup-measurer">
+        <div class="btn btn-orange" data-popup=".popup-measurer"
+          onclick="ym(93599554,'reachGoal','otkr-forma');">
           <span>Бесплатно вызвать замерщика</span>
         </div>
       </div>

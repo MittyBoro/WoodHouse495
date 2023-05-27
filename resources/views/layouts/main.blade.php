@@ -134,7 +134,9 @@
             </a>
           </div>
           <div class="contacts-col">
-            <a class="phone-row" href="tel:+79169168078">+7 (916) 916-80-78</a>
+            <a class="phone-row"
+              onclick="ym(93599554,'reachGoal','tel-clic'); return true;"
+              href="tel:+79169168078">+7 (916) 916-80-78</a>
             <a class="mail-row"
               href="mailto:info@woodhouse495.ru">info@woodhouse495.ru</a>
           </div>
@@ -144,7 +146,8 @@
                   loading="lazy" src="{{ Vite::image('icons/phone.svg') }}"
                   alt=""></div>
             </div>
-            <div class="btn btn-green" data-popup=".popup-callback">Заказать
+            <div class="btn btn-green" data-popup=".popup-callback"
+              onclick="ym(93599554,'reachGoal','otkr-forma');">Заказать
               звонок</div>
           </div>
           <div class="hamburger-col hidden-lg" data-popup=".popup-menu">
@@ -161,7 +164,8 @@
             <span class="mid-name a">
               услуги
               <img class="to-svg mid-arrow"
-                src="{{ Vite::image('icons/menu-arrow.svg') }}" alt="">
+                src="{{ Vite::image('icons/menu-arrow.svg') }}"
+                alt="">
             </span>
             <div class="mid-list">
               <a class="mid-item" href="/sanding">Шлифовка деревянного
@@ -224,9 +228,11 @@
                   alt=""></span>
             </div>
             <div class="ci-title">Наш телефон:</div>
-            <div class="ci-text"><a class="a-phone"
-                href="tel:+79169168078">+7 (916)
-                916-80-78</a></div>
+            <div class="ci-text">
+              <a class="a-phone"
+                onclick="ym(93599554,'reachGoal','tel-clic'); return true;"
+                href="tel:+79169168078">+7 (916) 916-80-78</a>
+            </div>
           </div>
           <div class="contacts-item">
             <div class="icons icons-green">
@@ -294,10 +300,13 @@
                 src="{{ Vite::image('icons/whatsapp.svg') }}" alt="">
             </a>
           </div>
-          <a class="phone-row" href="tel:+79169168078">+7 (916) 916-80-78</a>
+          <a class="phone-row"
+            onclick="ym(93599554,'reachGoal','tel-clic'); return true;"
+            href="tel:+79169168078">+7 (916) 916-80-78</a>
           <a class="mail-row"
             href="mailto:info@woodhouse495.ru">info@woodhouse495.ru</a>
-          <div class="btn btn-green" data-popup=".popup-callback">Заказать
+          <div class="btn btn-green" data-popup=".popup-callback"
+            onclick="ym(93599554,'reachGoal','otkr-forma');">Заказать
             звонок</div>
         </div>
         <div class="copy-col">
@@ -537,10 +546,13 @@
         </div>
 
         <div class="contacts-col">
-          <a class="phone-row" href="tel:+79169168078">+7 (916) 916-80-78</a>
+          <a class="phone-row"
+            onclick="ym(93599554,'reachGoal','tel-clic'); return true;"
+            href="tel:+79169168078">+7 (916) 916-80-78</a>
           <a class="mail-row"
             href="mailto:info@woodhouse495.ru">info@woodhouse495.ru</a>
-          <div class="btn btn-orange" data-popup=".popup-callback">
+          <div class="btn btn-orange" data-popup=".popup-callback"
+            onclick="ym(93599554,'reachGoal','otkr-forma');">
             <span>Заказать звонок</span>
           </div>
         </div>
